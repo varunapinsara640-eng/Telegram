@@ -1,0 +1,30 @@
+workflows:
+  wooble-android-build:
+    name: Wooble Android APK Build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      groups:
+        - keystore_credentials # Codemagic වල හදන Variable Group එකේ නම
+      vars:
+        PACKAGE_NAME: "org.wooble.messenger"
+      android_ndk: 27.2.12479018
+      java: 17
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: master
+          include: true
+    scripts:
+      - name: Set up local.properties
+        script: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          echo "ndk.dir=$ANDROID_SDK_ROOT/ndk/27.2.12479018" >> local.properties
+
+      - name: Build Android APK
+        script: |
+          ./gradlew assembleTMessagesProjRelease --no-daemon --stacktrace
+
+    artifacts:
+      - TMessagesProj/build/outputs/apk/**/*.apk
