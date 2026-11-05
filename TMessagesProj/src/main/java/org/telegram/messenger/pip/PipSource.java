@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip;
+package org.wooble.messenger.pip;
 
 import android.app.Activity;
 import android.app.PictureInPictureParams;
@@ -11,15 +11,15 @@ import androidx.annotation.RequiresApi;
 
 import androidx.media3.common.Player;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.pip.activity.IPipActivity;
-import org.telegram.messenger.pip.activity.IPipActivityActionListener;
-import org.telegram.messenger.pip.source.IPipSourceDelegate;
-import org.telegram.messenger.pip.source.PipSourceHandlerState2;
-import org.telegram.messenger.pip.utils.PipPositionObserver;
-import org.telegram.messenger.pip.utils.PipSourceParams;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.ui.Stories.LiveStoryPipOverlay;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.pip.activity.IPipActivity;
+import org.wooble.messenger.pip.activity.IPipActivityActionListener;
+import org.wooble.messenger.pip.source.IPipSourceDelegate;
+import org.wooble.messenger.pip.source.PipSourceHandlerState2;
+import org.wooble.messenger.pip.utils.PipPositionObserver;
+import org.wooble.messenger.pip.utils.PipSourceParams;
+import org.wooble.messenger.pip.utils.PipUtils;
+import org.wooble.ui.Stories.LiveStoryPipOverlay;
 import org.webrtc.TextureViewRenderer;
 
 import java.util.ArrayList;

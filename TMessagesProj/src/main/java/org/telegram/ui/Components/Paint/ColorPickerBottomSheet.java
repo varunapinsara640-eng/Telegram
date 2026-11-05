@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -35,17 +35,17 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 import androidx.core.util.Consumer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.Views.PaintColorsListView;
-import org.telegram.ui.Components.Paint.Views.PipettePickerView;
-import org.telegram.ui.Components.ViewPagerFixed;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Paint.Views.PaintColorsListView;
+import org.wooble.ui.Components.Paint.Views.PipettePickerView;
+import org.wooble.ui.Components.ViewPagerFixed;
 
 import java.util.HashMap;
 import java.util.Map;

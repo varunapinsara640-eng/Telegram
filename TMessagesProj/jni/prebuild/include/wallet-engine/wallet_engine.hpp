@@ -1671,7 +1671,7 @@ struct SendResult {
 /**
  * Chain-derived metadata for an NFT collection.
  *
- * Product-specific classification, such as Telegram gifts or usernames,
+ * Product-specific classification, such as Wooble gifts or usernames,
  * intentionally stays outside the engine.
  */
 struct NftCollectionDescriptor {

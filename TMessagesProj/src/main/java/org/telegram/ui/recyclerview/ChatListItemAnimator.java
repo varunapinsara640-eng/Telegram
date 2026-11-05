@@ -1,4 +1,4 @@
-package org.telegram.ui.recyclerview;
+package org.wooble.ui.recyclerview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,24 +17,24 @@ import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BotHelpCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.UserInfoCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.ChatGreetingsView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ThanosEffect;
-import org.telegram.ui.TextMessageEnterTransition;
-import org.telegram.ui.VoiceMessageEnterTransition;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.BotHelpCell;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.UserInfoCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.ChatGreetingsView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ThanosEffect;
+import org.wooble.ui.TextMessageEnterTransition;
+import org.wooble.ui.VoiceMessageEnterTransition;
 
 import java.util.ArrayList;
 import java.util.Collections;

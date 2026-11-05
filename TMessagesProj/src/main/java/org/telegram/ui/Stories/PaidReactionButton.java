@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.ilerp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.ilerp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -26,25 +26,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.blur3.StrokeDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stars.StarsReactionsSheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.blur3.StrokeDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stars.StarsReactionsSheet;
 
 import java.util.ArrayList;
 

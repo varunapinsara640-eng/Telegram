@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.SpannableString;
@@ -14,20 +14,20 @@ import android.widget.LinearLayout;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.PopupSwipeBackLayout;
-import org.telegram.ui.Components.VideoPlayer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.PopupSwipeBackLayout;
+import org.wooble.ui.Components.VideoPlayer;
 
 import java.util.ArrayList;
 

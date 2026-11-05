@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,14 +8,14 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.AppIconsSelectorCell;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LauncherIconController;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.AppIconsSelectorCell;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.LauncherIconController;
 
 import java.util.ArrayList;
 import java.util.List;

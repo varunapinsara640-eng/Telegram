@@ -1,14 +1,14 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.readRes;
+import static org.wooble.messenger.AndroidUtilities.readRes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -34,18 +34,18 @@ import androidx.annotation.RawRes;
 import androidx.annotation.UiThread;
 import androidx.annotation.WorkerThread;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ResLottieMeta;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.BitmapsCache;
-import org.telegram.messenger.utils.Choreographer60FpsContent;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.DispatchQueuePoolBackground;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.ResLottieMeta;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.BitmapsCache;
+import org.wooble.messenger.utils.Choreographer60FpsContent;
+import org.wooble.ui.BubbleActivity;
+import org.wooble.ui.LaunchActivity;
 
 import java.io.File;
 import java.io.FileReader;

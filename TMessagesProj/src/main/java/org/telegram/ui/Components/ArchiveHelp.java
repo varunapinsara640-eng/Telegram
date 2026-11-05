@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -18,14 +18,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 public class ArchiveHelp extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 

@@ -1,7 +1,7 @@
-package org.telegram.ui.community.sheet;
+package org.wooble.ui.community.sheet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -11,25 +11,25 @@ import android.widget.FrameLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ProfileSearchCell;
-import org.telegram.ui.Cells.RadioButtonCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ProfileSearchCell;
+import org.wooble.ui.Cells.RadioButtonCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 

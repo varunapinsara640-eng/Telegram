@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,17 +19,17 @@ import androidx.dynamicanimation.animation.FloatValueHolder;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Premium.GLIcon.DiamondSurfaceView;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.ui.Components.Premium.GLIcon.Icon3D;
-import org.telegram.ui.Components.Premium.StarParticlesView;
-import org.telegram.ui.Components.RLottieImageView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Premium.GLIcon.DiamondSurfaceView;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.wooble.ui.Components.Premium.GLIcon.Icon3D;
+import org.wooble.ui.Components.Premium.StarParticlesView;
+import org.wooble.ui.Components.RLottieImageView;
 
 /** A square, transparently padded Wallet diamond, with a lightweight device fallback. */
 public class WalletDiamondView extends FrameLayout {

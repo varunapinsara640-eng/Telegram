@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.PendingIntent;
 import android.app.Service;
@@ -13,9 +13,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.ServiceCompat;
 
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.web.R;
+import org.wooble.tgnet.TL_smsjobs;
+import org.wooble.ui.LaunchActivity;
 
 public class SMSJobsNotification extends Service {
 

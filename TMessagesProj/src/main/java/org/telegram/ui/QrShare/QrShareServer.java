@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 import android.content.SharedPreferences;
 import android.os.SystemClock;
@@ -6,20 +6,20 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
 
 import java.util.ArrayList;
 import java.util.Arrays;

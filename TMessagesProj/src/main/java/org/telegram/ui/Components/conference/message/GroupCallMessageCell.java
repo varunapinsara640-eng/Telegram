@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.conference.message;
+package org.wooble.ui.Components.conference.message;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -29,25 +29,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.voip.GroupCallMessage;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

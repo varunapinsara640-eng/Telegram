@@ -1,4 +1,4 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -6,8 +6,8 @@ import android.graphics.Canvas;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
 
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.JLatexMathDrawable;

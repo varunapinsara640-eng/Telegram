@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -11,8 +11,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
-import org.telegram.ui.EditWidgetActivity;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.ui.EditWidgetActivity;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.cells.selector;
+package org.wooble.ui.Components.Premium.boosts.cells.selector;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,20 +31,20 @@ import android.view.animation.LinearInterpolator;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ScrollView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.GroupCreateSpan;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.GroupCreateSpan;
+import org.wooble.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 import java.util.HashSet;

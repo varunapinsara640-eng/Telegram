@@ -1,16 +1,16 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.ui.bots.AffiliateProgramFragment.percents;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -38,55 +38,55 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Adapters.SearchAdapterHelper;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LoadingCell;
-import org.telegram.ui.Cells.ManageChatTextCell;
-import org.telegram.ui.Cells.ManageChatUserCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.SlideIntChooseView;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextCheckCell;
-import org.telegram.ui.Cells.TextCheckCell2;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.GigagroupConvertAlert;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SlideChooseView;
-import org.telegram.ui.Components.StickerEmptyView;
-import org.telegram.ui.Components.UndoView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_communities;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Adapters.SearchAdapterHelper;
+import org.wooble.ui.Cells.CheckBoxCell;
+import org.wooble.ui.Cells.GraySectionCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.LoadingCell;
+import org.wooble.ui.Cells.ManageChatTextCell;
+import org.wooble.ui.Cells.ManageChatUserCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.SlideIntChooseView;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.TextCheckCell;
+import org.wooble.ui.Cells.TextCheckCell2;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Cells.TextSettingsCell;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.GigagroupConvertAlert;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SlideChooseView;
+import org.wooble.ui.Components.StickerEmptyView;
+import org.wooble.ui.Components.UndoView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -1061,15 +1061,15 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     return;
                 } else if (position == antiSpamRow) {
                     final TextCell textCell = (TextCell) view;
-                    if (info != null && !info.antispam && getParticipantsCount() < getMessagesController().telegramAntispamGroupSizeMin) {
-                        BulletinFactory.of(this).createSimpleBulletin(R.raw.msg_antispam, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelAntiSpamForbidden", getMessagesController().telegramAntispamGroupSizeMin))).show();
+                    if (info != null && !info.antispam && getParticipantsCount() < getMessagesController().woobleAntispamGroupSizeMin) {
+                        BulletinFactory.of(this).createSimpleBulletin(R.raw.msg_antispam, AndroidUtilities.replaceTags(LocaleController.formatPluralString("ChannelAntiSpamForbidden", getMessagesController().woobleAntispamGroupSizeMin))).show();
                     } else if (info != null && ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && !antiSpamToggleLoading) {
                         antiSpamToggleLoading = true;
                         boolean wasAntispam = info.antispam;
                         TLRPC.TL_channels_toggleAntiSpam req = new TLRPC.TL_channels_toggleAntiSpam();
                         req.channel = getMessagesController().getInputChannel(chatId);
                         textCell.setChecked(req.enabled = (info.antispam = !info.antispam));
-                        textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || info.antispam || getParticipantsCount() >= getMessagesController().telegramAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
+                        textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || info.antispam || getParticipantsCount() >= getMessagesController().woobleAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
                         getConnectionsManager().sendRequest(req, (res, err) -> {
                             if (res != null) {
                                 getMessagesController().processUpdates((TLRPC.Updates) res, false);
@@ -1081,7 +1081,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                         return;
                                     }
                                     textCell.setChecked(info.antispam = wasAntispam);
-                                    textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || !info.antispam || getParticipantsCount() >= getMessagesController().telegramAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
+                                    textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || !info.antispam || getParticipantsCount() >= getMessagesController().woobleAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
                                     BulletinFactory.of(ChatUsersActivity.this).createSimpleBulletin(R.raw.error, getString("UnknownError", R.string.UnknownError)).show();
                                 });
                             }
@@ -3744,7 +3744,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 12:
                     TextCell textCell = (TextCell) holder.itemView;
                     if (position == antiSpamRow) {
-                        textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || info.antispam || getParticipantsCount() >= getMessagesController().telegramAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
+                        textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_DELETE_MESSAGES) && (info == null || info.antispam || getParticipantsCount() >= getMessagesController().woobleAntispamGroupSizeMin) ? 0 : R.drawable.permission_locked);
                         textCell.setTextAndCheckAndIcon(getString("ChannelAntiSpam", R.string.ChannelAntiSpam), info != null && info.antispam, R.drawable.msg_policy, false);
                     } else if (position == hideMembersRow) {
                         textCell.getCheckBox().setIcon(ChatObject.canUserDoAdminAction(currentChat, ChatObject.ACTION_BLOCK_USERS) && (info == null || info.participants_hidden || getParticipantsCount() >= getMessagesController().hiddenMembersGroupSizeMin) ? 0 : R.drawable.permission_locked);

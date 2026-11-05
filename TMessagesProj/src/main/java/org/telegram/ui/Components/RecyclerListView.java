@@ -1,17 +1,17 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x
+ * This is the source code of Wooble for Android v. 5.x.x
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.ui.ActionBar.Theme.multAlpha;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.ui.ActionBar.Theme.multAlpha;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -62,28 +62,28 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.CollapseTextCell;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
-import org.telegram.ui.FiltersSetupActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.GenericProvider;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.CollapseTextCell;
+import org.wooble.ui.Cells.GraySectionCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.capture.IBlur3Capture;
+import org.wooble.ui.Components.blur3.capture.IBlur3Hash;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
+import org.wooble.ui.FiltersSetupActivity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

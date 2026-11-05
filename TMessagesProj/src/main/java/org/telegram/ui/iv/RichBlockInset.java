@@ -1,8 +1,8 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.animation.ValueAnimator;
 
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.CubicBezierInterpolator;
 
 /**
  * Animates a cell's nesting inset (px) when the SAME block's depth changes — e.g. a block dragged in or out of

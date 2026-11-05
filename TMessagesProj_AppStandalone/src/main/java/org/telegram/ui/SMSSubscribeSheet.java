@@ -1,9 +1,9 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.app.Activity;
@@ -26,29 +26,29 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SMSJobController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.FireworksOverlay;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.SMSJobController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.web.R;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.TL_smsjobs;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CheckBoxSquare;
+import org.wooble.ui.Components.FireworksOverlay;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.Locale;
 
@@ -95,7 +95,7 @@ public class SMSSubscribeSheet {
             }
         };
         layout.addView(new FeatureCell(context, R.drawable.menu_feature_sms,     getString(R.string.SmsSubscribeFeature1Title), formatPluralString("SmsSubscribeFeature1Message", isEligible == null ? 100 : isEligible.monthly_sent_sms), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, 30, 16, 30, 0));
-        layout.addView(new FeatureCell(context, org.telegram.messenger.R.drawable.menu_feature_premium, getString(R.string.SmsSubscribeFeature2Title), AndroidUtilities.replaceSingleTag(getString(R.string.SmsSubscribeFeature2Message), openPremium), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, 30, 16, 30, 0));
+        layout.addView(new FeatureCell(context, org.wooble.messenger.R.drawable.menu_feature_premium, getString(R.string.SmsSubscribeFeature2Title), AndroidUtilities.replaceSingleTag(getString(R.string.SmsSubscribeFeature2Message), openPremium), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, 30, 16, 30, 0));
         layout.addView(new FeatureCell(context, R.drawable.menu_feature_gift,    getString(R.string.SmsSubscribeFeature3Title), getString(R.string.SmsSubscribeFeature3Message), resourcesProvider), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, 30, 16, 30, 0));
 
         final Runnable openTOS = () -> {
@@ -147,7 +147,7 @@ public class SMSSubscribeSheet {
                     new AlertDialog.Builder(context, resourcesProvider)
                         .setTitle(LocaleController.getString(R.string.SmsNoSimTitle))
                         .setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SmsNoSimMessage)))
-                        .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null)
+                        .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.OK), null)
                         .show();
                     return;
                 }
@@ -158,7 +158,7 @@ public class SMSSubscribeSheet {
                         BulletinFactory.showError(err);
                     } else if (res instanceof TLRPC.TL_boolFalse) {
                         button.setLoading(false);
-                        BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                        BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
                     } else {
                         SMSJobController.getInstance(currentAccount).setState(SMSJobController.STATE_JOINED);
                         sheet.dismiss();
@@ -231,7 +231,7 @@ public class SMSSubscribeSheet {
         layout.setOrientation(LinearLayout.VERTICAL);
 
         RLottieImageView imageView = new RLottieImageView(context);
-        imageView.setAnimation(org.telegram.messenger.R.raw.giveaway_results, 120, 120);
+        imageView.setAnimation(org.wooble.messenger.R.raw.giveaway_results, 120, 120);
         imageView.getAnimatedDrawable().multiplySpeed(1.8f);
         imageView.playAnimation();
         layout.addView(imageView, LayoutHelper.createLinear(120, 120, Gravity.CENTER_HORIZONTAL, 0, 24, 0, 12));
@@ -287,7 +287,7 @@ public class SMSSubscribeSheet {
         layout.addView(linkTextView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, 30, 0, 30, 24));
 
         ButtonWithCounterView button = new ButtonWithCounterView(context, resourcesProvider);
-        button.setText(getString(org.telegram.messenger.R.string.OK), false);
+        button.setText(getString(org.wooble.messenger.R.string.OK), false);
         layout.addView(button, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, 14, 0, 14, 0));
         button.setOnClickListener(v -> {
             sheet.dismiss();
@@ -336,13 +336,13 @@ public class SMSSubscribeSheet {
                 }
                 new AlertDialog.Builder(activity)
                     .setMessage(AndroidUtilities.replaceTags(getString(messageResId)))
-                    .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Settings), (dialog, which) -> {
+                    .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.Settings), (dialog, which) -> {
                         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                         Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
                         intent.setData(uri);
                         activity.startActivity(intent);
                     })
-                    .setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.Cancel), null)
+                    .setNegativeButton(LocaleController.getString(org.wooble.messenger.R.string.Cancel), null)
                     .setOnDismissListener(dialog -> {
 
                     })
@@ -351,7 +351,7 @@ public class SMSSubscribeSheet {
             } else {
                 new AlertDialog.Builder(activity)
                     .setMessage(AndroidUtilities.replaceTags(getString(R.string.SmsPermissionText)))
-                    .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Next), (dialog, which) -> {
+                    .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.Next), (dialog, which) -> {
                         final int requestCode = (int) (1000 + Math.abs(Math.random() * (Integer.MAX_VALUE - 1000)));
                         permissionsCallbacks.put(requestCode, success -> {
                             if (!success) {
@@ -362,7 +362,7 @@ public class SMSSubscribeSheet {
                         });
                         activity.requestPermissions(new String[] { Manifest.permission.SEND_SMS, Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_PHONE_NUMBERS }, requestCode);
                     })
-                    .setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.Cancel), null)
+                    .setNegativeButton(LocaleController.getString(org.wooble.messenger.R.string.Cancel), null)
                     .setOnDismissListener(dialog -> {
 
                     })

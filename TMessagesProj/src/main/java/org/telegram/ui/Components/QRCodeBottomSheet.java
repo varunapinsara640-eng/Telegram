@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -22,15 +22,15 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 
 import com.google.zxing.EncodeHintType;
-import org.telegram.messenger.TelegramQRCodeWriter;
+import org.wooble.messenger.WoobleQRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
 
 import java.util.HashMap;
 
@@ -154,7 +154,7 @@ public class QRCodeBottomSheet extends BottomSheet {
             HashMap<EncodeHintType, Object> hints = new HashMap<>();
             hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M);
             hints.put(EncodeHintType.MARGIN, 0);
-            TelegramQRCodeWriter writer = new TelegramQRCodeWriter();
+            WoobleQRCodeWriter writer = new WoobleQRCodeWriter();
             Bitmap bitmap = writer.encode(key, 768, 768, hints, oldBitmap);
             imageSize = writer.getImageSize();
             return bitmap;

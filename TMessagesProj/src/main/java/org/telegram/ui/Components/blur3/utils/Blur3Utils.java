@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.blur3.utils;
+package org.wooble.ui.Components.blur3.utils;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -17,9 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.drawable.WrappedDrawable;
 
 import org.jspecify.annotations.Nullable;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.ui.Components.blur3.capture.IBlur3Capture;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
 
 public class Blur3Utils {
     private Blur3Utils() {

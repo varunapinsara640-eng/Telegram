@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -16,12 +16,12 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
 
 public class StoryFailView extends FrameLayout {
 

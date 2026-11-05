@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -59,21 +59,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeColors;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.TextColorThemeCell;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeColors;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.TextColorThemeCell;
+import org.wooble.ui.LaunchActivity;
 
 import java.io.File;
 import java.util.ArrayList;

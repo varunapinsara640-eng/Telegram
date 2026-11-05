@@ -1,4 +1,4 @@
-package org.telegram.utils.code.highlight;
+package org.wooble.utils.code.highlight;
 
 import java.util.Arrays;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.net.Uri;
 import android.text.Spannable;
@@ -12,11 +12,11 @@ import android.text.util.Linkify;
 import android.util.LongSparseArray;
 import android.util.SparseBooleanArray;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.MessagePreviewView;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.MessagePreviewView;
 
 import java.util.ArrayList;
 

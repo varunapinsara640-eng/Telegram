@@ -1,8 +1,8 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -30,30 +30,30 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.Scroller;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.Text;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LoadingDrawable;
+import org.wooble.ui.Components.Scroller;
+import org.wooble.ui.Components.StaticLayoutEx;
+import org.wooble.ui.Components.Text;
 
 import java.util.ArrayList;
 

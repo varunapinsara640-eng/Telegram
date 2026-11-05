@@ -1,10 +1,10 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.replaceSingleLink;
-import static org.telegram.messenger.AndroidUtilities.replaceSingleLinkBold;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.replaceSingleLink;
+import static org.wooble.messenger.AndroidUtilities.replaceSingleLinkBold;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.Editable;
@@ -24,27 +24,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.EditTextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AppGlobalConfig;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.EditTextCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Collections;

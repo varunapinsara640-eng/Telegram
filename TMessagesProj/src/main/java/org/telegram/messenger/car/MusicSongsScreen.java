@@ -1,4 +1,4 @@
-package org.telegram.messenger.car;
+package org.wooble.messenger.car;
 
 import android.support.v4.media.session.MediaControllerCompat;
 
@@ -16,12 +16,12 @@ import androidx.core.graphics.drawable.IconCompat;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TelegramMediaSession;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.WoobleMediaSession;
 
 import java.util.ArrayList;
 
@@ -66,7 +66,7 @@ public class MusicSongsScreen extends Screen
     @NonNull
     @Override
     public Template onGetTemplate() {
-        TelegramMediaSession session = TelegramMediaSession.getInstance(getCarContext().getApplicationContext());
+        WoobleMediaSession session = WoobleMediaSession.getInstance(getCarContext().getApplicationContext());
         String headerTitle = title.isEmpty() ? " " : title;
 
         ArrayList<MessageObject> songs = session.getMusicMessages(dialogId);
@@ -114,7 +114,7 @@ public class MusicSongsScreen extends Screen
 
     private void playAtIndex(int index) {
         try {
-            TelegramMediaSession session = TelegramMediaSession.getInstance(getCarContext().getApplicationContext());
+            WoobleMediaSession session = WoobleMediaSession.getInstance(getCarContext().getApplicationContext());
             MediaControllerCompat controller = session.getSession().getController();
             controller.getTransportControls().playFromMediaId(dialogId + "_" + index, null);
         } catch (Throwable ignored) {

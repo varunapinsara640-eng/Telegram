@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -13,22 +13,22 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.checkerframework.checker.units.qual.A;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.DialogsSearchAdapter;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.ProfileSearchCell;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.UserInfoActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Adapters.DialogsSearchAdapter;
+import org.wooble.ui.Cells.GraySectionCell;
+import org.wooble.ui.Cells.ProfileSearchCell;
+import org.wooble.ui.Components.ListView.AdapterWithDiffUtils;
+import org.wooble.ui.UserInfoActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

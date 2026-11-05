@@ -1,6 +1,6 @@
-package org.telegram.ui.ActionBar.theme;
+package org.wooble.ui.ActionBar.theme;
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 public interface ITheme {
     long getThemeId();

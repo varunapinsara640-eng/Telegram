@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
 
 public class DarkBlueThemeResourcesProvider extends DarkThemeResourceProvider {
 

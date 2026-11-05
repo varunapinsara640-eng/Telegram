@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.poll;
+package org.wooble.ui.Components.poll;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.formatWholeNumber;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.formatWholeNumber;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,25 +19,25 @@ import androidx.annotation.NonNull;
 import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.CallLogActivity;
-import org.telegram.ui.Components.AvatarsListDrawable;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.MessageSeenView;
-import org.telegram.ui.ProfileActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.CallLogActivity;
+import org.wooble.ui.Components.AvatarsListDrawable;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.MessageSeenView;
+import org.wooble.ui.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;

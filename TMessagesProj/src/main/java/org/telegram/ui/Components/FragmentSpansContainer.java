@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -16,8 +16,8 @@ import android.widget.ScrollView;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 

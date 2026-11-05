@@ -1,6 +1,6 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,17 +12,17 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.spoilers.SpoilerEffect2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.MediaActionDrawable;
+import org.wooble.ui.Components.RadialProgress2;
+import org.wooble.ui.Components.spoilers.SpoilerEffect2;
 
 import java.util.ArrayList;
 

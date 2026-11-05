@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,23 +46,23 @@ import android.view.ViewConfiguration;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.TypefaceSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.BaseCell;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.TypefaceSpan;
 
 public class HintView2 extends View {
 

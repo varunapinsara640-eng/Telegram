@@ -1,11 +1,11 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 
-import org.telegram.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.Cells.TextSelectionHelper;
 
 /**
  * Builds a {@link TextSelectionHelper.TextLayoutBlock} for non-text blocks (divider, math, …) that

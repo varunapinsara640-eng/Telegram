@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,21 +33,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BitmapShaderTools;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.voip.VideoCapturerDevice;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.BitmapShaderTools;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.LaunchActivity;
 import org.webrtc.RendererCommon;
 
 import java.io.File;

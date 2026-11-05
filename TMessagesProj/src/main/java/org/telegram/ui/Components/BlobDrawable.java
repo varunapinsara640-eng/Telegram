@@ -1,12 +1,12 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.SharedConfig;
 
 import java.util.Random;
 

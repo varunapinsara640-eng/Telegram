@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 2.0.x.
+ * This is the source code of Wooble for Android v. 2.0.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,31 +29,31 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.DotDividerSpan;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LineProgressView;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.FilteredSearchView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.DotDividerSpan;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LineProgressView;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.FilteredSearchView;
 
 import java.io.File;
 import java.util.Date;

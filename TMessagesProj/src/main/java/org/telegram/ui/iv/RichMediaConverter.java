@@ -1,14 +1,14 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.graphics.BitmapFactory;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.tgnet.TLRPC;
 
 import java.io.File;
 import java.util.ArrayList;

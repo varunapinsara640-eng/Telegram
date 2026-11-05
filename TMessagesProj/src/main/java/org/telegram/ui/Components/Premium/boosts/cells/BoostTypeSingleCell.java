@@ -1,19 +1,19 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.boosts.BoostRepository;
 
 @SuppressLint("ViewConstructor")
 public class BoostTypeSingleCell extends BoostTypeCell {

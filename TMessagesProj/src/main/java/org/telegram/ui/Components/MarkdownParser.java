@@ -1,10 +1,10 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.find;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.find;
 
 import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 import org.commonmark.Extension;
 import org.commonmark.ext.gfm.strikethrough.Strikethrough;
@@ -44,15 +44,15 @@ import io.noties.markwon.html.HtmlTag;
 import io.noties.markwon.html.MarkwonHtmlParser;
 import io.noties.markwon.html.MarkwonHtmlParserImpl;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.iv.Latex;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.TLObject;
+import org.wooble.ui.iv.Latex;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -500,14 +500,14 @@ public class MarkdownParser {
     private static int flagFor(String name) {
         if (name == null) return 0;
         switch (name.toLowerCase()) {
-            case "u": case "ins":            return org.telegram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE;
-            case "mark":                     return org.telegram.ui.ArticleViewer.TEXT_FLAG_MARKED;
-            case "sub":                      return org.telegram.ui.ArticleViewer.TEXT_FLAG_SUB;
-            case "sup":                      return org.telegram.ui.ArticleViewer.TEXT_FLAG_SUP;
-            case "del": case "s": case "strike": return org.telegram.ui.ArticleViewer.TEXT_FLAG_STRIKE;
-            case "b": case "strong":         return org.telegram.ui.ArticleViewer.TEXT_FLAG_MEDIUM;
-            case "i": case "em":             return org.telegram.ui.ArticleViewer.TEXT_FLAG_ITALIC;
-            case "code": case "tt":          return org.telegram.ui.ArticleViewer.TEXT_FLAG_MONO;
+            case "u": case "ins":            return org.wooble.ui.ArticleViewer.TEXT_FLAG_UNDERLINE;
+            case "mark":                     return org.wooble.ui.ArticleViewer.TEXT_FLAG_MARKED;
+            case "sub":                      return org.wooble.ui.ArticleViewer.TEXT_FLAG_SUB;
+            case "sup":                      return org.wooble.ui.ArticleViewer.TEXT_FLAG_SUP;
+            case "del": case "s": case "strike": return org.wooble.ui.ArticleViewer.TEXT_FLAG_STRIKE;
+            case "b": case "strong":         return org.wooble.ui.ArticleViewer.TEXT_FLAG_MEDIUM;
+            case "i": case "em":             return org.wooble.ui.ArticleViewer.TEXT_FLAG_ITALIC;
+            case "code": case "tt":          return org.wooble.ui.ArticleViewer.TEXT_FLAG_MONO;
             default:                         return 0;
         }
     }
@@ -538,14 +538,14 @@ public class MarkdownParser {
             final TextStyle ts = (TextStyle) rt;
             TL_iv.RichText cur = materializeStyles(ts.text);
             final int f = ts.styleFlags;
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MONO)      != 0) cur = wrapStyle(new TL_iv.textFixed(),       cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_STRIKE)    != 0) cur = wrapStyle(new TL_iv.textStrike(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_UNDERLINE) != 0) cur = wrapStyle(new TL_iv.textUnderline(),   cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MARKED)    != 0) cur = wrapStyle(new TL_iv.textMarked(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_SUB)       != 0) cur = wrapStyle(new TL_iv.textSubscript(),   cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_SUP)       != 0) cur = wrapStyle(new TL_iv.textSuperscript(), cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_ITALIC)    != 0) cur = wrapStyle(new TL_iv.textItalic(),      cur);
-            if ((f & org.telegram.ui.ArticleViewer.TEXT_FLAG_MEDIUM)    != 0) cur = wrapStyle(new TL_iv.textBold(),        cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_MONO)      != 0) cur = wrapStyle(new TL_iv.textFixed(),       cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_STRIKE)    != 0) cur = wrapStyle(new TL_iv.textStrike(),      cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_UNDERLINE) != 0) cur = wrapStyle(new TL_iv.textUnderline(),   cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_MARKED)    != 0) cur = wrapStyle(new TL_iv.textMarked(),      cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_SUB)       != 0) cur = wrapStyle(new TL_iv.textSubscript(),   cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_SUP)       != 0) cur = wrapStyle(new TL_iv.textSuperscript(), cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_ITALIC)    != 0) cur = wrapStyle(new TL_iv.textItalic(),      cur);
+            if ((f & org.wooble.ui.ArticleViewer.TEXT_FLAG_MEDIUM)    != 0) cur = wrapStyle(new TL_iv.textBold(),        cur);
             return cur;
         }
         if (rt.text != null) rt.text = materializeStyles(rt.text);

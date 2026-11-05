@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.Components.PlayPauseDrawable;
+import org.wooble.ui.Components.PlayPauseDrawable;
 
 public class PlayPauseButton extends View {
 

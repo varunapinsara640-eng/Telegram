@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.wooble.ui.Components.Premium.GLIcon;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,12 +14,12 @@ import android.view.TextureView;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.EmuDetector;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Premium.StarParticlesView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.EmuDetector;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Premium.StarParticlesView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -238,8 +238,8 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
     protected int getMaxFrameRate() {
         // Decoration shares the GPU with the UI, unlike the isolated renderer test.
         if (type == Icon3D.TYPE_DIAMOND) {
-            return org.telegram.messenger.SharedConfig.getDevicePerformanceClass()
-                    == org.telegram.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH ? 60 : 30;
+            return org.wooble.messenger.SharedConfig.getDevicePerformanceClass()
+                    == org.wooble.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH ? 60 : 30;
         }
         return targetFps;
     }

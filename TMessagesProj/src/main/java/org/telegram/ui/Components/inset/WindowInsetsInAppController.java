@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.inset;
+package org.wooble.ui.Components.inset;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 public interface WindowInsetsInAppController {
 

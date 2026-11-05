@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,11 +21,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RLottieDrawable;
 
 @SuppressLint("ViewConstructor")
 public class VoIpSwitchLayout extends FrameLayout {

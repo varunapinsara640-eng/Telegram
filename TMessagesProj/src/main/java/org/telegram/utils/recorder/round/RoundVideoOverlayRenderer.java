@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -8,9 +8,9 @@ import android.util.Size;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.RLottieNative;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.ui.Components.RLottieNative;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

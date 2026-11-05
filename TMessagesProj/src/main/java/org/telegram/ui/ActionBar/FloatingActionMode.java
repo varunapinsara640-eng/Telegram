@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.accounts.AccountManager;
 import android.annotation.TargetApi;
@@ -33,10 +33,10 @@ import android.view.WindowManager;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.UserConfig;
 
 import java.util.Arrays;
 

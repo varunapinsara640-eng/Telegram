@@ -1,16 +1,16 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -57,60 +57,60 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.SearchTextWatcher;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Adapters.ContactsAdapter;
-import org.telegram.ui.Adapters.SearchAdapter;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.LetterSectionCell;
-import org.telegram.ui.Cells.ProfileSearchCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ContactsEmptyView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.FragmentFloatingButton;
-import org.telegram.ui.Components.FragmentSearchField;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.StickerEmptyView;
-import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
-import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
-import org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SecretChatHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.SearchTextWatcher;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Adapters.ContactsAdapter;
+import org.wooble.ui.Adapters.SearchAdapter;
+import org.wooble.ui.Cells.GraySectionCell;
+import org.wooble.ui.Cells.LetterSectionCell;
+import org.wooble.ui.Cells.ProfileSearchCell;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.UserCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ContactsEmptyView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.FragmentFloatingButton;
+import org.wooble.ui.Components.FragmentSearchField;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.NumberTextView;
+import org.wooble.ui.Components.RecyclerAnimationScrollHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.StickerEmptyView;
+import org.wooble.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
+import org.wooble.ui.Components.blur3.ViewGroupPartRenderer;
+import org.wooble.ui.Components.blur3.capture.IBlur3Capture;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.wooble.ui.Components.inset.WindowAnimatedInsetsProvider;
 
 import java.util.ArrayList;
 

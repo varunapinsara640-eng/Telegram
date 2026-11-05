@@ -1,24 +1,24 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.CharacterStyle;
 
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.FormattedDateSpan;
-import org.telegram.ui.Components.SquigglyLinesSpan;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanReplacement;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.FormattedDateSpan;
+import org.wooble.ui.Components.SquigglyLinesSpan;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.URLSpanMono;
+import org.wooble.ui.Components.URLSpanReplacement;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
@@ -12,8 +12,8 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.R;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.R;
 
 /**
  * Flat stand-in for the card's 3D diamond: draws the wallet_card_diamond vector recolored by a

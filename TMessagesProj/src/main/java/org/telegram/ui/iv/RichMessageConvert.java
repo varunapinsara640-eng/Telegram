@@ -1,13 +1,13 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextUtils;
 
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.TextStyleSpan;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.TextStyleSpan;
 
 import java.util.ArrayList;
 import java.util.List;

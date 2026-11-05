@@ -1,14 +1,14 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -26,16 +26,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
 
 public class TextDetailCell extends FrameLayout {
 

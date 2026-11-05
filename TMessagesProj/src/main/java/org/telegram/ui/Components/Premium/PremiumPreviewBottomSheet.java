@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,41 +33,41 @@ import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmojiPacksAlert;
-import org.telegram.ui.Components.FireworksOverlay;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingSpan;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.ui.Components.Premium.boosts.cells.TextInfoCell;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.PremiumFeatureCell;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EmojiPacksAlert;
+import org.wooble.ui.Components.FireworksOverlay;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.LoadingSpan;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.wooble.ui.Components.Premium.boosts.cells.TextInfoCell;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.PremiumFeatureCell;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 
@@ -304,13 +304,13 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             if ((spaceIndex = collectionName.lastIndexOf(' ')) >= 0) {
                 collectionName = collectionName.substring(0, spaceIndex);
             }
-            titleView[0].setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.TelegramPremiumUserStatusCollectibleDialogTitle, DialogObject.getShortName(user), collectionName), () -> {
+            titleView[0].setText(AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.WooblePremiumUserStatusCollectibleDialogTitle, DialogObject.getShortName(user), collectionName), () -> {
                 Browser.openUrl(getContext(), "https://" + MessagesController.getInstance(currentAccount).linkPrefix + "/nft/" + emojiStatusCollectible.slug);
             }));
-            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserStatusDialogSubtitle)));
+            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumUserStatusDialogSubtitle)));
         } else if (statusStickerSet != null) {
             final String stickerSetPlaceholder = "<STICKERSET>";
-            String string = LocaleController.formatString(R.string.TelegramPremiumUserStatusDialogTitle, ContactsController.formatName(user.first_name, user.last_name), stickerSetPlaceholder);
+            String string = LocaleController.formatString(R.string.WooblePremiumUserStatusDialogTitle, ContactsController.formatName(user.first_name, user.last_name), stickerSetPlaceholder);
             CharSequence charSequence = AndroidUtilities.replaceSingleLink(string, accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor);
             try {
                 charSequence = Emoji.replaceEmoji(charSequence, titleView[0].getPaint().getFontMetricsInt(), false);
@@ -402,20 +402,20 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
                     titleView[0].setText(title, null);
                 }
             }
-            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserStatusDialogSubtitle)));
+            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumUserStatusDialogSubtitle)));
         } else if (isEmojiStatus) {
-            titleView[0].setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.TelegramPremiumUserStatusDefaultDialogTitle, ContactsController.formatName(user.first_name, user.last_name))));
-            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.TelegramPremiumUserStatusDialogSubtitle, ContactsController.formatName(user.first_name, user.last_name))));
+            titleView[0].setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WooblePremiumUserStatusDefaultDialogTitle, ContactsController.formatName(user.first_name, user.last_name))));
+            subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WooblePremiumUserStatusDialogSubtitle, ContactsController.formatName(user.first_name, user.last_name))));
         } else if (giftTier != null) {
             if (isOutboundGift) {
-                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumOutboundDialogTitleWithPlural, user != null ? user.first_name : "", LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
-                subtitleView.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumOutboundDialogSubtitle, user != null ? user.first_name : ""), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
+                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.WooblePremiumUserGiftedPremiumOutboundDialogTitleWithPlural, user != null ? user.first_name : "", LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
+                subtitleView.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.WooblePremiumUserGiftedPremiumOutboundDialogSubtitle, user != null ? user.first_name : ""), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
             } else if (user == null || TextUtils.isEmpty(user.first_name) || user.id == 777000) {
-                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPluralSomeone, LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
-                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle)));
+                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.WooblePremiumUserGiftedPremiumDialogTitleWithPluralSomeone, LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
+                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumUserGiftedPremiumDialogSubtitle)));
             } else {
-                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.TelegramPremiumUserGiftedPremiumDialogTitleWithPlural, user.first_name, LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
-                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserGiftedPremiumDialogSubtitle)));
+                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.WooblePremiumUserGiftedPremiumDialogTitleWithPlural, user.first_name, LocaleController.formatPluralString("GiftMonths", giftTier.getMonths())), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
+                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumUserGiftedPremiumDialogSubtitle)));
             }
         } else if (gift != null) {
             titleView[0].setText(getString(R.string.Gift2PremiumTitle));
@@ -428,11 +428,11 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
             subtitleView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         } else {
             if (user == null) {
-                titleView[0].setText(LocaleController.getString(R.string.TelegramPremium));
-                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumSubscribedSubtitle)));
+                titleView[0].setText(LocaleController.getString(R.string.WooblePremium));
+                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumSubscribedSubtitle)));
             } else {
-                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.TelegramPremiumUserDialogTitle, ContactsController.formatName(user.first_name, user.last_name)), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
-                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.TelegramPremiumUserDialogSubtitle)));
+                titleView[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.WooblePremiumUserDialogTitle, ContactsController.formatName(user.first_name, user.last_name)), accentColor == null ? getThemedColor(Theme.key_windowBackgroundWhiteBlueButton) : accentColor));
+                subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WooblePremiumUserDialogSubtitle)));
             }
         }
         try {
@@ -442,7 +442,7 @@ public class PremiumPreviewBottomSheet extends BottomSheetWithRecyclerListView i
 
     @Override
     protected CharSequence getTitle() {
-        return LocaleController.getString(R.string.TelegramPremium);
+        return LocaleController.getString(R.string.WooblePremium);
     }
 
     @Override

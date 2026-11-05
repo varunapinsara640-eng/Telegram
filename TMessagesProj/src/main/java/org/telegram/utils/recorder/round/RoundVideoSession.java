@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.content.Context;
 import android.graphics.Matrix;
@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Records, previews, trims and produces a Telegram-style round video.
+ * Records, previews, trims and produces a Wooble-style round video.
  *
  * <p>All public methods must be called on the main thread. UI callbacks are delivered on the
  * main thread. Output callbacks are serialized on a dedicated background thread. The host must
@@ -265,7 +265,7 @@ public final class RoundVideoSession {
             return this;
         }
 
-        /** Enables the circular blur, dimming and Telegram overlays. */
+        /** Enables the circular blur, dimming and Wooble overlays. */
         public @NonNull Builder setCompositionEnabled(boolean enabled) {
             compositionEnabled = enabled;
             return this;

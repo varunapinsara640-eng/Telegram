@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -13,15 +13,15 @@ import android.view.View;
 
 import androidx.annotation.StringRes;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessageSuggestionParams;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

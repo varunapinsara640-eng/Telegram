@@ -1,14 +1,14 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -70,41 +70,41 @@ import androidx.core.graphics.ColorUtils;
 
 import androidx.media3.exoplayer.ExoPlayer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.AutoDeleteMediaTask;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.camera.Camera2Session;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraInfo;
-import org.telegram.messenger.camera.CameraSession;
-import org.telegram.messenger.camera.Size;
-import org.telegram.messenger.video.MP4Builder;
-import org.telegram.messenger.video.Mp4Movie;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
-import org.telegram.ui.Stories.recorder.DualCameraView;
-import org.telegram.ui.Stories.recorder.FlashViews;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.AutoDeleteMediaTask;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.messenger.camera.Camera2Session;
+import org.wooble.messenger.camera.CameraController;
+import org.wooble.messenger.camera.CameraInfo;
+import org.wooble.messenger.camera.CameraSession;
+import org.wooble.messenger.camera.Size;
+import org.wooble.messenger.video.MP4Builder;
+import org.wooble.messenger.video.Mp4Movie;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.ui.Stories.recorder.DualCameraView;
+import org.wooble.ui.Stories.recorder.FlashViews;
+import org.wooble.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.FileOutputStream;

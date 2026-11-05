@@ -1,7 +1,7 @@
-package org.telegram.tlrpc
+package org.wooble.tlrpc
 
 import com.example.GenerateSchemeTask
-import org.telegram.tlrpc.models.*
+import org.wooble.tlrpc.models.*
 import java.io.File
 import java.nio.charset.Charset
 

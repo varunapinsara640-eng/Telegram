@@ -1,6 +1,6 @@
-package org.telegram.tlrpc.telegram
+package org.wooble.tlrpc.wooble
 
-data class TelegramTlClass(
+data class WoobleTlClass(
     val constructor: UInt?,
 
     val packageName: String,

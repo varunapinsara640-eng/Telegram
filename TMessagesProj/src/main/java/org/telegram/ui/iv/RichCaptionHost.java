@@ -1,4 +1,4 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 public interface RichCaptionHost {
     RichEditText getCaptionEditText();

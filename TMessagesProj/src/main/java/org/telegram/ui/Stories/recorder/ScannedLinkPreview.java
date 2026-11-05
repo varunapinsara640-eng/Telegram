@@ -1,8 +1,8 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,26 +21,26 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.ProfileActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.ProfileActivity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -14,10 +14,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
 
 import java.util.List;
 

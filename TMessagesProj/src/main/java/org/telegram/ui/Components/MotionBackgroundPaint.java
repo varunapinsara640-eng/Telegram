@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -20,12 +20,12 @@ import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.ColorShader;
-import org.telegram.ui.Components.blur3.utils.BitmapChangeTracker;
-import org.telegram.ui.Components.blur3.utils.BitmapMemoizedMetadata;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.ColorShader;
+import org.wooble.ui.Components.blur3.utils.BitmapChangeTracker;
+import org.wooble.ui.Components.blur3.utils.BitmapMemoizedMetadata;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;

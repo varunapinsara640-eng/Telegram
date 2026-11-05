@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;

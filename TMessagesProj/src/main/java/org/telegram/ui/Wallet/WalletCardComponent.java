@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -30,20 +30,20 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ColoredImageSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ColoredImageSpan;
 
 public class WalletCardComponent extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 
@@ -81,7 +81,7 @@ public class WalletCardComponent extends FrameLayout implements NotificationCent
     private final View cardNumberView;
     private final Paint cardNumberPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.SUBPIXEL_TEXT_FLAG | Paint.LINEAR_TEXT_FLAG);
     private float numberStickerShadow;
-    private final org.telegram.ui.Components.AnimatedFloat numberShadowAnimated = new org.telegram.ui.Components.AnimatedFloat(
+    private final org.wooble.ui.Components.AnimatedFloat numberShadowAnimated = new org.wooble.ui.Components.AnimatedFloat(
             this::onNumberShadowFrame, 0, 240, CubicBezierInterpolator.EASE_OUT_QUINT);
     private final View balanceAnchor;
     private final LinearLayout balanceLayout;
@@ -311,12 +311,12 @@ public class WalletCardComponent extends FrameLayout implements NotificationCent
 
     /** Targets, 0..1 per text: how much a sticker under it should darken its shadow. */
     private float balanceStickerShadow, holderStickerShadow;
-    private final org.telegram.ui.Components.AnimatedFloat balanceShadowAnimated = new org.telegram.ui.Components.AnimatedFloat(
+    private final org.wooble.ui.Components.AnimatedFloat balanceShadowAnimated = new org.wooble.ui.Components.AnimatedFloat(
             this::onBalanceShadowFrame, 0, 240, CubicBezierInterpolator.EASE_OUT_QUINT);
-    private final org.telegram.ui.Components.AnimatedFloat holderShadowAnimated = new org.telegram.ui.Components.AnimatedFloat(
+    private final org.wooble.ui.Components.AnimatedFloat holderShadowAnimated = new org.wooble.ui.Components.AnimatedFloat(
             this::onHolderShadowFrame, 0, 240, CubicBezierInterpolator.EASE_OUT_QUINT);
     // The flat diamond takes over whenever the balance is shadowed, so it can carry the shadow too.
-    private final org.telegram.ui.Components.AnimatedFloat diamondFallbackAnimated = new org.telegram.ui.Components.AnimatedFloat(
+    private final org.wooble.ui.Components.AnimatedFloat diamondFallbackAnimated = new org.wooble.ui.Components.AnimatedFloat(
             this::onDiamondFallbackFrame, 0, 240, CubicBezierInterpolator.EASE_OUT_QUINT);
     private float diamondFallback;
 

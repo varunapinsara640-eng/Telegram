@@ -1,9 +1,9 @@
-package org.telegram.tgnet.tl;
+package org.wooble.tgnet.tl;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLParseException;
 
 public class TL_fragment {
 

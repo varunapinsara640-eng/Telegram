@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -15,9 +15,9 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.animation.DecelerateInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
 
 public class MediaActionDrawable extends Drawable {
 

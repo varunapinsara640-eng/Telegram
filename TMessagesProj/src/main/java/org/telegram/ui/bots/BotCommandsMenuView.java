@@ -1,6 +1,6 @@
-package org.telegram.ui.bots;
+package org.wooble.ui.bots;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -27,20 +27,20 @@ import androidx.annotation.NonNull;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.MenuDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.StaticLayoutEx;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.ui.ActionBar.MenuDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.StaticLayoutEx;
 
 import java.util.ArrayList;
 

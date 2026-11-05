@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -30,34 +30,34 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.AnimatedArrowDrawable;
-import org.telegram.ui.Components.AudioPlayerAlert;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.ChatBigEmptyView;
-import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContextProgressView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.EditTextEmoji;
-import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.GroupCreateCheckBox;
-import org.telegram.ui.Components.GroupCreateSpan;
-import org.telegram.ui.Components.LetterDrawable;
-import org.telegram.ui.Components.LineProgressView;
-import org.telegram.ui.Components.MessageBackgroundDrawable;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScamDrawable;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.Components.TypefaceSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.ui.Components.AnimatedArrowDrawable;
+import org.wooble.ui.Components.AudioPlayerAlert;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.ChatBigEmptyView;
+import org.wooble.ui.Components.CheckBox;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.ContextProgressView;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.EditTextCaption;
+import org.wooble.ui.Components.EditTextEmoji;
+import org.wooble.ui.Components.EmptyTextProgressView;
+import org.wooble.ui.Components.GroupCreateCheckBox;
+import org.wooble.ui.Components.GroupCreateSpan;
+import org.wooble.ui.Components.LetterDrawable;
+import org.wooble.ui.Components.LineProgressView;
+import org.wooble.ui.Components.MessageBackgroundDrawable;
+import org.wooble.ui.Components.NumberTextView;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.RadioButton;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ScamDrawable;
+import org.wooble.ui.Components.SeekBarView;
+import org.wooble.ui.Components.TypefaceSpan;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

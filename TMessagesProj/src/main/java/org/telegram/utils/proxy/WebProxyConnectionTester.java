@@ -1,7 +1,7 @@
-package org.telegram.utils.proxy;
+package org.wooble.utils.proxy;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestTimeDelegate;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.tgnet.RequestTimeDelegate;
 
 import java.util.ArrayDeque;
 

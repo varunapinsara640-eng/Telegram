@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,14 +33,14 @@ import androidx.core.graphics.ColorUtils;
 
 import com.google.android.gms.vision.Frame;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

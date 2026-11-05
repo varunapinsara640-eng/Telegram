@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,18 +16,18 @@ import com.android.billingclient.api.Purchase;
 import com.google.common.base.Charsets;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLParseException;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_wallet;
 
 import java.io.InputStream;
 import java.util.Iterator;

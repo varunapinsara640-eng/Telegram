@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,9 +9,9 @@ import android.view.animation.DecelerateInterpolator;
 
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeColors;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeColors;
 
 public class BottomPagesView extends View {
 

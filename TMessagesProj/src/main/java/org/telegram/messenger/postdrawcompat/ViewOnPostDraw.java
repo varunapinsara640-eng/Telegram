@@ -1,4 +1,4 @@
-package org.telegram.messenger.postdrawcompat;
+package org.wooble.messenger.postdrawcompat;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,4 +1,4 @@
-package org.telegram.messenger.audioinfo;
+package org.wooble.messenger.audioinfo;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -6,7 +6,7 @@ import android.media.MediaMetadataRetriever;
 
 import androidx.media3.exoplayer.MetadataRetriever;
 
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.FileLog;
 
 import java.io.File;
 

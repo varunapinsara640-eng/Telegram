@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,14 +12,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.Bitmaps;
+import org.wooble.messenger.DocumentObject;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
 
 import java.io.File;
 

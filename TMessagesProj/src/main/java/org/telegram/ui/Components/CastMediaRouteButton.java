@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -22,8 +22,8 @@ import androidx.mediarouter.app.MediaRouteDialogFactory;
 import androidx.mediarouter.app.MediaRouteDynamicChooserDialog;
 import androidx.mediarouter.media.MediaRouteSelector;
 
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
 
 public class CastMediaRouteButton extends MediaRouteButton {
 

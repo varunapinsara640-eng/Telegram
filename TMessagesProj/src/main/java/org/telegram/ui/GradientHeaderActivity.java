@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -28,25 +28,25 @@ import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.FillLastLinearLayoutManager;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.NestedSizeNotifierLayout;
-import org.telegram.ui.Components.Premium.PremiumGradient;
-import org.telegram.ui.Components.Premium.StarParticlesView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SimpleThemeDescription;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.FillLastLinearLayoutManager;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.NestedSizeNotifierLayout;
+import org.wooble.ui.Components.Premium.PremiumGradient;
+import org.wooble.ui.Components.Premium.StarParticlesView;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SimpleThemeDescription;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 

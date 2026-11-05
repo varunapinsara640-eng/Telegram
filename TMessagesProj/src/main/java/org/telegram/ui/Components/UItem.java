@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 
 import android.content.Context;
@@ -7,19 +7,19 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.BusinessLinksActivity;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Cells.SlideIntChooseView;
-import org.telegram.ui.ChannelMonetizationLayout;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.StatisticActivity;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stats;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Business.BusinessLinksActivity;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.Cells.SlideIntChooseView;
+import org.wooble.ui.ChannelMonetizationLayout;
+import org.wooble.ui.Components.ListView.AdapterWithDiffUtils;
+import org.wooble.ui.StatisticActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

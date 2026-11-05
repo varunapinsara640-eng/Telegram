@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -22,20 +22,20 @@ import androidx.annotation.NonNull;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.EmuDetector;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.EmuDetector;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Cells.BaseCell;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;

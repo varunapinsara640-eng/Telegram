@@ -1,18 +1,18 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.SQLite;
+package org.wooble.SQLite;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.Vector;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.Vector;
 
 public class SQLiteCursor {
 

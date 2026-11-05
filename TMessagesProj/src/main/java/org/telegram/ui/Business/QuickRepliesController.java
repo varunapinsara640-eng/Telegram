@@ -1,26 +1,26 @@
-package org.telegram.ui.Business;
+package org.wooble.ui.Business;
 
 import android.text.TextUtils;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ChatActivity;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

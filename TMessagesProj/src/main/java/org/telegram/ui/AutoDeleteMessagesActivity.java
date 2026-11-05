@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Context;
 import android.transition.ChangeBounds;
@@ -10,27 +10,27 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.RadioCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SectionsScrollView;
-import org.telegram.ui.Components.StickerImageView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.RadioCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SectionsScrollView;
+import org.wooble.ui.Components.StickerImageView;
 
 import java.util.ArrayList;
 

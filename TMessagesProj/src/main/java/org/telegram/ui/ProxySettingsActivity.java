@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.animation.ValueAnimator;
 import android.content.ClipData;
@@ -45,32 +45,32 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.utils.proxy.WebProxyTransport;
-import org.telegram.utils.proxy.ProxySettings;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.RadioCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.QRCodeBottomSheet;
-import org.telegram.ui.Components.SectionsScrollView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.Utilities;
+import org.wooble.utils.proxy.WebProxyTransport;
+import org.wooble.utils.proxy.ProxySettings;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.RadioCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Cells.TextSettingsCell;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.QRCodeBottomSheet;
+import org.wooble.ui.Components.SectionsScrollView;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -288,7 +288,7 @@ public class ProxySettingsActivity extends BaseFragment {
             if (a == 0) {
                 typeCell[a].setText(LocaleController.getString(R.string.UseProxySocks5), t == currentType, true);
             } else if (a == 1) {
-                typeCell[a].setText(LocaleController.getString(R.string.UseProxyTelegram), t == currentType, true);
+                typeCell[a].setText(LocaleController.getString(R.string.UseProxyWooble), t == currentType, true);
             } else {
                 typeCell[a].setText(LocaleController.getString(R.string.UseProxyWeb), t == currentType, false);
             }
@@ -468,7 +468,7 @@ public class ProxySettingsActivity extends BaseFragment {
             if (i == 0) {
                 bottomCells[i].setText(LocaleController.getString(R.string.UseProxyInfo));
             } else {
-                bottomCells[i].setText(LocaleController.getString(R.string.UseProxyTelegramInfo) + "\n\n" + LocaleController.getString(R.string.UseProxyTelegramInfo2));
+                bottomCells[i].setText(LocaleController.getString(R.string.UseProxyWoobleInfo) + "\n\n" + LocaleController.getString(R.string.UseProxyWoobleInfo2));
                 bottomCells[i].setVisibility(View.GONE);
             }
             linearLayout2.addView(bottomCells[i], LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
@@ -764,7 +764,7 @@ public class ProxySettingsActivity extends BaseFragment {
             } else if (currentType == ProxySettings.Type.MTPROTO) {
                 bottomCells[0].setVisibility(View.GONE);
                 bottomCells[1].setVisibility(View.VISIBLE);
-                bottomCells[1].setText(LocaleController.getString(R.string.UseProxyTelegramInfo) + "\n\n" + LocaleController.getString(R.string.UseProxyTelegramInfo2));
+                bottomCells[1].setText(LocaleController.getString(R.string.UseProxyWoobleInfo) + "\n\n" + LocaleController.getString(R.string.UseProxyWoobleInfo2));
                 ((View) inputFields[FIELD_SECRET].getParent()).setVisibility(View.VISIBLE);
                 ((View) inputFields[FIELD_PASSWORD].getParent()).setVisibility(View.GONE);
                 ((View) inputFields[FIELD_USER].getParent()).setVisibility(View.GONE);

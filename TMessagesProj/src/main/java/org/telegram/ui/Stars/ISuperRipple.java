@@ -1,4 +1,4 @@
-package org.telegram.ui.Stars;
+package org.wooble.ui.Stars;
 
 import android.view.View;
 

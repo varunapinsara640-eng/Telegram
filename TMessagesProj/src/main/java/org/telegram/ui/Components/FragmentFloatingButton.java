@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,12 +18,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RawRes;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 
 import java.util.ArrayList;
 

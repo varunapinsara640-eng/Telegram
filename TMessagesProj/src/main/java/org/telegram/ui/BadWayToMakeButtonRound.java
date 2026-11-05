@@ -1,8 +1,8 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.view.View;
 
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
 
 public class BadWayToMakeButtonRound {
     public static void round(View view) {

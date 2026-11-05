@@ -1,6 +1,6 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -21,25 +21,25 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.StatisticActivity;
-import org.telegram.ui.Stories.StoriesUtilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.StatisticActivity;
+import org.wooble.ui.Stories.StoriesUtilities;
 
 import java.util.Date;
 

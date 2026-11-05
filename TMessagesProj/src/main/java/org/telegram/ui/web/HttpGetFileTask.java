@@ -1,4 +1,4 @@
-package org.telegram.ui.web;
+package org.wooble.ui.web;
 
 
 import android.content.ContentResolver;
@@ -11,11 +11,11 @@ import androidx.annotation.Keep;
 
 import androidx.media3.common.MimeTypes;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Stories.recorder.StoryEntry;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -1,4 +1,4 @@
-package org.telegram.tasks
+package org.wooble.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty

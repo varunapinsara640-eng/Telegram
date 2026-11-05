@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Grishka, 2013-2016.
  */
 
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
-import static org.telegram.messenger.MessagesController.findUpdates;
-import static org.telegram.messenger.MessagesController.findUpdatesAndRemove;
+import static org.wooble.messenger.MessagesController.findUpdates;
+import static org.wooble.messenger.MessagesController.findUpdatesAndRemove;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -93,54 +93,54 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.StatsController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.JoinCallAlert;
-import org.telegram.ui.Components.PermissionRequest;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.voip.VoIPHelper;
-import org.telegram.ui.DarkBlueThemeResourcesProvider;
-import org.telegram.ui.GroupCallActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.VoIPFeedbackActivity;
-import org.telegram.ui.VoIPFragment;
-import org.telegram.ui.VoIPPermissionActivity;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.StatsController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.XiaomiUtilities;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.JoinCallAlert;
+import org.wooble.ui.Components.PermissionRequest;
+import org.wooble.ui.Components.Premium.LimitReachedBottomSheet;
+import org.wooble.ui.Components.voip.VoIPHelper;
+import org.wooble.ui.DarkBlueThemeResourcesProvider;
+import org.wooble.ui.GroupCallActivity;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.VoIPFeedbackActivity;
+import org.wooble.ui.VoIPFragment;
+import org.wooble.ui.VoIPPermissionActivity;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
@@ -4638,7 +4638,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 				Instance.setBufferSize(AudioTrack.getMinBufferSize(48000, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT) / 2);
 			}
 
-			cpuWakelock = ((PowerManager) getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "telegram-voip");
+			cpuWakelock = ((PowerManager) getSystemService(POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "wooble-voip");
 			cpuWakelock.acquire();
 
 			btAdapter = am.isBluetoothScoAvailableOffCall() ? BluetoothAdapter.getDefaultAdapter() : null;
@@ -4918,7 +4918,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 		Sensor proximity = sm.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 		try {
 			if (proximity != null) {
-				proximityWakelock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "telegram-voip-prx");
+				proximityWakelock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(PROXIMITY_SCREEN_OFF_WAKE_LOCK, "wooble-voip-prx");
 				sm.registerListener(this, proximity, SensorManager.SENSOR_DELAY_NORMAL);
 			}
 		} catch (Exception x) {
@@ -5689,7 +5689,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 	private PhoneAccountHandle addAccountToTelecomManager() {
 		TelecomManager tm = (TelecomManager) getSystemService(TELECOM_SERVICE);
 		TLRPC.User self = UserConfig.getInstance(currentAccount).getCurrentUser();
-		PhoneAccountHandle handle = new PhoneAccountHandle(new ComponentName(this, TelegramConnectionService.class), "" + self.id);
+		PhoneAccountHandle handle = new PhoneAccountHandle(new ComponentName(this, WoobleConnectionService.class), "" + self.id);
 		PhoneAccount account = new PhoneAccount.Builder(handle, ContactsController.formatName(self.first_name, self.last_name))
 				.setCapabilities(PhoneAccount.CAPABILITY_SELF_MANAGED)
 				.setIcon(Icon.createWithResource(this, R.drawable.ic_launcher_dr))

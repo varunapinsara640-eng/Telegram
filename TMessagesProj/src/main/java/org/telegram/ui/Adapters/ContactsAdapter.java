@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 1.3.x.
+ * This is the source code of Wooble for Android v. 1.3.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Adapters;
+package org.wooble.ui.Adapters;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -23,30 +23,30 @@ import androidx.annotation.NonNull;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.DividerCell;
-import org.telegram.ui.Cells.GraySectionCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.InviteUserCell;
-import org.telegram.ui.Cells.LetterSectionCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContactsEmptyView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.DividerCell;
+import org.wooble.ui.Cells.GraySectionCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.InviteUserCell;
+import org.wooble.ui.Cells.LetterSectionCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.UserCell;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.ContactsEmptyView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -557,7 +557,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                 if (needPhonebook || !isAdmin) {
                     textCell.setColors(Theme.key_windowBackgroundWhiteBlackText, Theme.key_windowBackgroundWhiteBlackText);
                 } else {
-                    textCell.setColors(Theme.key_telegram_color_text, Theme.key_telegram_color_text);
+                    textCell.setColors(Theme.key_wooble_color_text, Theme.key_wooble_color_text);
                 }
                 if (section == 0) {
                     if (needPhonebook) {

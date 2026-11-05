@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -11,8 +11,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.CubicBezierInterpolator;
 
 import java.util.ArrayList;
 

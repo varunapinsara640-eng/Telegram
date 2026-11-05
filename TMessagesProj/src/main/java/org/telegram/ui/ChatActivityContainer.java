@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,15 +14,15 @@ import android.widget.FrameLayout;
 
 
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.DrawerLayoutContainer;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BackButtonMenu;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.DrawerLayoutContainer;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.BackButtonMenu;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,16 +9,16 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.Reactions.AnimatedEmojiEffect;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.Reactions.AnimatedEmojiEffect;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 import java.util.ArrayList;
 

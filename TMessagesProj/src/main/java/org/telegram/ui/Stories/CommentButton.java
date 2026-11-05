@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -20,16 +20,16 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.blur3.StrokeDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.blur3.StrokeDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 public class CommentButton extends FrameLayout {
 

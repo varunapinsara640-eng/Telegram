@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -33,31 +33,31 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.Views.LocationMarker;
-import org.telegram.ui.Components.Paint.Views.WeatherView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.EmojiAnimationsOverlay;
-import org.telegram.ui.LocationActivity;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.Stories.recorder.StoryEntry;
-import org.telegram.ui.Stories.recorder.Weather;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Paint.Views.LocationMarker;
+import org.wooble.ui.Components.Paint.Views.WeatherView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.EmojiAnimationsOverlay;
+import org.wooble.ui.LocationActivity;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.Stories.recorder.StoryEntry;
+import org.wooble.ui.Stories.recorder.Weather;
 
 import java.util.ArrayList;
 

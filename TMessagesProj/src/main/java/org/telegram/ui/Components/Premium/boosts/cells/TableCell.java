@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
-import static org.telegram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
+import static org.wooble.tgnet.tl.TL_stories.Boost.NO_USER_ID;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -25,23 +25,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
 
 import java.util.Date;
 
@@ -223,7 +223,7 @@ public class TableCell extends FrameLayout {
         }
 
         String monthsStr = giftCode.months == 12 ? LocaleController.formatPluralString("Years", 1) : LocaleController.formatPluralString("Months", giftCode.months);
-        giftTextView.setText(LocaleController.formatString("BoostingTelegramPremiumFor", R.string.BoostingTelegramPremiumFor, monthsStr));
+        giftTextView.setText(LocaleController.formatString("BoostingWooblePremiumFor", R.string.BoostingWooblePremiumFor, monthsStr));
 
         if (fromChat != null) {
             SpannableStringBuilder builder = new SpannableStringBuilder();

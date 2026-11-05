@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarGiftSheet.replaceUnderstood;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.ui.Stars.StarGiftSheet.replaceUnderstood;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -33,28 +33,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.BottomPagesView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.ThemePreviewActivity;
-import org.telegram.ui.bots.AffiliateProgramFragment;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.BottomPagesView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.ThemePreviewActivity;
+import org.wooble.ui.bots.AffiliateProgramFragment;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -334,7 +334,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                     actionBar.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
                     actionBar.requestLayout();
                 } else if (premiumFeatures.get(i).type == PremiumPreviewFragment.PREMIUM_FEATURE_BUSINESS) {
-                    actionBar.setTitle(LocaleController.getString(R.string.TelegramBusiness));
+                    actionBar.setTitle(LocaleController.getString(R.string.WoobleBusiness));
                     actionBar.requestLayout();
                 }
                 checkPage();
@@ -565,7 +565,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
     private void setButtonText() {
         if (forceAbout) {
-            premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.AboutTelegramPremium));
+            premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.AboutWooblePremium));
         } else if (onlySelectedType) {
             if (startType == PremiumPreviewFragment.PREMIUM_FEATURE_REACTIONS) {
                 premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.UnlockPremiumReactions));
@@ -574,7 +574,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.UnlockPremiumIcons));
                 premiumButtonView.setIcon(R.raw.unlock_icon);
             } else {
-                premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.AboutTelegramPremium));
+                premiumButtonView.buttonTextView.setText(LocaleController.getString(R.string.AboutWooblePremium));
             }
         } else {
             premiumButtonView.buttonTextView.setText(PremiumPreviewFragment.getPremiumButtonText(currentAccount, selectedTier));
@@ -635,7 +635,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             actionBar.setTitle(LocaleController.getString(R.string.UpgradedStories));
             actionBar.requestLayout();
         } else if (premiumFeatures.get(selectedPosition).type == PremiumPreviewFragment.PREMIUM_FEATURE_BUSINESS) {
-            actionBar.setTitle(LocaleController.getString(R.string.TelegramBusiness));
+            actionBar.setTitle(LocaleController.getString(R.string.WoobleBusiness));
             actionBar.requestLayout();
         } else if (premiumFeatures.get(selectedPosition).type == PremiumPreviewFragment.FEATURE_GIFTS) {
             actionBar.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));

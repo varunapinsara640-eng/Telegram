@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -10,8 +10,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.Components.LayoutHelper;
 
 /** One text layout and icon slot throughout sending and settling; no end-frame view swap. */
 class WalletTransactionAmountView extends FrameLayout {

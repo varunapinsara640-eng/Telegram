@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -10,19 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
 
 public class GallerySheet extends BottomSheet {
 

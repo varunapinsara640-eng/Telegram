@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,10 +17,10 @@ import android.os.SystemClock;
 import android.text.TextPaint;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ProfileGalleryView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.ProfileGalleryView;
 
 import java.util.Arrays;
 

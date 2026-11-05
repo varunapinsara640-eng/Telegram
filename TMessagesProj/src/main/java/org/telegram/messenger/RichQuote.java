@@ -1,14 +1,14 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.text.Layout;
 import android.text.Spanned;
 import android.text.TextUtils;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.iv.RichTextStyle;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.iv.RichTextStyle;
 
 import java.util.ArrayList;
 import java.util.Arrays;

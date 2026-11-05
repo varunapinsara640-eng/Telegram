@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,48 +46,48 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.AdminedChannelCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LoadingCell;
-import org.telegram.ui.Cells.RadioButtonCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextBlockCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.CrossfadeDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EditTextEmoji;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkActionView;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.TypefaceSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.AdminedChannelCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.LoadingCell;
+import org.wooble.ui.Cells.RadioButtonCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextBlockCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CircularProgressDrawable;
+import org.wooble.ui.Components.CrossfadeDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.EditTextEmoji;
+import org.wooble.ui.Components.ImageUpdater;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkActionView;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.Premium.LimitReachedBottomSheet;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.TypefaceSpan;
 
 import java.util.ArrayList;
 

@@ -1,16 +1,16 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.utils.Choreographer60FpsContent;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Stars.StarsReactionsSheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.utils.Choreographer60FpsContent;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Stars.StarsReactionsSheet;
 
 public class ProfilePremiumCell extends TextCell {
 

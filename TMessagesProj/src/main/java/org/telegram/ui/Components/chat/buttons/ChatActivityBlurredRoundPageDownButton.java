@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.chat.buttons;
+package org.wooble.ui.Components.chat.buttons;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.DrawableRes;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CounterView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CounterView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 
 @SuppressLint("ViewConstructor")

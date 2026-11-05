@@ -1,21 +1,21 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.utils.recorder.round.RoundVideoSession;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.utils.recorder.round.RoundVideoSession;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/** Bridges growing round-video output generations to Telegram's file uploader. */
-final class TelegramRoundVideoUpload implements
+/** Bridges growing round-video output generations to Wooble's file uploader. */
+final class WoobleRoundVideoUpload implements
         RoundVideoSession.OutputListener,
         NotificationCenter.NotificationCenterDelegate {
 
@@ -67,7 +67,7 @@ final class TelegramRoundVideoUpload implements
     private final Map<Long, Generation> generations = new HashMap<>();
     private boolean released;
 
-    TelegramRoundVideoUpload(int currentAccount, boolean encrypted) {
+    WoobleRoundVideoUpload(int currentAccount, boolean encrypted) {
         this.currentAccount = currentAccount;
         this.encrypted = encrypted;
         NotificationCenter.getInstance(currentAccount).addObserver(

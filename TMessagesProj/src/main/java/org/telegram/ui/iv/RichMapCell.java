@@ -1,6 +1,6 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,21 +15,21 @@ import android.widget.FrameLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.WebFile;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -19,17 +19,17 @@ import androidx.core.math.MathUtils;
 
 
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
 
 import java.util.ArrayList;
 

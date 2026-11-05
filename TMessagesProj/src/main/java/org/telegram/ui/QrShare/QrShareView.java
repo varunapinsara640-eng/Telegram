@@ -1,8 +1,8 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -38,24 +38,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.Cells.SettingsSearchCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.BatchParticlesDrawHelper;
-import org.telegram.ui.Stars.StarGiftPatterns;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Stars.StarsController;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.Components.StaticLayoutEx;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.Cells.SettingsSearchCell;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.BatchParticlesDrawHelper;
+import org.wooble.ui.Stars.StarGiftPatterns;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Stars.StarsController;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -88,7 +88,7 @@ public class QrShareView extends View {
 
         void onSceneLight(boolean light);
 
-        /** The real Telegram emoji keyboard lives in the sheet's emoji tab: place it (top in px) or hide it. */
+        /** The real Wooble emoji keyboard lives in the sheet's emoji tab: place it (top in px) or hide it. */
         void onEmojiPanel(boolean visible, float top, float alpha);
 
         /** Horizontal bounds and bottom of the floating sheet the keyboard sits in. */
@@ -240,14 +240,14 @@ public class QrShareView extends View {
     // the rows of the free code's menu (with the timer on / off): titles and subtitles
     private static String[] menuTitles(boolean timerOn) {
         return new String[]{
-            org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidMenuReset),
-            org.telegram.messenger.LocaleController.getString(timerOn ? R.string.QrNoPaidMenuDisableTimer : R.string.QrNoPaidMenuEnableTimer),
-            org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidMenuRestoreFee)
+            org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidMenuReset),
+            org.wooble.messenger.LocaleController.getString(timerOn ? R.string.QrNoPaidMenuDisableTimer : R.string.QrNoPaidMenuEnableTimer),
+            org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidMenuRestoreFee)
         };
     }
 
     private static String[] menuSubtitles(boolean timerOn) {
-        return new String[]{null, org.telegram.messenger.LocaleController.getString(timerOn ? R.string.QrNoPaidMenuDisableTimerInfo : R.string.QrNoPaidMenuEnableTimerInfo), null};
+        return new String[]{null, org.wooble.messenger.LocaleController.getString(timerOn ? R.string.QrNoPaidMenuDisableTimerInfo : R.string.QrNoPaidMenuEnableTimerInfo), null};
     }
 
     private long freeUntil;
@@ -391,12 +391,12 @@ public class QrShareView extends View {
 
     /** The QR image has been saved to the gallery. */
     public void showSavedToast() {
-        showToast(R.drawable.msg_download, org.telegram.messenger.LocaleController.getString(R.string.QrSavedToGallery));
+        showToast(R.drawable.msg_download, org.wooble.messenger.LocaleController.getString(R.string.QrSavedToGallery));
     }
 
     /** Without Premium a custom emoji other than the presets was tapped: nothing is applied, the star toast explains it. */
     public void showPremiumEmojiToast() {
-        showToast(0, org.telegram.messenger.LocaleController.getString(R.string.QrPremiumEmojiToast), org.telegram.messenger.LocaleController.getString(R.string.QrPremiumSubscribe));
+        showToast(0, org.wooble.messenger.LocaleController.getString(R.string.QrPremiumEmojiToast), org.wooble.messenger.LocaleController.getString(R.string.QrPremiumSubscribe));
         haptic();
     }
 
@@ -426,7 +426,7 @@ public class QrShareView extends View {
     private final Drawable icCopy, icPremiumMain;
     private final Drawable icShare, icDownload, icScan, icPalette, icSmile, icGift, icRetry, icClock, icStar;
     private final Paint scanText = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private final String scanLabel = org.telegram.messenger.LocaleController.getString(R.string.QrScanQr);
+    private final String scanLabel = org.wooble.messenger.LocaleController.getString(R.string.QrScanQr);
     private final BackDrawable icClose;     // the app's own close glyph (ActionBar back button in close state)
     private final RLottieDrawable logo;     // the flying plane of the stock QR screen
     private final Paint cutPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -630,7 +630,7 @@ public class QrShareView extends View {
     private static int deepen(int c, boolean edge) {
         final double[] lab = new double[3];
         ColorUtils.colorToLAB(c, lab);
-        if (!edge) return c; // the centre exactly as in Telegram
+        if (!edge) return c; // the centre exactly as in Wooble
         lab[0] = Math.max(0, lab[0] - 3); // the edge: a hair more depth on a full-screen radial
         lab[1] *= 1.03;
         lab[2] *= 1.03;
@@ -832,7 +832,7 @@ public class QrShareView extends View {
                 c.drawPath(path, paint);
                 b.prepareToDraw();
             } catch (Throwable e) {
-                org.telegram.messenger.FileLog.e(e);
+                org.wooble.messenger.FileLog.e(e);
                 b = null;
             }
             final Bitmap out = b;
@@ -1286,7 +1286,7 @@ public class QrShareView extends View {
         if (p == null || p.symbolBitmap != null || p.symbol == null) return;
         // the symbol is rasterized from its lottie by the gift loader; the drawable is the stand-in if that fails
         if (p.giftLoader != null && !p.giftLoader.isDone()) return;
-        final org.telegram.messenger.ImageReceiver ir = p.symbol.getImageReceiver();
+        final org.wooble.messenger.ImageReceiver ir = p.symbol.getImageReceiver();
         // wait for the real image: the blurred thumb would be captured otherwise (soft, low-contrast symbols)
         if (ir == null || !ir.hasImageLoaded() || !ir.hasNotThumb()) return;
         final int s = dp(48);
@@ -1433,7 +1433,7 @@ public class QrShareView extends View {
 
     private @Nullable StarsController.GiftsList giftsList;
     /** A page of the list has come: the sheet takes it and asks for the next one until the end. */
-    private final org.telegram.messenger.NotificationCenter.NotificationCenterDelegate giftsObserver = (id, account, args) -> {
+    private final org.wooble.messenger.NotificationCenter.NotificationCenterDelegate giftsObserver = (id, account, args) -> {
         if (args.length > 1 && args[1] == giftsList) loadGifts();
     };
 
@@ -1614,8 +1614,8 @@ public class QrShareView extends View {
     private void openLayer(int t) {
         if (!themeEditable) return;
         // gifts as a theme are for Premium only; the colours and the emoji presets are for everyone
-        if (t == SCENE_GIFT && !org.telegram.messenger.UserConfig.getInstance(currentAccount).isPremium()) {
-            showToast(0, org.telegram.messenger.LocaleController.getString(R.string.QrPremiumGiftsToast), org.telegram.messenger.LocaleController.getString(R.string.QrPremiumSubscribe));
+        if (t == SCENE_GIFT && !org.wooble.messenger.UserConfig.getInstance(currentAccount).isPremium()) {
+            showToast(0, org.wooble.messenger.LocaleController.getString(R.string.QrPremiumGiftsToast), org.wooble.messenger.LocaleController.getString(R.string.QrPremiumSubscribe));
             haptic();
             return;
         }
@@ -1718,7 +1718,7 @@ public class QrShareView extends View {
         // "New code created. This code will expire in 1 minute." does not fit the toast: the expiry line + timer icon
         if (timerOn) showToast(R.drawable.msg_recent, expiryText());
         else
-            showToast(R.drawable.msg_retry, org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidToastNewCode));
+            showToast(R.drawable.msg_retry, org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidToastNewCode));
         haptic();
     }
 
@@ -1728,7 +1728,7 @@ public class QrShareView extends View {
         else timerWaiting = false;
         lastChipSec = -1;
         updateChipText(true);
-        showToast(R.drawable.msg_recent, timerOn ? expiryText() : org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidToastNoTimeLimit));
+        showToast(R.drawable.msg_recent, timerOn ? expiryText() : org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidToastNoTimeLimit));
         if (delegate != null) delegate.onFeeMode(timerOn ? FEE_TIMER : FEE_PERMANENT);
     }
 
@@ -1736,7 +1736,7 @@ public class QrShareView extends View {
     public void setFeeStars(long stars) {
         chipShown = stars > 0;
         // "Remove ★50 fee": the star stands where the template has it
-        final String label = stars > 0 ? org.telegram.messenger.LocaleController.formatString(R.string.QrNoPaidRemoveStarsFee, org.telegram.messenger.LocaleController.formatNumber(stars, ',')) : "";
+        final String label = stars > 0 ? org.wooble.messenger.LocaleController.formatString(R.string.QrNoPaidRemoveStarsFee, org.wooble.messenger.LocaleController.formatNumber(stars, ',')) : "";
         final int star = label.indexOf('★');
         feeA = star >= 0 ? label.substring(0, star) : "";
         feeB = star >= 0 ? label.substring(star + 1) : label;
@@ -1761,7 +1761,7 @@ public class QrShareView extends View {
     /** The free code could not be made: the fee comes back with the error. */
     public void cancelFree(String error) {
         if (free) {
-            restoreFee(error != null ? org.telegram.messenger.LocaleController.getString(R.string.ErrorOccurred) : null);
+            restoreFee(error != null ? org.wooble.messenger.LocaleController.getString(R.string.ErrorOccurred) : null);
         } else if (error != null) {
             showError(error);
         }
@@ -1769,7 +1769,7 @@ public class QrShareView extends View {
 
     /** A request failed: a generic error (the server's code is in the log). */
     public void showError(String error) {
-        showToast(R.drawable.msg_warning, org.telegram.messenger.LocaleController.getString(R.string.ErrorOccurred));
+        showToast(R.drawable.msg_warning, org.wooble.messenger.LocaleController.getString(R.string.ErrorOccurred));
     }
 
     private long toastDelayUntil;
@@ -1781,7 +1781,7 @@ public class QrShareView extends View {
     {toastMedium.setTypeface(AndroidUtilities.bold());}
 
     private String expiryText() {
-        final String t = org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidToastExpires);
+        final String t = org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidToastExpires);
         if (!t.equals(expiryText)) {
             expiryText = t;
             // the first number of the copy (the minute) is the Medium run
@@ -1853,14 +1853,14 @@ public class QrShareView extends View {
         if (!free) {
             return; // the fee text is static; the free text keeps its last value while sweeping out
         } else if (!timerOn) {
-            s = org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidFree) + " · " + org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidNoTimeLimit);
+            s = org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidFree) + " · " + org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidNoTimeLimit);
             lastChipSec = -1;
         } else {
             final long left = timerLeft(System.currentTimeMillis());
             final int sec = (int) Math.ceil(left / 1000.0);
             if (sec == lastChipSec && lastChip != null) return; // format only when the second changes
             lastChipSec = sec;
-            s = org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidFree) + " · " + org.telegram.messenger.LocaleController.formatString(R.string.QrNoPaidExpiresIn, String.format(java.util.Locale.US, "%d:%02d", sec / 60, sec % 60));
+            s = org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidFree) + " · " + org.wooble.messenger.LocaleController.formatString(R.string.QrNoPaidExpiresIn, String.format(java.util.Locale.US, "%d:%02d", sec / 60, sec % 60));
         }
         if (!s.equals(lastChip)) {
             lastChip = s;
@@ -1986,8 +1986,8 @@ public class QrShareView extends View {
             // a new text once a second, not every frame
             lastTempChipSec = left;
             tempChipText = left >= 0
-                ? org.telegram.messenger.LocaleController.formatString(R.string.QrNoPaidExpiresIn, String.format(java.util.Locale.US, "%d:%02d", left / 60, left % 60))
-                : org.telegram.messenger.LocaleController.getString(R.string.QrCreatingLink);
+                ? org.wooble.messenger.LocaleController.formatString(R.string.QrNoPaidExpiresIn, String.format(java.util.Locale.US, "%d:%02d", left / 60, left % 60))
+                : org.wooble.messenger.LocaleController.getString(R.string.QrCreatingLink);
         }
         final String s = tempChipText;
         chipPaint.setTextSize(dp(11));
@@ -2073,15 +2073,15 @@ public class QrShareView extends View {
     /** The plane at its best frame (the stock QR screen's frame), rendered once from the same animation. */
     private void ensureLogoOptimal() {
         if (logoOptimal != null || logo.getIntrinsicWidth() <= 0) return;
-        org.telegram.ui.Components.RLottieNative frames = null;
+        org.wooble.ui.Components.RLottieNative frames = null;
         try {
-            frames = org.telegram.ui.Components.RLottieNative.createFromRawJson(AndroidUtilities.readRes(R.raw.plane_logo_plain));
+            frames = org.wooble.ui.Components.RLottieNative.createFromRawJson(AndroidUtilities.readRes(R.raw.plane_logo_plain));
             if (frames == null) return;
             final Bitmap b = Bitmap.createBitmap(logo.getIntrinsicWidth(), logo.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
             frames.getFrame(Math.min(LOGO_OPTIMAL_FRAME, frames.getFrameCount() - 1), b, true);
             logoOptimal = b;
         } catch (Throwable e) {
-            org.telegram.messenger.FileLog.e(e);
+            org.wooble.messenger.FileLog.e(e);
         } finally {
             if (frames != null) frames.recycle();
         }
@@ -2243,7 +2243,7 @@ public class QrShareView extends View {
         if (free) {
             burnFrac = timerOn ? Utilities.clamp01(timerLeft(now) / (float) FREE_MS) : 1f;
             if (timerOn && !timerWaiting && now >= freeUntil) {
-                restoreFee(org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidToastExpired));
+                restoreFee(org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidToastExpired));
             }
         }
         updateChipText(true);
@@ -3312,14 +3312,14 @@ public class QrShareView extends View {
 
     /** A custom emoji's current frame, advanced as a draw of it would (lottie or video), or its loaded still. */
     private Bitmap emojiFrame(AnimatedEmojiDrawable d) {
-        final org.telegram.messenger.ImageReceiver ir = d.getImageReceiver();
+        final org.wooble.messenger.ImageReceiver ir = d.getImageReceiver();
         if (ir == null) return null;
         final RLottieDrawable lottie = ir.getLottieAnimation();
         if (lottie != null) {
             if (!sharing) lottie.updateCurrentFrame(0, false);
             return lottie.hasBitmap() ? lottie.getAnimatedBitmap() : null;
         }
-        final org.telegram.ui.Components.AnimatedFileDrawable video = ir.getAnimation();
+        final org.wooble.ui.Components.AnimatedFileDrawable video = ir.getAnimation();
         if (video != null) {
             if (!sharing) video.updateCurrentFrame(System.currentTimeMillis(), false);
             return video.hasBitmap() ? video.getAnimatedBitmap() : null;
@@ -4887,7 +4887,7 @@ public class QrShareView extends View {
         super.onAttachedToWindow();
         prepareCardShadow(); // ready before the open's first frame
         prewarmIslandColors(); // the packs island colours for all the backdrops, ahead of any open
-        org.telegram.messenger.NotificationCenter.getInstance(currentAccount).addObserver(giftsObserver, org.telegram.messenger.NotificationCenter.starUserGiftsLoaded);
+        org.wooble.messenger.NotificationCenter.getInstance(currentAccount).addObserver(giftsObserver, org.wooble.messenger.NotificationCenter.starUserGiftsLoaded);
         loadGifts(); // pages that came while detached
         sensors = (android.hardware.SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         final android.hardware.Sensor g = sensors != null ? sensors.getDefaultSensor(android.hardware.Sensor.TYPE_GRAVITY) : null;
@@ -4897,7 +4897,7 @@ public class QrShareView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.messenger.NotificationCenter.getInstance(currentAccount).removeObserver(giftsObserver, org.telegram.messenger.NotificationCenter.starUserGiftsLoaded);
+        org.wooble.messenger.NotificationCenter.getInstance(currentAccount).removeObserver(giftsObserver, org.wooble.messenger.NotificationCenter.starUserGiftsLoaded);
         removeCallbacks(prewarmGiftsRunnable);
         if (sensors != null) sensors.unregisterListener(gravityListener);
         haveG = false;
@@ -5483,7 +5483,7 @@ public class QrShareView extends View {
             } else if (gifts.isEmpty()) {
                 text.setColor(0xB3FFFFFF);
                 text.setTextSize(dp(14));
-                final String s = org.telegram.messenger.LocaleController.getString(!giftsEndReached ? R.string.QrLoadingGifts : giftsOwner < 0 ? R.string.QrChatNoCollectibles : R.string.QrNoCollectibles);
+                final String s = org.wooble.messenger.LocaleController.getString(!giftsEndReached ? R.string.QrLoadingGifts : giftsOwner < 0 ? R.string.QrChatNoCollectibles : R.string.QrNoCollectibles);
                 c.drawText(s, (w - text.measureText(s)) / 2f, gridTop + dp(40), text);
             }
             final int cols = giftCols(), count = giftCount();
@@ -5621,7 +5621,7 @@ public class QrShareView extends View {
         boolean legacy = true;
         if (BatchParticlesDrawHelper.isAvailable() && tp.d.isStable() && tp.d.getDrawable() instanceof AnimatedEmojiDrawable) {
             final AnimatedEmojiDrawable ad = (AnimatedEmojiDrawable) tp.d.getDrawable();
-            final org.telegram.messenger.ImageReceiver ir = ad.getImageReceiver();
+            final org.wooble.messenger.ImageReceiver ir = ad.getImageReceiver();
             final Bitmap bm = ir != null && ad.getDocumentId() == tp.docId ? ir.getBitmap() : null;
             if (bm != null) {
                 boolean changed = false;
@@ -5726,14 +5726,14 @@ public class QrShareView extends View {
     private StaticLayout emptySubLayout;
     private int emptySubW;
     private boolean emptySubChat;
-    private final String emptyTitleText = org.telegram.messenger.LocaleController.getString(R.string.QrNoGiftsTitle);
-    private final String buyLabel = org.telegram.messenger.LocaleController.getString(R.string.QrBrowseGifts);
+    private final String emptyTitleText = org.wooble.messenger.LocaleController.getString(R.string.QrNoGiftsTitle);
+    private final String buyLabel = org.wooble.messenger.LocaleController.getString(R.string.QrBrowseGifts);
 
     /** The own gifts can be bought from the empty state; a chat's empty state only says there are none. */
     private boolean canBuyGifts() {return giftsOwner > 0;}
 
     private AnimatedEmojiDrawable emptyDog;
-    private org.telegram.ui.Components.RLottieDrawable emptyLottie;
+    private org.wooble.ui.Components.RLottieDrawable emptyLottie;
     private long emptyDogDocId;
 
     private static final String DOG_SET = "Redo_edc21keMa";
@@ -5752,7 +5752,7 @@ public class QrShareView extends View {
         }
         if (dogSetRequested) return null; // one request; the callback fills dogDoc (offline: the Lottie fallback stays)
         dogSetRequested = true;
-        final TLRPC.TL_messages_stickerSet set = org.telegram.messenger.MediaDataController.getInstance(currentAccount).getStickerSet(dogInput, null, false, r -> {
+        final TLRPC.TL_messages_stickerSet set = org.wooble.messenger.MediaDataController.getInstance(currentAccount).getStickerSet(dogInput, null, false, r -> {
             if (r != null && r.documents != null && !r.documents.isEmpty()) dogDoc = r.documents.get(0);
             invalidate();
         });
@@ -5782,7 +5782,7 @@ public class QrShareView extends View {
             emptyDogDocId = doc.id;
             dogFadeStart = 0;
         }
-        final org.telegram.messenger.ImageReceiver ir = emptyDog != null ? emptyDog.getImageReceiver() : null;
+        final org.wooble.messenger.ImageReceiver ir = emptyDog != null ? emptyDog.getImageReceiver() : null;
         final long now = AnimationUtils.currentAnimationTimeMillis();
         if (ir != null && ir.hasBitmapImage() && dogFadeStart == 0) dogFadeStart = now;
         final float k = dogFadeStart == 0 ? 0f : Math.min(1f, (now - dogFadeStart) / 250f);
@@ -5799,7 +5799,7 @@ public class QrShareView extends View {
         c.scale(ds, ds, cx, py - dp(2) + ps / 2f);
         if (ke < 1f) {
             if (emptyLottie == null) {
-                emptyLottie = new org.telegram.ui.Components.RLottieDrawable(R.raw.qr_resistance_dog, (int) ps, (int) ps, true, null);
+                emptyLottie = new org.wooble.ui.Components.RLottieDrawable(R.raw.qr_resistance_dog, (int) ps, (int) ps, true, null);
                 emptyLottie.setAutoRepeat(1);
                 emptyLottie.setAllowDecodeSingleFrame(true);
                 emptyLottie.setMasterParent(this);
@@ -5850,7 +5850,7 @@ public class QrShareView extends View {
             emptySub.setTextSize(dp(14));
             final Paint.FontMetrics fm = emptySub.getFontMetrics();
             final float add = dp(18.5f) - (fm.descent - fm.ascent);
-            final String sub = org.telegram.messenger.LocaleController.getString(chat ? R.string.QrChatNoCollectibles : R.string.QrNoGiftsInfo);
+            final String sub = org.wooble.messenger.LocaleController.getString(chat ? R.string.QrChatNoCollectibles : R.string.QrNoGiftsInfo);
             emptySubLayout = new StaticLayout(sub, emptySub, maxW, android.text.Layout.Alignment.ALIGN_CENTER, 1f, add, false);
         }
     }
@@ -6162,7 +6162,7 @@ public class QrShareView extends View {
             final float cy = y + rh / 2f;
             if (i == 2) {
                 // "Icon / Premium / premium_main" (Figma): outline star with a cutout, crisp vector, 24 → 20dp
-                icon(c, icPremiumMain, menuBounds.left + dp(26), cy, dp(20), tc, ra); // Telegram's own menu_premium_main
+                icon(c, icPremiumMain, menuBounds.left + dp(26), cy, dp(20), tc, ra); // Wooble's own menu_premium_main
             } else {
                 if (i == 0) icon(c, icRetry, menuBounds.left + dp(26), cy, dp(20), tc, ra);
                 else
@@ -6192,7 +6192,7 @@ public class QrShareView extends View {
     // toast: grows from a dot (width leads), slight overshoot, content in at 130–200 ms; dismiss = reverse into a dot
     private long toastPhaseStart;
     private boolean toastShown;
-    // menu icons drawn once into ALPHA_8 bitmaps (24-unit grid at 20dp, Telegram outline weight 1.66u)
+    // menu icons drawn once into ALPHA_8 bitmaps (24-unit grid at 20dp, Wooble outline weight 1.66u)
     private Bitmap clockX, clockPlain, retryBmp;
     private final Paint iconPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
 
@@ -6313,7 +6313,7 @@ public class QrShareView extends View {
         return toastStar;
     }
 
-    private RLottieDrawable toastCheck; // "New code created": Telegram's success check, white, plays once
+    private RLottieDrawable toastCheck; // "New code created": Wooble's success check, white, plays once
 
     private RLottieDrawable toastCheck() {
         if (toastCheck == null) {
@@ -6849,7 +6849,7 @@ public class QrShareView extends View {
                     if (i == 0) resetCode();
                     else if (i == 1) toggleTimer();
                     else
-                        restoreFee(org.telegram.messenger.LocaleController.getString(R.string.QrNoPaidToastFeeRestored));
+                        restoreFee(org.wooble.messenger.LocaleController.getString(R.string.QrNoPaidToastFeeRestored));
                     return;
                 }
             }

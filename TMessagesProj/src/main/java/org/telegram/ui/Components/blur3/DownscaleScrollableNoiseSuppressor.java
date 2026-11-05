@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.blur3;
+package org.wooble.ui.Components.blur3;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
@@ -14,12 +14,12 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.utils.RenderNodeEffects;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
-import org.telegram.utils.glass.positions.GlassPositionsArray;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.utils.RenderNodeEffects;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.capture.IBlur3Capture;
+import org.wooble.utils.glass.positions.GlassPositionsArray;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x
+ * This is the source code of Wooble for Android v. 5.x.x
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.app.Activity;
 import android.app.Application;
@@ -14,8 +14,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

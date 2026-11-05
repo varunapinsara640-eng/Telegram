@@ -1,10 +1,10 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.hideKeyboard;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.hideKeyboard;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -39,51 +39,51 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.PollCreateCheckCell;
-import org.telegram.ui.Cells.PollEditTextCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextCheckCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
-import org.telegram.ui.Components.poll.WebPageLoader;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaFile;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaGallery;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaLink;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaLocation;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaMusic;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaSticker;
-import org.telegram.ui.Components.poll.sheets.CountrySelectBottomSheet;
-import org.telegram.ui.ContentPreviewViewer;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AdjustPanLayoutHelper;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.PollCreateCheckCell;
+import org.wooble.ui.Cells.PollEditTextCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.TextCheckCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.poll.PollAttachedMedia;
+import org.wooble.ui.Components.poll.WebPageLoader;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaFile;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaGallery;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaLink;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaLocation;
+import org.wooble.ui.Components.poll.PollAttachedMediaPack;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaMusic;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaSticker;
+import org.wooble.ui.Components.poll.sheets.CountrySelectBottomSheet;
+import org.wooble.ui.ContentPreviewViewer;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.Stories.recorder.KeyboardNotifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -294,7 +294,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
         updateRows();
 
-        checkboxPaint.setColor(getThemedColor(Theme.key_telegram_color));
+        checkboxPaint.setColor(getThemedColor(Theme.key_wooble_color));
         parentAlert.sizeNotifierFrameLayout.setDelegate(this);
         listAdapter = new ListAdapter(context);
 
@@ -1995,7 +1995,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                     } else if (position == poll2vLimitDurationTimeRow) {
                         checkDurationInfoRow(textCell, false);
                     } else {
-                        textCell.setColors(-1, Theme.key_telegram_color_text);
+                        textCell.setColors(-1, Theme.key_wooble_color_text);
                         Drawable drawable1 = mContext.getResources().getDrawable(R.drawable.poll_add_circle);
                         Drawable drawable2 = mContext.getResources().getDrawable(R.drawable.poll_add_plus);
                         drawable1.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
@@ -2719,7 +2719,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
 
         themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
 
-        themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, null, null, null, Theme.key_telegram_color_text));
+        themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, null, null, null, Theme.key_wooble_color_text));
         themeDescriptions.add(new ThemeDescription(listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, null, null, null, Theme.key_switchTrackChecked));
         themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextCell.class}, new String[]{"imageView"}, null, null, null, Theme.key_checkboxCheck));
 

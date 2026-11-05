@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.Components.Paint.Views.PaintTextOptionsView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

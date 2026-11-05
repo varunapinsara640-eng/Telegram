@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,13 +19,13 @@ import android.widget.PopupWindow;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.CompoundEmoji;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.CompoundEmoji;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
 
 import java.lang.reflect.Field;
 

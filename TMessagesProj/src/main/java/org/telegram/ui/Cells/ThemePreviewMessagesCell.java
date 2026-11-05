@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,29 +19,29 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatBackgroundDrawable;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.Reactions.ReactionsEffectOverlay;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.ChatBackgroundDrawable;
+import org.wooble.ui.Components.AnimatedColor;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.Reactions.ReactionsEffectOverlay;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Stories.recorder.StoryEntry;
 
 public class ThemePreviewMessagesCell extends LinearLayout {
 
@@ -128,7 +128,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
             message.replyMessage.message = LocaleController.getString(isChannel ? R.string.ChannelColorPreviewReply : R.string.UserColorPreviewReply);
             message.media = new TLRPC.TL_messageMediaWebPage();
             message.media.webpage = new TLRPC.TL_webPage();
-            message.media.webpage.embed_url = "https://telegram.org/";
+            message.media.webpage.embed_url = "https://wooble.org/";
             message.media.webpage.flags |= 2;
             message.media.webpage.site_name = LocaleController.getString(R.string.AppName);
             message.media.webpage.flags |= 4;
@@ -223,7 +223,7 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     TLRPC.TL_messageEntityTextUrl entityUrl = new TLRPC.TL_messageEntityTextUrl();
                     entityUrl.offset = index1;
                     entityUrl.length = index2 - index1 - 1;
-                    entityUrl.url = "https://telegram.org";
+                    entityUrl.url = "https://wooble.org";
                     message.entities.add(entityUrl);
                 }
                 message.message = builder.toString();

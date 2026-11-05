@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.wooble.ui.Components.Paint.Views;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -43,20 +43,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MessagePreviewView;
-import org.telegram.ui.SecretVoicePlayer;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
-import org.telegram.ui.Stories.recorder.PreviewView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MessagePreviewView;
+import org.wooble.ui.SecretVoicePlayer;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.ui.Stories.recorder.PreviewView;
 
 public class StoryLinkPreviewDialog extends Dialog {
 

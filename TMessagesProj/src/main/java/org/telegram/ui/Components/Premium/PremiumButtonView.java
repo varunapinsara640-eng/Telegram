@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,21 +19,21 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BadWayToMakeButtonRound;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.CounterView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Loadable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BadWayToMakeButtonRound;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.CircularProgressDrawable;
+import org.wooble.ui.Components.CounterView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Loadable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
 
 public class PremiumButtonView extends FrameLayout implements Loadable {
 

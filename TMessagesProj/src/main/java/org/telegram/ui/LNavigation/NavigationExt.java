@@ -1,7 +1,7 @@
-package org.telegram.ui.LNavigation;
+package org.wooble.ui.LNavigation;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.INavigationLayout;
 
 import java.util.ArrayList;
 import java.util.List;

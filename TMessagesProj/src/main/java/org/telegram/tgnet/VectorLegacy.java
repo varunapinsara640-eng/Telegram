@@ -1,4 +1,4 @@
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,19 +15,19 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RadioButton;
+import org.wooble.ui.Components.RecyclerListView;
 
 @SuppressLint("ViewConstructor")
 public abstract class BaseCell extends FrameLayout {

@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.TargetApi;
 import android.app.AppOpsManager;

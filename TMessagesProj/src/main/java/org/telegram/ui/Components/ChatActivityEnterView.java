@@ -1,19 +1,19 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.ui.LaunchActivity.getLastFragment;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.ui.LaunchActivity.getLastFragment;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -113,107 +113,107 @@ import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
-import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.wooble.ui.recyclerview.ChatListItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.BotForumHelper;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SharedPrefsHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.messenger.utils.EphemeralMessagesHelper;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BasePermissionsActivity;
-import org.telegram.ui.Business.BusinessLinksController;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
-import org.telegram.ui.Components.chat.SendButtonBlockedByTypingView;
-import org.telegram.ui.Components.chat.layouts.ChatActivitySideControlsButtonsLayout;
-import org.telegram.ui.Components.inset.WindowInsetsInAppController;
-import org.telegram.ui.ContentPreviewViewer;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.Gifts.GiftSheet;
-import org.telegram.ui.GroupStickersActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.LinkManager;
-import org.telegram.ui.MessageSendPreview;
-import org.telegram.ui.MultiContactsSelectorBottomSheet;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.StickersActivity;
-import org.telegram.ui.Stories.HighlightMessageSheet;
-import org.telegram.ui.Stories.recorder.CaptionContainerView;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.bots.BotCommandsMenuContainer;
-import org.telegram.ui.bots.BotCommandsMenuView;
-import org.telegram.ui.bots.BotKeyboardView;
-import org.telegram.ui.bots.BotWebViewAttachedSheet;
-import org.telegram.ui.bots.BotWebViewSheet;
-import org.telegram.ui.bots.ChatActivityBotWebViewButton;
-import org.telegram.ui.bots.WebViewRequestProps;
-import org.telegram.ui.iv.BlockRow;
-import org.telegram.ui.iv.RichEditor;
-import org.telegram.ui.iv.RichHtml;
-import org.telegram.ui.iv.RichMessageConvert;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BirthdayController;
+import org.wooble.messenger.BotForumHelper;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.RichMessageLayout;
+import org.wooble.messenger.MessageSuggestionParams;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SharedPrefsHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.camera.CameraController;
+import org.wooble.messenger.utils.DrawableUtils;
+import org.wooble.messenger.utils.EphemeralMessagesHelper;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.AdjustPanLayoutHelper;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BasePermissionsActivity;
+import org.wooble.ui.Business.BusinessLinksController;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.Forum.ForumUtilities;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.Components.Premium.boosts.BoostRepository;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.wooble.ui.Components.chat.SendButtonBlockedByTypingView;
+import org.wooble.ui.Components.chat.layouts.ChatActivitySideControlsButtonsLayout;
+import org.wooble.ui.Components.inset.WindowInsetsInAppController;
+import org.wooble.ui.ContentPreviewViewer;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.Gifts.GiftSheet;
+import org.wooble.ui.GroupStickersActivity;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.LinkManager;
+import org.wooble.ui.MessageSendPreview;
+import org.wooble.ui.MultiContactsSelectorBottomSheet;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.ProfileActivity;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.StickersActivity;
+import org.wooble.ui.Stories.HighlightMessageSheet;
+import org.wooble.ui.Stories.recorder.CaptionContainerView;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.bots.BotCommandsMenuContainer;
+import org.wooble.ui.bots.BotCommandsMenuView;
+import org.wooble.ui.bots.BotKeyboardView;
+import org.wooble.ui.bots.BotWebViewAttachedSheet;
+import org.wooble.ui.bots.BotWebViewSheet;
+import org.wooble.ui.bots.ChatActivityBotWebViewButton;
+import org.wooble.ui.bots.WebViewRequestProps;
+import org.wooble.ui.iv.BlockRow;
+import org.wooble.ui.iv.RichEditor;
+import org.wooble.ui.iv.RichHtml;
+import org.wooble.ui.iv.RichMessageConvert;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -2937,7 +2937,7 @@ public class ChatActivityEnterView extends FrameLayout implements
         sendOutlineView.setImageResource(R.drawable.send_outline);
         sendOutlineView.setScaleType(ImageView.ScaleType.CENTER);
         sendOutlineView.setVisibility(View.GONE);
-        sendOutlineView.setColorFilter(getThemedColor(Theme.key_telegram_color), PorterDuff.Mode.SRC_IN);
+        sendOutlineView.setColorFilter(getThemedColor(Theme.key_wooble_color), PorterDuff.Mode.SRC_IN);
         textFieldContainer.addView(sendOutlineView, LayoutHelper.createFrame(DEFAULT_HEIGHT, DEFAULT_HEIGHT, Gravity.BOTTOM | Gravity.RIGHT));
 
         sendButtonContainer = new FrameLayout(context) {
@@ -8849,7 +8849,7 @@ public class ChatActivityEnterView extends FrameLayout implements
             try {
                 if (wakeLock == null) {
                     PowerManager pm = (PowerManager) ApplicationLoader.applicationContext.getSystemService(Context.POWER_SERVICE);
-                    wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "telegram:audio_record_lock");
+                    wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "wooble:audio_record_lock");
                     wakeLock.acquire();
                 }
             } catch (Exception e) {
@@ -10413,7 +10413,7 @@ public class ChatActivityEnterView extends FrameLayout implements
         emojiButton.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         deleteRichDraftButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_glass_defaultIcon), PorterDuff.Mode.SRC_IN));
         deleteRichDraftButton.setBackground(Theme.createInsetRoundRectDrawable(getThemedColor(Theme.key_listSelector), dp(19), dp(1), dp(3)));
-        sendOutlineView.setColorFilter(getThemedColor(Theme.key_telegram_color), PorterDuff.Mode.SRC_IN);
+        sendOutlineView.setColorFilter(getThemedColor(Theme.key_wooble_color), PorterDuff.Mode.SRC_IN);
     }
 
     private void updateRecordedDeleteIconColors() {

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.spoilers;
+package org.wooble.ui.Components.spoilers;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -12,11 +12,11 @@ import android.view.Choreographer;
 
 import androidx.annotation.Size;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
 
 import java.util.ArrayList;
 import java.util.Arrays;

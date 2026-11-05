@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.wooble.ui.Components.Premium.boosts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.replaceTags;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.replaceTags;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,22 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.GiftPremiumBottomSheet;
-import org.telegram.ui.Components.Premium.PremiumPreviewBottomSheet;
-import org.telegram.ui.Components.Premium.boosts.cells.ActionBtnCell;
-import org.telegram.ui.Components.Premium.boosts.cells.LinkCell;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.GiftPremiumBottomSheet;
+import org.wooble.ui.Components.Premium.PremiumPreviewBottomSheet;
+import org.wooble.ui.Components.Premium.boosts.cells.ActionBtnCell;
+import org.wooble.ui.Components.Premium.boosts.cells.LinkCell;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.LaunchActivity;
 
 public class PremiumPreviewGiftLinkBottomSheet extends PremiumPreviewBottomSheet {
     private static final int BOTTOM_HEIGHT_DP = 68;

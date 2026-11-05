@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.cells.statistics;
+package org.wooble.ui.Components.Premium.boosts.cells.statistics;
 
-import static org.telegram.tgnet.tl.TL_stories.Boost.NO_USER_ID;
+import static org.wooble.tgnet.tl.TL_stories.Boost.NO_USER_ID;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,14 +12,14 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.UserCell;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.LayoutHelper;
 
 import java.util.Date;
 

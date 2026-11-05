@@ -1,12 +1,12 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
 import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
+import org.wooble.messenger.MessageObject;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
 
 public class ChatActivityDraftMessageMeasureController {
     private RecyclerView recyclerView;

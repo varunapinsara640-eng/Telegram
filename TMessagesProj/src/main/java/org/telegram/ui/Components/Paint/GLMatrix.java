@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import android.graphics.Matrix;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -6,20 +6,20 @@ import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.Reactions.ReactionImageHolder;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.Reactions.ReactionsUtils;
-import org.telegram.ui.EmojiAnimationsOverlay;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.Reactions.ReactionImageHolder;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.Reactions.ReactionsUtils;
+import org.wooble.ui.EmojiAnimationsOverlay;
 
 public class StoryReactionWidgetView extends StoryMediaAreasView.AreaView {
 

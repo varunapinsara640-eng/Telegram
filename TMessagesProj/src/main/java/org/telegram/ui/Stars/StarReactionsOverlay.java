@@ -1,7 +1,7 @@
-package org.telegram.ui.Stars;
+package org.wooble.ui.Stars;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.scaleRect;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.scaleRect;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -15,24 +15,24 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.GradientClip;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.BaseCell;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.GradientClip;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 

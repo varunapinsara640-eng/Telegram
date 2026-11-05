@@ -1,9 +1,9 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.wooble.messenger.MessagesController;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_keyboard;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;

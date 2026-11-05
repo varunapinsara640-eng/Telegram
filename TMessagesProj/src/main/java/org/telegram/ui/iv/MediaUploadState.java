@@ -1,6 +1,6 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 public class MediaUploadState {
 

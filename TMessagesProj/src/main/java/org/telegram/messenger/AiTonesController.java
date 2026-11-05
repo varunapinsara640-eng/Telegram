@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.tl.TL_aicompose;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.tl.TL_aicompose;
 
 import java.util.ArrayList;
 import java.util.Base64;

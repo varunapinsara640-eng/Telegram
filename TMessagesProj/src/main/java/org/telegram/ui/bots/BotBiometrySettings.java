@@ -1,7 +1,7 @@
-package org.telegram.ui.bots;
+package org.wooble.ui.bots;
 
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -11,20 +11,20 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import org.checkerframework.checker.guieffect.qual.UI;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserObject;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.AvatarSpan;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
 
 import java.util.ArrayList;
 import java.util.HashMap;

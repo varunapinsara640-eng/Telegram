@@ -1,8 +1,8 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.LayoutTransition;
 import android.annotation.SuppressLint;
@@ -36,38 +36,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.EditTextCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.TextCheckCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SectionsScrollView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.SlideChooseView;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AdjustPanLayoutHelper;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.EditTextCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.TextCheckCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Cells.TextSettingsCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.SectionsScrollView;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.SlideChooseView;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stories.recorder.KeyboardNotifier;
 
 import java.util.ArrayList;
 
@@ -150,7 +150,7 @@ public class LinkEditActivity extends BaseFragment {
 
             @Override
             public void draw(@NonNull Canvas canvas) {
-                p.setColor(Theme.getColor(Theme.key_telegram_color));
+                p.setColor(Theme.getColor(Theme.key_wooble_color));
                 canvas.drawRoundRect(getBounds().left, getBounds().exactCenterY() - dp(14),
                         getBounds().right, getBounds().exactCenterY() + dp(14), dp(14), dp(14), p);
             }

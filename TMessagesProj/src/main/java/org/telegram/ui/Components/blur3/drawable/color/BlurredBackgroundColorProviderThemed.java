@@ -1,10 +1,10 @@
-package org.telegram.ui.Components.blur3.drawable.color;
+package org.wooble.ui.Components.blur3.drawable.color;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LiteMode;
+import org.wooble.ui.ActionBar.Theme;
 
 public class BlurredBackgroundColorProviderThemed implements BlurredBackgroundColorProvider {
 

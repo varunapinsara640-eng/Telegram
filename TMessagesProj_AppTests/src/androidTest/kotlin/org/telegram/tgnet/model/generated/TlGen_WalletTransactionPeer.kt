@@ -1,12 +1,12 @@
-package org.telegram.tgnet.model.generated
+package org.wooble.tgnet.model.generated
 
 import kotlin.Boolean
 import kotlin.Long
 import kotlin.String
 import kotlin.UInt
-import org.telegram.tgnet.OutputSerializedData
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.wooble.tgnet.OutputSerializedData
+import org.wooble.tgnet.model.TlGen_Object
+import org.wooble.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_WalletTransactionPeer : TlGen_Object {
   public data class TL_walletTransactionPeerUser(
@@ -115,7 +115,7 @@ public sealed class TlGen_WalletTransactionPeer : TlGen_Object {
     }
   }
 
-  public data class TL_walletTransactionPeerTelegramGift(
+  public data class TL_walletTransactionPeerWoobleGift(
     public val own_profile: Boolean,
   ) : TlGen_WalletTransactionPeer() {
     internal val flags: UInt

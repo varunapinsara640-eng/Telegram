@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -20,15 +20,15 @@ import androidx.core.graphics.ColorUtils;
 
 
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.EmojiThemes;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.EmojiThemes;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
 
 import java.util.ArrayList;
 import java.util.Objects;

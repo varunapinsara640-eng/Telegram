@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,19 +46,19 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.telegram.ui.Components.blur3.utils.Blur3Utils;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.messenger.RichMessageLayout;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.wooble.ui.Components.blur3.utils.Blur3Utils;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
 
 import java.util.ArrayList;
 

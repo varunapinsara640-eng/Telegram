@@ -1,17 +1,17 @@
-package org.telegram.plugin
+package org.wooble.plugin
 
 import com.android.build.api.variant.AndroidComponentsExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.register
-import org.telegram.tasks.localization.GenerateLocalizationUtilsJavaTask
+import org.wooble.tasks.localization.GenerateLocalizationUtilsJavaTask
 
-class TelegramBuildPlugin : Plugin<Project> {
+class WoobleBuildPlugin : Plugin<Project> {
 
     override fun apply(project: Project) {
         val androidComponents =
             project.extensions.findByType(AndroidComponentsExtension::class.java)
-                ?: error("Apply com.android.application/library before org.telegram.build-plugin")
+                ?: error("Apply com.android.application/library before org.wooble.build-plugin")
 
         androidComponents.onVariants { variant ->
             val suffix = variant.name.replaceFirstChar { it.uppercase() }

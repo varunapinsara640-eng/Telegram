@@ -1,10 +1,10 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.ui.Stars.StarGiftSheet.replaceUnderstood;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.ui.Stars.StarGiftSheet.replaceUnderstood;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -31,27 +31,27 @@ import android.widget.TextView;
 
 //import com.google.mlkit.nl.translate.TranslateLanguage;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChannelMonetizationLayout;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.TranslateController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChannelMonetizationLayout;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.RestrictedLanguagesSelectActivity;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
 import java.util.List;

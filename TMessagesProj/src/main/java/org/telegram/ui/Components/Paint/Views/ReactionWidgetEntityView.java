@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.wooble.ui.Components.Paint.Views;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -10,17 +10,17 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.view.ViewGroup;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Reactions.ReactionImageHolder;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.RectOld;
-import org.telegram.ui.Components.Size;
-import org.telegram.ui.Stories.StoryReactionWidgetBackground;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Reactions.ReactionImageHolder;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.RectOld;
+import org.wooble.ui.Components.Size;
+import org.wooble.ui.Stories.StoryReactionWidgetBackground;
 
 import java.util.List;
 import java.util.Objects;

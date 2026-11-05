@@ -1,17 +1,17 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -57,43 +57,43 @@ import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSlider;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.conference.message.GroupCallMessageCell;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
-import org.telegram.ui.Components.voip.VoIPHelper;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.GroupCallActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.LocationActivity;
-import org.telegram.ui.Stories.LivePlayer;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.LocationController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.voip.GroupCallMessage;
+import org.wooble.messenger.voip.GroupCallMessagesController;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.ActionBarMenuSlider;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.conference.message.GroupCallMessageCell;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.ui.Components.voip.VoIPHelper;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.GroupCallActivity;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.LocationActivity;
+import org.wooble.ui.Stories.LivePlayer;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -2668,7 +2668,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 final float bottom = getMeasuredHeight();
                 final float top = bottom - dpf2(2);
 
-                progressPaint.setColor(getThemedColor(Theme.key_telegram_color));
+                progressPaint.setColor(getThemedColor(Theme.key_wooble_color));
                 canvas.drawRoundRect(left, top, p, bottom, dpf2(1), dpf2(1), progressPaint);
             }
         }

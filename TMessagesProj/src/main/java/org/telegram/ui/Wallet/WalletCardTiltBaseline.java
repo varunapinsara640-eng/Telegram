@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 final class WalletCardTiltBaseline {
 

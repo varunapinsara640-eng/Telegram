@@ -1,11 +1,11 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.ApplicationLoader;
+import org.wooble.messenger.ApplicationLoader;
 
 final class RoundVideoSwitchTimingStore {
 

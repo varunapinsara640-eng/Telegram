@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 /**
  * The collectible gift backdrops of the palette: name, centre, edge, pattern, light accent (text). The server palette
@@ -59,7 +59,7 @@ final class Backdrops {
      * Uses the server palette (its colours and ids), shown in the server's order. A palette without the default backdrop
      * is not taken, the screen needs it as its default.
      */
-    static boolean apply(java.util.List<org.telegram.tgnet.TLRPC.TL_shareThemeBackdropOption> list) {
+    static boolean apply(java.util.List<org.wooble.tgnet.TLRPC.TL_shareThemeBackdropOption> list) {
         if (list == null || list.isEmpty()) {
             return false;
         }
@@ -80,7 +80,7 @@ final class Backdrops {
         TEXT = new int[n];
         IDS = new int[n];
         for (int i = 0; i < n; ++i) {
-            final org.telegram.tgnet.TLRPC.TL_shareThemeBackdropOption o = list.get(i);
+            final org.wooble.tgnet.TLRPC.TL_shareThemeBackdropOption o = list.get(i);
             NAMES[i] = o.name;
             CENTER[i] = o.center_color | 0xFF000000;
             EDGE[i] = o.edge_color | 0xFF000000;

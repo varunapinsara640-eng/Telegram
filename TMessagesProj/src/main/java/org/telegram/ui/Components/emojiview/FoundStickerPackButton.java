@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.emojiview;
+package org.wooble.ui.Components.emojiview;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,10 +8,10 @@ import android.os.Build;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;

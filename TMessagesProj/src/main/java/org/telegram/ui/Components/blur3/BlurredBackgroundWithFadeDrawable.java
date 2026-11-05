@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.blur3;
+package org.wooble.ui.Components.blur3;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -26,11 +26,11 @@ import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 
 public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private final Paint maskFadeGradientPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

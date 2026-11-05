@@ -1,13 +1,13 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_update;
 
 public class MemberRequestsController extends BaseController {
 

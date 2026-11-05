@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 import java.util.ArrayList;
 import java.util.HashMap;

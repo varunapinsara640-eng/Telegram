@@ -1,14 +1,14 @@
-package org.telegram.ui.Components.poll.attached;
+package org.wooble.ui.Components.poll.attached;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaGallery extends PollAttachedMedia {
     public final MediaController.PhotoEntry photoEntry;

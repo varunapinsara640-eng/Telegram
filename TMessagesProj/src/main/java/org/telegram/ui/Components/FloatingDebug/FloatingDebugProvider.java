@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.FloatingDebug;
+package org.wooble.ui.Components.FloatingDebug;
 
 import java.util.List;
 

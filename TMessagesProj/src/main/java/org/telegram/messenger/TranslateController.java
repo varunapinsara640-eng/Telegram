@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -23,21 +23,21 @@ import androidx.annotation.Nullable;
 //import com.google.mlkit.nl.translate.Translator;
 //import com.google.mlkit.nl.translate.TranslatorOptions;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.TranslateAlert2;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.TranslateAlert2;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.RestrictedLanguagesSelectActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

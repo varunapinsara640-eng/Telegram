@@ -1,11 +1,11 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_keyboard;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

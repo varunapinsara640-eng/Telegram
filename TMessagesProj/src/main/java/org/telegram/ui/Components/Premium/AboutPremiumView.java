@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
 
 public class AboutPremiumView extends LinearLayout {
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.cells.selector;
+package org.wooble.ui.Components.Premium.boosts.cells.selector;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,25 +13,25 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.boosts.cells.BaseCell;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.StatusBadgeComponent;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.boosts.cells.BaseCell;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.StatusBadgeComponent;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
 
 import java.util.Date;
 

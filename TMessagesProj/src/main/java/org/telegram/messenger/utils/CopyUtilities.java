@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
 import android.graphics.Typeface;
 import android.os.Build;
@@ -13,13 +13,13 @@ import android.text.style.StyleSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.URLSpanReplacement;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.URLSpanReplacement;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
@@ -294,7 +294,7 @@ public class CopyUtilities {
                 if (opening) {
                     final String className = HTMLTagAttributesHandler.getValue(attributes, "class");
                     final boolean collapsed = HTMLTagAttributesHandler.getValue(attributes, "data-collapsed") != null
-                            || className != null && className.contains("telegram-collapsed-quote");
+                            || className != null && className.contains("wooble-collapsed-quote");
                     output.setSpan(new ParsedSpan(collapsed ? TYPE_COLLAPSE : TYPE_QUOTE), output.length(), output.length(), Spanned.SPAN_MARK_MARK);
                     return true;
                 } else {

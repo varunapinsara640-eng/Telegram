@@ -1,11 +1,11 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Trace;
 
-import org.telegram.messenger.AnimatedFileDrawableStream;
-import org.telegram.messenger.BuildConfig;
+import org.wooble.messenger.AnimatedFileDrawableStream;
+import org.wooble.messenger.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;

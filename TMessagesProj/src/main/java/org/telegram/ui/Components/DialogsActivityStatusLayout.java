@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,9 +11,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.Theme;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
@@ -24,7 +24,7 @@ public class DialogsActivityStatusLayout extends View {
     private final Paint fillingPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     private final RectF statusBarRectF = new RectF();
-    private final RectF telegramLogoRectF = new RectF();
+    private final RectF woobleLogoRectF = new RectF();
     private final RectF animatingRectF = new RectF();
 
     public DialogsActivityStatusLayout(Context context) {
@@ -33,7 +33,7 @@ public class DialogsActivityStatusLayout extends View {
     }
 
     public void updateColors() {
-        fillingPaint.setColor(Theme.getColor(Theme.key_telegram_color));
+        fillingPaint.setColor(Theme.getColor(Theme.key_wooble_color));
         invalidate();
     }
 
@@ -47,13 +47,13 @@ public class DialogsActivityStatusLayout extends View {
         statusBarRectF.set(0, 0, getMeasuredWidth(), t);
 
         final int t2 = t + h / 2 - dp(15);
-        telegramLogoRectF.set(dp(12), t2, dp(12) + dp(30), t2 + dp(30));
+        woobleLogoRectF.set(dp(12), t2, dp(12) + dp(30), t2 + dp(30));
     }
 
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
         final float factor = animatorStatusBarVisible.getFloatValue();
-        lerp(telegramLogoRectF, statusBarRectF, factor, animatingRectF);
+        lerp(woobleLogoRectF, statusBarRectF, factor, animatingRectF);
 
         final float radius = lerp(dp(15), 0, factor);
 

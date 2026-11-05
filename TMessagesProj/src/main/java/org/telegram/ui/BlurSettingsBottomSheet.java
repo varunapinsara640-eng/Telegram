@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,13 +11,13 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.SeekBarView;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
 
 public class BlurSettingsBottomSheet extends BottomSheet {
 

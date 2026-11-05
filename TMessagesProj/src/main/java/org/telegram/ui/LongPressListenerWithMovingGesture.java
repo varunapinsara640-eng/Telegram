@@ -1,13 +1,13 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.graphics.Rect;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.Components.GestureDetector2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.Components.GestureDetector2;
 
 
 public class LongPressListenerWithMovingGesture implements View.OnTouchListener {

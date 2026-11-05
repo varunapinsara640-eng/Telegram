@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 public class SendMessageChatArguments {
     public static final SendMessageChatArguments EMPTY = new SendMessageChatArguments.Builder().build();

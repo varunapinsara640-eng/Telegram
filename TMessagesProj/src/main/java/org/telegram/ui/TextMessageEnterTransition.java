@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -32,28 +32,28 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 
 import androidx.core.graphics.ColorUtils;
-import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.wooble.ui.recyclerview.ChatListItemAnimator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmptyStubSpan;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ReplyMessageLine;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.ChatActivityEnterView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EmptyStubSpan;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ReplyMessageLine;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.ui.Components.spoilers.SpoilerEffect;
 
 public class TextMessageEnterTransition implements MessageEnterTransitionContainer.Transition {
     float fromRadius;

@@ -1,13 +1,13 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Build;
 import android.util.Log;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.video.audio_input.AudioInput;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.video.audio_input.AudioInput;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

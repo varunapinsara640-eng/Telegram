@@ -1,11 +1,11 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.telegram.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationCenter;
 
 import java.util.ArrayList;
 

@@ -1,23 +1,23 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.Stories.recorder.GallerySheet;
-import org.telegram.ui.Stories.recorder.TimelineView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.Stories.recorder.GallerySheet;
+import org.wooble.ui.Stories.recorder.TimelineView;
 
 public class PhotoViewerCoverEditor extends FrameLayout {
 

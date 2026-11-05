@@ -1,15 +1,15 @@
-package org.telegram.ui.Components.Reactions;
+package org.wooble.ui.Components.Reactions;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 @SuppressLint("ViewConstructor")
 public class UpdateReactionsButton extends ButtonWithCounterView {

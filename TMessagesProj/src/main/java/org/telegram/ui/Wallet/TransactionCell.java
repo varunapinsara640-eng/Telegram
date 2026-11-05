@@ -1,7 +1,7 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -35,27 +35,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.IconBackgroundColors;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.UploadingDotsSpannable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.WebFile;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.IconBackgroundColors;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stories.UploadingDotsSpannable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -276,11 +276,11 @@ public class TransactionCell extends FrameLayout implements Theme.Colorable {
                 iconView.setImageResource(incoming ? R.drawable.wallet_transaction_in : R.drawable.wallet_transaction_out);
                 titleView.setText(!TextUtils.isEmpty(transaction.peer.domain) ? transaction.peer.domain : addressFormatter.format(transaction.peer.address));
             }
-        } else if (transaction.peer instanceof TL_wallet.walletTransactionPeerTelegramGift) {
+        } else if (transaction.peer instanceof TL_wallet.walletTransactionPeerWoobleGift) {
             avatarView.setVisibility(View.GONE);
             setIconColor(incoming ? IconBackgroundColors.GREEN : IconBackgroundColors.BLUE);
             iconView.setImageResource(incoming ? R.drawable.wallet_transaction_in : R.drawable.wallet_transaction_out);
-            titleView.setText(getString(R.string.WalletTransactionTelegram));
+            titleView.setText(getString(R.string.WalletTransactionWooble));
         } else if (transaction.peer instanceof TL_wallet.walletTransactionPeerOnramp) {
             final TL_wallet.walletTransactionPeerOnramp peer = (TL_wallet.walletTransactionPeerOnramp) transaction.peer;
             avatarView.setVisibility(View.GONE);
@@ -315,7 +315,7 @@ public class TransactionCell extends FrameLayout implements Theme.Colorable {
             subtitleView.setText(getString(R.string.WalletFailedTransfer));
         } else if (transaction.key_change || transaction.peer instanceof TL_wallet.walletTransactionPeerOnramp) {
 
-        } else if (transaction.peer instanceof TL_wallet.walletTransactionPeerTelegramGift && ((TL_wallet.walletTransactionPeerTelegramGift) transaction.peer).own_profile) {
+        } else if (transaction.peer instanceof TL_wallet.walletTransactionPeerWoobleGift && ((TL_wallet.walletTransactionPeerWoobleGift) transaction.peer).own_profile) {
             subtitleView.setText(incoming ? getString(R.string.WalletMovedFromProfile) : getString(R.string.WalletMovedToProfile));
         } else if (transaction.nft != null) {
             subtitleView.setText(incoming ? getString(R.string.WalletIncomingTransferNft) : getString(R.string.WalletOutgoingTransferNft));

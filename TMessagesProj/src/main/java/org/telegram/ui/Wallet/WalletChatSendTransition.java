@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -16,12 +16,12 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
 
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.Premium.GLIcon.WalletDiamondTextureView;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.ChatActivity;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.Premium.GLIcon.WalletDiamondTextureView;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.ChatActivity;
 
 public final class WalletChatSendTransition {
     private final ViewGroup root;
@@ -111,7 +111,7 @@ public final class WalletChatSendTransition {
             public void onAnimationStart(Animator animator) {
                 // Hide from the still-focused sheet window, at the same time as
                 // the diamond and sheet begin moving (including the fallback).
-                if (sheet != null) org.telegram.messenger.AndroidUtilities.hideKeyboard(source);
+                if (sheet != null) org.wooble.messenger.AndroidUtilities.hideKeyboard(source);
             }
 
             @Override
@@ -274,7 +274,7 @@ public final class WalletChatSendTransition {
                     && GramWallet.messageMatchesTransaction(landing.getMessageObject(), transaction)) {
                 float controlY = Math.min(from.centerY(), to.centerY()) - dp(150);
                 float arrivalSpeed = 2f * (to.centerY() - controlY) / .6f
-                        / org.telegram.messenger.AndroidUtilities.density;
+                        / org.wooble.messenger.AndroidUtilities.density;
                 landing.walletActionLayout.playLanding(arrivalSpeed);
             }
         }
@@ -304,6 +304,6 @@ public final class WalletChatSendTransition {
         }
         completion.run();
         final ViewGroup cleanupRoot = particleRoot;
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(() -> cleanupRoot.removeView(overlay), 650);
+        org.wooble.messenger.AndroidUtilities.runOnUIThread(() -> cleanupRoot.removeView(overlay), 650);
     }
 }

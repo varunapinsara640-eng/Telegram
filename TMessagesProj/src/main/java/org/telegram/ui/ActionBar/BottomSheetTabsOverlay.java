@@ -1,9 +1,9 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.Utilities.clamp01;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.Utilities.clamp01;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -50,15 +50,15 @@ import androidx.customview.widget.ExploreByTouchHelper;
 
 import com.google.zxing.common.detector.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.GradientClip;
-import org.telegram.ui.bots.BotWebViewSheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.GradientClip;
+import org.wooble.ui.bots.BotWebViewSheet;
 
 import java.util.ArrayList;
 import java.util.HashSet;

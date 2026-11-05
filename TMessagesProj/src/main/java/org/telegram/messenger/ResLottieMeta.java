@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.SuppressLint;
 
 import androidx.annotation.RawRes;
 
-import org.telegram.tgnet.SerializedData;
+import org.wooble.tgnet.SerializedData;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

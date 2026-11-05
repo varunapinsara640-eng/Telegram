@@ -1,16 +1,16 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -76,59 +76,59 @@ import androidx.core.math.MathUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.time.SunDate;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.BlurSettingsBottomSheet;
-import org.telegram.ui.Cells.BaseCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AudioVisualizerDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ChoosingStickerStatusDrawable;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.FragmentContextViewWavesDrawable;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.MsgClockDrawable;
-import org.telegram.ui.Components.PathAnimator;
-import org.telegram.ui.Components.PlayingGameDrawable;
-import org.telegram.ui.Components.Premium.PremiumGradient;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RecordStatusDrawable;
-import org.telegram.ui.Components.RoundStatusDrawable;
-import org.telegram.ui.Components.ScamDrawable;
-import org.telegram.ui.Components.SendingFileDrawable;
-import org.telegram.ui.Components.StatusDrawable;
-import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.TypingDotsDrawable;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.RoundVideoProgressShadow;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.ThemePreviewActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.Bitmaps;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.time.SunDate;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.BlurSettingsBottomSheet;
+import org.wooble.ui.Cells.BaseCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AudioVisualizerDrawable;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ChoosingStickerStatusDrawable;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.FragmentContextViewWavesDrawable;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.MsgClockDrawable;
+import org.wooble.ui.Components.PathAnimator;
+import org.wooble.ui.Components.PlayingGameDrawable;
+import org.wooble.ui.Components.Premium.PremiumGradient;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RecordStatusDrawable;
+import org.wooble.ui.Components.RoundStatusDrawable;
+import org.wooble.ui.Components.ScamDrawable;
+import org.wooble.ui.Components.SendingFileDrawable;
+import org.wooble.ui.Components.StatusDrawable;
+import org.wooble.ui.Components.ThemeEditorView;
+import org.wooble.ui.Components.TypingDotsDrawable;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.RoundVideoProgressShadow;
+import org.wooble.ui.ThemeActivity;
+import org.wooble.ui.ThemePreviewActivity;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -3417,9 +3417,9 @@ public class Theme {
     public static final int key_botKeyboard_button_danger = colorsCount++;
     public static final int key_botKeyboard_button_success = colorsCount++;
 
-    public static final int key_telegram_color_dialogsLogo = colorsCount++;
-    public static final int key_telegram_color = colorsCount++;
-    public static final int key_telegram_color_text = colorsCount++;
+    public static final int key_wooble_color_dialogsLogo = colorsCount++;
+    public static final int key_wooble_color = colorsCount++;
+    public static final int key_wooble_color_text = colorsCount++;
 
     public static final int key_wallet_comment = colorsCount++;
     public static final int key_wallet_out_commentBorder = colorsCount++;
@@ -3710,10 +3710,10 @@ public class Theme {
         fallbackKeys.put(key_glass_tabSelectedText, Theme.key_chat_messagePanelSend);
         fallbackKeys.put(key_glass_tabUnselected, Theme.key_windowBackgroundWhiteBlackText);
         fallbackKeys.put(key_actionBarDefaultTitle, key_windowBackgroundWhiteBlackText);
-        fallbackKeys.put(key_telegram_color_dialogsLogo, key_windowBackgroundWhiteBlackText);
+        fallbackKeys.put(key_wooble_color_dialogsLogo, key_windowBackgroundWhiteBlackText);
         fallbackKeys.put(key_profile_title, key_windowBackgroundWhiteBlackText);
-        fallbackKeys.put(key_telegram_color, Theme.key_chat_messagePanelSend);
-        fallbackKeys.put(key_telegram_color_text, Theme.key_windowBackgroundWhiteBlueText4);
+        fallbackKeys.put(key_wooble_color, Theme.key_chat_messagePanelSend);
+        fallbackKeys.put(key_wooble_color_text, Theme.key_windowBackgroundWhiteBlueText4);
 
         fallbackKeys.put(key_wallet_comment, Theme.key_dialogBackgroundGray);
         fallbackKeys.put(key_wallet_out_commentBorder, Theme.key_divider);
@@ -3738,7 +3738,7 @@ public class Theme {
 
         //fallbackKeys.put(key_chat_msgIvButtonDefaultInlineIn, );
         //fallbackKeys.put(key_chat_msgIvButtonDefaultInlineInPressed,  );
-        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineInText, key_telegram_color_text);
+        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineInText, key_wooble_color_text);
 
 
 
@@ -3760,7 +3760,7 @@ public class Theme {
 
         // fallbackKeys.put(key_chat_msgIvButtonDefaultInlineOut, );
         // fallbackKeys.put(key_chat_msgIvButtonDefaultInlineOutPressed, );
-        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineOutText, key_telegram_color_text);
+        fallbackKeys.put(key_chat_msgIvButtonDefaultInlineOutText, key_wooble_color_text);
 
 
 
@@ -7925,7 +7925,7 @@ public class Theme {
         dialogs_pinnedPaint.setColor(getColor(key_chats_pinnedOverlay));
         dialogs_timePaint.setColor(getColor(key_chats_date));
         dialogs_timePaintBold.setColor(getColor(key_chats_date_bold));
-        dialogs_timePaintBoldAccent.setColor(getColor(key_telegram_color_text));
+        dialogs_timePaintBoldAccent.setColor(getColor(key_wooble_color_text));
         dialogs_countTextPaint.setColor(getColor(key_chats_unreadCounterText));
         dialogs_countTextPaint2.setColor(getColor(key_chats_unreadCounterText));
         dialogs_archiveTextPaint.setColor(getColor(key_chats_archiveText));
@@ -7947,7 +7947,7 @@ public class Theme {
         setDrawableColorByKey(dialogs_errorDrawable, key_chats_sentErrorIcon);
         setDrawableColorByKey(dialogs_pinnedDrawable, key_chats_pinnedIcon);
         setDrawableColorByKey(dialogs_pinnedDrawable2, key_chats_pinnedIcon);
-        setDrawableColorByKey(dialogs_pinnedDrawable2Accent, key_telegram_color_text);
+        setDrawableColorByKey(dialogs_pinnedDrawable2Accent, key_wooble_color_text);
         setDrawableColorByKey(dialogs_reorderDrawable, key_chats_pinnedIcon);
         setDrawableColorByKey(dialogs_muteDrawable, key_chats_muteIcon);
         setDrawableColorByKey(dialogs_unmuteDrawable, key_chats_muteIcon);

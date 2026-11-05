@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -11,9 +11,9 @@ import androidx.annotation.Size;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
 
 @Deprecated(since = "use insets listener !!!")
 public class KeyboardNotifier {

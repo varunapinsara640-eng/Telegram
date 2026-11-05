@@ -1,6 +1,6 @@
-package org.telegram.ui.Gifts;
+package org.wooble.ui.Gifts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,12 +12,12 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stars.StarGiftUniqueActionLayout;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stars.StarGiftUniqueActionLayout;
 
 @SuppressLint("ViewConstructor")
 public class StarGiftUniqueActionView extends View {

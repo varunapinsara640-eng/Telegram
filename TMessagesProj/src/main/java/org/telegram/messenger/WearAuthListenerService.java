@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.Intent;
 
@@ -7,8 +7,8 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.WearableListenerService;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.WearAuthSheet;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.WearAuthSheet;
 
 public class WearAuthListenerService extends WearableListenerService {
 

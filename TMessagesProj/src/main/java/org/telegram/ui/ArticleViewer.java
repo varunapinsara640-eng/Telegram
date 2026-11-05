@@ -1,21 +1,21 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.MessageObject.POSITION_FLAG_BOTTOM;
-import static org.telegram.messenger.MessageObject.POSITION_FLAG_LEFT;
-import static org.telegram.messenger.MessageObject.POSITION_FLAG_RIGHT;
-import static org.telegram.messenger.MessageObject.POSITION_FLAG_TOP;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.MessageObject.POSITION_FLAG_BOTTOM;
+import static org.wooble.messenger.MessageObject.POSITION_FLAG_LEFT;
+import static org.wooble.messenger.MessageObject.POSITION_FLAG_RIGHT;
+import static org.wooble.messenger.MessageObject.POSITION_FLAG_TOP;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -115,110 +115,110 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotGuardHelper;
-import org.telegram.messenger.ChatObject;
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileStreamLoadOperation;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.WebFile;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.WindowVisibilityManager;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.BottomSheetTabDialog;
-import org.telegram.ui.ActionBar.BottomSheetTabs;
-import org.telegram.ui.ActionBar.BottomSheetTabsOverlay;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnchorSpan;
-import org.telegram.ui.Components.AnimatedArrowDrawable;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContextProgressView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SeekBar;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.Components.ShareAlert;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.SmoothScroller;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.TableLayout;
-import org.telegram.ui.Components.TextPaintImageReceiverSpan;
-import org.telegram.ui.Components.TextPaintMarkSpan;
-import org.telegram.ui.Components.TextPaintSpan;
-import org.telegram.ui.Components.TextPaintUrlSpan;
-import org.telegram.ui.Components.TextPaintWebpageUrlSpan;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.TranslateAlert2;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.VideoPlayer;
-import org.telegram.ui.Components.WebPlayerView;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.Stories.recorder.KeyboardNotifier;
-import org.telegram.ui.web.AddressBarList;
-import org.telegram.ui.web.BookmarksFragment;
-import org.telegram.ui.web.BotWebViewContainer;
-import org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout;
-import org.telegram.ui.web.BrowserHistory;
-import org.telegram.ui.web.HistoryFragment;
-import org.telegram.ui.web.SearchEngine;
-import org.telegram.ui.web.WebActionBar;
-import org.telegram.ui.web.WebBrowserSettings;
-import org.telegram.ui.web.WebInstantView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BotGuardHelper;
+import org.wooble.messenger.ChatObject;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.FileStreamLoadOperation;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.WebFile;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.utils.WindowVisibilityManager;
+import org.wooble.messenger.video.VideoPlayerHolderBase;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarLayout;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.BottomSheetTabDialog;
+import org.wooble.ui.ActionBar.BottomSheetTabs;
+import org.wooble.ui.ActionBar.BottomSheetTabsOverlay;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnchorSpan;
+import org.wooble.ui.Components.AnimatedArrowDrawable;
+import org.wooble.ui.Components.AnimatedColor;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.AnimationProperties;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CheckBoxBase;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.ContextProgressView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.MediaActionDrawable;
+import org.wooble.ui.Components.RadialProgress2;
+import org.wooble.ui.Components.RadioButton;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SeekBar;
+import org.wooble.ui.Components.SeekBarView;
+import org.wooble.ui.Components.ShareAlert;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.SmoothScroller;
+import org.wooble.ui.Components.StaticLayoutEx;
+import org.wooble.ui.Components.TableLayout;
+import org.wooble.ui.Components.TextPaintImageReceiverSpan;
+import org.wooble.ui.Components.TextPaintMarkSpan;
+import org.wooble.ui.Components.TextPaintSpan;
+import org.wooble.ui.Components.TextPaintUrlSpan;
+import org.wooble.ui.Components.TextPaintWebpageUrlSpan;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.TranslateAlert2;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.VideoPlayer;
+import org.wooble.ui.Components.WebPlayerView;
+import org.wooble.ui.Components.spoilers.SpoilerEffect;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.Stories.recorder.KeyboardNotifier;
+import org.wooble.ui.web.AddressBarList;
+import org.wooble.ui.web.BookmarksFragment;
+import org.wooble.ui.web.BotWebViewContainer;
+import org.wooble.ui.bots.ChatAttachAlertBotWebViewLayout;
+import org.wooble.ui.web.BrowserHistory;
+import org.wooble.ui.web.HistoryFragment;
+import org.wooble.ui.web.SearchEngine;
+import org.wooble.ui.web.WebActionBar;
+import org.wooble.ui.web.WebBrowserSettings;
+import org.wooble.ui.web.WebInstantView;
 
 import java.io.File;
 import java.net.URLDecoder;
@@ -232,7 +232,7 @@ import java.util.Stack;
 import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.telegram.ui.iv.Latex;
+import org.wooble.ui.iv.Latex;
 
 public class ArticleViewer extends IArticleViewer implements NotificationCenter.NotificationCenterDelegate {
 
@@ -5124,7 +5124,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
             Browser.openAsInternalIntent(parentActivity, link);
         } else if (!Browser.openInExternalApp(parentActivity, link, false)) {
             if (pages[0] == null || pages[0].getWebView() == null) {
-                Browser.openInTelegramBrowser(parentActivity, link, null);
+                Browser.openInWoobleBrowser(parentActivity, link, null);
             } else {
                 pages[0].getWebView().loadUrl(link);
             }
@@ -5135,7 +5135,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
         if (parentActivity == null || entry == null) return;
         actionBar.showAddress(false, true);
         if (pages[0] == null || pages[0].getWebView() == null) {
-            Browser.openInTelegramBrowser(parentActivity, entry.url, null);
+            Browser.openInWoobleBrowser(parentActivity, entry.url, null);
         } else {
             pages[0].getWebView().loadUrl(entry.url, entry.meta);
         }
@@ -9023,7 +9023,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
 
     private class BlockEmbedCell extends FrameLayout implements TextSelectionHelper.ArticleSelectableView {
 
-        private class TelegramWebviewProxy {
+        private class WoobleWebviewProxy {
             @Keep
             @JavascriptInterface
             public void postEvent(final String eventName, final String eventData) {
@@ -9186,7 +9186,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
 
                 webView.getSettings().setAllowContentAccess(true);
                 webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
-                webView.addJavascriptInterface(new TelegramWebviewProxy(), "TelegramWebviewProxy");
+                webView.addJavascriptInterface(new WoobleWebviewProxy(), "WoobleWebviewProxy");
 
                 webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
                 CookieManager cookieManager = CookieManager.getInstance();
@@ -9322,7 +9322,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 try {
                     if (currentBlock.html != null) {
                         if (webView != null) {
-                            webView.loadDataWithBaseURL("https://telegram.org/embed", currentBlock.html, "text/html", "UTF-8", null);
+                            webView.loadDataWithBaseURL("https://wooble.org/embed", currentBlock.html, "text/html", "UTF-8", null);
                             webView.setVisibility(VISIBLE);
                         }
                         if (videoView != null) {
@@ -10943,7 +10943,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 if (currentBlock.isCheckbox) {
                     if (checkbox == null) {
                         checkbox = new CheckBoxBase(this, 20, parent.getResourcesProvider());
-                        checkbox.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        checkbox.setColor(Theme.key_wooble_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
                         checkbox.setBackgroundType(10);
                         checkbox.setDrawUnchecked(true);
                         checkbox.setCustomRadius(dp(5));
@@ -11267,7 +11267,7 @@ public class ArticleViewer extends IArticleViewer implements NotificationCenter.
                 if (currentBlock.isCheckbox) {
                     if (checkbox == null) {
                         checkbox = new CheckBoxBase(this, 20, parent.getResourcesProvider());
-                        checkbox.setColor(Theme.key_telegram_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
+                        checkbox.setColor(Theme.key_wooble_color, Theme.key_dialogCheckboxSquareDisabled, Theme.key_checkboxCheck);
                         checkbox.setBackgroundType(10);
                         checkbox.setDrawUnchecked(true);
                         checkbox.setCustomRadius(dp(5));

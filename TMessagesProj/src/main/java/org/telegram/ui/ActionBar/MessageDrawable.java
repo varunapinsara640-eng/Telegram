@@ -1,4 +1,4 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -21,10 +21,10 @@ import android.graphics.drawable.NinePatchDrawable;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.blur3.utils.NinePatchBuilder;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.blur3.utils.NinePatchBuilder;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;

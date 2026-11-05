@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3;
+package org.wooble.ui.Components.blur3;
 
 import android.os.Build;
 import android.view.View;
@@ -6,12 +6,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
-import org.telegram.utils.glass.GlassEngine;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.utils.glass.GlassEngine;
 
 import java.lang.ref.WeakReference;
 

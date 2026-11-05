@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import androidx.annotation.OptIn;
 import androidx.media3.common.util.UnstableApi;
@@ -6,9 +6,9 @@ import androidx.media3.common.util.Util;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 

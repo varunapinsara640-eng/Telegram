@@ -1,24 +1,24 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.NotificationsController.TYPE_CHANNEL;
-import static org.telegram.messenger.NotificationsController.TYPE_PRIVATE;
-import static org.telegram.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
-import static org.telegram.messenger.Utilities.tryParseLong;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stories.HighlightMessageSheet.parseTiers;
-import static org.telegram.ui.Stories.HighlightMessageSheet.parseTiersString;
-import static org.telegram.ui.Stories.HighlightMessageSheet.tiersEqual;
-import static org.telegram.ui.Stories.HighlightMessageSheet.tiersToString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.NotificationsController.TYPE_CHANNEL;
+import static org.wooble.messenger.NotificationsController.TYPE_PRIVATE;
+import static org.wooble.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
+import static org.wooble.messenger.Utilities.tryParseLong;
+import static org.wooble.ui.Stars.StarsController.findAttribute;
+import static org.wooble.ui.Stories.HighlightMessageSheet.parseTiers;
+import static org.wooble.ui.Stories.HighlightMessageSheet.parseTiersString;
+import static org.wooble.ui.Stories.HighlightMessageSheet.tiersEqual;
+import static org.wooble.ui.Stories.HighlightMessageSheet.tiersToString;
 
 import android.Manifest;
 import android.app.Activity;
@@ -51,75 +51,75 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.util.Consumer;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.support.LongSparseLongArray;
-import org.telegram.messenger.utils.EphemeralMessagesHelper;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.messenger.voip.VoIPDebugToSend;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_forum;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_chatlists;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatReactionsEditActivity;
-import org.telegram.ui.ChatRightsEditActivity;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.Components.JoinCallAlert;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.SwipeGestureSettingsView;
-import org.telegram.ui.Components.TranscribeButton;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.EditWidgetActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.MainTabsActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.Stars.BotStarsController;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stories.StoriesController;
-import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.TopicsFragment;
-import org.telegram.ui.Wallet.GramWallet;
-import org.telegram.ui.Wallet.GramWalletStorage;
-import org.telegram.ui.bots.BotWebViewAttachedSheet;
-import org.telegram.ui.bots.BotWebViewSheet;
-import org.telegram.ui.bots.WebViewRequestProps;
-import org.telegram.ui.community.CommunityChatType;
-import org.telegram.ui.community.CommunityUtils;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLiteException;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.support.LongSparseIntArray;
+import org.wooble.messenger.support.LongSparseLongArray;
+import org.wooble.messenger.utils.EphemeralMessagesHelper;
+import org.wooble.messenger.voip.GroupCallMessagesController;
+import org.wooble.messenger.voip.VoIPDebugToSend;
+import org.wooble.messenger.voip.VoIPPreNotificationService;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.tgnet.tl.TL_communities;
+import org.wooble.tgnet.tl.TL_ephemeral;
+import org.wooble.tgnet.tl.TL_forum;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.tgnet.tl.TL_chatlists;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.ActionBarLayout;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.Cells.CheckBoxCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.ChatReactionsEditActivity;
+import org.wooble.ui.ChatRightsEditActivity;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ImageUpdater;
+import org.wooble.ui.Components.JoinCallAlert;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.Premium.LimitReachedBottomSheet;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.SwipeGestureSettingsView;
+import org.wooble.ui.Components.TranscribeButton;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.EditWidgetActivity;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.MainTabsActivity;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.ProfileActivity;
+import org.wooble.ui.SecretMediaViewer;
+import org.wooble.ui.Stars.BotStarsController;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stories.StoriesController;
+import org.wooble.ui.ThemeActivity;
+import org.wooble.ui.TopicsFragment;
+import org.wooble.ui.Wallet.GramWallet;
+import org.wooble.ui.Wallet.GramWalletStorage;
+import org.wooble.ui.bots.BotWebViewAttachedSheet;
+import org.wooble.ui.bots.BotWebViewSheet;
+import org.wooble.ui.bots.WebViewRequestProps;
+import org.wooble.ui.community.CommunityChatType;
+import org.wooble.ui.community.CommunityUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -624,8 +624,8 @@ public class MessagesController extends BaseController implements NotificationCe
     public int reactionsInChatMax;
     public int forumUpgradeParticipantsMin;
     public int topicsPinnedLimit;
-    public long telegramAntispamUserId;
-    public int telegramAntispamGroupSizeMin;
+    public long woobleAntispamUserId;
+    public int woobleAntispamGroupSizeMin;
     public int hiddenMembersGroupSizeMin;
     private int chatlistUpdatePeriod;
     public int storyExpiringLimitDefault;
@@ -1680,8 +1680,8 @@ public class MessagesController extends BaseController implements NotificationCe
         transcribeButtonPressed = mainPreferences.getInt("transcribeButtonPressed", 0);
         forumUpgradeParticipantsMin = mainPreferences.getInt("forumUpgradeParticipantsMin", 200);
         topicsPinnedLimit = mainPreferences.getInt("topicsPinnedLimit", 3);
-        telegramAntispamUserId = mainPreferences.getLong("telegramAntispamUserId", -1);
-        telegramAntispamGroupSizeMin = mainPreferences.getInt("telegramAntispamGroupSizeMin", 100);
+        woobleAntispamUserId = mainPreferences.getLong("woobleAntispamUserId", -1);
+        woobleAntispamGroupSizeMin = mainPreferences.getInt("woobleAntispamGroupSizeMin", 100);
         hiddenMembersGroupSizeMin = mainPreferences.getInt("hiddenMembersGroupSizeMin", 100);
         chatlistUpdatePeriod = mainPreferences.getInt("chatlistUpdatePeriod", 3600);
         uploadMarkupVideo = mainPreferences.getBoolean("uploadMarkupVideo", true);
@@ -1778,7 +1778,7 @@ public class MessagesController extends BaseController implements NotificationCe
         channelRevenueWithdrawalEnabled = mainPreferences.getBoolean("channelRevenueWithdrawalEnabled", false);
         newNoncontactPeersRequirePremiumWithoutOwnpremium = mainPreferences.getBoolean("newNoncontactPeersRequirePremiumWithoutOwnpremium", false);
         reactionsUniqMax = mainPreferences.getInt("reactionsUniqMax", 11);
-        premiumManageSubscriptionUrl = mainPreferences.getString("premiumManageSubscriptionUrl", ApplicationLoader.isStandaloneBuild() ? "https://t.me/premiumbot?start=status" : "https://play.google.com/store/account/subscriptions?sku=telegram_premium&package=org.telegram.messenger");
+        premiumManageSubscriptionUrl = mainPreferences.getString("premiumManageSubscriptionUrl", ApplicationLoader.isStandaloneBuild() ? "https://t.me/premiumbot?start=status" : "https://play.google.com/store/account/subscriptions?sku=wooble_premium&package=org.wooble.messenger");
         androidDisableRoundCamera2 = mainPreferences.getBoolean("androidDisableRoundCamera2", true);
         storiesPinnedToTopCountMax = mainPreferences.getInt("storiesPinnedToTopCountMax", 3);
         showAnnualPerMonth = mainPreferences.getBoolean("showAnnualPerMonth", false);
@@ -3737,14 +3737,14 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                     break;
                 }
-                case "telegram_antispam_user_id": {
+                case "wooble_antispam_user_id": {
                     if (value.value instanceof TLRPC.TL_jsonString) {
                         TLRPC.TL_jsonString string = (TLRPC.TL_jsonString) value.value;
                         try {
                             long number = Long.parseLong(string.value);
-                            if (number != telegramAntispamUserId) {
-                                telegramAntispamUserId = number;
-                                editor.putLong("telegramAntispamUserId", telegramAntispamUserId);
+                            if (number != woobleAntispamUserId) {
+                                woobleAntispamUserId = number;
+                                editor.putLong("woobleAntispamUserId", woobleAntispamUserId);
                                 changed = true;
                             }
                         } catch (Exception e) {
@@ -3753,12 +3753,12 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                     break;
                 }
-                case "telegram_antispam_group_size_min": {
+                case "wooble_antispam_group_size_min": {
                     if (value.value instanceof TLRPC.TL_jsonNumber) {
                         TLRPC.TL_jsonNumber number = (TLRPC.TL_jsonNumber) value.value;
-                        if (number.value != telegramAntispamGroupSizeMin) {
-                            telegramAntispamGroupSizeMin = (int) number.value;
-                            editor.putInt("telegramAntispamGroupSizeMin", telegramAntispamGroupSizeMin);
+                        if (number.value != woobleAntispamGroupSizeMin) {
+                            woobleAntispamGroupSizeMin = (int) number.value;
+                            editor.putInt("woobleAntispamGroupSizeMin", woobleAntispamGroupSizeMin);
                             changed = true;
                         }
                     }
@@ -5720,7 +5720,7 @@ public class MessagesController extends BaseController implements NotificationCe
             Theme.checkCurrentRemoteTheme(false);
 
             if (config.static_maps_provider == null) {
-                config.static_maps_provider = "telegram";
+                config.static_maps_provider = "wooble";
             }
 
             mapKey = null;
@@ -5749,7 +5749,7 @@ public class MessagesController extends BaseController implements NotificationCe
                                 }
                             }
                             availableMapProviders |= 1;
-                        } else if ("telegram".equals(typeAndKey[0])) {
+                        } else if ("wooble".equals(typeAndKey[0])) {
                             if (a == 0) {
                                 mapProvider = 2;
                             }
@@ -5812,7 +5812,7 @@ public class MessagesController extends BaseController implements NotificationCe
         TLRPC.TL_userForeign_old2 user = new TLRPC.TL_userForeign_old2();
         user.phone = "333";
         user.id = 333000;
-        user.first_name = "Telegram";
+        user.first_name = "Wooble";
         user.last_name = "";
         user.status = null;
         user.photo = new TLRPC.TL_userProfilePhotoEmpty();
@@ -5822,7 +5822,7 @@ public class MessagesController extends BaseController implements NotificationCe
         user.phone = "42777";
         user.id = 777000;
         user.verified = true;
-        user.first_name = "Telegram";
+        user.first_name = "Wooble";
         user.last_name = "Notifications";
         user.status = null;
         user.photo = new TLRPC.TL_userProfilePhotoEmpty();
@@ -8090,7 +8090,7 @@ public class MessagesController extends BaseController implements NotificationCe
         }
         if (dialogId == getUserConfig().getClientUserId()) {
             settings.business_bot_id = UserObject.REPLY_BOT;
-            settings.business_bot_manage_url = "https://telegram.org/";
+            settings.business_bot_manage_url = "https://wooble.org/";
         }
         editor.apply();
         userPeerSettings.put(dialogId, settings);

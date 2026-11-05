@@ -1,7 +1,7 @@
-package org.telegram.tgnet.model
+package org.wooble.tgnet.model
 
-import org.telegram.messenger.Utilities
-import org.telegram.tgnet.OutputSerializedData
+import org.wooble.messenger.Utilities
+import org.wooble.tgnet.OutputSerializedData
 
 
 public object TlGen_Vector {

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 
 import android.animation.TimeInterpolator;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 public class AnimatedFloat {
 

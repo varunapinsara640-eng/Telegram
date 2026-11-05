@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 /** Per-file dispatch spacing used by TDLib's FileDownloader/DelayDispatcher. */
 final class DownloadRequestPacer {

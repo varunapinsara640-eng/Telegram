@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 import android.graphics.BlendMode;
 import android.graphics.BlendModeColorFilter;

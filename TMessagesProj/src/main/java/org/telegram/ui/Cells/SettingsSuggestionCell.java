@@ -1,4 +1,4 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -10,19 +10,19 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.URLSpanNoUnderline;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.URLSpanNoUnderline;
 
 public class SettingsSuggestionCell extends LinearLayout {
 

@@ -1,5 +1,5 @@
 /*
- * This is the source code of Telegram for Android v. 7.x.x.
+ * This is the source code of Wooble for Android v. 7.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
@@ -7,7 +7,7 @@
  */
 
 
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
@@ -45,39 +45,39 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ChatsWidgetProvider;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.ContactsWidgetProvider;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.GroupCreateUserCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.InviteMembersBottomSheet;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ChatsWidgetProvider;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.ContactsWidgetProvider;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.GroupCreateUserCell;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.ForegroundColorSpanThemable;
+import org.wooble.ui.Components.InviteMembersBottomSheet;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.RecyclerListView;
 
 import java.io.File;
 import java.util.ArrayList;

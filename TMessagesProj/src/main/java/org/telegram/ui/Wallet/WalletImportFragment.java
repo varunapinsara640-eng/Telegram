@@ -1,11 +1,11 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import org.telegram.ui.Wallet.GramWallet.SecretPhrase;
-import org.telegram.messenger.LocaleController;
+import org.wooble.ui.Wallet.GramWallet.SecretPhrase;
+import org.wooble.messenger.LocaleController;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.getAccountInProduction;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.getAccountInProduction;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -24,24 +24,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.BackupImageView;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.Components.BackupImageView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.EllipsizeSpanAnimator;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.WalletActivity;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.EllipsizeSpanAnimator;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Wallet.WalletActivity;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

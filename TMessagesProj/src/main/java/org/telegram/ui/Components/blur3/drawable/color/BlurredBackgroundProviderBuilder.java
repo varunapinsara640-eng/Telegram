@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.blur3.drawable.color;
+package org.wooble.ui.Components.blur3.drawable.color;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import androidx.annotation.ColorInt;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
 
 public class BlurredBackgroundProviderBuilder implements BlurredBackgroundProvider {
     private final Theme.ResourcesProvider resourcesProvider;

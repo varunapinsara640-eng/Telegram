@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat.layouts;
+package org.wooble.ui.Components.chat.layouts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,11 +8,11 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 
 public class ChatActivityFadeView extends View implements Theme.Colorable {
     private BlurredBackgroundWithFadeDrawable fadeDrawableTop;

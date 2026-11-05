@@ -1,11 +1,11 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.isInAirplaneMode;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.isInAirplaneMode;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.content.Context;
@@ -43,37 +43,37 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SMSJobController;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LanguageCell;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.LocationController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.SMSJobController;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.web.R;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.TL_smsjobs;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.LanguageCell;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.ListView.AdapterWithDiffUtils;
+import org.wooble.ui.Components.Premium.LimitPreviewView;
+import org.wooble.ui.Components.Premium.boosts.GiftInfoBottomSheet;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -163,7 +163,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                 default:
                 case VIEW_TYPE_SHADOW:
                     view = new TextInfoPrivacyCell(getContext());
-                    Drawable shadowDrawable = Theme.getThemedDrawable(getContext(), org.telegram.messenger.R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, resourceProvider));
+                    Drawable shadowDrawable = Theme.getThemedDrawable(getContext(), org.wooble.messenger.R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, resourceProvider));
                     Drawable background = new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray));
                     CombinedDrawable combinedDrawable = new CombinedDrawable(background, shadowDrawable, 0, 0);
                     combinedDrawable.setFullsize(true);
@@ -331,7 +331,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
         items.add(new Item(VIEW_TYPE_HEADER));
         items.add(new Item(VIEW_TYPE_TABLE));
         items.add(Item.asShadow(null));
-        items.add(Item.asButton(BUTTON_TERMS, org.telegram.messenger.R.drawable.menu_intro, LocaleController.getString(R.string.SmsToS)));
+        items.add(Item.asButton(BUTTON_TERMS, org.wooble.messenger.R.drawable.menu_intro, LocaleController.getString(R.string.SmsToS)));
         items.add(Item.asButton(BUTTON_PREMIUM, R.drawable.menu_premium_main, LocaleController.getString(R.string.SmsPremiumBenefits)));
         if (state == SMSJobController.STATE_JOINED && !SMSJobController.getInstance(currentAccount).journal.isEmpty()) {
             items.add(Item.asButton(BUTTON_HISTORY, R.drawable.menu_sms_history, LocaleController.getString(R.string.SmsHistory)).setError(SMSJobController.getInstance(currentAccount).hasError()));
@@ -339,7 +339,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
         if (state == SMSJobController.STATE_JOINED) {
             final int simsCount = SMSJobController.getInstance(currentAccount).simsCount();
             if (simsCount > 1 || simsCount == 1 && Build.VERSION.SDK_INT < 22) {
-                items.add(Item.asButton(BUTTON_SIM, org.telegram.messenger.R.drawable.menu_storage_path, LocaleController.getString(R.string.SmsActiveSim)));
+                items.add(Item.asButton(BUTTON_SIM, org.wooble.messenger.R.drawable.menu_storage_path, LocaleController.getString(R.string.SmsActiveSim)));
             }
         }
         items.add(Item.asShadow(null));
@@ -383,7 +383,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                             new AlertDialog.Builder(getContext(), getResourceProvider())
                                     .setTitle(LocaleController.getString(R.string.SmsNoSimTitle))
                                     .setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SmsNoSimMessage)))
-                                    .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null)
+                                    .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.OK), null)
                                     .show();
                             return;
                         }
@@ -391,7 +391,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                             if (err != null) {
                                 BulletinFactory.showError(err);
                             } else if (res instanceof TLRPC.TL_boolFalse) {
-                                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
                             } else {
                                 SMSJobController.getInstance(currentAccount).setState(SMSJobController.STATE_JOINED);
                                 SMSJobController.getInstance(currentAccount).loadStatus(true);
@@ -421,7 +421,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                 AlertDialog d = new AlertDialog.Builder(getContext(), getResourceProvider())
                     .setTitle(LocaleController.getString(R.string.SmsDeactivateTitle))
                     .setMessage(LocaleController.getString(R.string.SmsDeactivateMessage))
-                    .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.VoipGroupLeave), (di, w) -> {
+                    .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.VoipGroupLeave), (di, w) -> {
                         finishFragment();
                         if (SMSJobController.getInstance(currentAccount).getState() == SMSJobController.STATE_JOINED) {
                             AndroidUtilities.runOnUIThread(() -> {
@@ -431,7 +431,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                             SMSJobController.getInstance(currentAccount).setState(SMSJobController.STATE_NONE);
                         }
                     })
-                    .setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.Back), null)
+                    .setNegativeButton(LocaleController.getString(org.wooble.messenger.R.string.Back), null)
                     .setDimAlpha(0.5f)
                     .create();
                 showDialog(d);
@@ -473,7 +473,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                             builder.getDismissRunnable().run();
                         });
                     }
-                    builder.setNegativeButton(LocaleController.getString("Cancel", org.telegram.messenger.R.string.Cancel), null);
+                    builder.setNegativeButton(LocaleController.getString("Cancel", org.wooble.messenger.R.string.Cancel), null);
                     showDialog(builder.create());
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -494,7 +494,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
     private TextView errorChipTextView;
 
     private void updateHeader() {
-        limitPreviewView = new LimitPreviewView(getContext(), org.telegram.messenger.R.drawable.msg_limit_chats, 0, 0, resourceProvider);
+        limitPreviewView = new LimitPreviewView(getContext(), org.wooble.messenger.R.drawable.msg_limit_chats, 0, 0, resourceProvider);
         limitPreviewView.isStatistic = true;
         limitPreviewView.setDarkGradientProvider(this::setDarkGradientLocation);
         aboveTitleView = new FrameLayout(getContext()) {
@@ -511,7 +511,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
         errorChipTextView.setText(getString(R.string.SmsAirplaneMode));
         errorChipTextView.setCompoundDrawablePadding(dp(6));
         errorChipTextView.setGravity(Gravity.CENTER);
-        Drawable errorDrawable = getContext().getResources().getDrawable(org.telegram.messenger.R.drawable.list_warning_sign).mutate();
+        Drawable errorDrawable = getContext().getResources().getDrawable(org.wooble.messenger.R.drawable.list_warning_sign).mutate();
         errorDrawable.setBounds(0, 0, errorDrawable.getIntrinsicWidth(), errorDrawable.getIntrinsicHeight());
         errorDrawable.setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
         errorChipTextView.setCompoundDrawables(errorDrawable, null, null, null);
@@ -602,7 +602,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                     new AlertDialog.Builder(getContext(), getResourceProvider())
                             .setTitle(LocaleController.getString(R.string.SmsNoSimTitle))
                             .setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SmsNoSimMessage)))
-                            .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null)
+                            .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.OK), null)
                             .show();
                     return;
                 }
@@ -610,7 +610,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                     if (err != null) {
                         BulletinFactory.showError(err);
                     } else if (res instanceof TLRPC.TL_boolFalse) {
-                        BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                        BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
                     } else {
                         SMSJobController.getInstance(currentAccount).setState(SMSJobController.STATE_JOINED);
                         SMSJobController.getInstance(currentAccount).loadStatus(true);
@@ -792,7 +792,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
             smsSentTextView.setText("" + (status == null ? 0 : status.total_sent), animated);
             smsRemainingTextView.setText("" + remainingNumber, animated);
             if (status == null) {
-                sentSinceDateTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.None), animated);
+                sentSinceDateTextView.setText(LocaleController.getString(org.wooble.messenger.R.string.None), animated);
             } else {
                 String date = LocaleController.formatDateAudio(status.total_since, false);
                 if (date.length() > 0) {
@@ -808,7 +808,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
                 }
                 giftSinceDateTextView.setText(date, animated);
             } else {
-                giftSinceDateTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.None), animated);
+                giftSinceDateTextView.setText(LocaleController.getString(org.wooble.messenger.R.string.None), animated);
             }
             SpannableString giftLink = new SpannableString(LocaleController.getString(R.string.SmsLastGiftLink));
             if (status != null && status.last_gift_slug != null) {
@@ -1070,7 +1070,7 @@ public class SMSStatsActivity extends GradientHeaderActivity implements Notifica
             button.setOnClickListener(v -> {
                 dismiss();
             });
-            button.setText(LocaleController.getString(org.telegram.messenger.R.string.Close), false);
+            button.setText(LocaleController.getString(org.wooble.messenger.R.string.Close), false);
             buttonContainer.addView(button, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 48, Gravity.CENTER_VERTICAL, 16, 0, 16, 0));
             View buttonShadow = new View(getContext());
             buttonShadow.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));

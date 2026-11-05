@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.web.WebInstantView;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.web.WebInstantView;
 
 public class ImageLocation {
 

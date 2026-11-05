@@ -1,4 +1,4 @@
-package org.telegram.messenger.camera;
+package org.wooble.messenger.camera;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -30,12 +30,12 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
 
 import java.io.File;
 import java.io.FileOutputStream;

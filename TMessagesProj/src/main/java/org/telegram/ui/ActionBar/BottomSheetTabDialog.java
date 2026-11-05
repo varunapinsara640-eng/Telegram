@@ -1,4 +1,4 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.app.Dialog;
 import android.graphics.Canvas;
@@ -17,11 +17,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.R;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.LaunchActivity;
 
 public class BottomSheetTabDialog extends Dialog {
 

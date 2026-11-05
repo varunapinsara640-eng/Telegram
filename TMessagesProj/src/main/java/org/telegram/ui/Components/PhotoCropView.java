@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x
+ * This is the source code of Wooble for Android v. 5.x.x
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -26,14 +26,14 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.Crop.CropRotationWheel;
-import org.telegram.ui.Components.Crop.CropTransform;
-import org.telegram.ui.Components.Crop.CropView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MediaController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BubbleActivity;
+import org.wooble.ui.Components.Crop.CropRotationWheel;
+import org.wooble.ui.Components.Crop.CropTransform;
+import org.wooble.ui.Components.Crop.CropView;
 
 public class PhotoCropView extends FrameLayout {
 

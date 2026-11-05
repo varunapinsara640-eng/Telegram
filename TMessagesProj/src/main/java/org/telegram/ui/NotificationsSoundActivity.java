@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.ClipData;
 import android.content.Context;
@@ -32,40 +32,40 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ringtone.RingtoneDataStore;
-import org.telegram.messenger.ringtone.RingtoneUploader;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.CreationTextCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.ChatAttachAlertDocumentLayout;
-import org.telegram.ui.Components.ChatAvatarContainer;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.ringtone.RingtoneDataStore;
+import org.wooble.messenger.ringtone.RingtoneUploader;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.CreationTextCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.ChatAttachAlertDocumentLayout;
+import org.wooble.ui.Components.ChatAvatarContainer;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.Forum.ForumUtilities;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.NumberTextView;
+import org.wooble.ui.Components.RadioButton;
+import org.wooble.ui.Components.RecyclerListView;
 
 import java.io.File;
 import java.io.IOException;
@@ -683,7 +683,7 @@ public class NotificationsSoundActivity extends BaseFragment implements ChatAtta
                 case 1:
                     HeaderCell headerCell = (HeaderCell) holder.itemView;
                     if (position == serverTonesHeaderRow) {
-                        headerCell.setText(LocaleController.getString(R.string.TelegramTones));
+                        headerCell.setText(LocaleController.getString(R.string.WoobleTones));
                     } else if (position == systemTonesHeaderRow) {
                         headerCell.setText(LocaleController.getString(R.string.SystemTones));
                     }

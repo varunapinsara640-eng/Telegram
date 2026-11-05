@@ -1,8 +1,8 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.MessagesController.findUpdatesAndRemove;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.MessagesController.findUpdatesAndRemove;
 
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -11,56 +11,56 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.Components.AIEditorAlert;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CreateBotAlert;
-import org.telegram.ui.Components.Premium.boosts.UserSelectorBottomSheet;
-import org.telegram.ui.Components.SharedMediaLayout;
-import org.telegram.ui.Components.voip.VoIPHelper;
-import org.telegram.ui.Gifts.GiftSheet;
-import org.telegram.ui.Stars.BotStarsActivity;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stories.recorder.StoryRecorder;
-import org.telegram.ui.TON.TONIntroActivity;
-import org.telegram.ui.Wallet.GramWallet;
-import org.telegram.ui.Wallet.GramWalletTonConnect;
-import org.telegram.ui.Wallet.WalletActivity;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.Wallet.WalletSendEnterAmount;
-import org.telegram.ui.Wallet.WalletSendSelectSender;
-import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
-import org.telegram.ui.web.WebBrowserSettings;
-import org.telegram.ui.QrShare.QrShareActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BirthdayController;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_aicompose;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.Components.AIEditorAlert;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CreateBotAlert;
+import org.wooble.ui.Components.Premium.boosts.UserSelectorBottomSheet;
+import org.wooble.ui.Components.SharedMediaLayout;
+import org.wooble.ui.Components.voip.VoIPHelper;
+import org.wooble.ui.Gifts.GiftSheet;
+import org.wooble.ui.Stars.BotStarsActivity;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.Stories.recorder.StoryRecorder;
+import org.wooble.ui.TON.TONIntroActivity;
+import org.wooble.ui.Wallet.GramWallet;
+import org.wooble.ui.Wallet.GramWalletTonConnect;
+import org.wooble.ui.Wallet.WalletActivity;
+import org.wooble.ui.Wallet.WalletEngine2;
+import org.wooble.ui.Wallet.WalletSendEnterAmount;
+import org.wooble.ui.Wallet.WalletSendSelectSender;
+import org.wooble.ui.bots.ChannelAffiliateProgramsFragment;
+import org.wooble.ui.web.WebBrowserSettings;
+import org.wooble.ui.QrShare.QrShareActivity;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -124,7 +124,7 @@ public class LinkManager {
         if (host == null) return false;
         final Matcher prefixMatcher = LaunchActivity.PREFIX_T_ME_PATTERN.matcher(host.toLowerCase());
         final boolean isPrefix = prefixMatcher.find();
-        if (!"telegram.me".equalsIgnoreCase(host) && !"t.me".equalsIgnoreCase(host) && !"telegram.dog".equalsIgnoreCase(host) && !isPrefix)
+        if (!"wooble.me".equalsIgnoreCase(host) && !"t.me".equalsIgnoreCase(host) && !"wooble.dog".equalsIgnoreCase(host) && !isPrefix)
             return false;
 
         if (isPrefix) {
@@ -1249,11 +1249,11 @@ public class LinkManager {
             return true;
         }
         if ("faq".equalsIgnoreCase(first)) {
-            Browser.openUrl(activity, LocaleController.getString(R.string.TelegramFaqUrl));
+            Browser.openUrl(activity, LocaleController.getString(R.string.WoobleFaqUrl));
             return true;
         }
         if ("features".equalsIgnoreCase(first)) {
-            Browser.openUrl(activity, LocaleController.getString(R.string.TelegramFeaturesUrl));
+            Browser.openUrl(activity, LocaleController.getString(R.string.WoobleFeaturesUrl));
             return true;
         }
         if ("privacy-policy".equalsIgnoreCase(first)) {
@@ -1833,7 +1833,7 @@ public class LinkManager {
                     String host = uri.getHost().toLowerCase();
                     Matcher prefixMatcher = LaunchActivity.PREFIX_T_ME_PATTERN.matcher(host);
                     boolean isPrefix = prefixMatcher.find();
-                    if (host.equals("telegram.me") || host.equals("t.me") || host.equals("telegram.dog") || isPrefix) {
+                    if (host.equals("wooble.me") || host.equals("t.me") || host.equals("wooble.dog") || isPrefix) {
                         ArrayList<String> segments = new ArrayList<>(uri.getPathSegments());
                         if (segments.size() > 0 && segments.get(0).equals("s")) {
                             segments.remove(0);

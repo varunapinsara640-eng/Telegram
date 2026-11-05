@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.quickforward;
+package org.wooble.ui.Components.quickforward;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -8,16 +8,16 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.Bulletin;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.Bulletin;
 
 import java.util.ArrayList;
 import java.util.HashMap;

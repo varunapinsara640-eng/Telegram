@@ -1,14 +1,14 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -24,13 +24,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.IconBackgroundColors;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Switch;
-import org.telegram.ui.SettingsActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.IconBackgroundColors;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Switch;
+import org.wooble.ui.SettingsActivity;
 
 @SuppressLint("ViewConstructor")
 public class PollCreateCheckCell extends FrameLayout {

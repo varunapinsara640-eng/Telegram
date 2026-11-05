@@ -1,12 +1,12 @@
-package org.telegram.tgnet.test
+package org.wooble.tgnet.test
 
 import com.appmattus.kotlinfixture.config.ConfigurationBuilder
 import org.junit.Test
-import org.telegram.tgnet.ConnectionsManager
-import org.telegram.tgnet.model.generated.TlGen_EmojiStatus
-import org.telegram.tgnet.model.generated.TlGen_MessageEntity
-import org.telegram.tgnet.model.generated.TlGen_PeerColor
-import org.telegram.tgnet.model.generated.TlGen_auth_Authorization
+import org.wooble.tgnet.ConnectionsManager
+import org.wooble.tgnet.model.generated.TlGen_EmojiStatus
+import org.wooble.tgnet.model.generated.TlGen_MessageEntity
+import org.wooble.tgnet.model.generated.TlGen_PeerColor
+import org.wooble.tgnet.model.generated.TlGen_auth_Authorization
 
 class NativeSchemeTest : BaseSchemeTest() {
     @Test

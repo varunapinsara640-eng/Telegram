@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.FloatingDebug;
+package org.wooble.ui.Components.FloatingDebug;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -41,24 +41,24 @@ import androidx.dynamicanimation.animation.SpringForce;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BlurSettingsBottomSheet;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BlurSettingsBottomSheet;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Components.AnimationProperties;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SeekBarView;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;

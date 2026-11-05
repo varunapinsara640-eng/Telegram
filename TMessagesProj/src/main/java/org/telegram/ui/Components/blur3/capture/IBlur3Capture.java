@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3.capture;
+package org.wooble.ui.Components.blur3.capture;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;

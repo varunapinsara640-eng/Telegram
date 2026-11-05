@@ -1,11 +1,11 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.graphics.Color;
 import androidx.core.graphics.ColorUtils;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.OKLCH;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.OKLCH;
 
-/** Direct Telegram backdrop material colors and UI transition helpers. */
+/** Direct Wooble backdrop material colors and UI transition helpers. */
 final class WalletGiftPalette {
     static float[] of(TL_stars.starGiftAttributeBackdrop backdrop) {
         if (backdrop == null) return new float[]{0, 1, 1};
@@ -176,7 +176,7 @@ final class WalletGiftPalette {
 
     private static final float[] BLUE_MATERIAL = {0.017513231635093687f,0.28449588418006894f,1.2347647094726564f,0.012535676658153534f,0.21663006767630577f,0.8356013679504395f,0.026820781230926512f,0.400800558924675f,2.404087600708008f,0.003239999860525131f,0.1710000067949295f,0.4703999853134156f};
 
-    /** Append exact Telegram colors while preserving the UI transition contract. */
+    /** Append exact Wooble colors while preserving the UI transition contract. */
     static void putBackdrop(float[] style, int side, TL_stars.starGiftAttributeBackdrop backdrop) {
         int i=10+side*4;
         style[i]=backdrop==null ? -1 : backdrop.center_color & 0xffffff;

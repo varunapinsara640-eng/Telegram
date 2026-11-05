@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 2.0.x.
+ * This is the source code of Wooble for Android v. 2.0.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,18 +15,18 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLClassStore;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.AccountFrozenAlert;
-import org.telegram.ui.ActionBar.AlertDialog;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.messenger.support.LongSparseIntArray;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLClassStore;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.AccountFrozenAlert;
+import org.wooble.ui.ActionBar.AlertDialog;
 
 import java.io.File;
 import java.math.BigInteger;

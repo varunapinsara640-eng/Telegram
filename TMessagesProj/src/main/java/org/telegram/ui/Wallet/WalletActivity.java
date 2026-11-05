@@ -1,10 +1,10 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.ilerp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.ilerp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -76,76 +76,76 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_toncenter;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Gifts.GiftSheet;
-import org.telegram.ui.Stars.StarGiftSheet;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.QrShare.QrCodeLayer;
-import org.telegram.ui.QrShare.QrScanOverlay;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.DialogsActivityTopPanelLayout;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EdgeEffectTrackerFactory;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.IconBackgroundColors;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingSpan;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.ViewPagerFixed;
-import org.telegram.ui.Components.TableView;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalFragment;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.LinkManager;
-import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.TON.TONIntroActivity;
-import org.telegram.ui.Stories.UploadingDotsSpannable;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.TwoStepVerificationSetupActivity;
-import org.telegram.ui.bots.BotWebViewSheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.WoobleQRCodeWriter;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_toncenter;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.Gifts.GiftSheet;
+import org.wooble.ui.Stars.StarGiftSheet;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.QrShare.QrCodeLayer;
+import org.wooble.ui.QrShare.QrScanOverlay;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedColor;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.DialogsActivityTopPanelLayout;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.EdgeEffectTrackerFactory;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.IconBackgroundColors;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.LoadingSpan;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.ViewPagerFixed;
+import org.wooble.ui.Components.TableView;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalFragment;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.LinkManager;
+import org.wooble.ui.PasscodeActivity;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.TON.TONIntroActivity;
+import org.wooble.ui.Stories.UploadingDotsSpannable;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.TwoStepVerificationSetupActivity;
+import org.wooble.ui.bots.BotWebViewSheet;
 
 import java.nio.charset.StandardCharsets;
 import java.math.BigDecimal;
@@ -1531,8 +1531,8 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
         }, () -> scanOverlay = null);
     }
 
-    private static boolean isTelegramHost(@Nullable String host) {
-        return host != null && ("t.me".equalsIgnoreCase(host) || "telegram.me".equalsIgnoreCase(host) || "telegram.dog".equalsIgnoreCase(host));
+    private static boolean isWoobleHost(@Nullable String host) {
+        return host != null && ("t.me".equalsIgnoreCase(host) || "wooble.me".equalsIgnoreCase(host) || "wooble.dog".equalsIgnoreCase(host));
     }
 
     /** A scanned text as a link; a t.me link without a scheme gets https. */
@@ -1540,7 +1540,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
         final Uri uri = Uri.parse(text.trim());
         if (uri.getScheme() == null) {
             final Uri https = Uri.parse("https://" + text.trim());
-            if (isTelegramHost(https.getHost())) return https;
+            if (isWoobleHost(https.getHost())) return https;
         }
         return uri;
     }
@@ -1549,7 +1549,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
     static boolean isWalletQrLink(Uri uri) {
         final String scheme = uri.getScheme();
         if ("ton".equalsIgnoreCase(scheme) || "tc".equalsIgnoreCase(scheme)) return true;
-        if (!"https".equalsIgnoreCase(scheme) && !"http".equalsIgnoreCase(scheme) || !isTelegramHost(uri.getHost())) return false;
+        if (!"https".equalsIgnoreCase(scheme) && !"http".equalsIgnoreCase(scheme) || !isWoobleHost(uri.getHost())) return false;
         final List<String> segments = uri.getPathSegments();
         return segments.size() == 1 && ("sendgrams".equalsIgnoreCase(segments.get(0)) || walletQrUsername(uri) != null);
     }
@@ -1557,7 +1557,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
     /** The username of a t.me/<username> link, else null. */
     @Nullable
     static String walletQrUsername(Uri uri) {
-        if (!isTelegramHost(uri.getHost())) return null;
+        if (!isWoobleHost(uri.getHost())) return null;
         final List<String> segments = uri.getPathSegments();
         if (segments.size() != 1) return null;
         final String username = segments.get(0);
@@ -2195,7 +2195,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
         sendText.setSpan(new ColoredImageSpan(R.drawable.wallet_intro_arrow, ColoredImageSpan.ALIGN_CENTER), sendArrowIndex, sendArrowIndex + 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         sendCell.setPadding(dp(0), dp(8), dp(0), dp(8));
         sendCell.set(
-                R.drawable.wallet_intro_telegram,
+                R.drawable.wallet_intro_wooble,
                 LocaleController.getString(R.string.WalletSend),
                 sendText
         );
@@ -2290,13 +2290,13 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
         layout.setPadding(dp(12), dp(28), dp(12), dp(12));
         scrollView.addView(layout, new ScrollView.LayoutParams(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
-        final org.telegram.ui.Components.BackupImageView imageView = new org.telegram.ui.Components.BackupImageView(context);
+        final org.wooble.ui.Components.BackupImageView imageView = new org.wooble.ui.Components.BackupImageView(context);
         imageView.setRoundRadius(dp(12));
         imageView.setContentDescription(collectible.name);
         final Drawable placeholder = context.getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
         placeholder.setColorFilter(new PorterDuffColorFilter(
                 Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourceProvider), PorterDuff.Mode.SRC_IN));
-        final org.telegram.messenger.ImageLocation image = CollectibleCell.getImage(collectible, false);
+        final org.wooble.messenger.ImageLocation image = CollectibleCell.getImage(collectible, false);
         if (image != null) {
             imageView.setImage(image, "120_120", placeholder, collectible);
         } else {
@@ -2399,7 +2399,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
             Runnable openWallet, Theme.ResourcesProvider resourceProvider
     ) {
         if (context == null) return;
-        if (initialTransaction.peer instanceof TL_wallet.walletTransactionPeerTelegramGift && initialTransaction.nft != null && initialTransaction.nft.gift instanceof TL_stars.TL_starGiftUnique) {
+        if (initialTransaction.peer instanceof TL_wallet.walletTransactionPeerWoobleGift && initialTransaction.nft != null && initialTransaction.nft.gift instanceof TL_stars.TL_starGiftUnique) {
             final TL_stars.TL_starGiftUnique gift = (TL_stars.TL_starGiftUnique) initialTransaction.nft.gift;
             new StarGiftSheet(context, currentAccount, 0, resourceProvider)
                 .setWalletTransaction(initialTransaction)
@@ -2749,13 +2749,13 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
         } else if (T.nft != null) {
             amountLayout.removeAllViews();
             final TL_wallet.nftItem collectible = T.nft;
-            final org.telegram.ui.Components.BackupImageView imageView = new org.telegram.ui.Components.BackupImageView(context);
+            final org.wooble.ui.Components.BackupImageView imageView = new org.wooble.ui.Components.BackupImageView(context);
             imageView.setRoundRadius(dp(12));
             imageView.setContentDescription(collectible.name);
             final Drawable placeholder = context.getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
             placeholder.setColorFilter(new PorterDuffColorFilter(
                     Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourceProvider), PorterDuff.Mode.SRC_IN));
-            final org.telegram.messenger.ImageLocation image = CollectibleCell.getImage(collectible, false);
+            final org.wooble.messenger.ImageLocation image = CollectibleCell.getImage(collectible, false);
             if (image != null) {
                 imageView.setImage(image, "120_120", placeholder, collectible);
             } else {
@@ -3178,7 +3178,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
                 icon.setSize(dp(16));
                 icon.translate(0, dp(1));
                 feeString.setSpan(icon, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                feeString.append(LocaleController.getString(R.string.WalletFeePaidByTelegram));
+                feeString.append(LocaleController.getString(R.string.WalletFeePaidByWooble));
                 table.addRow(LocaleController.getString(R.string.WalletFee), feeString, "?", () -> {
                     new AlertDialog.Builder(context, resourceProvider)
                         .setTitle(LocaleController.getString(R.string.WalletNetworkFee))
@@ -3713,7 +3713,7 @@ public class WalletActivity extends UniversalFragment implements NotificationCen
 
     @Override
     public boolean onFragmentCreate() {
-        WalletCard2DMaterial.prewarm(org.telegram.messenger.ApplicationLoader.applicationContext);
+        WalletCard2DMaterial.prewarm(org.wooble.messenger.ApplicationLoader.applicationContext);
         getNotificationCenter().addObserver(this, NotificationCenter.walletUpdate);
         getNotificationCenter().addObserver(this, NotificationCenter.starBalanceUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.walletTransactionsUpdate);

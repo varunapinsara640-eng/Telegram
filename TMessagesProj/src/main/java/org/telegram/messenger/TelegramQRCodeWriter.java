@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.readRes;
+import static org.wooble.messenger.AndroidUtilities.readRes;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -43,7 +43,7 @@ import java.util.Map;
  *
  * @author dswitkin@google.com (Daniel Switkin)
  */
-public final class TelegramQRCodeWriter {
+public final class WoobleQRCodeWriter {
 
   private static final int QUIET_ZONE_SIZE = 4;
   private ByteMatrix input;

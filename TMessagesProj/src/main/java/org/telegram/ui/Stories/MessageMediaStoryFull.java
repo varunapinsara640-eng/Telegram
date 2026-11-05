@@ -1,12 +1,12 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.AbstractSerializedData;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.AbstractSerializedData;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
 
 public class MessageMediaStoryFull extends TLRPC.TL_messageMediaStory {
 

@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import org.telegram.messenger.R;
+import org.wooble.messenger.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,15 +13,15 @@ import android.view.inputmethod.InputMethodSubtype;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.BillingUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.BillingUtilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.tl.TL_wallet;
 
 import java.util.ArrayList;
 import java.util.Currency;

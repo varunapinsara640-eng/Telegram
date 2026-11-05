@@ -1,11 +1,11 @@
-package org.telegram.messenger.postdrawcompat;
+package org.wooble.messenger.postdrawcompat;
 
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.R;
+import org.wooble.messenger.R;
 
 import java.util.ArrayList;
 

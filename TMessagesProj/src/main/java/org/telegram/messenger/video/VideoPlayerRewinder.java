@@ -1,17 +1,17 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.util.Log;
 
 import androidx.media3.common.C;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.PhotoViewerWebView;
-import org.telegram.ui.Components.SeekSpeedDrawable;
-import org.telegram.ui.Components.VideoForwardDrawable;
-import org.telegram.ui.Components.VideoPlayer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Components.PhotoViewerWebView;
+import org.wooble.ui.Components.SeekSpeedDrawable;
+import org.wooble.ui.Components.VideoForwardDrawable;
+import org.wooble.ui.Components.VideoPlayer;
 
 public class VideoPlayerRewinder {
 

@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.ui.Stars.StarsController.findAttribute;
+import static org.wooble.ui.Stars.StarsController.findAttribute;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
@@ -9,13 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Gifts.AuctionBidSheet;
-import org.telegram.ui.Stars.StarsController;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_payments;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.Gifts.AuctionBidSheet;
+import org.wooble.ui.Stars.StarsController;
 
 import java.util.ArrayList;
 import java.util.Collections;

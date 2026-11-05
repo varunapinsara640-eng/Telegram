@@ -1,4 +1,4 @@
-package org.telegram.messenger.video.resample;
+package org.wooble.messenger.video.resample;
 
 import androidx.annotation.NonNull;
 

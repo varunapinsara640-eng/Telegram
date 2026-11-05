@@ -1,4 +1,4 @@
-package org.telegram.tasks
+package org.wooble.tasks
 
 import groovy.util.Node
 import groovy.util.NodeList
@@ -22,7 +22,7 @@ import java.io.OutputStream
 import java.nio.charset.StandardCharsets
 
 @CacheableTask
-abstract class TelegramStringsTask : DefaultTask() {
+abstract class WoobleStringsTask : DefaultTask() {
 
     companion object {
         private val GENERATED_EXCLUSIONS = setOf(

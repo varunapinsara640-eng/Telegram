@@ -1,16 +1,16 @@
 /*
- * This is the source code of Telegram for Android v. 1.3.x.
+ * This is the source code of Wooble for Android v. 1.3.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -60,83 +60,83 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Adapters.DialogsAdapter;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BubbleCounterPath;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CanvasButton;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.DialogCellTags;
-import org.telegram.ui.Components.EmptyStubSpan;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.Forum.ForumBubbleDrawable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.PhotoBubbleClip;
-import org.telegram.ui.Components.Premium.PremiumGradient;
-import org.telegram.ui.Components.PullForegroundDrawable;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.StatusDrawable;
-import org.telegram.ui.Components.SwipeGestureSettingsView;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.TimerDrawable;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.Components.URLSpanNoUnderlineBold;
-import org.telegram.ui.Components.VectorAvatarThumbDrawable;
-import org.telegram.ui.Components.dialogs.DialogMediaIconsHelper;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.FilterCreateActivity;
-import org.telegram.ui.RightSlidingDialogContainer;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stories.StoriesListPlaceProvider;
-import org.telegram.ui.Stories.StoriesUtilities;
-import org.telegram.ui.Stories.StoryViewer;
-import org.telegram.ui.community.CommunityArrowDrawable;
-import org.telegram.ui.community.CommunitySheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ChatThemeController;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.DrawableUtils;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Adapters.DialogsAdapter;
+import org.wooble.ui.AvatarSpan;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BubbleCounterPath;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.CanvasButton;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.DialogCellTags;
+import org.wooble.ui.Components.EmptyStubSpan;
+import org.wooble.ui.Components.ForegroundColorSpanThemable;
+import org.wooble.ui.Components.Forum.ForumBubbleDrawable;
+import org.wooble.ui.Components.Forum.ForumUtilities;
+import org.wooble.ui.Components.PhotoBubbleClip;
+import org.wooble.ui.Components.Premium.PremiumGradient;
+import org.wooble.ui.Components.PullForegroundDrawable;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.StaticLayoutEx;
+import org.wooble.ui.Components.StatusDrawable;
+import org.wooble.ui.Components.SwipeGestureSettingsView;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.TimerDrawable;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.URLSpanNoUnderline;
+import org.wooble.ui.Components.URLSpanNoUnderlineBold;
+import org.wooble.ui.Components.VectorAvatarThumbDrawable;
+import org.wooble.ui.Components.dialogs.DialogMediaIconsHelper;
+import org.wooble.ui.Components.spoilers.SpoilerEffect;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.FilterCreateActivity;
+import org.wooble.ui.RightSlidingDialogContainer;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.Stories.StoriesListPlaceProvider;
+import org.wooble.ui.Stories.StoriesUtilities;
+import org.wooble.ui.Stories.StoryViewer;
+import org.wooble.ui.community.CommunityArrowDrawable;
+import org.wooble.ui.community.CommunitySheet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -5713,7 +5713,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 MessageObject message = groupMessages.get(i);
                 if (message != null && !message.needDrawBluredPreview() && (message.isPhoto() || message.isNewGif() || message.isVideo() || message.isRoundVideo() || message.isStoryMedia())) {
                     String type = message.isWebpage() ? message.messageOwner.media.webpage.type : null;
-                    if (!("app".equals(type) || "profile".equals(type) || "article".equals(type) || type != null && type.startsWith("telegram_"))) {
+                    if (!("app".equals(type) || "profile".equals(type) || "article".equals(type) || type != null && type.startsWith("wooble_"))) {
                         setThumb(i, message);
                     }
                 }
@@ -5723,7 +5723,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             hasVideoThumb = false;
             if (!message.needDrawBluredPreview() && (message.isPhoto() || message.isNewGif() || message.isVideo() || message.isRoundVideo() || message.isStoryMedia())) {
                 String type = message.isWebpage() ? message.messageOwner.media.webpage.type : null;
-                if (!("app".equals(type) || "profile".equals(type) || "article".equals(type) || type != null && type.startsWith("telegram_"))) {
+                if (!("app".equals(type) || "profile".equals(type) || "article".equals(type) || type != null && type.startsWith("wooble_"))) {
                     setThumb(0, message);
                 }
             }

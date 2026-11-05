@@ -3,7 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
 }
-apply plugin: 'org.telegram.build-app-plugin'
+apply plugin: 'org.wooble.build-app-plugin'
 
 repositories {
     mavenCentral()
@@ -151,7 +151,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "Telegram-Beta.apk"
+            outputFileName = "Wooble-Beta.apk"
             output.versionCodeOverride = defaultConfig.versionCode * 10 + variant.productFlavors.get(0).abiVersionCode
         }
     }
@@ -185,7 +185,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace 'org.telegram.messenger.regular'
+    namespace 'org.wooble.messenger.regular'
 
     lintOptions {
         checkReleaseBuilds false

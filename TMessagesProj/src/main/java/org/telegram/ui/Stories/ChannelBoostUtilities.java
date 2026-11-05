@@ -1,10 +1,10 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
 import android.text.TextUtils;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.tgnet.TLRPC;
 
 public class ChannelBoostUtilities {
     public static String createLink(int currentAccount, long dialogId) {

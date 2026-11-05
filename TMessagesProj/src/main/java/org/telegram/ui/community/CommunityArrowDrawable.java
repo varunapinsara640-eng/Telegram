@@ -1,6 +1,6 @@
-package org.telegram.ui.community;
+package org.wooble.ui.community;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,10 +16,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.R;
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.R;
+import org.wooble.messenger.utils.DrawableUtils;
+import org.wooble.ui.ActionBar.Theme;
 
 public class CommunityArrowDrawable extends Drawable {
     private final Drawable arrowDrawable;

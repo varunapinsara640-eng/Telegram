@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -15,26 +15,26 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.AbstractSerializedData;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.PermissionRequest;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.AbstractSerializedData;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.PermissionRequest;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
 
 
 import java.util.Calendar;

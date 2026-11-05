@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -7,17 +7,17 @@ import android.text.TextUtils;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_forum;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.Forum.ForumUtilities;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.messenger.support.LongSparseIntArray;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_forum;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.Components.Forum.ForumUtilities;
 
 import java.util.ArrayList;
 import java.util.Arrays;

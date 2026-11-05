@@ -1,15 +1,15 @@
-package org.telegram.ui.Components.poll;
+package org.wooble.ui.Components.poll;
 
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Text;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.MessageObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.Text;
 
 import java.io.File;
 

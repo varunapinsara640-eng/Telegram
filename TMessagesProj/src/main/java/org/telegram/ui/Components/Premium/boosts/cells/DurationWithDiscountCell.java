@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,14 +6,14 @@ import android.text.SpannableStringBuilder;
 import android.view.Gravity;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.boosts.DiscountSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.LocaleController;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.boosts.DiscountSpan;
 
 @SuppressLint("ViewConstructor")
 public class DurationWithDiscountCell extends DurationCell {

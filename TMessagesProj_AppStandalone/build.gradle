@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.telegram.build-app-plugin'
+apply plugin: 'org.wooble.build-app-plugin'
 
 repositories {
     mavenCentral()
@@ -156,7 +156,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace 'org.telegram.messenger.web'
+    namespace 'org.wooble.messenger.web'
 
     lintOptions {
         checkReleaseBuilds false

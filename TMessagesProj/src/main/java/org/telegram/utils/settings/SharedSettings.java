@@ -1,8 +1,8 @@
-package org.telegram.utils.settings;
+package org.wooble.utils.settings;
 
-import org.telegram.messenger.BuildConfig;
-import org.telegram.utils.recorder.round.RoundVideoSession;
-import org.telegram.utils.recorder.audio.AudioRecordingSession;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.utils.recorder.round.RoundVideoSession;
+import org.wooble.utils.recorder.audio.AudioRecordingSession;
 
 public final class SharedSettings {
 

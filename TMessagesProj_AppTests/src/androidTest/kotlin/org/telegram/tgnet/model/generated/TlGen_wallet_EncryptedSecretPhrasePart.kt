@@ -1,11 +1,11 @@
-package org.telegram.tgnet.model.generated
+package org.wooble.tgnet.model.generated
 
 import kotlin.Byte
 import kotlin.UInt
 import kotlin.collections.List
-import org.telegram.tgnet.OutputSerializedData
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.wooble.tgnet.OutputSerializedData
+import org.wooble.tgnet.model.TlGen_Object
+import org.wooble.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_wallet_EncryptedSecretPhrasePart : TlGen_Object {
   public data class TL_wallet_encryptedSecretPhrasePart(

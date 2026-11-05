@@ -1,7 +1,7 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.Wallet.WalletImportFragment.formatAddressTwoLines;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.ui.Wallet.WalletImportFragment.formatAddressTwoLines;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -34,37 +34,37 @@ import java.util.Objects;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Wallet.GramWallet.SecretPhrase;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.IconBackgroundColors;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LoadingSpan;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.ui.Wallet.GramWallet.SecretPhrase;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.WebFile;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.IconBackgroundColors;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LoadingSpan;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 public class GramWalletTonConnect {
 
@@ -141,8 +141,8 @@ public class GramWalletTonConnect {
         sessions.removeIf(s -> s.id == session.id);
         if (!session.closed) sessions.add(session);
         updateOpenRequests(session);
-        org.telegram.messenger.NotificationCenter.getInstance(currentAccount).postNotificationName(
-                org.telegram.messenger.NotificationCenter.walletUpdate, wallet, session);
+        org.wooble.messenger.NotificationCenter.getInstance(currentAccount).postNotificationName(
+                org.wooble.messenger.NotificationCenter.walletUpdate, wallet, session);
     }
 
     public boolean requestsProof(ConnectRequest context) {
@@ -498,8 +498,8 @@ public class GramWalletTonConnect {
                 throw new IllegalArgumentException("Requested network does not match the wallet network");
             }
             if ("ton_proof".equals(item.getString("name"))) {
-                if (domain.replaceFirst("\\.$", "").equals("telegram.org")) {
-                    throw new IllegalArgumentException("The telegram.org proof domain is reserved for wallet import");
+                if (domain.replaceFirst("\\.$", "").equals("wooble.org")) {
+                    throw new IllegalArgumentException("The wooble.org proof domain is reserved for wallet import");
                 }
                 item.getString("payload");
             }
@@ -1354,10 +1354,10 @@ public class GramWalletTonConnect {
                 if (context instanceof android.app.Activity) {
                     android.app.Activity activity = (android.app.Activity) context;
                     if (activity.isFinishing() || activity.isDestroyed()
-                            || !org.telegram.ui.LaunchActivity.isResumed
-                            || org.telegram.messenger.SharedConfig.appLocked
-                            || org.telegram.messenger.SharedConfig.isWaitingForPasscodeEnter
-                            || org.telegram.messenger.UserConfig.selectedAccount != currentAccount) {
+                            || !org.wooble.ui.LaunchActivity.isResumed
+                            || org.wooble.messenger.SharedConfig.appLocked
+                            || org.wooble.messenger.SharedConfig.isWaitingForPasscodeEnter
+                            || org.wooble.messenger.UserConfig.selectedAccount != currentAccount) {
                         wallet.tonConnect.release(request);
                         return;
                     }
@@ -1694,7 +1694,7 @@ public class GramWalletTonConnect {
             }
         };
         long deadline = Math.min(request.expires, request.transaction.validUntil == 0 ? Long.MAX_VALUE : request.transaction.validUntil);
-        long delay = Math.max(0, deadline - org.telegram.tgnet.ConnectionsManager.getInstance(currentAccount).getCurrentTime()) * 1000L;
+        long delay = Math.max(0, deadline - org.wooble.tgnet.ConnectionsManager.getInstance(currentAccount).getCurrentTime()) * 1000L;
         request.setOnProcessed(sheet::dismiss);
         sheet.setOnDismissListener(dialog -> {
             dismissed[0] = true;

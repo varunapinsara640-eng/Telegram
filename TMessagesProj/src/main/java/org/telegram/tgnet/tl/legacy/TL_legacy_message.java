@@ -1,11 +1,11 @@
-package org.telegram.tgnet.tl.legacy;
+package org.wooble.tgnet.tl.legacy;
 
 import android.text.TextUtils;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
 
 public class TL_legacy_message {
     private TL_legacy_message() {

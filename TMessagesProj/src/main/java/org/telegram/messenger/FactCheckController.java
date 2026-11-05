@@ -1,7 +1,7 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,27 +29,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.AlertDialogDecor;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedColor;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.AlertDialogDecor;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedColor;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextCaption;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

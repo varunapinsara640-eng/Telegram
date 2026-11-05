@@ -1,10 +1,10 @@
-package org.telegram.messenger.chromecast;
+package org.wooble.messenger.chromecast;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.Utilities;
 
 import java.io.File;
 

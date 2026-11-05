@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -39,26 +39,26 @@ import androidx.core.app.NotificationCompat;
 
 import androidx.media3.common.C;
 
-import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AudioPlayerAlert;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.audioinfo.AudioInfo;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AudioPlayerAlert;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.LaunchActivity;
 
 import java.io.File;
 
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
 
-    public static final String NOTIFY_PREVIOUS = "org.telegram.android.musicplayer.previous";
-    public static final String NOTIFY_CLOSE = "org.telegram.android.musicplayer.close";
-    public static final String NOTIFY_PAUSE = "org.telegram.android.musicplayer.pause";
-    public static final String NOTIFY_PLAY = "org.telegram.android.musicplayer.play";
-    public static final String NOTIFY_NEXT = "org.telegram.android.musicplayer.next";
-    public static final String NOTIFY_SEEK = "org.telegram.android.musicplayer.seek";
-    public static final String NOTIFY_REPEAT = "org.telegram.android.musicplayer.repeat";
-    public static final String NOTIFY_SHUFFLE = "org.telegram.android.musicplayer.shuffle";
+    public static final String NOTIFY_PREVIOUS = "org.wooble.android.musicplayer.previous";
+    public static final String NOTIFY_CLOSE = "org.wooble.android.musicplayer.close";
+    public static final String NOTIFY_PAUSE = "org.wooble.android.musicplayer.pause";
+    public static final String NOTIFY_PLAY = "org.wooble.android.musicplayer.play";
+    public static final String NOTIFY_NEXT = "org.wooble.android.musicplayer.next";
+    public static final String NOTIFY_SEEK = "org.wooble.android.musicplayer.seek";
+    public static final String NOTIFY_REPEAT = "org.wooble.android.musicplayer.repeat";
+    public static final String NOTIFY_SHUFFLE = "org.wooble.android.musicplayer.shuffle";
 
     private static final int ID_NOTIFICATION = 5;
 
@@ -112,7 +112,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mediaSession = new MediaSessionCompat(this, "telegramAudioPlayer");
+            mediaSession = new MediaSessionCompat(this, "woobleAudioPlayer");
             playbackState = new PlaybackStateCompat.Builder();
             albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102), AndroidUtilities.dp(102), Bitmap.Config.ARGB_8888);
             Drawable placeholder = getResources().getDrawable(R.drawable.nocover_big);

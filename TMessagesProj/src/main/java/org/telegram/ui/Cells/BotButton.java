@@ -1,6 +1,6 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,19 +14,19 @@ import android.view.animation.OvershootInterpolator;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotInlineKeyboard;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.LinkManager;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BotInlineKeyboard;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.LoadingDrawable;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.LinkManager;
 
 import java.util.Arrays;
 

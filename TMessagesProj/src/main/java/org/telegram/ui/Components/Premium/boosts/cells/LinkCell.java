@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,16 +17,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.EffectsTextView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.spoilers.SpoilerEffect2;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.EffectsTextView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.spoilers.SpoilerEffect2;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
 
 @SuppressLint("ViewConstructor")
 public class LinkCell extends FrameLayout {

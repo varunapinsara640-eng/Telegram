@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,23 +31,23 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.pip.source.IPipSourceDelegate;
-import org.telegram.messenger.pip.utils.PipPermissions;
-import org.telegram.messenger.pip.PipSource;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.messenger.voip.Instance;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.VoIPFragment;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.pip.source.IPipSourceDelegate;
+import org.wooble.messenger.pip.utils.PipPermissions;
+import org.wooble.messenger.pip.PipSource;
+import org.wooble.messenger.pip.utils.PipUtils;
+import org.wooble.messenger.voip.Instance;
+import org.wooble.messenger.voip.VideoCapturerDevice;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.VoIPFragment;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 

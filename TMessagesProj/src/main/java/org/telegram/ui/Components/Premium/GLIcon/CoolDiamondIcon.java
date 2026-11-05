@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.wooble.ui.Components.Premium.GLIcon;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -19,8 +19,8 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.view.View;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SharedConfig;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.SharedConfig;
 
 import java.nio.ByteBuffer;
 import java.util.WeakHashMap;

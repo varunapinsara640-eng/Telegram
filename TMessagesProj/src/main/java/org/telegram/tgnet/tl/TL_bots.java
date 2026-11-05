@@ -1,14 +1,14 @@
-package org.telegram.tgnet.tl;
+package org.wooble.tgnet.tl;
 
 import android.graphics.Path;
 
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
 
 import java.util.ArrayList;
 

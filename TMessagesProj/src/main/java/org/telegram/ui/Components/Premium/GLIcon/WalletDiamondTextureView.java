@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.wooble.ui.Components.Premium.GLIcon;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
@@ -19,7 +19,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.FileLog;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;

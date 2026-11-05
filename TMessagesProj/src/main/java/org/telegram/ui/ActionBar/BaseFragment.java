@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -38,36 +38,36 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.utils.LeakDetector;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ArticleViewer;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.StoryViewer;
-import org.telegram.ui.bots.BotWebViewAttachedSheet;
-import org.telegram.ui.iv.RichCommand;
-import org.telegram.utils.glass.GlassEngine;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.GiftAuctionController;
+import org.wooble.messenger.LocationController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.SecretChatHelper;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.utils.LeakDetector;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.ui.ArticleViewer;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stories.StoryViewer;
+import org.wooble.ui.bots.BotWebViewAttachedSheet;
+import org.wooble.ui.iv.RichCommand;
+import org.wooble.utils.glass.GlassEngine;
 
 import java.util.ArrayList;
 

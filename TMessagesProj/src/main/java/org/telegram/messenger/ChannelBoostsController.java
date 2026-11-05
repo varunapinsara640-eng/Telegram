@@ -1,15 +1,15 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.Premium.boosts.BoostRepository;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

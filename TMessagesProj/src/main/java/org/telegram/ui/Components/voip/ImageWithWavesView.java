@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -11,12 +11,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LiteMode;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
 
 public class ImageWithWavesView extends FrameLayout {
     private final AvatarWavesDrawable avatarWavesDrawable;

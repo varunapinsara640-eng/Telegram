@@ -1,4 +1,4 @@
-package org.telegram.ui.community;
+package org.wooble.ui.community;
 
 public enum CommunityChatType {
     YouAreIn,

@@ -1,11 +1,11 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.os.SystemClock;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
 
 import java.util.concurrent.atomic.AtomicLong;
 

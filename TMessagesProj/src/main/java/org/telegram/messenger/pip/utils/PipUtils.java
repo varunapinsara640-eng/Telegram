@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.utils;
+package org.wooble.messenger.pip.utils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.view.WindowManager;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.pip.PipSource;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.pip.PipSource;
 
 public class PipUtils {
     public static final String TAG = "PIP_DEBUG";

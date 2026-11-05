@@ -1,9 +1,9 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.formatDuration;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.formatDuration;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -22,19 +22,19 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.utils.CountdownTimer;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.BlurredFrameLayout;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Gifts.ActiveAuctionsSheet;
-import org.telegram.ui.Gifts.AuctionBidSheet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.GiftAuctionController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.utils.CountdownTimer;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.BlurredFrameLayout;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Gifts.ActiveAuctionsSheet;
+import org.wooble.ui.Gifts.AuctionBidSheet;
 
 import java.util.ArrayList;
 import java.util.List;

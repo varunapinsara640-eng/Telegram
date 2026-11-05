@@ -1,4 +1,4 @@
-package org.telegram.utils.settings;
+package org.wooble.utils.settings;
 
 public final class IntSetting {
 

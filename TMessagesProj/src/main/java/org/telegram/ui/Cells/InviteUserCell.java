@@ -1,14 +1,14 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,17 +19,17 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ProgressButton;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ProgressButton;
 
 @SuppressLint("ViewConstructor")
 public class InviteUserCell extends FrameLayout {
@@ -86,7 +86,7 @@ public class InviteUserCell extends FrameLayout {
             button.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
             button.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             button.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
-            button.setBackgroundRoundRect(Theme.getColor(Theme.key_telegram_color), Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 16);
+            button.setBackgroundRoundRect(Theme.getColor(Theme.key_wooble_color), Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 16);
             button.setPadding(AndroidUtilities.dp(14), 0, AndroidUtilities.dp(14), 0);
             nameAndButton.addView(button, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, 28, 0f, Gravity.CENTER_VERTICAL, 18, 0, 18, 0));
             button.setOnClickListener(v -> InviteUserCell.this.performClick());
@@ -131,7 +131,7 @@ public class InviteUserCell extends FrameLayout {
         statusTextView.setTag(Theme.key_windowBackgroundWhiteGrayText);
         statusTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         if (currentContact.imported > 0) {
-            statusTextView.setText(LocaleController.formatPluralString("TelegramContacts", currentContact.imported));
+            statusTextView.setText(LocaleController.formatPluralString("WoobleContacts", currentContact.imported));
         } else {
             statusTextView.setText(currentContact.phones.get(0));
         }

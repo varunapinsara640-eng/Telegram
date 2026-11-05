@@ -1,15 +1,15 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Context;
 import android.view.View;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.SharedPhotoVideoCell2;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.wooble.messenger.MessageObject;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.SharedPhotoVideoCell2;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
 
 public class StoryCellFactory extends UItem.UItemFactory<SharedPhotoVideoCell2> {
     static {

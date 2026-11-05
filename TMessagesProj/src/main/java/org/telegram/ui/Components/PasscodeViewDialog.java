@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,14 +19,14 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.DrawerLayoutContainer;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.MessageSendPreview;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.ActionBar.DrawerLayoutContainer;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.MessageSendPreview;
 
 public class PasscodeViewDialog extends Dialog {
 

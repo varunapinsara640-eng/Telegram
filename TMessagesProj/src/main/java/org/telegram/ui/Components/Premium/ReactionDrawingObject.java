@@ -1,17 +1,17 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Reactions.ReactionsEffectOverlay;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DocumentObject;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.Reactions.ReactionsEffectOverlay;
 
 public class ReactionDrawingObject extends CarouselView.DrawingObject {
 

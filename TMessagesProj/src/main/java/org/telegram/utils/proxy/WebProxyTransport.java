@@ -1,4 +1,4 @@
-package org.telegram.utils.proxy;
+package org.wooble.utils.proxy;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -22,10 +22,10 @@ import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ForegroundDetector;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.ui.Components.ForegroundDetector;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -68,7 +68,7 @@ public final class WebProxyTransport implements ForegroundDetector.Listener {
     private static final int MAX_STREAMS = 64;
     private static final int MAX_OUTBOUND_ITEMS = 8192;
     private static final int MAX_OUTBOUND_BYTES = 64 * 1024 * 1024;
-    private static final String BRIDGE_OBJECT = "TelegramWebProxy";
+    private static final String BRIDGE_OBJECT = "WoobleWebProxy";
 
     private static final String BASE64_PREFIX = "tproxy-base64:";
     private static final int MAX_BASE64_LENGTH = ((FRAME_HEADER + FRAME_MAX_PAYLOAD + 2) / 3) * 4;
@@ -76,7 +76,7 @@ public final class WebProxyTransport implements ForegroundDetector.Listener {
         "(function(){\n" +
         "'use strict';\n" +
         "try {\n" +
-        " var bridge=window.TelegramWebProxy;\n" +
+        " var bridge=window.WoobleWebProxy;\n" +
         " if(!bridge||typeof bridge.postMessage!=='function'||typeof bridge.onmessage!=='function')return false;\n" +
         " var nativePost=bridge.postMessage;\n" +
         " var receive=bridge.onmessage;\n" +

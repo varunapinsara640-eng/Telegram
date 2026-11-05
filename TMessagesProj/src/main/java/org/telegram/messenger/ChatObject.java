@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -20,16 +20,16 @@ import androidx.collection.LongSparseArray;
 
 
 
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.messenger.voip.Instance;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.GroupCallActivity;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.messenger.voip.Instance;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_communities;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.GroupCallActivity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

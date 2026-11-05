@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.wooble.ui.Components.Premium.boosts;
 
 import android.app.Activity;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.DarkThemeResourceProvider;
-import org.telegram.ui.WrappedResourceProvider;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stories.DarkThemeResourceProvider;
+import org.wooble.ui.WrappedResourceProvider;
 
 public class DarkFragmentWrapper extends BaseFragment {
 

@@ -1,13 +1,13 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.os.Looper;
 import android.util.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.ui.Storage.CacheModel;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLiteException;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.ui.Storage.CacheModel;
 
 import java.io.File;
 import java.io.IOException;

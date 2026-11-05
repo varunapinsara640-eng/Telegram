@@ -1,20 +1,20 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.replaceArrows;
-import static org.telegram.messenger.AndroidUtilities.replaceSingleTag;
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.MessagesController.findUpdatesAndRemove;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.replaceArrows;
+import static org.wooble.messenger.AndroidUtilities.replaceSingleTag;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.MessagesController.findUpdatesAndRemove;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -118,87 +118,87 @@ import com.google.android.play.core.integrity.IntegrityTokenResponse;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.AuthTokensHelper;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.CallReceiver;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.PasskeysController;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SRPHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.CustomPhoneKeyboardView;
-import org.telegram.ui.Components.Easings;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.FragmentFloatingButton;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.LoginOrView;
-import org.telegram.ui.Components.OutlineTextContainerView;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.ui.Components.Premium.GLIcon.Icon3D;
-import org.telegram.ui.Components.Premium.StarParticlesView;
-import org.telegram.ui.Components.ProxyDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SimpleThemeDescription;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.SlideView;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.TextViewSwitcher;
-import org.telegram.ui.Components.TransformableLoginButtonView;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.Components.VerticalPositionAutoAnimator;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.Stars.ExplainStarsSheet;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.bots.BotWebViewSheet;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.AuthTokensHelper;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.CallReceiver;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.PasskeysController;
+import org.wooble.messenger.PushListenerController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SRPHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.CheckBoxCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnimatedPhoneNumberEditText;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.CustomPhoneKeyboardView;
+import org.wooble.ui.Components.Easings;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.FragmentFloatingButton;
+import org.wooble.ui.Components.ImageUpdater;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.LoadingDrawable;
+import org.wooble.ui.Components.LoginOrView;
+import org.wooble.ui.Components.OutlineTextContainerView;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.wooble.ui.Components.Premium.GLIcon.Icon3D;
+import org.wooble.ui.Components.Premium.StarParticlesView;
+import org.wooble.ui.Components.ProxyDrawable;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.SimpleThemeDescription;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.SlideView;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.TextViewSwitcher;
+import org.wooble.ui.Components.TransformableLoginButtonView;
+import org.wooble.ui.Components.URLSpanNoUnderline;
+import org.wooble.ui.Components.VerticalPositionAutoAnimator;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.ui.Stars.ExplainStarsSheet;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.bots.BotWebViewSheet;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -1257,13 +1257,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                 Intent mailer = new Intent(Intent.ACTION_SENDTO);
                 mailer.setData(Uri.parse("mailto:"));
-                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{banned ? "recover@telegram.org" : "login@stel.com"});
+                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{banned ? "recover@wooble.org" : "login@stel.com"});
                 if (banned) {
                     mailer.putExtra(Intent.EXTRA_SUBJECT, "Banned phone number: " + phoneNumber);
-                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Telegram says it's banned. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
+                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Wooble says it's banned. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                 } else {
                     mailer.putExtra(Intent.EXTRA_SUBJECT, "Invalid phone number: " + phoneNumber);
-                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Telegram says it's invalid. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
+                    mailer.putExtra(Intent.EXTRA_TEXT, "I'm trying to use my mobile phone number: " + phoneNumber + "\nBut Wooble says it's invalid. Please help.\n\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                 }
                 fragment.getParentActivity().startActivity(Intent.createChooser(mailer, "Send email..."));
             } catch (Exception e) {
@@ -3987,7 +3987,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
                                         Intent mailer = new Intent(Intent.ACTION_SENDTO);
                                         mailer.setData(Uri.parse("mailto:"));
-                                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@telegram.org"});
+                                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@wooble.org"});
                                         mailer.putExtra(Intent.EXTRA_SUBJECT, emailPhone + " Android Registration/Login Issue " + version + (paid ? " #paidauth" : ""));
 
                                         StringBuilder body = new StringBuilder();
@@ -9905,7 +9905,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             if (!TextUtils.isEmpty(support_email_email)) {
                                 mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{support_email_email});
                             } else {
-                                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@telegram.org"});
+                                mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@wooble.org"});
                             }
                             if (!TextUtils.isEmpty(support_email_subject)) {
                                 mailer.putExtra(Intent.EXTRA_SUBJECT, support_email_subject);

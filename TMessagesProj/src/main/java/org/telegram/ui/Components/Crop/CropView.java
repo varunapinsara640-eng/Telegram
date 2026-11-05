@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Crop;
+package org.wooble.ui.Components.Crop;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,19 +17,19 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.PaintingOverlay;
-import org.telegram.ui.Components.VideoEditTextureView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.BubbleActivity;
+import org.wooble.ui.Components.PaintingOverlay;
+import org.wooble.ui.Components.VideoEditTextureView;
 
 import java.io.File;
 import java.io.FileOutputStream;

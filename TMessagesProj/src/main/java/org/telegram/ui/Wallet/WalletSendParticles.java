@@ -1,10 +1,10 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.SystemClock;
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 import java.util.ArrayList;
 import java.util.Random;
 

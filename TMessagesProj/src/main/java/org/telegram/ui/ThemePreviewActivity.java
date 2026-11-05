@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -75,80 +75,80 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.MenuDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.DialogCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.LoadingCell;
-import org.telegram.ui.Cells.PatternCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CircularProgressDrawable;
-import org.telegram.ui.Components.ColorPicker;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Easings;
-import org.telegram.ui.Components.FragmentFloatingButton;
-import org.telegram.ui.Components.GestureDetector2;
-import org.telegram.ui.Components.HintView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SeekBarView;
-import org.telegram.ui.Components.ShareAlert;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.WallpaperCheckBoxView;
-import org.telegram.ui.Components.WallpaperParallaxEffect;
-import org.telegram.ui.Stories.recorder.PreviewView;
-import org.telegram.ui.Stories.recorder.SliderView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ChatThemeController;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.MenuDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.DialogCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.LoadingCell;
+import org.wooble.ui.Cells.PatternCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.CircularProgressDrawable;
+import org.wooble.ui.Components.ColorPicker;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Easings;
+import org.wooble.ui.Components.FragmentFloatingButton;
+import org.wooble.ui.Components.GestureDetector2;
+import org.wooble.ui.Components.HintView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.Premium.LimitReachedBottomSheet;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.SeekBarView;
+import org.wooble.ui.Components.ShareAlert;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.UndoView;
+import org.wooble.ui.Components.WallpaperCheckBoxView;
+import org.wooble.ui.Components.WallpaperParallaxEffect;
+import org.wooble.ui.Stories.recorder.PreviewView;
+import org.wooble.ui.Stories.recorder.SliderView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -217,10 +217,10 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
     private long watchForKeyboardEndTime;
     private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
 
-    org.telegram.ui.ActionBar.MessageDrawable msgOutDrawable = new MessageDrawable(org.telegram.ui.ActionBar.MessageDrawable.TYPE_TEXT, true, false);
-    org.telegram.ui.ActionBar.MessageDrawable msgOutDrawableSelected = new MessageDrawable(org.telegram.ui.ActionBar.MessageDrawable.TYPE_TEXT, true, true);
-    org.telegram.ui.ActionBar.MessageDrawable msgOutMediaDrawable = new MessageDrawable(org.telegram.ui.ActionBar.MessageDrawable.TYPE_MEDIA, true, false);
-    org.telegram.ui.ActionBar.MessageDrawable msgOutMediaDrawableSelected = new MessageDrawable(org.telegram.ui.ActionBar.MessageDrawable.TYPE_MEDIA, true, true);
+    org.wooble.ui.ActionBar.MessageDrawable msgOutDrawable = new MessageDrawable(org.wooble.ui.ActionBar.MessageDrawable.TYPE_TEXT, true, false);
+    org.wooble.ui.ActionBar.MessageDrawable msgOutDrawableSelected = new MessageDrawable(org.wooble.ui.ActionBar.MessageDrawable.TYPE_TEXT, true, true);
+    org.wooble.ui.ActionBar.MessageDrawable msgOutMediaDrawable = new MessageDrawable(org.wooble.ui.ActionBar.MessageDrawable.TYPE_MEDIA, true, false);
+    org.wooble.ui.ActionBar.MessageDrawable msgOutMediaDrawableSelected = new MessageDrawable(org.wooble.ui.ActionBar.MessageDrawable.TYPE_MEDIA, true, true);
 
     private ColorPicker colorPicker;
     private int lastPickedColor;
@@ -1057,7 +1057,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         }
 
         if (messagesAdapter.showSecretMessages) {
-            actionBar2.setTitle("Telegram Beta Chat");
+            actionBar2.setTitle("Wooble Beta Chat");
             actionBar2.setSubtitle(LocaleController.formatPluralString("Members", 505));
         } else {
             if (screenType == SCREEN_TYPE_CHANGE_BACKGROUND) {
@@ -5015,7 +5015,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                     TLRPC.TL_messageEntityTextUrl entityUrl = new TLRPC.TL_messageEntityTextUrl();
                     entityUrl.offset = index1;
                     entityUrl.length = index2 - index1 - 1;
-                    entityUrl.url = "https://telegram.org";
+                    entityUrl.url = "https://wooble.org";
                     message.entities.add(entityUrl);
                 }
                 message.message = builder.toString();
@@ -5911,7 +5911,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
         }
     }
 
-    private class MessageDrawable extends org.telegram.ui.ActionBar.MessageDrawable {
+    private class MessageDrawable extends org.wooble.ui.ActionBar.MessageDrawable {
         public MessageDrawable(int typeMedia, boolean b, boolean b1) {
             super(typeMedia, b, b1);
         }

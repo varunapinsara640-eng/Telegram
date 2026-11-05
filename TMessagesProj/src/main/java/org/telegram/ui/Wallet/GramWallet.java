@@ -1,8 +1,8 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.PasskeysController.ktxCallback;
-import static org.telegram.ui.web.BotWebViewContainer.obj;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.PasskeysController.ktxCallback;
+import static org.wooble.ui.web.BotWebViewContainer.obj;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,35 +17,35 @@ import androidx.annotation.Nullable;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_toncenter;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.Stars.StarsIntroActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.voip.ConferenceCall;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_toncenter;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PasscodeActivity;
+import org.wooble.ui.Stars.StarsIntroActivity;
 
 import java.lang.ref.WeakReference;
 import java.math.BigDecimal;
@@ -1511,7 +1511,7 @@ public class GramWallet implements GramWalletStreaming.IGramWalletStreamingSubsc
                 .put("payload", android.util.Base64.encodeToString(deposit.payload, android.util.Base64.NO_WRAP)))));
     }
 
-    /** Sends a server-prepared NFT transfer (payments.depositStarGift) moving the collectible to a Telegram account. */
+    /** Sends a server-prepared NFT transfer (payments.depositStarGift) moving the collectible to a Wooble account. */
     public void depositNFT(TLRPC.User user, TL_wallet.nftItem collectible, TL_stars.starGiftDepositPayload deposit, Utilities.Callback<String> whenSent) {
         depositNFT(user, collectible, deposit, whenSent, null);
     }
@@ -1597,7 +1597,7 @@ public class GramWallet implements GramWalletStreaming.IGramWalletStreamingSubsc
                     transaction.nft = collectible;
                     if (raw != null && collectible != null) {
                         // Server-prepared deposit: the destination is the gift contract, show it like server's gift transfer.
-                        final TL_wallet.walletTransactionPeerTelegramGift peer = new TL_wallet.walletTransactionPeerTelegramGift();
+                        final TL_wallet.walletTransactionPeerWoobleGift peer = new TL_wallet.walletTransactionPeerWoobleGift();
                         peer.own_profile = user != null && user.id == UserConfig.getInstance(currentAccount).getClientUserId();
                         transaction.peer = peer;
                     } else {
@@ -2224,7 +2224,7 @@ public class GramWallet implements GramWalletStreaming.IGramWalletStreamingSubsc
                 return;
             }
             MessagesController.getInstance(currentAccount).putUsers(res.users, false);
-            org.telegram.messenger.MessagesStorage.getInstance(currentAccount).putUsersAndChats(res.users, null, true, true);
+            org.wooble.messenger.MessagesStorage.getInstance(currentAccount).putUsersAndChats(res.users, null, true, true);
             final TL_wallet.walletUserAddress resolved = res.addresses.get(0);
             if (resolved.user_id != 0) {
                 cachedWalletResolvesByUser.put(resolved.user_id, resolved);

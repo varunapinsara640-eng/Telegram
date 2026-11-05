@@ -36,7 +36,7 @@ RTCError VerifyCandidate(const Candidate& cand) {
     return RTCError::OK();
   }
   if (port < 1024) {
-    // Telegram reflector addresses are synthetic hostnames whose port identifies
+    // Wooble reflector addresses are synthetic hostnames whose port identifies
     // the relay server. ReflectorPort validates and handles these candidates.
     if (!absl::EndsWith(cand.address().hostname(), ".reflector") &&
         (port != 80) && (port != 443)) {

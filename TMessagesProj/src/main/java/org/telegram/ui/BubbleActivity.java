@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 6.x.x.
+ * This is the source code of Wooble for Android v. 6.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,23 +19,23 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.DrawerLayoutContainer;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ActivityWindowEmptyBackgroundDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.PasscodeView;
-import org.telegram.ui.Components.ThemeEditorView;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.DrawerLayoutContainer;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ActivityWindowEmptyBackgroundDrawable;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.PasscodeView;
+import org.wooble.ui.Components.ThemeEditorView;
 
 import java.util.ArrayList;
 

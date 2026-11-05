@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Paint.Views;
+package org.wooble.ui.Components.Paint.Views;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,25 +29,25 @@ import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MessageBackgroundDrawable;
-import org.telegram.ui.Components.RectOld;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Stories.recorder.PreviewView;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.BlurringShader;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MessageBackgroundDrawable;
+import org.wooble.ui.Components.RectOld;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Stories.recorder.PreviewView;
+import org.wooble.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.util.ArrayList;

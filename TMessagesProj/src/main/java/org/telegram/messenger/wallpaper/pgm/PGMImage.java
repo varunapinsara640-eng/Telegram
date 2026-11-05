@@ -1,4 +1,4 @@
-package org.telegram.messenger.wallpaper.pgm;
+package org.wooble.messenger.wallpaper.pgm;
 
 import android.graphics.Bitmap;
 

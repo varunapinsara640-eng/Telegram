@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.dialogs;
+package org.wooble.ui.Components.dialogs;
 
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -6,8 +6,8 @@ import android.util.SparseArray;
 
 import androidx.annotation.DrawableRes;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ColoredImageSpan;
 
 public class DialogMediaIconsHelper {
     private static final SparseArray<ColoredImageSpan> spans = new SparseArray<>(6);
@@ -30,7 +30,7 @@ public class DialogMediaIconsHelper {
         ColoredImageSpan span = spans.get(iconRes);
         if (span == null) {
             span = new ColoredImageSpan(iconRes);
-            span.setColorKey(Theme.key_telegram_color_text);
+            span.setColorKey(Theme.key_wooble_color_text);
             spans.put(iconRes, span);
         }
 

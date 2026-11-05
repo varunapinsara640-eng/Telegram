@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -48,51 +48,51 @@ import androidx.core.graphics.drawable.IconCompat;
 
 import com.android.billingclient.api.ProductDetails;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.ringtone.RingtoneDataStore;
-import org.telegram.messenger.ringtone.RingtoneUploader;
-import org.telegram.messenger.utils.EphemeralMessagesHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.EmojiThemes;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.ChatThemeBottomSheet;
-import org.telegram.ui.Components.FormattedDateSpan;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.StickerSetBulletinLayout;
-import org.telegram.ui.Components.StickersAlert;
-import org.telegram.ui.Components.StickersArchiveAlert;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.URLSpanReplacement;
-import org.telegram.ui.Components.URLSpanUserMention;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.messenger.utils.tlutils.AmountUtils;
-import org.telegram.ui.Stories.StoriesStorage;
-import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.utils.code.highlight.CodeHighlighting;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLiteException;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.messenger.ringtone.RingtoneDataStore;
+import org.wooble.messenger.ringtone.RingtoneUploader;
+import org.wooble.messenger.utils.EphemeralMessagesHelper;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.tgnet.tl.TL_ephemeral;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.EmojiThemes;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.ChatThemeBottomSheet;
+import org.wooble.ui.Components.FormattedDateSpan;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.StickerSetBulletinLayout;
+import org.wooble.ui.Components.StickersAlert;
+import org.wooble.ui.Components.StickersArchiveAlert;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.URLSpanReplacement;
+import org.wooble.ui.Components.URLSpanUserMention;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.messenger.utils.tlutils.AmountUtils;
+import org.wooble.ui.Stories.StoriesStorage;
+import org.wooble.ui.Wallet.WalletEngine2;
+import org.wooble.utils.code.highlight.CodeHighlighting;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -132,7 +132,7 @@ public class MediaDataController extends BaseController {
             SPOILER_PATTERN = Pattern.compile("\\|\\|(.+?)\\|\\|"),
             STRIKE_PATTERN = Pattern.compile("~~(.+?)~~");
 
-    public static String SHORTCUT_CATEGORY = "org.telegram.messenger.SHORTCUT_SHARE";
+    public static String SHORTCUT_CATEGORY = "org.wooble.messenger.SHORTCUT_SHARE";
 
     private static volatile MediaDataController[] Instance = new MediaDataController[UserConfig.MAX_ACCOUNT_COUNT];
     private static final Object[] lockObjects = new Object[UserConfig.MAX_ACCOUNT_COUNT];

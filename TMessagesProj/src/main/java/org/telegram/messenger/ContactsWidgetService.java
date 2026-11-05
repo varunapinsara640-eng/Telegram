@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
@@ -22,10 +22,10 @@ import androidx.collection.LongSparseArray;
 
 
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.EditWidgetActivity;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.EditWidgetActivity;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
 public class AnimatedFileInfo {
     private AnimatedFileInfo() {

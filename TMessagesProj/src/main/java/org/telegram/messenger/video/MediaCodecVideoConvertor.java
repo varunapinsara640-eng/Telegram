@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 import android.annotation.TargetApi;
 import android.media.MediaCodec;
@@ -11,19 +11,19 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.video.audio_input.AudioInput;
-import org.telegram.messenger.video.audio_input.BlankAudioInput;
-import org.telegram.messenger.video.audio_input.GeneralAudioInput;
-import org.telegram.ui.Stories.recorder.CollageLayout;
-import org.telegram.ui.Stories.recorder.StoryEntry;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.messenger.video.audio_input.AudioInput;
+import org.wooble.messenger.video.audio_input.BlankAudioInput;
+import org.wooble.messenger.video.audio_input.GeneralAudioInput;
+import org.wooble.ui.Stories.recorder.CollageLayout;
+import org.wooble.ui.Stories.recorder.StoryEntry;
 
 import java.io.File;
 import java.io.IOException;

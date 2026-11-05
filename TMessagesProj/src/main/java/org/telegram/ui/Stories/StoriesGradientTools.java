@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.GradientTools;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.GradientTools;
 
 public class StoriesGradientTools extends GradientTools {
 

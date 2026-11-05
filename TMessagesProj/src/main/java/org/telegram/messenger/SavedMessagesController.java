@@ -1,21 +1,21 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.os.Bundle;
 import android.text.TextUtils;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

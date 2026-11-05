@@ -1,7 +1,7 @@
-package org.telegram.ui.community.cells;
+package org.wooble.ui.community.cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,10 +18,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class CommunityBanGroupConfirmCell extends FrameLayout {

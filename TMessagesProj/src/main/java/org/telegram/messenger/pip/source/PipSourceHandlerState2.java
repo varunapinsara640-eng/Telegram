@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.source;
+package org.wooble.messenger.pip.source;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,16 +12,16 @@ import androidx.core.graphics.ColorUtils;
 
 import androidx.media3.common.Player;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.pip.PipSource;
-import org.telegram.messenger.pip.PipSourceContentView;
-import org.telegram.messenger.pip.activity.IPipActivityAnimationListener;
-import org.telegram.messenger.pip.activity.IPipActivityListener;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.messenger.pip.utils.Trigger;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.pip.PipSource;
+import org.wooble.messenger.pip.PipSourceContentView;
+import org.wooble.messenger.pip.activity.IPipActivityAnimationListener;
+import org.wooble.messenger.pip.activity.IPipActivityListener;
+import org.wooble.messenger.pip.utils.PipUtils;
+import org.wooble.messenger.pip.utils.Trigger;
+import org.wooble.ui.ActionBar.Theme;
 
 public class PipSourceHandlerState2 implements IPipActivityListener, IPipActivityAnimationListener {
 

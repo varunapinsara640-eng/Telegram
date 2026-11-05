@@ -1,10 +1,10 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SharedConfig;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.SharedConfig;
 import org.webrtc.ContextUtils;
 import org.webrtc.VideoSink;
 

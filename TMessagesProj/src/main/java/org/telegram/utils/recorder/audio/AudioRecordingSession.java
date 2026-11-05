@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.audio;
+package org.wooble.utils.recorder.audio;
 
 import android.content.Context;
 import android.net.Uri;
@@ -23,7 +23,7 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Records, previews, trims and incrementally exposes a Telegram-compatible Ogg/Opus voice file.
+ * Records, previews, trims and incrementally exposes a Wooble-compatible Ogg/Opus voice file.
  *
  * <p>All public methods must be called on the main thread. UI callbacks are delivered on the
  * main thread. Output callbacks are serialized on a dedicated background thread. Audio focus,
@@ -154,7 +154,7 @@ public final class AudioRecordingSession {
         }
     }
 
-    /** Receives diagnostic messages without coupling the recorder to Telegram FileLog. */
+    /** Receives diagnostic messages without coupling the recorder to Wooble FileLog. */
     public interface Logger {
         /** Writes a normal diagnostic message. */
         void log(@NonNull String message);
@@ -348,7 +348,7 @@ public final class AudioRecordingSession {
         }
     }
 
-    /** Immutable description of the completed Telegram voice file. */
+    /** Immutable description of the completed Wooble voice file. */
     public static final class Result {
         private final long outputId;
         private final File file;
@@ -377,7 +377,7 @@ public final class AudioRecordingSession {
             return durationMs;
         }
 
-        /** Returns Telegram's packed five-bit waveform, or null when extraction failed. */
+        /** Returns Wooble's packed five-bit waveform, or null when extraction failed. */
         public @Nullable byte[] getWaveform() {
             return waveform == null ? null : waveform.clone();
         }

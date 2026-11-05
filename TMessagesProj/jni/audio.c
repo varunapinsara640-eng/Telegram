@@ -515,7 +515,7 @@ int writeFrame(uint8_t *framePcmBytes, uint32_t frameByteCount, int end) {
     return 1;
 }
 
-JNIEXPORT jint Java_org_telegram_messenger_MediaController_startRecord(JNIEnv *env, jclass class, jstring path, jint sampleRate) {
+JNIEXPORT jint Java_org_wooble_messenger_MediaController_startRecord(JNIEnv *env, jclass class, jstring path, jint sampleRate) {
     const char *pathStr = (*env)->GetStringUTFChars(env, path, 0);
 
     int32_t result = initRecorder(pathStr, sampleRate);
@@ -527,16 +527,16 @@ JNIEXPORT jint Java_org_telegram_messenger_MediaController_startRecord(JNIEnv *e
     return result;
 }
 
-JNIEXPORT jint Java_org_telegram_messenger_MediaController_writeFrame(JNIEnv *env, jclass class, jobject frame, jint len) {
+JNIEXPORT jint Java_org_wooble_messenger_MediaController_writeFrame(JNIEnv *env, jclass class, jobject frame, jint len) {
     jbyte *frameBytes = (*env)->GetDirectBufferAddress(env, frame);
     return writeFrame((uint8_t *) frameBytes, (uint32_t) len, len / 2 < frame_size);
 }
 
-JNIEXPORT void Java_org_telegram_messenger_MediaController_stopRecord(JNIEnv *env, jclass class) {
+JNIEXPORT void Java_org_wooble_messenger_MediaController_stopRecord(JNIEnv *env, jclass class) {
     cleanupRecorder();
 }
 
-JNIEXPORT jint Java_org_telegram_messenger_MediaController_isOpusFile(JNIEnv *env, jclass class, jstring path) {
+JNIEXPORT jint Java_org_wooble_messenger_MediaController_isOpusFile(JNIEnv *env, jclass class, jstring path) {
     const char *pathStr = (*env)->GetStringUTFChars(env, path, 0);
     
     int32_t result = 0;
@@ -565,7 +565,7 @@ static inline void set_bits(uint8_t *bytes, int32_t bitOffset, int32_t value) {
     bytes[1] |= (uint8_t) (bits >> 8);
 }
 
-JNIEXPORT jbyteArray Java_org_telegram_messenger_MediaController_getWaveform2(JNIEnv *env, jclass class, jshortArray array, jint length) {
+JNIEXPORT jbyteArray Java_org_wooble_messenger_MediaController_getWaveform2(JNIEnv *env, jclass class, jshortArray array, jint length) {
 
     jshort *sampleBuffer = (*env)->GetShortArrayElements(env, array, 0);
     if (sampleBuffer == NULL) {
@@ -636,7 +636,7 @@ JNIEXPORT jbyteArray Java_org_telegram_messenger_MediaController_getWaveform2(JN
 
 int16_t *sampleBuffer = NULL;
 
-JNIEXPORT jbyteArray Java_org_telegram_messenger_MediaController_getWaveform(JNIEnv *env, jclass class, jstring path) {
+JNIEXPORT jbyteArray Java_org_wooble_messenger_MediaController_getWaveform(JNIEnv *env, jclass class, jstring path) {
     const char *pathStr = (*env)->GetStringUTFChars(env, path, 0);
     if (pathStr == NULL) {
         return NULL;
@@ -732,7 +732,7 @@ JNIEXPORT jbyteArray Java_org_telegram_messenger_MediaController_getWaveform(JNI
     return result;
 }
 
-JNIEXPORT void JNICALL Java_org_telegram_ui_Stories_recorder_FfmpegAudioWaveformLoader_init(JNIEnv *env, jobject obj, jstring pathJStr, jint count) {
+JNIEXPORT void JNICALL Java_org_wooble_ui_Stories_recorder_FfmpegAudioWaveformLoader_init(JNIEnv *env, jobject obj, jstring pathJStr, jint count) {
     const char *path = (*env)->GetStringUTFChars(env, pathJStr, 0);
     if (path == NULL) {
         return;
@@ -1108,7 +1108,7 @@ int joinOpusAudios(const char* file1, const char* file2, const char* dest) {
     return success;
 }
 
-JNIEXPORT jboolean Java_org_telegram_messenger_MediaController_cropOpusFile(JNIEnv *env, jclass class, jstring src, jstring dst, jlong startMs, jlong endMs) {
+JNIEXPORT jboolean Java_org_wooble_messenger_MediaController_cropOpusFile(JNIEnv *env, jclass class, jstring src, jstring dst, jlong startMs, jlong endMs) {
     const char* srcStr = (*env)->GetStringUTFChars(env, src, 0);
     const char* dstStr = (*env)->GetStringUTFChars(env, dst, 0);
     int result = cropOpusAudio(srcStr, dstStr, startMs, endMs);
@@ -1117,7 +1117,7 @@ JNIEXPORT jboolean Java_org_telegram_messenger_MediaController_cropOpusFile(JNIE
     return result == 1;
 }
 
-JNIEXPORT jboolean Java_org_telegram_messenger_MediaController_joinOpusFiles(JNIEnv* env, jclass class, jstring file1, jstring file2, jstring dest) {
+JNIEXPORT jboolean Java_org_wooble_messenger_MediaController_joinOpusFiles(JNIEnv* env, jclass class, jstring file1, jstring file2, jstring dest) {
     const char* file1Str = (*env)->GetStringUTFChars(env, file1, 0);
     const char* file2Str = (*env)->GetStringUTFChars(env, file2, 0);
     const char* destStr = (*env)->GetStringUTFChars(env, dest, 0);
@@ -1868,7 +1868,7 @@ static int writeAudioRecorderFrame(
     return 1;
 }
 
-JNIEXPORT jlong Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nCreate(
+JNIEXPORT jlong Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nCreate(
         JNIEnv *env,
         jclass clazz,
         jstring path,
@@ -1910,7 +1910,7 @@ JNIEXPORT jlong Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nCrea
     return (jlong) (intptr_t) recorder;
 }
 
-JNIEXPORT jint Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nWriteFrame(
+JNIEXPORT jint Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nWriteFrame(
         JNIEnv *env,
         jclass clazz,
         jlong handle,
@@ -1927,7 +1927,7 @@ JNIEXPORT jint Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nWrite
     return writeAudioRecorderFrame(recorder, (uint8_t *) frameBytes, (uint32_t) length);
 }
 
-JNIEXPORT jlong Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nFlush(
+JNIEXPORT jlong Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nFlush(
         JNIEnv *env,
         jclass clazz,
         jlong handle
@@ -1936,7 +1936,7 @@ JNIEXPORT jlong Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nFlus
     return flushAudioRecorderContext(recorder);
 }
 
-JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nFinish(
+JNIEXPORT jboolean Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nFinish(
         JNIEnv *env,
         jclass clazz,
         jlong handle
@@ -1954,7 +1954,7 @@ JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nF
     return result ? JNI_TRUE : JNI_FALSE;
 }
 
-JNIEXPORT void Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nDestroy(
+JNIEXPORT void Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nDestroy(
         JNIEnv *env,
         jclass clazz,
         jlong handle
@@ -1962,7 +1962,7 @@ JNIEXPORT void Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nDestr
     destroyAudioRecorderContext((AudioRecorderContext *) (intptr_t) handle);
 }
 
-JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nCropOpusFile(
+JNIEXPORT jboolean Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nCropOpusFile(
         JNIEnv *env,
         jclass clazz,
         jstring source,
@@ -1978,22 +1978,22 @@ JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nC
     return result == 1;
 }
 
-JNIEXPORT jbyteArray Java_org_telegram_utils_recorder_audio_AudioRecorderNative_nGetWaveform(
+JNIEXPORT jbyteArray Java_org_wooble_utils_recorder_audio_AudioRecorderNative_nGetWaveform(
         JNIEnv *env,
         jclass clazz,
         jstring path
 ) {
-    return Java_org_telegram_messenger_MediaController_getWaveform(env, clazz, path);
+    return Java_org_wooble_messenger_MediaController_getWaveform(env, clazz, path);
 }
 
-JNIEXPORT jlong Java_org_telegram_utils_recorder_audio_AudioNoiseSuppressor_nCreate(
+JNIEXPORT jlong Java_org_wooble_utils_recorder_audio_AudioNoiseSuppressor_nCreate(
         JNIEnv *env,
         jclass clazz
 ) {
     return (jlong) (intptr_t) createAudioNoiseSuppressorContext();
 }
 
-JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioNoiseSuppressor_nProcess(
+JNIEXPORT jboolean Java_org_wooble_utils_recorder_audio_AudioNoiseSuppressor_nProcess(
         JNIEnv *env,
         jclass clazz,
         jlong handle,
@@ -2013,7 +2013,7 @@ JNIEXPORT jboolean Java_org_telegram_utils_recorder_audio_AudioNoiseSuppressor_n
             : JNI_FALSE;
 }
 
-JNIEXPORT void Java_org_telegram_utils_recorder_audio_AudioNoiseSuppressor_nDestroy(
+JNIEXPORT void Java_org_wooble_utils_recorder_audio_AudioNoiseSuppressor_nDestroy(
         JNIEnv *env,
         jclass clazz,
         jlong handle

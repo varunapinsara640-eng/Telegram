@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,10 +13,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.TypingDotsDrawable;
+import org.wooble.messenger.utils.DrawableUtils;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.TypingDotsDrawable;
 
 import me.vkryl.android.animator.BoolAnimator;
 

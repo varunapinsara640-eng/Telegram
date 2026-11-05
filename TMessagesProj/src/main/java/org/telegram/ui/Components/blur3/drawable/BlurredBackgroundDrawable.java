@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.blur3.drawable;
+package org.wooble.ui.Components.blur3.drawable;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -28,17 +28,17 @@ import androidx.annotation.RequiresApi;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.utils.RadiiUtils;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.Blur3HashImpl;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
-import org.telegram.ui.Components.blur3.utils.NinePatchBuilder;
+import org.wooble.messenger.utils.RadiiUtils;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.Blur3HashImpl;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
+import org.wooble.ui.Components.blur3.utils.NinePatchBuilder;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;

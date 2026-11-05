@@ -1,7 +1,7 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,12 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.CubicBezierInterpolator;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
 
 public class RichTableCellGrid extends ViewGroup {
 

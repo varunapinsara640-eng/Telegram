@@ -1,11 +1,11 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.os.SystemClock;
 import android.util.SparseIntArray;
 
 import androidx.annotation.UiThread;
 
-import org.telegram.ui.Components.Reactions.HwEmojis;
+import org.wooble.ui.Components.Reactions.HwEmojis;
 
 import java.util.ArrayList;
 

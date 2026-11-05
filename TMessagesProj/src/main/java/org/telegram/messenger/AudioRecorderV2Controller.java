@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.Context;
 import android.os.Handler;
@@ -7,14 +7,14 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.utils.recorder.audio.AudioRecordingSession;
-import org.telegram.utils.settings.SharedSettings;
+import org.wooble.utils.recorder.audio.AudioRecordingSession;
+import org.wooble.utils.settings.SharedSettings;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/** Bridges the standalone recorder to Telegram's existing voice-recording lifecycle. */
+/** Bridges the standalone recorder to Wooble's existing voice-recording lifecycle. */
 final class AudioRecorderV2Controller {
 
     interface Listener {

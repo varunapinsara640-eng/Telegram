@@ -1,6 +1,6 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -27,8 +27,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.Stories.recorder.KeyboardNotifier;
 
 public class AlertDialogDecor extends AlertDialog {
 

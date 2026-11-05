@@ -1,10 +1,10 @@
-package org.telegram.ui.web;
+package org.wooble.ui.web;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.readRes;
-import static org.telegram.messenger.AndroidUtilities.replaceSingleLinkBold;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.readRes;
+import static org.wooble.messenger.AndroidUtilities.replaceSingleLinkBold;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -85,81 +85,81 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.BottomSheetTabs;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ArticleViewer;
-import org.telegram.ui.CameraScanActivity;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CreateBotAlert;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Paint.Views.LinkPreview;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.voip.AnimatedFileInfo;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
-import org.telegram.ui.DialogsActivity;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.MultiContactsSelectorBottomSheet;
-import org.telegram.ui.OAuthSheet;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Stories.recorder.StoryEntry;
-import org.telegram.ui.Stories.recorder.StoryRecorder;
-import org.telegram.ui.WrappedResourceProvider;
-import org.telegram.ui.bots.BotBiometry;
-import org.telegram.ui.bots.BotDownloads;
-import org.telegram.ui.bots.BotLocation;
-import org.telegram.ui.bots.BotSensors;
-import org.telegram.ui.bots.BotShareSheet;
-import org.telegram.ui.bots.BotStorage;
-import org.telegram.ui.bots.BotWebViewSheet;
-import org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout;
-import org.telegram.ui.bots.SetupEmojiStatusSheet;
-import org.telegram.ui.bots.WebViewRequestProps;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarLayout;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.BottomSheetTabs;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ArticleViewer;
+import org.wooble.ui.CameraScanActivity;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.AnimatedFileNative;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CreateBotAlert;
+import org.wooble.ui.Components.EditTextCaption;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Paint.Views.LinkPreview;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.Components.voip.AnimatedFileInfo;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.ui.DialogsActivity;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.MultiContactsSelectorBottomSheet;
+import org.wooble.ui.OAuthSheet;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.ProfileActivity;
+import org.wooble.ui.Stories.recorder.StoryEntry;
+import org.wooble.ui.Stories.recorder.StoryRecorder;
+import org.wooble.ui.WrappedResourceProvider;
+import org.wooble.ui.bots.BotBiometry;
+import org.wooble.ui.bots.BotDownloads;
+import org.wooble.ui.bots.BotLocation;
+import org.wooble.ui.bots.BotSensors;
+import org.wooble.ui.bots.BotShareSheet;
+import org.wooble.ui.bots.BotStorage;
+import org.wooble.ui.bots.BotWebViewSheet;
+import org.wooble.ui.bots.ChatAttachAlertBotWebViewLayout;
+import org.wooble.ui.bots.SetupEmojiStatusSheet;
+import org.wooble.ui.bots.WebViewRequestProps;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -379,10 +379,10 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     private BotWebViewProxy botWebViewProxy;
-    private static final String BOT_WEB_MESSAGE_BRIDGE = "TelegramWebviewProxyMessage";
+    private static final String BOT_WEB_MESSAGE_BRIDGE = "WoobleWebviewProxyMessage";
     private static final int MAX_BOT_WEB_MESSAGE_LENGTH = 1024 * 1024;
     private static final String BOT_WEB_MESSAGE_SHIM =
-            "window.TelegramWebviewProxy={postEvent:function(eventType,eventData){" +
+            "window.WoobleWebviewProxy={postEvent:function(eventType,eventData){" +
                     "window." + BOT_WEB_MESSAGE_BRIDGE + ".postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));" +
                     "}};";
     private long documentGeneration;
@@ -494,7 +494,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 final PackageInfo packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
                 final int perf = SharedConfig.getDevicePerformanceClass();
                 final String perfName = perf == SharedConfig.PERFORMANCE_CLASS_LOW ? "LOW" : perf == SharedConfig.PERFORMANCE_CLASS_AVERAGE ? "AVERAGE" : "HIGH";
-                useragent += " Telegram-Android/" + packageInfo.versionName + " (" + capitalizeFirst(Build.MANUFACTURER) + " " + Build.MODEL + "; Android " + Build.VERSION.RELEASE + "; SDK " + Build.VERSION.SDK_INT + "; " + perfName + ")";
+                useragent += " Wooble-Android/" + packageInfo.versionName + " (" + capitalizeFirst(Build.MANUFACTURER) + " " + Build.MODEL + "; Android " + Build.VERSION.RELEASE + "; SDK " + Build.VERSION.SDK_INT + "; " + perfName + ")";
             }
             settings.setUserAgentString(useragent);
         } catch (Exception e) {
@@ -534,9 +534,9 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             }
             if (webViewProxy == null) {
                 webViewProxy = new WebViewProxy(webView, this);
-                webView.addJavascriptInterface(webViewProxy, "TelegramWebviewProxy");
+                webView.addJavascriptInterface(webViewProxy, "WoobleWebviewProxy");
             } else if (replaceWith == null) {
-                webView.addJavascriptInterface(webViewProxy, "TelegramWebviewProxy");
+                webView.addJavascriptInterface(webViewProxy, "WoobleWebviewProxy");
             }
             webViewProxy.setContainer(this);
         }
@@ -1217,7 +1217,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             return;
         }
         d("notifyEvent " + event);
-        evaluateJs("window.Telegram.WebView.receiveEvent('" + event + "', " + eventData + ");", false);
+        evaluateJs("window.Wooble.WebView.receiveEvent('" + event + "', " + eventData + ");", false);
     }
 
     private void notifyEvent(WebRequestContext context, String event, JSONObject eventData) {
@@ -1258,7 +1258,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             return;
         }
         StringBuilder sb = new StringBuilder();
-        sb.append("window.Telegram.WebView.receiveEvent('");
+        sb.append("window.Wooble.WebView.receiveEvent('");
         sb.append(event);
         sb.append("', ");
         sb.append(eventData);
@@ -1274,7 +1274,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                 FileLog.d("notifyEvent " + event + " dropped after document change");
                 return;
             }
-            webView.evaluateJS("window.Telegram.WebView.receiveEvent('" + event + "', " + eventData + ");");
+            webView.evaluateJS("window.Wooble.WebView.receiveEvent('" + event + "', " + eventData + ");");
         });
     }
 
@@ -1428,7 +1428,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         }
 
         // Remove the legacy object even when this WebView was passed in from another container.
-        webView.removeJavascriptInterface("TelegramWebviewProxy");
+        webView.removeJavascriptInterface("WoobleWebviewProxy");
 
         if (!WebViewFeature.isFeatureSupported(WebViewFeature.WEB_MESSAGE_LISTENER)) {
             d("Bot WebMessageListener is unsupported; native bridge disabled");
@@ -3987,7 +3987,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                             builder.setTitleMultipleLines(true);
                             builder.setTitle(formattedUrl);
                             builder.setItems(new CharSequence[]{
-                                    LocaleController.getString(R.string.OpenInTelegramBrowser),
+                                    LocaleController.getString(R.string.OpenInWoobleBrowser),
                                     LocaleController.getString(R.string.OpenInSystemBrowser),
                                     LocaleController.getString(R.string.Copy)
                             }, (dialog, which) -> {

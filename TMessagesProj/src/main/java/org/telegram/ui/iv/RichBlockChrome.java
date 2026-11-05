@@ -1,15 +1,15 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
 import android.view.View;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ReplyMessageLine;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ReplyMessageLine;
 
 /**
  * Shared gutter chrome for any rich block cell: the left/right inset for nesting depth, plus the list

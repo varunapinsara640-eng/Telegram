@@ -1,11 +1,11 @@
-package org.telegram.ui.Components.Reactions;
+package org.wooble.ui.Components.Reactions;
 
-import static org.telegram.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
-import static org.telegram.messenger.SharedConfig.getDevicePerformanceClass;
+import static org.wooble.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
+import static org.wooble.messenger.SharedConfig.getDevicePerformanceClass;
 
 import android.view.View;
 
-import org.telegram.messenger.ImageLoader;
+import org.wooble.messenger.ImageLoader;
 
 import java.util.Arrays;
 import java.util.HashSet;

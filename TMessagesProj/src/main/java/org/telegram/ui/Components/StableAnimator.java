@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.TimeAnimator;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 /**
  * Good for animations with a jank at the beginning.

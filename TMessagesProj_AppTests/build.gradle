@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'test-generator'
-apply plugin: 'org.telegram.build-app-plugin'
+apply plugin: 'org.wooble.build-app-plugin'
 
 repositories {
     mavenCentral()
@@ -173,7 +173,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace 'org.telegram.messenger.test'
+    namespace 'org.wooble.messenger.test'
 
     lintOptions {
         checkReleaseBuilds false

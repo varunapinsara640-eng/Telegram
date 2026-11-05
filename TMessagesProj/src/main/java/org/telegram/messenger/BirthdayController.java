@@ -1,15 +1,15 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.SharedPreferences;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLParseException;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
 
 import java.util.ArrayList;
 import java.util.Calendar;

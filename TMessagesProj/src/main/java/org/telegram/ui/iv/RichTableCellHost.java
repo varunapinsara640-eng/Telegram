@@ -1,6 +1,6 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -9,11 +9,11 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
 
 public class RichTableCellHost extends FrameLayout {
 

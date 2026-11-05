@@ -1,7 +1,7 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.Paint.PersistColorPalette;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.ui.Components.Paint.PersistColorPalette;
 
 public class BaseController {
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.content.Context;
 import android.graphics.Matrix;

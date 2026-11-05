@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -8,11 +8,11 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Stories.recorder.HintView2;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Stories.recorder.HintView2;
 
 public class TopViewCell extends LinearLayout implements Theme.Colorable {
 

@@ -1,6 +1,6 @@
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.Utilities;
 
 import java.util.ArrayList;
 

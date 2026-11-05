@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.quickforward;
+package org.wooble.ui.Components.quickforward;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
@@ -35,14 +35,14 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.AnimationProperties;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.CubicBezierInterpolator;
 
 import java.util.List;
 

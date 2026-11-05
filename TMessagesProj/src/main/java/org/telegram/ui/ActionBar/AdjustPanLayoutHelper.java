@@ -1,4 +1,4 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,14 +21,14 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.view.WindowInsetsCompat;
-import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.wooble.ui.recyclerview.ChatListItemAnimator;
 
 
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.UserConfig;
+import org.wooble.ui.LaunchActivity;
 
 import java.util.ArrayList;
 import java.util.List;

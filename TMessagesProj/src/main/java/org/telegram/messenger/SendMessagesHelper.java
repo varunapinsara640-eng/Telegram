@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.SuppressLint;
 import android.content.ClipDescription;
@@ -52,59 +52,59 @@ import androidx.collection.LongSparseArray;
 import androidx.core.view.inputmethod.InputContentInfoCompat;
 
 import org.json.JSONObject;
-import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.messenger.support.SparseLongArray;
-import org.telegram.messenger.utils.EphemeralMessagesHelper;
-import org.telegram.messenger.utils.tlutils.AmountUtils;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Components.poll.PollSendParams;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaFile;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaGallery;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaLink;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaLocation;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaMusic;
-import org.telegram.ui.Components.poll.attached.PollAttachedMediaSticker;
-import org.telegram.ui.Components.voip.AnimatedFileInfo;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.OAuthSheet;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.TON.TONIntroActivity;
-import org.telegram.ui.bots.BotWebViewSheet;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.Reactions.ReactionsUtils;
-import org.telegram.ui.PaymentFormActivity;
-import org.telegram.ui.Stories.MessageMediaStoryFull;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.TwoStepVerificationSetupActivity;
+import org.wooble.messenger.audioinfo.AudioInfo;
+import org.wooble.messenger.support.SparseLongArray;
+import org.wooble.messenger.utils.EphemeralMessagesHelper;
+import org.wooble.messenger.utils.tlutils.AmountUtils;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.tl.TL_ephemeral;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.AnimatedFileNative;
+import org.wooble.ui.Components.poll.PollAttachedMedia;
+import org.wooble.ui.Components.poll.PollAttachedMediaPack;
+import org.wooble.ui.Components.poll.PollSendParams;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaFile;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaGallery;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaLink;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaLocation;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaMusic;
+import org.wooble.ui.Components.poll.attached.PollAttachedMediaSticker;
+import org.wooble.ui.Components.voip.AnimatedFileInfo;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.OAuthSheet;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.TON.TONIntroActivity;
+import org.wooble.ui.bots.BotWebViewSheet;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.LimitReachedBottomSheet;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.Reactions.ReactionsUtils;
+import org.wooble.ui.PaymentFormActivity;
+import org.wooble.ui.Stories.MessageMediaStoryFull;
+import org.wooble.ui.TwoStepVerificationActivity;
+import org.wooble.ui.TwoStepVerificationSetupActivity;
 
 import java.io.File;
 import java.io.FileInputStream;

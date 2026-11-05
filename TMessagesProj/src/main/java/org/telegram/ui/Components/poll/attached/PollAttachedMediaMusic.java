@@ -1,19 +1,19 @@
-package org.telegram.ui.Components.poll.attached;
+package org.wooble.ui.Components.poll.attached;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.poll.PollAttachedMedia;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessageObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.MediaActionDrawable;
+import org.wooble.ui.Components.RadialProgress2;
+import org.wooble.ui.Components.poll.PollAttachedMedia;
 
 public class PollAttachedMediaMusic extends PollAttachedMedia {
     public final MessageObject messageObject;

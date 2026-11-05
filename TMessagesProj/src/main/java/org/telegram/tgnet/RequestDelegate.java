@@ -1,4 +1,4 @@
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
 public interface RequestDelegate {
     void run(TLObject response, TLRPC.TL_error error);

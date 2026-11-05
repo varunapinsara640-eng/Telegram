@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.replaceSingleTag;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.replaceSingleTag;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,39 +37,39 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
-import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.wooble.ui.recyclerview.ChatListItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManagerFixed;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatMessageSharedResources;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.RichQuote;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.IMessageCell;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatMessageSharedResources;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MessagePreviewParams;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.RichMessageLayout;
+import org.wooble.messenger.RichQuote;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.IMessageCell;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.wooble.ui.PremiumPreviewFragment;
 
 import java.util.ArrayList;
 
@@ -1061,7 +1061,7 @@ public class MessagePreviewView extends FrameLayout {
                 sendersNameButton.setOnClickListener(view -> {
                     if (!canHideSenderName) {
                         BulletinFactory.of(MessagePreviewView.this, resourcesProvider)
-                            .createSimpleBulletin(R.raw.star_premium_2, replaceSingleTag("Subscribe to **Telegram Premium** to forward formatted messages without the sender’s name.", () -> {
+                            .createSimpleBulletin(R.raw.star_premium_2, replaceSingleTag("Subscribe to **Wooble Premium** to forward formatted messages without the sender’s name.", () -> {
                                 dismiss(false);
                                 AndroidUtilities.runOnUIThread(() -> {
                                     if (!AndroidUtilities.isContextSafe(context)) return;
@@ -1220,7 +1220,7 @@ public class MessagePreviewView extends FrameLayout {
                 if (textSelectionOverlay.getParent() instanceof ViewGroup) {
                     ((ViewGroup) textSelectionOverlay.getParent()).removeView(textSelectionOverlay);
                 }
-                addView(textSelectionOverlay, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT, 0, org.telegram.ui.ActionBar.ActionBar.getCurrentActionBarHeight() / AndroidUtilities.density, 0, 0));
+                addView(textSelectionOverlay, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT, 0, org.wooble.ui.ActionBar.ActionBar.getCurrentActionBarHeight() / AndroidUtilities.density, 0, 0));
             }
             textSelectionHelper.setParentView(chatListView);
 
@@ -1380,7 +1380,7 @@ public class MessagePreviewView extends FrameLayout {
             menu.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec), MeasureSpec.UNSPECIFIED));
             buttonsHeight = Math.max(buttonsHeight, menu.getMeasuredHeight() + rect.top + rect.bottom);
 
-            ((MarginLayoutParams) chatListView.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.ActionBar.getCurrentActionBarHeight();
+            ((MarginLayoutParams) chatListView.getLayoutParams()).topMargin = org.wooble.ui.ActionBar.ActionBar.getCurrentActionBarHeight();
             if (isLandscapeMode) {
                 chatPreviewContainer.getLayoutParams().height = LayoutHelper.MATCH_PARENT;
                 ((MarginLayoutParams) chatPreviewContainer.getLayoutParams()).topMargin = dp(8);

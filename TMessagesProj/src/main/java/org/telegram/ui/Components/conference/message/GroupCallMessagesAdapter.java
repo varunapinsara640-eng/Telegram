@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.conference.message;
+package org.wooble.ui.Components.conference.message;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.view.ViewGroup;
@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.messenger.voip.GroupCallMessage;
+import org.wooble.messenger.voip.GroupCallMessagesController;
+import org.wooble.tgnet.TLRPC;
 
 import java.util.ArrayList;
 import java.util.List;

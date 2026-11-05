@@ -1,6 +1,6 @@
-package org.telegram.utils.code.highlight;
+package org.wooble.utils.code.highlight;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Typeface;
 import android.text.Spannable;
@@ -11,14 +11,14 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.text.style.MetricAffectingSpan;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.TextStyleSpan;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.TextStyleSpan;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -31,7 +31,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/** Drop-in adapter for Telegram Android's CodeHighlighting public API. */
+/** Drop-in adapter for Wooble Android's CodeHighlighting public API. */
 public class CodeHighlighting {
 
     public static final int MATCH_NONE = 0;
@@ -271,7 +271,7 @@ public class CodeHighlighting {
                                 output.write(buffer, 0, length);
                             grammars = output.toByteArray();
                         }
-                        // Telegram's NativeLoader loads the main tmessages library before this.
+                        // Wooble's NativeLoader loads the main tmessages library before this.
                         final PrismaHighlighter highlighter = new PrismaHighlighter(grammars);
                         return new PrismaHighlightingService.Tokenizer() {
                             @Override

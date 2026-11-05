@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,32 +31,32 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.utils.settings.SharedSettings;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.utils.Choreographer60FpsContent;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
-import org.telegram.ui.Stories.recorder.FlashViews;
-import org.telegram.utils.recorder.round.RoundVideoSession;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.utils.settings.SharedSettings;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.messenger.utils.Choreographer60FpsContent;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.ui.Stories.recorder.FlashViews;
+import org.wooble.utils.recorder.round.RoundVideoSession;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
-/** Telegram UI adapter for the standalone Camera2 round-video session. */
+/** Wooble UI adapter for the standalone Camera2 round-video session. */
 public final class InstantCameraView2 extends InstantCameraViewBase {
 
     private static final long MINIMUM_DURATION_MS = 800L;
@@ -93,7 +93,7 @@ public final class InstantCameraView2 extends InstantCameraViewBase {
     private RoundVideoSession.OutputResolution activeOutputResolution;
     private RoundVideoSession.StateInfo stateInfo;
     private RoundVideoSession.CameraCapabilities capabilities;
-    private TelegramRoundVideoUpload upload;
+    private WoobleRoundVideoUpload upload;
     private VideoEditedInfo videoEditedInfo;
     private SendOptions pendingSend;
     private AnimatorSet visibilityAnimator;
@@ -377,7 +377,7 @@ public final class InstantCameraView2 extends InstantCameraViewBase {
         lastVisibleDurationMs = 0L;
         progressView.setProgress(0f);
         showInitialPlaceholder();
-        upload = new TelegramRoundVideoUpload(currentAccount, secretChat);
+        upload = new WoobleRoundVideoUpload(currentAccount, secretChat);
         activeOutputResolution = SharedSettings.roundVideoOutputResolution.get();
         session = new RoundVideoSession.Builder(getContext(), textureView)
                 .setOutputDirectory(new File(ApplicationLoader.getFilesDirFixed(), "cache"))
@@ -844,7 +844,7 @@ public final class InstantCameraView2 extends InstantCameraViewBase {
         if (options == null) return;
         pendingSend = null;
         sent = true;
-        TelegramRoundVideoUpload.UploadInfo uploadInfo = upload == null
+        WoobleRoundVideoUpload.UploadInfo uploadInfo = upload == null
                 ? null
                 : upload.getUploadInfo(result.getOutputId(), result.getFile());
         VideoEditedInfo info = createVideoEditedInfo(
@@ -883,7 +883,7 @@ public final class InstantCameraView2 extends InstantCameraViewBase {
     private VideoEditedInfo createVideoEditedInfo(
             @NonNull File file,
             long durationMs,
-            TelegramRoundVideoUpload.UploadInfo uploadInfo
+            WoobleRoundVideoUpload.UploadInfo uploadInfo
     ) {
         VideoEditedInfo info = new VideoEditedInfo();
         info.startTime = -1;

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -23,18 +23,18 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.voip.GroupCallMiniTextureView;
-import org.telegram.ui.Components.voip.GroupCallRenderersContainer;
-import org.telegram.ui.Components.voip.GroupCallStatusIcon;
-import org.telegram.ui.GroupCallActivity;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.voip.GroupCallMiniTextureView;
+import org.wooble.ui.Components.voip.GroupCallRenderersContainer;
+import org.wooble.ui.Components.voip.GroupCallStatusIcon;
+import org.wooble.ui.GroupCallActivity;
 
 import java.util.ArrayList;
 
@@ -178,7 +178,7 @@ public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapte
 
         GroupCallStatusIcon statusIcon;
 
-        org.telegram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable avatarWavesDrawable = new org.telegram.ui.Cells.GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.dp(26), AndroidUtilities.dp(29));
+        org.wooble.ui.Cells.GroupCallUserCell.AvatarWavesDrawable avatarWavesDrawable = new org.wooble.ui.Cells.GroupCallUserCell.AvatarWavesDrawable(AndroidUtilities.dp(26), AndroidUtilities.dp(29));
 
         public GroupCallUserCell(@NonNull Context context) {
             super(context);

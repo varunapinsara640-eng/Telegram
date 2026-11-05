@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -8,15 +8,15 @@ import android.telecom.ConnectionRequest;
 import android.telecom.ConnectionService;
 import android.telecom.PhoneAccountHandle;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
 
 /**
  * Created by grishka on 09.01.2018.
  */
 
 @TargetApi(Build.VERSION_CODES.O)
-public class TelegramConnectionService extends ConnectionService {
+public class WoobleConnectionService extends ConnectionService {
 
 	@Override
 	public void onCreate() {

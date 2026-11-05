@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 /** Conservative scissor for the filtered QR mask, without changing its geometry or UVs. */
 final class WalletCardQrBounds {

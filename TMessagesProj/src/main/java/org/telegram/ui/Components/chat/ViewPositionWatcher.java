@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
 import android.graphics.PointF;
 import android.graphics.RectF;

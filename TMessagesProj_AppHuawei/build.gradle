@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.huawei.agconnect'
-apply plugin: 'org.telegram.build-app-plugin'
+apply plugin: 'org.wooble.build-app-plugin'
 
 repositories {
     mavenCentral()
@@ -164,7 +164,7 @@ android {
     buildFeatures {
         buildConfig = true
     }
-    namespace 'org.telegram.messenger.huawei'
+    namespace 'org.wooble.messenger.huawei'
 
     lintOptions {
         checkReleaseBuilds false

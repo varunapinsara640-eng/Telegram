@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
@@ -6,8 +6,8 @@ import android.media.MediaFormat;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.video.MP4Builder;
-import org.telegram.messenger.video.Mp4Movie;
+import org.wooble.messenger.video.MP4Builder;
+import org.wooble.messenger.video.Mp4Movie;
 
 import java.io.File;
 import java.io.IOException;

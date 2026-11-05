@@ -1,4 +1,4 @@
-package org.telegram.utils.proxy;
+package org.wooble.utils.proxy;
 
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -7,7 +7,7 @@ import android.util.Base64;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 import java.io.UnsupportedEncodingException;
 import java.net.IDN;
@@ -235,7 +235,7 @@ public final class ProxySettings {
                 }
 
                 host = host.toLowerCase();
-                if (!host.equals("telegram.me") && !host.equals("t.me") && !host.equals("telegram.dog")) {
+                if (!host.equals("wooble.me") && !host.equals("t.me") && !host.equals("wooble.dog")) {
                     return null;
                 }
 
@@ -271,7 +271,7 @@ public final class ProxySettings {
                     return null;
                 }
 
-                uri = Uri.parse("tg://telegram.org/" + url.substring(queryIndex));
+                uri = Uri.parse("tg://wooble.org/" + url.substring(queryIndex));
             } else {
                 return null;
             }

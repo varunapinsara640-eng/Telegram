@@ -1,10 +1,10 @@
-package org.telegram.messenger.video.audio_input;
+package org.wooble.messenger.video.audio_input;
 
 import android.util.Log;
 
-import org.telegram.messenger.video.AudioBufferConverter;
-import org.telegram.messenger.video.AudioConversions;
-import org.telegram.messenger.video.AudioDecoder;
+import org.wooble.messenger.video.AudioBufferConverter;
+import org.wooble.messenger.video.AudioConversions;
+import org.wooble.messenger.video.AudioDecoder;
 
 import java.io.IOException;
 import java.nio.ShortBuffer;

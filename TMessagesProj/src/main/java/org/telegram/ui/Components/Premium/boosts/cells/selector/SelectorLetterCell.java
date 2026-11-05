@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.cells.selector;
+package org.wooble.ui.Components.Premium.boosts.cells.selector;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class SelectorLetterCell extends FrameLayout {

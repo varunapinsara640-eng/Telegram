@@ -1,9 +1,9 @@
-package org.telegram.utils.settings;
+package org.wooble.utils.settings;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 
-import org.telegram.messenger.ApplicationLoader;
+import org.wooble.messenger.ApplicationLoader;
 
 final class SettingsPreferences {
 

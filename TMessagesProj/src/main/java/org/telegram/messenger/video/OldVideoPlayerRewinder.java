@@ -1,11 +1,11 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 import androidx.media3.common.C;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.PhotoViewerWebView;
-import org.telegram.ui.Components.VideoForwardDrawable;
-import org.telegram.ui.Components.VideoPlayer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.Components.PhotoViewerWebView;
+import org.wooble.ui.Components.VideoForwardDrawable;
+import org.wooble.ui.Components.VideoPlayer;
 
 public class OldVideoPlayerRewinder {
 

@@ -1,4 +1,4 @@
-package org.telegram.messenger.car;
+package org.wooble.messenger.car;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -32,24 +32,24 @@ import androidx.core.graphics.drawable.IconCompat;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.WoobleMediaSession;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.tgnet.TLRPC;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -240,7 +240,7 @@ public class HomeScreen extends Screen
                 .setSelf(selfPerson)
                 .setMessages(carMessages)
                 .setGroupConversation(isGroup)
-                .setConversationCallback(new TelegramConversationCallback(currentAccount, dialogId, latestMid));
+                .setConversationCallback(new WoobleConversationCallback(currentAccount, dialogId, latestMid));
         if (icon != null) {
             cb.setIcon(new CarIcon.Builder(icon).build());
         }
@@ -282,7 +282,7 @@ public class HomeScreen extends Screen
     // ===== Music tab =====
 
     private Template buildMusicTemplate() {
-        TelegramMediaSession session = TelegramMediaSession.getInstance(getCarContext().getApplicationContext());
+        WoobleMediaSession session = WoobleMediaSession.getInstance(getCarContext().getApplicationContext());
         if (!session.isChatsLoaded()) {
             if (!musicLoadKicked) {
                 musicLoadKicked = true;
@@ -396,12 +396,12 @@ public class HomeScreen extends Screen
         }
     }
 
-    private static final class TelegramConversationCallback implements ConversationCallback {
+    private static final class WoobleConversationCallback implements ConversationCallback {
         private final int currentAccount;
         private final long dialogId;
         private final int maxId;
 
-        TelegramConversationCallback(int currentAccount, long dialogId, int maxId) {
+        WoobleConversationCallback(int currentAccount, long dialogId, int maxId) {
             this.currentAccount = currentAccount;
             this.dialogId = dialogId;
             this.maxId = maxId;

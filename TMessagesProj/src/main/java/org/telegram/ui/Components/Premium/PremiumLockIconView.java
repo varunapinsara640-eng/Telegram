@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,12 +14,12 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
 
 public class PremiumLockIconView extends ImageView {
 

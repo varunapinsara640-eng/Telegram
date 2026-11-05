@@ -1,6 +1,6 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,10 +11,10 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.UnsupportedBlockDrawable;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.UnsupportedBlockDrawable;
 
 public class ChatMessageUnsupportedCell extends View implements Theme.Colorable {
     public final UnsupportedBlockDrawable unsupportedBlockDrawable;

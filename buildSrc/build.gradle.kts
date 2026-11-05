@@ -5,13 +5,13 @@ plugins {
 
 gradlePlugin {
     plugins {
-        register("telegramBuildPlugin") {
-            id = "org.telegram.build-plugin"
-            implementationClass = "org.telegram.plugin.TelegramBuildPlugin"
+        register("woobleBuildPlugin") {
+            id = "org.wooble.build-plugin"
+            implementationClass = "org.wooble.plugin.WoobleBuildPlugin"
         }
-        register("telegramBuildAppPlugin") {
-            id = "org.telegram.build-app-plugin"
-            implementationClass = "org.telegram.plugin.TelegramBuildAppPlugin"
+        register("woobleBuildAppPlugin") {
+            id = "org.wooble.build-app-plugin"
+            implementationClass = "org.wooble.plugin.WoobleBuildAppPlugin"
         }
         register("testGenerator") {
             id = "test-generator"

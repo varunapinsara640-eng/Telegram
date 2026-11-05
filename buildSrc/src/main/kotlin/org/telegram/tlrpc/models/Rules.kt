@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.models
+package org.wooble.tlrpc.models
 
 data class Rules(
     val databaseTypes: Set<String>,

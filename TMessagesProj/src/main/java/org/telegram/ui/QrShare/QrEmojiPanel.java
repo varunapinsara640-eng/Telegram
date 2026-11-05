@@ -1,6 +1,6 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -27,18 +27,18 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerAnimationScrollHelper;
+import org.wooble.ui.Components.RecyclerListView;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -134,7 +134,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
         super(context);
         this.account = account;
         this.delegate = delegate;
-        premium = org.telegram.messenger.UserConfig.getInstance(account).isPremium();
+        premium = org.wooble.messenger.UserConfig.getInstance(account).isPremium();
 
         grid = new Grid(context);
         layoutManager = new GridLayoutManager(context, spanCount);
@@ -238,7 +238,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
 
     /** A custom emoji that takes the colour of the text (e.g. the plain icon packs): white on the QR screen. */
     static boolean isTextColor(@Nullable Drawable d) {
-        return d instanceof AnimatedEmojiDrawable && org.telegram.messenger.MessageObject.isTextColorEmoji(((AnimatedEmojiDrawable) d).getDocument());
+        return d instanceof AnimatedEmojiDrawable && org.wooble.messenger.MessageObject.isTextColorEmoji(((AnimatedEmojiDrawable) d).getDocument());
     }
 
     /**
@@ -274,7 +274,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
             if (i > 0) sb.append(',');
             sb.append(l.get(i));
         }
-        org.telegram.messenger.MessagesController.getMainSettings(account).edit().putString(PREF_APPLIED, sb.toString()).apply();
+        org.wooble.messenger.MessagesController.getMainSettings(account).edit().putString(PREF_APPLIED, sb.toString()).apply();
         recentDirty = true;
     }
 
@@ -299,7 +299,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
     private ArrayList<Long> applied() {
         if (applied == null) {
             applied = new ArrayList<>();
-            final String saved = org.telegram.messenger.MessagesController.getMainSettings(account).getString(PREF_APPLIED, "");
+            final String saved = org.wooble.messenger.MessagesController.getMainSettings(account).getString(PREF_APPLIED, "");
             for (String t : saved.split(",")) {
                 try {
                     if (!t.isEmpty()) applied.add(Long.parseLong(t));
@@ -388,7 +388,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
         // the presets on top, then Recent: what was applied to the QR, then the recent custom emoji (a few rows)
         final ArrayList<TLRPC.Document> presets = presets();
         if (!presets.isEmpty()) {
-            sections.add(new Section(KIND_PRESETS, org.telegram.messenger.LocaleController.getString(R.string.QrEmojiPresets), 0, presets));
+            sections.add(new Section(KIND_PRESETS, org.wooble.messenger.LocaleController.getString(R.string.QrEmojiPresets), 0, presets));
         }
         final ArrayList<TLRPC.Document> recent = new ArrayList<>();
         final java.util.HashSet<Long> inRecent = new java.util.HashSet<>();
@@ -420,7 +420,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
             }
         }
         if (!recent.isEmpty()) {
-            sections.add(new Section(KIND_RECENT, org.telegram.messenger.LocaleController.getString(R.string.RecentlyUsed), 0, recent));
+            sections.add(new Section(KIND_RECENT, org.wooble.messenger.LocaleController.getString(R.string.RecentlyUsed), 0, recent));
         }
         sections.addAll(packs);
 
@@ -646,7 +646,7 @@ public class QrEmojiPanel extends FrameLayout implements NotificationCenter.Noti
             unlock.setTypeface(AndroidUtilities.bold());
             unlock.setGravity(Gravity.CENTER);
             unlock.setPadding(dp(10), 0, dp(10), 0);
-            unlock.setText(org.telegram.messenger.LocaleController.getString(R.string.Unlock));
+            unlock.setText(org.wooble.messenger.LocaleController.getString(R.string.Unlock));
             final android.graphics.drawable.GradientDrawable bg = new android.graphics.drawable.GradientDrawable();
             bg.setColor(UNLOCK_COLOR);
             bg.setCornerRadius(dp(13));

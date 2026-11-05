@@ -1,7 +1,7 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.Context;
 import android.content.Intent;
@@ -26,50 +26,50 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.Cells.EditTextCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.Components.AIEditorAlert;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.ChatAttachAlertDocumentLayout;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmojiView;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.MessageSendPreview;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessageChatArguments;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.Cells.EditTextCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.Components.AIEditorAlert;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.ChatActivityEnterView;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.ChatAttachAlertDocumentLayout;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EmojiView;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.MessageSendPreview;
+import org.wooble.ui.PremiumPreviewFragment;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 
-import org.telegram.ui.iv.Latex;
+import org.wooble.ui.iv.Latex;
 
 public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
 
@@ -1045,11 +1045,11 @@ public class ChatAttachAlertRichLayout extends ChatAttachAlert.AttachAlertLayout
                     listView.pendingMediaRow = null;
                     for (int a = 0; a < order.size(); a++) {
                         final Object object = photos.get(order.get(a));
-                        if (object instanceof org.telegram.messenger.MediaController.PhotoEntry) {
+                        if (object instanceof org.wooble.messenger.MediaController.PhotoEntry) {
                             if (target != null) {
-                                listView.addMediaToRow(target, (org.telegram.messenger.MediaController.PhotoEntry) object);
+                                listView.addMediaToRow(target, (org.wooble.messenger.MediaController.PhotoEntry) object);
                             } else {
-                                listView.attachMedia((org.telegram.messenger.MediaController.PhotoEntry) object);
+                                listView.attachMedia((org.wooble.messenger.MediaController.PhotoEntry) object);
                             }
                             break;
                         }

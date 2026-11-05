@@ -1,7 +1,7 @@
-package org.telegram.tlrpc
+package org.wooble.tlrpc
 
-import org.telegram.tlrpc.models.*
-import org.telegram.tlrpc.schema.TlSchemaParamType
+import org.wooble.tlrpc.models.*
+import org.wooble.tlrpc.schema.TlSchemaParamType
 
 object SchemeTlValidator {
     fun validate(scheme: TlScheme): TlSchemeWithMeta {

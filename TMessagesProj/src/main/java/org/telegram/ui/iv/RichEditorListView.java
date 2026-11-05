@@ -1,7 +1,7 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -31,33 +31,33 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.ReplyMessageLine;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.FloatingToolbar;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextSelectionHelper;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.AppGlobalConfig;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.Components.ReplyMessageLine;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.FloatingToolbar;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextSelectionHelper;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -642,7 +642,7 @@ public class RichEditorListView extends UniversalRecyclerView {
             media.state = MediaUploadState.STATE_DONE;
             media.photo = photo;
             media.hasSpoiler = ((TL_iv.pageBlockPhoto) block).spoiler;
-            final TLRPC.PhotoSize big = org.telegram.messenger.FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
+            final TLRPC.PhotoSize big = org.wooble.messenger.FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
             if (big != null) {
                 media.width = big.w;
                 media.height = big.h;
@@ -1221,13 +1221,13 @@ public class RichEditorListView extends UniversalRecyclerView {
         }
 
         public void showInputDialog(String title, String hint, String initial, boolean showPaste,
-                                    org.telegram.ui.Components.EditTextCaption.InputDialogCallback callback) {
+                                    org.wooble.ui.Components.EditTextCaption.InputDialogCallback callback) {
             editText.showInputDialog(title, hint, initial, showPaste, callback);
         }
 
         public void showInputDialog(String title, String hint, String initial, boolean showPaste,
                                     boolean adaptive,
-                                    org.telegram.ui.Components.EditTextCaption.InputDialogCallback callback) {
+                                    org.wooble.ui.Components.EditTextCaption.InputDialogCallback callback) {
             editText.showInputDialog(title, hint, initial, showPaste, adaptive, callback);
         }
 

@@ -1,12 +1,12 @@
-package org.telegram.ui.Charts.view_data;
+package org.wooble.ui.Charts.view_data;
 
 import android.graphics.Paint;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Charts.data.ChartData;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Charts.data.ChartData;
 
 public class StackBarViewData extends LineViewData {
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 /**
  * The values of the glass, the light band and the QR intro, as tuned by the designer ("Dark out" rim, Glass Lab).

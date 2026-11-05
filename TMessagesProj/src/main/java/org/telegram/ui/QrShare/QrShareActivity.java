@@ -1,6 +1,6 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
@@ -16,25 +16,25 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionIntroActivity;
-import org.telegram.ui.CameraScanActivity;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.OrientationController;
-import org.telegram.ui.ProfileActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionIntroActivity;
+import org.wooble.ui.CameraScanActivity;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.OrientationController;
+import org.wooble.ui.ProfileActivity;
 
 /**
  * The QR code of a user or a chat (args "user_id" / "chat_id"): the iOS "share QR" screen with "Remove message fee".
@@ -64,7 +64,7 @@ public class QrShareActivity extends BaseFragment {
     /** The own QR. */
     public static QrShareActivity self(int account) {
         final Bundle args = new Bundle();
-        args.putLong("user_id", org.telegram.messenger.UserConfig.getInstance(account).getClientUserId());
+        args.putLong("user_id", org.wooble.messenger.UserConfig.getInstance(account).getClientUserId());
         return new QrShareActivity(args);
     }
 
@@ -73,7 +73,7 @@ public class QrShareActivity extends BaseFragment {
         userId = arguments != null ? arguments.getLong("user_id") : 0;
         chatId = arguments != null ? arguments.getLong("chat_id") : 0;
         immediateOnOpen = arguments != null && arguments.getBoolean(ARG_IMMEDIATE)
-            && org.telegram.messenger.SharedConfig.getDevicePerformanceClass() == org.telegram.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
+            && org.wooble.messenger.SharedConfig.getDevicePerformanceClass() == org.wooble.messenger.SharedConfig.PERFORMANCE_CLASS_HIGH;
         if (userId == 0 && chatId == 0) {
             userId = getUserConfig().getClientUserId();
         }
@@ -235,13 +235,13 @@ public class QrShareActivity extends BaseFragment {
 
     /** The stock Premium screen. */
     private void openPremium() {
-        presentFragment(new org.telegram.ui.PremiumPreviewFragment("qr_emoji"));
+        presentFragment(new org.wooble.ui.PremiumPreviewFragment("qr_emoji"));
     }
 
     /** "Browse Gifts" of the empty gifts layer: the gift store for oneself (collectibles are bought from there). */
     private void openGiftStore() {
         if (getParentActivity() == null) return;
-        final org.telegram.ui.Gifts.GiftSheet sheet = new org.telegram.ui.Gifts.GiftSheet(getParentActivity(), currentAccount, getUserConfig().getClientUserId(), null);
+        final org.wooble.ui.Gifts.GiftSheet sheet = new org.wooble.ui.Gifts.GiftSheet(getParentActivity(), currentAccount, getUserConfig().getClientUserId(), null);
         sheet.setBrowseCollectibles();
         sheet.show();
     }
@@ -251,16 +251,16 @@ public class QrShareActivity extends BaseFragment {
     /** Waits for the storage permission (Android 6–10), then saves. */
     private boolean saveAfterPermission;
 
-    /** The QR as an image (the same one as shared) to the gallery: Pictures/Telegram before Android 10, MediaStore after. */
+    /** The QR as an image (the same one as shared) to the gallery: Pictures/Wooble before Android 10, MediaStore after. */
     private void saveToGallery() {
         final android.app.Activity activity = getParentActivity();
         if (activity == null || view == null || view.getCurrentLink() == null) {
             return;
         }
-        if (Build.VERSION.SDK_INT >= 23 && (Build.VERSION.SDK_INT <= 28 || org.telegram.messenger.BuildVars.NO_SCOPED_STORAGE)
+        if (Build.VERSION.SDK_INT >= 23 && (Build.VERSION.SDK_INT <= 28 || org.wooble.messenger.BuildVars.NO_SCOPED_STORAGE)
             && activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             saveAfterPermission = true;
-            activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, org.telegram.ui.BasePermissionsActivity.REQUEST_CODE_EXTERNAL_STORAGE);
+            activity.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, org.wooble.ui.BasePermissionsActivity.REQUEST_CODE_EXTERNAL_STORAGE);
             return;
         }
         final android.graphics.Bitmap bitmap = view.renderShareImage();
@@ -338,7 +338,7 @@ public class QrShareActivity extends BaseFragment {
                 return;
             }
             overlay.close();
-            QrScanOverlay.pickFromGallery(this, QrScanOverlay::isTelegramLink, link -> {
+            QrScanOverlay.pickFromGallery(this, QrScanOverlay::isWoobleLink, link -> {
                 if (getParentActivity() != null) {
                     Browser.openUrl(getParentActivity(), link);
                 }
@@ -397,7 +397,7 @@ public class QrShareActivity extends BaseFragment {
 
     @Override
     public void onRequestPermissionsResultFragment(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == org.telegram.ui.BasePermissionsActivity.REQUEST_CODE_EXTERNAL_STORAGE) {
+        if (requestCode == org.wooble.ui.BasePermissionsActivity.REQUEST_CODE_EXTERNAL_STORAGE) {
             // a refusal is explained by LaunchActivity
             final boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
             if (saveAfterPermission && granted) {
@@ -587,7 +587,7 @@ public class QrShareActivity extends BaseFragment {
         if (strip != null) {
             strip.getLocationOnScreen(gridLoc);
             final float stKb = gridLoc[1] - emojiLoc[1]; // the strip's top in keyboard coordinates
-            final float st = (stKb - oy) / gk, sb = st + (strip.getHeight() + org.telegram.messenger.AndroidUtilities.dp(12)) / gk;
+            final float st = (stKb - oy) / gk, sb = st + (strip.getHeight() + org.wooble.messenger.AndroidUtilities.dp(12)) / gk;
             if (pickOverlay != null) pickOverlay.setTopClip(stKb + strip.getHeight() - stripInsetBottom);
             // the island's own shape is cut: its glass shows the sheet's glass instead (see stripUnder)
             final float sx0 = stripLoc0X(strip, grid) / grid.getScaleX();
@@ -600,12 +600,12 @@ public class QrShareActivity extends BaseFragment {
             c.drawRect(0, Math.min(st, -oy / gk), w, sb, topFadePaint); // above st the shader clamps to 0: cleared
         }
         // bottom: 10dp at the glass edge, nothing below
-        final int fh = org.telegram.messenger.AndroidUtilities.dp(10);
+        final int fh = org.wooble.messenger.AndroidUtilities.dp(10);
         final float ft = (emojiGlassBottom - oy - fh) / gk;
         topFadeM.setScale(1f, fh / gk);
         topFadeM.postTranslate(0, ft);
         emojiFade.setLocalMatrix(topFadeM);
-        c.drawRect(0, ft, w, Math.max(ft + fh / gk, grid.getHeight() + org.telegram.messenger.AndroidUtilities.dp(200)), emojiFadePaint);
+        c.drawRect(0, ft, w, Math.max(ft + fh / gk, grid.getHeight() + org.wooble.messenger.AndroidUtilities.dp(200)), emojiFadePaint);
         final boolean running = cp < 1f && !opening;
         stepStrip(strip, opening ? mp : cp);
         final float visTop = Math.max(0f, -oy), visBottom = emojiGlassBottom - oy;
@@ -838,7 +838,7 @@ public class QrShareActivity extends BaseFragment {
                 callback.run();
             }
         });
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(() -> {
+        org.wooble.messenger.AndroidUtilities.runOnUIThread(() -> {
             lockTransition();
             set.start();
         });
@@ -855,15 +855,15 @@ public class QrShareActivity extends BaseFragment {
         unlockTransition();
         final boolean stopHeavy = !immediateOnOpen; // otherwise nothing of the pattern plays during the open
         transitionLockAccount = currentAccount;
-        transitionLock = org.telegram.messenger.NotificationCenter.getInstance(currentAccount).setAnimationInProgress(-1, null, stopHeavy);
-        transitionGlobalLock = org.telegram.messenger.NotificationCenter.getGlobalInstance().setAnimationInProgress(-1, null, stopHeavy);
+        transitionLock = org.wooble.messenger.NotificationCenter.getInstance(currentAccount).setAnimationInProgress(-1, null, stopHeavy);
+        transitionGlobalLock = org.wooble.messenger.NotificationCenter.getGlobalInstance().setAnimationInProgress(-1, null, stopHeavy);
     }
 
     private void unlockTransition() {
         if (transitionLock >= 0)
-            org.telegram.messenger.NotificationCenter.getInstance(transitionLockAccount).onAnimationFinish(transitionLock);
+            org.wooble.messenger.NotificationCenter.getInstance(transitionLockAccount).onAnimationFinish(transitionLock);
         if (transitionGlobalLock >= 0)
-            org.telegram.messenger.NotificationCenter.getGlobalInstance().onAnimationFinish(transitionGlobalLock);
+            org.wooble.messenger.NotificationCenter.getGlobalInstance().onAnimationFinish(transitionGlobalLock);
         transitionLock = transitionGlobalLock = -1;
     }
 
@@ -879,7 +879,7 @@ public class QrShareActivity extends BaseFragment {
     private void stepStrip(View strip, float cp) {
         if (strip == null || view == null) return;
         // ride with the sheet: the glass top now vs. its final top
-        stripTy = shapeT - (view.panelFinalTop() - org.telegram.messenger.AndroidUtilities.dp(8));
+        stripTy = shapeT - (view.panelFinalTop() - org.wooble.messenger.AndroidUtilities.dp(8));
         // its glass samples the backdrop at its screen position: recorded again whenever it moves or scales
         if (strip.getTranslationY() != stripTy) {
             strip.setTranslationY(stripTy);
@@ -972,7 +972,7 @@ public class QrShareActivity extends BaseFragment {
     private void updateGridBottomPad() {
         final androidx.recyclerview.widget.RecyclerView grid = emojiGrid;
         if (grid == null || view == null) return;
-        final int padBottom = org.telegram.messenger.AndroidUtilities.dp(view.pickedKeys().isEmpty() ? 12 : 73);
+        final int padBottom = org.wooble.messenger.AndroidUtilities.dp(view.pickedKeys().isEmpty() ? 12 : 73);
         if (grid.getPaddingBottom() != padBottom)
             grid.setPadding(grid.getPaddingLeft(), grid.getPaddingTop(), grid.getPaddingRight(), padBottom);
     }
@@ -986,10 +986,10 @@ public class QrShareActivity extends BaseFragment {
         final QrEmojiPanel.Tabs strip = emojiView.getTabs();
         final android.graphics.drawable.GradientDrawable bg = new android.graphics.drawable.GradientDrawable();
         bg.setColor(0x33FFFFFF); // the picks island's recipe: the backdrop-hue tint (drawn under, see stripUnder) + 20% white
-        bg.setCornerRadius(org.telegram.messenger.AndroidUtilities.dp(20));
+        bg.setCornerRadius(org.wooble.messenger.AndroidUtilities.dp(20));
         // the glass keeps its earlier visible size/margins (it used to sit a rim-width inside the view bounds), but is
         // 3 px taller: 1 px up, 2 px down (≈ +1 dp on this 3.0-density phone)
-        final int rimOut = (int) Math.ceil(org.telegram.messenger.AndroidUtilities.dpf2(RimTune.g[RimTune.BIG][RimTune.D_W] + Math.max(0f, -RimTune.g[RimTune.BIG][RimTune.INSET])));
+        final int rimOut = (int) Math.ceil(org.wooble.messenger.AndroidUtilities.dpf2(RimTune.g[RimTune.BIG][RimTune.D_W] + Math.max(0f, -RimTune.g[RimTune.BIG][RimTune.INSET])));
         // 4 px taller than before (2 up, 2 down) and the side margins 2–3 px smaller, so the gap to the sheet's
         // edge is the same on the top and the sides: insets 4 px top/sides, 3 px bottom (view 36 dp → pill 101 px)
         stripRimOut = Math.max(0, rimOut - 3);
@@ -1015,9 +1015,9 @@ public class QrShareActivity extends BaseFragment {
         strip.setClipToOutline(true);
         if (strip.getLayoutParams() instanceof android.view.ViewGroup.MarginLayoutParams) {
             final android.view.ViewGroup.MarginLayoutParams mlp = (android.view.ViewGroup.MarginLayoutParams) strip.getLayoutParams();
-            final int m = org.telegram.messenger.AndroidUtilities.dp(10);
+            final int m = org.wooble.messenger.AndroidUtilities.dp(10);
             // the keyboard itself starts 8dp below the glass top: topMargin 0 puts the pill 8dp from the glass edge
-            final int tm = org.telegram.messenger.AndroidUtilities.dp(2); // the keyboard starts 8dp below the glass: 10dp in total
+            final int tm = org.wooble.messenger.AndroidUtilities.dp(2); // the keyboard starts 8dp below the glass: 10dp in total
             if (mlp.leftMargin != m || mlp.rightMargin != m || mlp.topMargin != tm) {
                 mlp.leftMargin = m;
                 mlp.rightMargin = m;
@@ -1035,10 +1035,10 @@ public class QrShareActivity extends BaseFragment {
                 if (!view.pickedKeys().isEmpty()) pickOverlay.invalidate(); // badges and borders follow the grid
             };
             pickOverlay.attachGrid(grid); // our own thin white scrollbar instead of the system one
-            final int padTop = org.telegram.messenger.AndroidUtilities.dp(2 + 36 + 6);
+            final int padTop = org.wooble.messenger.AndroidUtilities.dp(2 + 36 + 6);
             emojiGrid = grid;
             // right: a gutter for the scrollbar (3dp bar, 3dp from the glass edge) so it never covers a cell
-            final int padRight = grid.getPaddingRight() + org.telegram.messenger.AndroidUtilities.dp(5);
+            final int padRight = grid.getPaddingRight() + org.wooble.messenger.AndroidUtilities.dp(5);
             grid.setPadding(grid.getPaddingLeft(), padTop, padRight, grid.getPaddingBottom());
             updateGridBottomPad();
             grid.setClipToPadding(false);
@@ -1055,7 +1055,7 @@ public class QrShareActivity extends BaseFragment {
         strip.bringToFront();
     }
 
-    /** No Telegram swipe-back here: horizontal drags rotate / move the backdrop. Back button and close still work. */
+    /** No Wooble swipe-back here: horizontal drags rotate / move the backdrop. Back button and close still work. */
     @Override
     public boolean isSwipeBackEnabled(android.view.MotionEvent event) {
         return false;
@@ -1082,8 +1082,8 @@ public class QrShareActivity extends BaseFragment {
         final android.app.Activity a = getParentActivity();
         if (a == null) return;
         final android.view.Window w = a.getWindow();
-        org.telegram.messenger.AndroidUtilities.setLightNavigationBar(a, false);
-        org.telegram.messenger.AndroidUtilities.setLightStatusBar(w, false);
+        org.wooble.messenger.AndroidUtilities.setLightNavigationBar(a, false);
+        org.wooble.messenger.AndroidUtilities.setLightStatusBar(w, false);
         if (android.os.Build.VERSION.SDK_INT >= 29) {
             if (savedContrast == null) savedContrast = w.isNavigationBarContrastEnforced();
             w.setNavigationBarContrastEnforced(false);
@@ -1106,7 +1106,7 @@ public class QrShareActivity extends BaseFragment {
         super.onResume();
         applyWhiteBars();
         if (getParentActivity() != null)
-            org.telegram.messenger.AndroidUtilities.setLightNavigationBar(getParentActivity(), false);
+            org.wooble.messenger.AndroidUtilities.setLightNavigationBar(getParentActivity(), false);
     }
 
     @Override

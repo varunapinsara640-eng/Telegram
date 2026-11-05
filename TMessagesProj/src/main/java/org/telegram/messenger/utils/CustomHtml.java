@@ -1,14 +1,14 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
 import android.text.Spanned;
 import android.text.TextUtils;
 
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanReplacement;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.URLSpanMono;
+import org.wooble.ui.Components.URLSpanReplacement;
 
 public class CustomHtml {
 

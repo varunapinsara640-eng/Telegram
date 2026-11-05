@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.voip.VoIPPreNotificationService;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.voip.VoIPHelper;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.voip.VoIPPreNotificationService;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.ui.Components.voip.VoIPHelper;
 
 import java.util.ArrayList;
 

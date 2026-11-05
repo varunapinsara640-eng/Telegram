@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.MessagesController.findUpdatesAndRemove;
+import static org.wooble.messenger.MessagesController.findUpdatesAndRemove;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -26,15 +26,15 @@ import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import com.android.billingclient.api.QueryPurchasesParams;
 
-import org.telegram.messenger.utils.BillingUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.LoginActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.wooble.messenger.utils.BillingUtilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.LoginActivity;
+import org.wooble.ui.PremiumPreviewFragment;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BillingController implements PurchasesUpdatedListener, BillingClientStateListener {
-    public final static String PREMIUM_PRODUCT_ID = "telegram_premium";
+    public final static String PREMIUM_PRODUCT_ID = "wooble_premium";
     public final static QueryProductDetailsParams.Product PREMIUM_PRODUCT = QueryProductDetailsParams.Product.newBuilder()
             .setProductType(BillingClient.ProductType.SUBS)
             .setProductId(PREMIUM_PRODUCT_ID)

@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.SQLite.SQLiteDatabase;
+import org.wooble.SQLite.SQLitePreparedStatement;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLRPC;
 
 import java.io.File;
 import java.io.IOException;

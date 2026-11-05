@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.audio;
+package org.wooble.utils.recorder.audio;
 
 import android.os.SystemClock;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import static com.google.zxing.common.detector.MathUtils.distance;
 
@@ -11,10 +11,10 @@ import android.view.ViewConfiguration;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.Size;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.Size;
 
 import java.util.Vector;
 

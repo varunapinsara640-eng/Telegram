@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.readRes;
+import static org.wooble.messenger.AndroidUtilities.readRes;
 
 import android.graphics.Bitmap;
 import android.graphics.Paint;
@@ -8,10 +8,10 @@ import android.text.TextUtils;
 
 import androidx.annotation.WorkerThread;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DispatchQueuePoolBackground;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
 
 import java.io.File;
 

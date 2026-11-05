@@ -1,20 +1,20 @@
-package org.telegram.ui.Charts.view_data;
+package org.wooble.ui.Charts.view_data;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChannelMonetizationLayout;
-import org.telegram.ui.Charts.data.ChartData;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Stars.StarsIntroActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChannelMonetizationLayout;
+import org.wooble.ui.Charts.data.ChartData;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Stars.StarsIntroActivity;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

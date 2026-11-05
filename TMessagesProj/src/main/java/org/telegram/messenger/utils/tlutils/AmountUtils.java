@@ -1,15 +1,15 @@
-package org.telegram.messenger.utils.tlutils;
+package org.wooble.messenger.utils.tlutils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stars;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.tl.TL_stars;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

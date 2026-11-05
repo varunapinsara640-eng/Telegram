@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.wooble.messenger.chromecast;
 
 import android.content.Context;
 import android.net.Uri;
@@ -18,9 +18,9 @@ import androidx.media3.datasource.FileDataSource;
 
 import com.google.android.gms.cast.MediaMetadata;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 
 import java.io.BufferedInputStream;
 import java.io.File;

@@ -1,23 +1,23 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.find;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.MessageObject.getMedia;
-import static org.telegram.messenger.MessageObject.replaceWithLink;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.find;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.MessageObject.getMedia;
+import static org.wooble.messenger.MessageObject.replaceWithLink;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -99,152 +99,152 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.math.MathUtils;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotForumHelper;
-import org.telegram.messenger.BotInlineKeyboard;
-import org.telegram.messenger.ChatMessageSharedResources;
-import org.telegram.messenger.ChatObject;
-import org.telegram.utils.code.highlight.CodeHighlighting;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FlagSecureReason;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.RichQuote;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.WebFile;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.Choreographer60FpsContent;
-import org.telegram.messenger.utils.CountdownTimer;
-import org.telegram.messenger.utils.DrawableUtils;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.MessageDrawable;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedNumberLayout;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.AnimationProperties;
-import org.telegram.ui.Components.AudioVisualizerDrawable;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.AvatarsDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.ClipRoundedDrawable;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EmptyStubSpan;
-import org.telegram.ui.Components.FloatSeekBarAccessibilityDelegate;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.FormattedDateSpan;
-import org.telegram.ui.Components.ForwardBackground;
-import org.telegram.ui.Components.InfiniteProgress;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingDrawable;
-import org.telegram.ui.Components.MediaActionDrawable;
-import org.telegram.ui.Components.MessageBackgroundDrawable;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.MsgClockDrawable;
-import org.telegram.ui.Components.PostRunnableHolder;
-import org.telegram.ui.Components.Premium.boosts.BoostCounterSpan;
-import org.telegram.ui.Components.Premium.boosts.cells.msg.GiveawayMessageCell;
-import org.telegram.ui.Components.Premium.boosts.cells.msg.GiveawayResultsMessageCell;
-import org.telegram.ui.Components.QuoteHighlight;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.RLottieDiceDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ReplyMessageLine;
-import org.telegram.ui.Components.RoundVideoPlayingDrawable;
-import org.telegram.ui.Components.SeekBar;
-import org.telegram.ui.Components.SeekBarAccessibilityDelegate;
-import org.telegram.ui.Components.SeekBarWaveform;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.SlotsDrawable;
-import org.telegram.ui.Components.StaticLayoutEx;
-import org.telegram.ui.Components.StickerSetLinkIcon;
-import org.telegram.ui.Components.SuggestionOffer;
-import org.telegram.ui.Components.SummaryIcon;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.TimerParticles;
-import org.telegram.ui.Components.TopicButton;
-import org.telegram.ui.Components.TopicSeparator;
-import org.telegram.ui.Components.TornEdge;
-import org.telegram.ui.Components.TranscribeButton;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.URLSpanBotCommand;
-import org.telegram.ui.Components.URLSpanBrowser;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.Components.VectorAvatarThumbDrawable;
-import org.telegram.ui.Components.VideoForwardDrawable;
-import org.telegram.ui.Components.AvatarsListDrawable;
-import org.telegram.ui.Components.chat.ChatActivityDraftMessageMeasureController;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Components.poll.PollUtils;
-import org.telegram.ui.Components.poll.buttons.PollAddButtonDrawable;
-import org.telegram.ui.Components.poll.buttons.PollButtonDrawable;
-import org.telegram.ui.Components.poll.PollContentDrawable;
-import org.telegram.ui.Components.poll.buttons.PollInstantButtonDrawable;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.Components.spoilers.SpoilerEffect2;
-import org.telegram.ui.GradientClip;
-import org.telegram.ui.MultiLayoutTypingAnimator;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PinchToZoomHelper;
-import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.Stars.StarGiftPatterns;
-import org.telegram.ui.Stars.StarGiftSheet;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stars.StarsReactionsSheet;
-import org.telegram.ui.Stories.StoriesUtilities;
-import org.telegram.ui.Stories.StoryViewer;
-import org.telegram.ui.Stories.recorder.CaptionContainerView;
-import org.telegram.ui.Stories.recorder.DominantColors;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AppGlobalConfig;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BotForumHelper;
+import org.wooble.messenger.BotInlineKeyboard;
+import org.wooble.messenger.ChatMessageSharedResources;
+import org.wooble.messenger.ChatObject;
+import org.wooble.utils.code.highlight.CodeHighlighting;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.DocumentObject;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.FlagSecureReason;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.RichMessageLayout;
+import org.wooble.messenger.RichQuote;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.TranslateController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.WebFile;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.utils.Choreographer60FpsContent;
+import org.wooble.messenger.utils.CountdownTimer;
+import org.wooble.messenger.utils.DrawableUtils;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.messenger.video.OldVideoPlayerRewinder;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.MessageDrawable;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.AvatarSpan;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedNumberLayout;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.AnimationProperties;
+import org.wooble.ui.Components.AudioVisualizerDrawable;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.AvatarsDrawable;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.CheckBoxBase;
+import org.wooble.ui.Components.ClipRoundedDrawable;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EmptyStubSpan;
+import org.wooble.ui.Components.FloatSeekBarAccessibilityDelegate;
+import org.wooble.ui.Components.ForegroundColorSpanThemable;
+import org.wooble.ui.Components.FormattedDateSpan;
+import org.wooble.ui.Components.ForwardBackground;
+import org.wooble.ui.Components.InfiniteProgress;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.LoadingDrawable;
+import org.wooble.ui.Components.MediaActionDrawable;
+import org.wooble.ui.Components.MessageBackgroundDrawable;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.MsgClockDrawable;
+import org.wooble.ui.Components.PostRunnableHolder;
+import org.wooble.ui.Components.Premium.boosts.BoostCounterSpan;
+import org.wooble.ui.Components.Premium.boosts.cells.msg.GiveawayMessageCell;
+import org.wooble.ui.Components.Premium.boosts.cells.msg.GiveawayResultsMessageCell;
+import org.wooble.ui.Components.QuoteHighlight;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.RLottieDiceDrawable;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RadialProgress2;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ReplyMessageLine;
+import org.wooble.ui.Components.RoundVideoPlayingDrawable;
+import org.wooble.ui.Components.SeekBar;
+import org.wooble.ui.Components.SeekBarAccessibilityDelegate;
+import org.wooble.ui.Components.SeekBarWaveform;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.SlotsDrawable;
+import org.wooble.ui.Components.StaticLayoutEx;
+import org.wooble.ui.Components.StickerSetLinkIcon;
+import org.wooble.ui.Components.SuggestionOffer;
+import org.wooble.ui.Components.SummaryIcon;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.TimerParticles;
+import org.wooble.ui.Components.TopicButton;
+import org.wooble.ui.Components.TopicSeparator;
+import org.wooble.ui.Components.TornEdge;
+import org.wooble.ui.Components.TranscribeButton;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.URLSpanBotCommand;
+import org.wooble.ui.Components.URLSpanBrowser;
+import org.wooble.ui.Components.URLSpanMono;
+import org.wooble.ui.Components.URLSpanNoUnderline;
+import org.wooble.ui.Components.VectorAvatarThumbDrawable;
+import org.wooble.ui.Components.VideoForwardDrawable;
+import org.wooble.ui.Components.AvatarsListDrawable;
+import org.wooble.ui.Components.chat.ChatActivityDraftMessageMeasureController;
+import org.wooble.ui.Components.poll.PollAttachedMediaPack;
+import org.wooble.ui.Components.poll.PollUtils;
+import org.wooble.ui.Components.poll.buttons.PollAddButtonDrawable;
+import org.wooble.ui.Components.poll.buttons.PollButtonDrawable;
+import org.wooble.ui.Components.poll.PollContentDrawable;
+import org.wooble.ui.Components.poll.buttons.PollInstantButtonDrawable;
+import org.wooble.ui.Components.spoilers.SpoilerEffect;
+import org.wooble.ui.Components.spoilers.SpoilerEffect2;
+import org.wooble.ui.GradientClip;
+import org.wooble.ui.MultiLayoutTypingAnimator;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.PinchToZoomHelper;
+import org.wooble.ui.SecretMediaViewer;
+import org.wooble.ui.Stars.StarGiftPatterns;
+import org.wooble.ui.Stars.StarGiftSheet;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.Stars.StarsReactionsSheet;
+import org.wooble.ui.Stories.StoriesUtilities;
+import org.wooble.ui.Stories.StoryViewer;
+import org.wooble.ui.Stories.recorder.CaptionContainerView;
+import org.wooble.ui.Stories.recorder.DominantColors;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -732,7 +732,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         default void didPressInstantButton(ChatMessageCell cell, int type) {
         }
 
-        default boolean openArticlePhoto(ChatMessageCell cell, org.telegram.tgnet.tl.TL_iv.PageBlock block) {
+        default boolean openArticlePhoto(ChatMessageCell cell, org.wooble.tgnet.tl.TL_iv.PageBlock block) {
             return false;
         }
 
@@ -7461,31 +7461,31 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     } else if (messageObject.isGiveawayOrGiveawayResults()) {
                         drawInstantView = true;
                         drawInstantViewType = 19;
-                    } else if ("telegram_channel_boost".equals(webpageType)) {
+                    } else if ("wooble_channel_boost".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 18;
-                    } else if ("telegram_group_boost".equals(webpageType)) {
+                    } else if ("wooble_group_boost".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 22;
-                    } else if ("telegram_giftcode".equals(webpageType)) {
+                    } else if ("wooble_giftcode".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 20;
-                    } else if ("telegram_livestream".equals(webpageType)) {
+                    } else if ("wooble_livestream".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 11;
-                    } else if ("telegram_voicechat".equals(webpageType)) {
+                    } else if ("wooble_voicechat".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 9;
-                    } else if ("telegram_videochat".equals(webpageType)) {
+                    } else if ("wooble_videochat".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 25;
-                    } else if ("telegram_channel".equals(webpageType)) {
+                    } else if ("wooble_channel".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 1;
-                    } else if ("telegram_channel_direct".equals(webpageType)) {
+                    } else if ("wooble_channel_direct".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 29;
-                    } else if ("telegram_user".equals(webpageType)) {
+                    } else if ("wooble_user".equals(webpageType)) {
                         boolean isProfile = false;
                         if (webpage != null && webpage.url != null) {
                             Uri data = Uri.parse(webpage.url);
@@ -7499,12 +7499,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         } else {
                             drawInstantViewType = 13;
                         }
-                    } else if ("telegram_aicomposetone".equals(webpageType)) {
+                    } else if ("wooble_aicomposetone".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = INSTANT_BUTTON_TYPE_AI_STYLE;
                         final TLRPC.TL_webPageAttributeAiComposeTone attr = find(webpage.attributes, TLRPC.TL_webPageAttributeAiComposeTone.class);
                         emoji_id = attr != null ? attr.emoji_id : 0;
-                    } else if ("telegram_nft".equals(webpageType)) {
+                    } else if ("wooble_nft".equals(webpageType)) {
                         for (int b = 0, N2 = webpage.attributes.size(); b < N2; b++) {
                             final TLRPC.WebPageAttribute attribute_ = webpage.attributes.get(b);
                             if (!(attribute_ instanceof TLRPC.TL_webPageAttributeUniqueStarGift)) {
@@ -7518,19 +7518,19 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             }
                             break;
                         }
-                    } else if ("telegram_megagroup".equals(webpageType)) {
+                    } else if ("wooble_megagroup".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 2;
-                    } else if ("telegram_message".equals(webpageType) || "photo".equals(webpageType) && webpage != null && Browser.isTMe(webpage.url)) {
+                    } else if ("wooble_message".equals(webpageType) || "photo".equals(webpageType) && webpage != null && Browser.isTMe(webpage.url)) {
                         drawInstantView = true;
                         drawInstantViewType = 3;
-                    } else if ("telegram_community".equals(webpageType) || "telegram_chatlist".equals(webpageType)) {
+                    } else if ("wooble_community".equals(webpageType) || "wooble_chatlist".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 14;
-                    } else if ("telegram_botapp".equals(webpageType)) {
+                    } else if ("wooble_botapp".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 15;
-                    } else if ("telegram_theme".equals(webpageType)) {
+                    } else if ("wooble_theme".equals(webpageType)) {
                         for (int b = 0, N2 = MessageObject.getMedia(messageObject.messageOwner).webpage.attributes.size(); b < N2; b++) {
                             TLRPC.WebPageAttribute attribute_ = MessageObject.getMedia(messageObject.messageOwner).webpage.attributes.get(b);
                             if (!(attribute_ instanceof TLRPC.TL_webPageAttributeTheme)) {
@@ -7557,7 +7557,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 break;
                             }
                         }
-                    } else if ("telegram_story".equals(webpageType)) {
+                    } else if ("wooble_story".equals(webpageType)) {
                         for (int b = 0, N2 = webpage.attributes.size(); b < N2; b++) {
                             TLRPC.WebPageAttribute attribute_ = webpage.attributes.get(b);
                             if (!(attribute_ instanceof TLRPC.TL_webPageAttributeStory)) {
@@ -7582,7 +7582,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             }
                             break;
                         }
-                    } else if ("telegram_background".equals(webpageType)) {
+                    } else if ("wooble_background".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 6;
                         try {
@@ -7645,7 +7645,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         } catch (Exception ignore) {
 
                         }
-                    } else if ("telegram_auction".equals(webpageType)) {
+                    } else if ("wooble_auction".equals(webpageType)) {
                         final TLRPC.TL_webPageAttributeStarGiftAuction attr =
                             TlUtils.findFirstInstance(webpage.attributes, TLRPC.TL_webPageAttributeStarGiftAuction.class);
                         drawInstantView = true;
@@ -7655,7 +7655,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             stargift = attr.gift;
                             starGiftAuction = attr;
                         }
-                    } else if ("telegram_stickerset".equals(webpageType)) {
+                    } else if ("wooble_stickerset".equals(webpageType)) {
                         final TLRPC.TL_webPageAttributeStickerSet attr =
                             TlUtils.findFirstInstance(webpage.attributes, TLRPC.TL_webPageAttributeStickerSet.class);
                         drawInstantView = true;
@@ -7669,7 +7669,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             stickers = attr.stickers;
                             stickersTextColor = attr.text_color;
                         }
-                    } else if ("telegram_collection".equals(webpageType)) {
+                    } else if ("wooble_collection".equals(webpageType)) {
                         TLRPC.TL_webPageAttributeStarGiftCollection attr =
                             TlUtils.findFirstInstance(webpage.attributes, TLRPC.TL_webPageAttributeStarGiftCollection.class);
                         drawInstantView = true;
@@ -7679,13 +7679,13 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             stickers = attr.icons;
                             stickersTextColor = false;
                         }
-                    } else if ("telegram_call".equals(webpageType)) {
+                    } else if ("wooble_call".equals(webpageType)) {
                         drawInstantView = true;
                         drawInstantViewType = 27;
                     }
                 } else if (siteName != null) {
                     siteName = siteName.toLowerCase();
-                    if ((siteName.equals("instagram") || siteName.equals("twitter") || "telegram_album".equals(webpageType) || "telegram_story_album".equals(webpageType)) && webpage.cached_page instanceof TL_iv.TL_page &&
+                    if ((siteName.equals("instagram") || siteName.equals("twitter") || "wooble_album".equals(webpageType) || "wooble_story_album".equals(webpageType)) && webpage.cached_page instanceof TL_iv.TL_page &&
                             (webpage.photo instanceof TLRPC.TL_photo || MessageObject.isVideoDocument(webpage.document))) {
                         drawInstantView = false;
                         slideshow = true;
@@ -7986,7 +7986,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         site_name = getString("VoipGroupVideoChat", R.string.VoipGroupVideoChat);
                     } else if (drawInstantViewType == 6) {
                         site_name = getString("ChatBackground", R.string.ChatBackground);
-                    } else if ("telegram_theme".equals(webpageType)) {
+                    } else if ("wooble_theme".equals(webpageType)) {
                         site_name = getString("ColorTheme", R.string.ColorTheme);
                     }
                     if (stargift != null) {
@@ -10915,7 +10915,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     final Uri uri = Uri.parse(buttonTypeUrl.url);
                                     final String host = uri.getHost().toLowerCase();
                                     botButton.isInviteButton = (uri.getQueryParameter("startgroup") != null && (
-                                            ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) && ("t.me".equals(host) || "telegram.me".equals(host) || "telegram.dog".equals(host)) ||
+                                            ("http".equals(uri.getScheme()) || "https".equals(uri.getScheme())) && ("t.me".equals(host) || "wooble.me".equals(host) || "wooble.dog".equals(host)) ||
                                                     "tg".equals(uri.getScheme()) && (buttonTypeUrl.url.startsWith("tg:resolve") || buttonTypeUrl.url.startsWith("tg://resolve"))
                                     ));
                                 } catch (Exception ignore) {
@@ -29508,11 +29508,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     
     private static boolean isSmallImageLinkPreviewType(String type) {
         return "app".equals(type) || "profile".equals(type) ||
-                "article".equals(type) || "telegram_bot".equals(type) ||
-                "telegram_user".equals(type) || "telegram_channel".equals(type) || "telegram_channel_direct".equals(type) ||
-                "telegram_megagroup".equals(type) || "telegram_voicechat".equals(type) || "telegram_videochat".equals(type) ||
-                "telegram_livestream".equals(type) || "telegram_channel_boost".equals(type) || "telegram_group_boost".equals(type) ||
-                "telegram_aicomposetone".equals(type);
+                "article".equals(type) || "wooble_bot".equals(type) ||
+                "wooble_user".equals(type) || "wooble_channel".equals(type) || "wooble_channel_direct".equals(type) ||
+                "wooble_megagroup".equals(type) || "wooble_voicechat".equals(type) || "wooble_videochat".equals(type) ||
+                "wooble_livestream".equals(type) || "wooble_channel_boost".equals(type) || "wooble_group_boost".equals(type) ||
+                "wooble_aicomposetone".equals(type);
     }
     
     private static void normalizePollPercents(boolean hasDifferent, int restPercent, ArrayList<PollButton> sortedPollButtons) {

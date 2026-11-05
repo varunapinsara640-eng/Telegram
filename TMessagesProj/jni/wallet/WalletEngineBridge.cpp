@@ -170,7 +170,7 @@ public:
         execute_ = env->GetMethodID(cls, "execute", "(JLjava/lang/String;Z[BJ)[B");
         cancel_ = env->GetMethodID(cls, "cancel", "(J)V");
         env->DeleteLocalRef(cls);
-        jclass error_cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$HttpTransport$HostException");
+        jclass error_cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$HttpTransport$HostException");
         if (!error_cls || !execute_ || !cancel_)
             throw std::runtime_error("Could not resolve wallet transport callbacks");
         error_kind_ = env->GetFieldID(error_cls, "kind", "I");
@@ -353,10 +353,10 @@ class Transaction {
 public:
     jobject object;
     Transaction(JNIEnv *env, const std::string &address, jlong amount) : env_(env) {
-        engine_cls_ = env_->FindClass("org/telegram/ui/Wallet/WalletEngine2");
+        engine_cls_ = env_->FindClass("org/wooble/ui/Wallet/WalletEngine2");
         if (!engine_cls_) throw std::runtime_error("Could not resolve wallet engine");
         auto factory = env_->GetStaticMethodID(engine_cls_, "createTransaction",
-            "(Ljava/lang/String;J)Lorg/telegram/tgnet/tl/TL_wallet$walletTransaction;");
+            "(Ljava/lang/String;J)Lorg/wooble/tgnet/tl/TL_wallet$walletTransaction;");
         if (!factory) throw std::runtime_error("Could not resolve wallet transaction factory");
         auto destination = env_->NewStringUTF(address.c_str());
         if (!destination) throw std::bad_alloc();
@@ -385,7 +385,7 @@ public:
     }
     void phase(we::SendPhase value) {
         auto setter = env_->GetStaticMethodID(engine_cls_, "setTransactionPhase",
-            "(Lorg/telegram/tgnet/tl/TL_wallet$walletTransaction;I)V");
+            "(Lorg/wooble/tgnet/tl/TL_wallet$walletTransaction;I)V");
         if (!setter) throw std::runtime_error("Could not resolve transaction phase");
         env_->CallStaticVoidMethod(engine_cls_, setter, object, static_cast<jint>(value));
         if (env_->ExceptionCheck()) throw std::runtime_error("Could not convert transaction phase");
@@ -480,7 +480,7 @@ void throw_java(JNIEnv *env, const char *type, const char *message) {
 } // namespace
 
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_mnemonicWordlist(JNIEnv *env, jclass) {
+Java_org_wooble_ui_Wallet_WalletEngine2_mnemonicWordlist(JNIEnv *env, jclass) {
     try {
         const auto words = we::mnemonic_wordlist();
         jclass string_class = env->FindClass("java/lang/String");
@@ -505,7 +505,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_mnemonicWordlist(JNIEnv *env, jclass) 
 }
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeSecretPhraseToPublicKey(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeSecretPhraseToPublicKey(
         JNIEnv *env, jclass, jbyteArray secret_phrase) {
     if (!secret_phrase) {
         throw_java(env, "java/lang/IllegalArgumentException", "Recovery phrase is required");
@@ -542,7 +542,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeSecretPhraseToPublicKey(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeSecretPhraseToAddress(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeSecretPhraseToAddress(
         JNIEnv *env, jclass, jbyteArray secret_phrase) {
     if (!secret_phrase) {
         throw_java(env, "java/lang/IllegalArgumentException", "Recovery phrase is required");
@@ -572,7 +572,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeSecretPhraseToAddress(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_isValidCellBoc(JNIEnv *env, jclass, jstring boc) {
+Java_org_wooble_ui_Wallet_WalletEngine2_isValidCellBoc(JNIEnv *env, jclass, jstring boc) {
     try {
         return boc && gram_adapter::is_valid_cell_boc(java_string(env, boc)) ? JNI_TRUE : JNI_FALSE;
     } catch (...) {
@@ -581,7 +581,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_isValidCellBoc(JNIEnv *env, jclass, js
 }
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeTonConnectCrypto(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeTonConnectCrypto(
         JNIEnv *env, jclass, jbyteArray phrase_bytes, jbyteArray parameters_bytes) {
     if (!phrase_bytes || !parameters_bytes) {
         throw_java(env, "java/lang/IllegalArgumentException", "Missing TON Connect approval data");
@@ -615,7 +615,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeTonConnectCrypto(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreateImportProof(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeCreateImportProof(
         JNIEnv *env, jclass, jbyteArray phrase_bytes, jbyteArray domain_bytes,
         jbyteArray payload_bytes, jint timestamp, jboolean for_import) {
     if (!phrase_bytes || !domain_bytes || !payload_bytes || timestamp <= 0
@@ -664,7 +664,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreateImportProof(
         if (descriptor.public_key.size() != 32 || proof.signature.size() != 64)
             throw std::runtime_error("Unexpected ownership proof size");
 
-        auto cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$ImportedWalletProof");
+        auto cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$ImportedWalletProof");
         if (!cls) return nullptr;
         auto constructor = env->GetMethodID(cls, "<init>", "([BI[B)V");
         if (!constructor) return nullptr;
@@ -693,7 +693,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreateImportProof(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeIsValidAddress(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeIsValidAddress(
         JNIEnv *env, jclass, jstring address) {
     if (!address) return JNI_FALSE;
     try {
@@ -712,7 +712,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeIsValidAddress(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeTransactionAddress(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeTransactionAddress(
         JNIEnv *env, jclass, jstring address) {
     try {
         const auto friendly = we::convert_ton_address(
@@ -727,7 +727,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeTransactionAddress(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreate(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeCreate(
         JNIEnv *env, jclass, jint current_account, jstring address, jbyteArray public_key, jobject transport, jstring journal_directory) {
     try {
         if (!address || !public_key || env->GetArrayLength(public_key) != 32) {
@@ -749,7 +749,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreate(
         env->GetByteArrayRegion(public_key, 0, 32, reinterpret_cast<jbyte *>(key.data()));
         if (env->ExceptionCheck()) return 0;
 
-        const auto record_id = "telegram-" + std::to_string(current_account) + ":" + raw_address;
+        const auto record_id = "wooble-" + std::to_string(current_account) + ":" + raw_address;
         we::WalletClientConfig config{
             record_id,
             wallet_address,
@@ -783,7 +783,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeCreate(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeBalance(JNIEnv *env, jclass, jlong handle) {
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeBalance(JNIEnv *env, jclass, jlong handle) {
     try {
         std::shared_ptr<we::WalletClient> client;
         {
@@ -815,7 +815,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeBalance(JNIEnv *env, jclass, jlo
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateSend(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeEmulateSend(
         JNIEnv *env, jclass, jlong handle, jstring address, jlong amount,
         jbyteArray comment_bytes, jboolean comment_encrypted) {
     try {
@@ -845,7 +845,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateSend(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateRotateKey(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeEmulateRotateKey(
         JNIEnv *env, jclass, jlong handle, jstring address) {
     try {
         // No SecretScope: preview_key_rotation accepts public state only and
@@ -863,7 +863,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateRotateKey(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareRotateKey(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePrepareRotateKey(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jstring gasless_address) {
     try {
         auto client = get_client(handle);
@@ -889,7 +889,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareRotateKey(
         replacement.value.swap(prepared.replacement_recovery_phrase.phrase);
         if (prepared.new_public_key.size() != 32)
             throw std::runtime_error("Unexpected signing public key size");
-        const auto cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$PreparedRotation");
+        const auto cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$PreparedRotation");
         if (!cls) return nullptr;
         const auto constructor = env->GetMethodID(cls, "<init>",
             "(Ljava/lang/String;Ljava/lang/String;[B[B)V");
@@ -921,7 +921,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareRotateKey(
 }
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeDecryptRawComment(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeDecryptRawComment(
         JNIEnv *env, jclass, jbyteArray phrase_bytes, jstring sender, jstring body) {
     if (!phrase_bytes || !sender || !body || env->GetArrayLength(phrase_bytes) == 0) {
         throw_java(env, "java/lang/IllegalArgumentException", "Recovery phrase, sender and message body are required");
@@ -964,7 +964,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeDecryptRawComment(
 }
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeDecryptComment(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeDecryptComment(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes,
         jstring sender, jstring body) {
     try {
@@ -1017,7 +1017,7 @@ we::SendIntent ton_connect_intent(JNIEnv *env, jobjectArray fields, jlong valid_
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePreviewTonConnect(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePreviewTonConnect(
         JNIEnv *env, jclass, jlong handle, jobjectArray fields, jlong valid_until) {
     try {
         auto intent = ton_connect_intent(env, fields, valid_until);
@@ -1032,7 +1032,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePreviewTonConnect(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePreviewSignMessage(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePreviewSignMessage(
         JNIEnv *env, jclass, jlong handle, jobjectArray fields, jlong valid_until) {
     try {
         auto intent = ton_connect_intent(env, fields, valid_until);
@@ -1045,7 +1045,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePreviewSignMessage(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeSignMessage(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeSignMessage(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jobjectArray fields,
         jlong valid_until, jstring operation_id) {
     try {
@@ -1068,7 +1068,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeSignMessage(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareTonConnectTransfer(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePrepareTonConnectTransfer(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jobjectArray fields,
         jlong valid_until, jstring operation_id) {
     try {
@@ -1080,7 +1080,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareTonConnectTransfer(
         if (env->ExceptionCheck()) return nullptr;
         SecretScope scope(client, phrase, we::SecretAccessReason::kSignTransfer);
         auto prepared = client.wallet->prepare_transfer({java_string(env, operation_id), intent});
-        auto cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$PreparedSend");
+        auto cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$PreparedSend");
         if (!cls) return nullptr;
         auto ctor = env->GetMethodID(cls, "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
         if (!ctor) return nullptr;
@@ -1094,7 +1094,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareTonConnectTransfer(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareSend(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePrepareSend(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jstring address,
         jlong amount, jbyteArray comment_bytes, jbyteArray comment_recipient_public_key,
         jstring gasless_address, jstring operation_id) {
@@ -1144,7 +1144,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareSend(
         const auto comment_body = encrypted_comment_body
             ? env->NewStringUTF(encrypted_comment_body->c_str()) : nullptr;
         if (env->ExceptionCheck()) return nullptr;
-        const auto prepared_cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$PreparedSend");
+        const auto prepared_cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$PreparedSend");
         if (!prepared_cls) return nullptr;
         const auto prepared_constructor = env->GetMethodID(prepared_cls, "<init>",
             "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
@@ -1161,7 +1161,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareSend(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeMessageBodyHash(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeMessageBodyHash(
         JNIEnv *env, jclass, jstring boc) {
     try {
         const auto hash = gram_adapter::message_body_hash(java_string(env, boc));
@@ -1175,7 +1175,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeMessageBodyHash(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeSend(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeSend(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jstring address,
         jlong amount, jbyteArray comment_bytes, jbyteArray comment_recipient_public_key,
         jstring operation_id, jobject callbacks) {
@@ -1228,10 +1228,10 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeSend(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeResolvePending(JNIEnv *env, jclass, jlong handle) {
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeResolvePending(JNIEnv *env, jclass, jlong handle) {
     try {
         const auto snapshot = get_client(handle).wallet->resolve_pending();
-        const auto cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$SendResolution");
+        const auto cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$SendResolution");
         if (!cls) return nullptr;
         const auto constructor = env->GetMethodID(cls, "<init>",
             "(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;J)V");
@@ -1256,7 +1256,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeResolvePending(JNIEnv *env, jcla
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeRotateKey(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeRotateKey(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes,
         jstring operation_id, jobject callbacks) {
     try {
@@ -1320,7 +1320,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeRotateKey(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeClose(JNIEnv *env, jclass, jlong handle) {
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeClose(JNIEnv *env, jclass, jlong handle) {
     try {
         std::shared_ptr<we::WalletClient> client;
         {
@@ -1341,7 +1341,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeClose(JNIEnv *env, jclass, jlong
 
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateSendNFT(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativeEmulateSendNFT(
         JNIEnv *env, jclass, jlong handle, jstring recipient, jstring nft_address,
         jbyteArray comment_bytes, jstring operation_id, jlong attached, jlong forward) {
     try {
@@ -1362,7 +1362,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativeEmulateSendNFT(
 }
 
 extern "C" JNIEXPORT jobject JNICALL
-Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareSendNFT(
+Java_org_wooble_ui_Wallet_WalletEngine2_nativePrepareSendNFT(
         JNIEnv *env, jclass, jlong handle, jbyteArray phrase_bytes, jstring recipient,
         jstring nft_address, jbyteArray comment_bytes, jstring operation_id, jlong attached, jlong forward) {
     try {
@@ -1377,7 +1377,7 @@ Java_org_telegram_ui_Wallet_WalletEngine2_nativePrepareSendNFT(
         const auto prepared = client.wallet->prepare_nft_transfer({java_string(env, operation_id), intent});
         const auto external = env->NewStringUTF(prepared.external_boc.c_str());
         if (!external) return nullptr;
-        const auto cls = env->FindClass("org/telegram/ui/Wallet/WalletEngine2$PreparedSend");
+        const auto cls = env->FindClass("org/wooble/ui/Wallet/WalletEngine2$PreparedSend");
         if (!cls) return nullptr;
         const auto constructor = env->GetMethodID(cls, "<init>",
                 "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");

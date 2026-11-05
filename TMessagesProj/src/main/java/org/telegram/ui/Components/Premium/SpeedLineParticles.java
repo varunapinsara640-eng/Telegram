@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -6,9 +6,9 @@ import android.graphics.RectF;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
 
 import java.util.ArrayList;
 

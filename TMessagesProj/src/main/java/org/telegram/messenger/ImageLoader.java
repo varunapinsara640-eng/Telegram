@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
@@ -42,22 +42,22 @@ import androidx.core.graphics.ColorUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.DispatchQueuePriority;
-import org.telegram.messenger.secretmedia.EncryptedFileInputStream;
-import org.telegram.messenger.utils.BitmapsCache;
-import org.telegram.messenger.wallpaper.WallpaperGiftBitmapDrawable;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.RLottieDiceDrawable;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.SlotsDrawable;
-import org.telegram.ui.Components.ThemePreviewDrawable;
-import org.telegram.ui.web.WebInstantView;
+import org.wooble.DispatchQueuePriority;
+import org.wooble.messenger.secretmedia.EncryptedFileInputStream;
+import org.wooble.messenger.utils.BitmapsCache;
+import org.wooble.messenger.wallpaper.WallpaperGiftBitmapDrawable;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.RLottieDiceDrawable;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.SlotsDrawable;
+import org.wooble.ui.Components.ThemePreviewDrawable;
+import org.wooble.ui.web.WebInstantView;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -154,7 +154,7 @@ public class ImageLoader {
     private volatile long lastCacheOutTime = 0;
     private int lastImageNum = 0;
 
-    private File telegramPath = null;
+    private File wooblePath = null;
 
     public static final String AUTOPLAY_FILTER = "g";
     public static final String AUTOPLAY_FILTER_NONLOOP = "gl";
@@ -2469,14 +2469,14 @@ public class ImageLoader {
                     try {
                         if (ApplicationLoader.applicationContext.getExternalMediaDirs().length > 0) {
                             publicMediaDir = getPublicStorageDir();
-                            publicMediaDir = new File(publicMediaDir, "Telegram");
+                            publicMediaDir = new File(publicMediaDir, "Wooble");
                             publicMediaDir.mkdirs();
                         }
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
                     newPath = ApplicationLoader.applicationContext.getExternalFilesDir(null);
-                    telegramPath = new File(newPath, "Telegram");
+                    wooblePath = new File(newPath, "Wooble");
                 } else {
                     boolean isSdCard = !TextUtils.isEmpty(SharedConfig.storageCacheDir) && path.getAbsolutePath().startsWith(SharedConfig.storageCacheDir);
                     if (!isSdCard) {
@@ -2485,26 +2485,26 @@ public class ImageLoader {
                             path = ApplicationLoader.applicationContext.getExternalFilesDir(null);
                         }
                     }
-                    telegramPath = new File(path, "Telegram");
+                    wooblePath = new File(path, "Wooble");
                 }
-                telegramPath.mkdirs();
+                wooblePath.mkdirs();
 
-                if (!telegramPath.isDirectory()) {
+                if (!wooblePath.isDirectory()) {
                     ArrayList<File> dirs = AndroidUtilities.getDataDirs();
                     for (int a = 0, N = dirs.size(); a < N; a++) {
                         File dir = dirs.get(a);
                         if (dir != null && !TextUtils.isEmpty(SharedConfig.storageCacheDir) && dir.getAbsolutePath().startsWith(SharedConfig.storageCacheDir)) {
                             path = dir;
-                            telegramPath = new File(path, "Telegram");
-                            telegramPath.mkdirs();
+                            wooblePath = new File(path, "Wooble");
+                            wooblePath.mkdirs();
                             break;
                         }
                     }
                 }
 
-                if (telegramPath.isDirectory()) {
+                if (wooblePath.isDirectory()) {
                     try {
-                        File imagePath = new File(telegramPath, "Telegram Images");
+                        File imagePath = new File(wooblePath, "Wooble Images");
                         imagePath.mkdir();
                         if (imagePath.isDirectory() && canMoveFiles(cachePath, imagePath, FileLoader.MEDIA_DIR_IMAGE)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_IMAGE, imagePath);
@@ -2517,7 +2517,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File videoPath = new File(telegramPath, "Telegram Video");
+                        File videoPath = new File(wooblePath, "Wooble Video");
                         videoPath.mkdir();
                         if (videoPath.isDirectory() && canMoveFiles(cachePath, videoPath, FileLoader.MEDIA_DIR_VIDEO)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_VIDEO, videoPath);
@@ -2530,7 +2530,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File audioPath = new File(telegramPath, "Telegram Audio");
+                        File audioPath = new File(wooblePath, "Wooble Audio");
                         audioPath.mkdir();
                         if (audioPath.isDirectory() && canMoveFiles(cachePath, audioPath, FileLoader.MEDIA_DIR_AUDIO)) {
                             AndroidUtilities.createEmptyFile(new File(audioPath, ".nomedia"));
@@ -2544,7 +2544,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File documentPath = new File(telegramPath, "Telegram Documents");
+                        File documentPath = new File(wooblePath, "Wooble Documents");
                         documentPath.mkdir();
                         if (documentPath.isDirectory() && canMoveFiles(cachePath, documentPath, FileLoader.MEDIA_DIR_DOCUMENT)) {
                             AndroidUtilities.createEmptyFile(new File(documentPath, ".nomedia"));
@@ -2558,7 +2558,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File normalNamesPath = new File(telegramPath, "Telegram Files");
+                        File normalNamesPath = new File(wooblePath, "Wooble Files");
                         normalNamesPath.mkdir();
                         if (normalNamesPath.isDirectory() && canMoveFiles(cachePath, normalNamesPath, FileLoader.MEDIA_DIR_FILES)) {
                             AndroidUtilities.createEmptyFile(new File(normalNamesPath, ".nomedia"));
@@ -2572,7 +2572,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File normalNamesPath = new File(telegramPath, "Telegram Stories");
+                        File normalNamesPath = new File(wooblePath, "Wooble Stories");
                         normalNamesPath.mkdir();
                         if (normalNamesPath.isDirectory() && canMoveFiles(cachePath, normalNamesPath, FileLoader.MEDIA_DIR_STORIES)) {
                             AndroidUtilities.createEmptyFile(new File(normalNamesPath, ".nomedia"));
@@ -2587,7 +2587,7 @@ public class ImageLoader {
                 }
                 if (publicMediaDir != null && publicMediaDir.isDirectory()) {
                     try {
-                        File imagePath = new File(publicMediaDir, "Telegram Images");
+                        File imagePath = new File(publicMediaDir, "Wooble Images");
                         imagePath.mkdir();
                         if (imagePath.isDirectory() && canMoveFiles(cachePath, imagePath, FileLoader.MEDIA_DIR_IMAGE)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_IMAGE_PUBLIC, imagePath);
@@ -2600,7 +2600,7 @@ public class ImageLoader {
                     }
 
                     try {
-                        File videoPath = new File(publicMediaDir, "Telegram Video");
+                        File videoPath = new File(publicMediaDir, "Wooble Video");
                         videoPath.mkdir();
                         if (videoPath.isDirectory() && canMoveFiles(cachePath, videoPath, FileLoader.MEDIA_DIR_VIDEO)) {
                             mediaDirs.put(FileLoader.MEDIA_DIR_VIDEO_PUBLIC, videoPath);

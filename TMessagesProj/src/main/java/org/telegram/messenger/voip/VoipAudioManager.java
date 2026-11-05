@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import static android.content.Context.AUDIO_SERVICE;
 
@@ -9,9 +9,9 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.Utilities;
 
 public class VoipAudioManager {
 

@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
 public class RadiiUtils {
     public static boolean radiiAreSame(float[] radii) {

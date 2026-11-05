@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
 
 public final class ViewHelper {
 

@@ -1,4 +1,4 @@
-package org.telegram.utils.glass;
+package org.wooble.utils.glass;
 
 import android.graphics.RectF;
 import android.os.Build;
@@ -8,15 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.postdrawcompat.OnPostDrawListener;
-import org.telegram.messenger.postdrawcompat.ViewOnPostDrawListener;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
-import org.telegram.ui.Components.chat.ViewPositionWatcher;
-import org.telegram.utils.glass.positions.GlassPositionsArray;
-import org.telegram.utils.glass.positions.GlassPositionsMerger;
+import org.wooble.messenger.postdrawcompat.OnPostDrawListener;
+import org.wooble.messenger.postdrawcompat.ViewOnPostDrawListener;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.wooble.ui.Components.chat.ViewPositionWatcher;
+import org.wooble.utils.glass.positions.GlassPositionsArray;
+import org.wooble.utils.glass.positions.GlassPositionsMerger;
 
 import java.util.ArrayList;
 

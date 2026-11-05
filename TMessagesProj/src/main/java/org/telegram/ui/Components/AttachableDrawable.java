@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.view.View;
 
-import org.telegram.messenger.ImageReceiver;
+import org.wooble.messenger.ImageReceiver;
 
 public interface AttachableDrawable {
     void onAttachedToWindow(ImageReceiver parent);

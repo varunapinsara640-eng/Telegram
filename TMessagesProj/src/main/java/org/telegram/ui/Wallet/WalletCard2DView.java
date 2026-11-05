@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,8 +21,8 @@ import android.view.ViewConfiguration;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ScaleStateListAnimator;
 
 public class WalletCard2DView extends FrameLayout implements SensorEventListener {
 
@@ -130,7 +130,7 @@ public class WalletCard2DView extends FrameLayout implements SensorEventListener
     };
 
     public WalletCard2DView(Context context) {
-        this(context, org.telegram.messenger.R.drawable.wallet_card_qr);
+        this(context, org.wooble.messenger.R.drawable.wallet_card_qr);
     }
 
     public WalletCard2DView(Context context, int cardIconResId) {
@@ -243,7 +243,7 @@ public class WalletCard2DView extends FrameLayout implements SensorEventListener
             WalletCard2DMaterial.ASSET_QUEUE.postRunnable(() -> {
                 WalletCard2DMaterial ready = new WalletCard2DMaterial(context.getApplicationContext(),
                         cardIconResId, qrButtonRightPadding, redrawMaterial);
-                org.telegram.messenger.AndroidUtilities.runOnUIThread(() -> {
+                org.wooble.messenger.AndroidUtilities.runOnUIThread(() -> {
                     material = ready;
                     material.setIcon(requestedCardIcon);
                     renderedX = Float.NaN;

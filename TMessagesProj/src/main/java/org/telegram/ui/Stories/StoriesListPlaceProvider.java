@@ -1,6 +1,6 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -9,23 +9,23 @@ import android.graphics.Region;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.DialogCell;
-import org.telegram.ui.Cells.ManageChatUserCell;
-import org.telegram.ui.Cells.ProfileChannelCell;
-import org.telegram.ui.Cells.ProfileSearchCell;
-import org.telegram.ui.Cells.ReactedUserHolderView;
-import org.telegram.ui.Cells.SharedPhotoVideoCell2;
-import org.telegram.ui.Cells.StatisticPostInfoCell;
-import org.telegram.ui.Cells.UserCell;
-import org.telegram.ui.Components.BlurredRecyclerView;
-import org.telegram.ui.Components.RecyclerListView;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.DialogCell;
+import org.wooble.ui.Cells.ManageChatUserCell;
+import org.wooble.ui.Cells.ProfileChannelCell;
+import org.wooble.ui.Cells.ProfileSearchCell;
+import org.wooble.ui.Cells.ReactedUserHolderView;
+import org.wooble.ui.Cells.SharedPhotoVideoCell2;
+import org.wooble.ui.Cells.StatisticPostInfoCell;
+import org.wooble.ui.Cells.UserCell;
+import org.wooble.ui.Components.BlurredRecyclerView;
+import org.wooble.ui.Components.RecyclerListView;
 
 public class StoriesListPlaceProvider implements StoryViewer.PlaceProvider {
 

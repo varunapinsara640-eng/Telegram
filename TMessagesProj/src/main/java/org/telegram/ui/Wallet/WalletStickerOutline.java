@@ -1,11 +1,11 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import org.telegram.messenger.DispatchQueue;
+import org.wooble.messenger.DispatchQueue;
 
 /** The white die-cut outline of a wallet card sticker, built off the main thread. */
 final class WalletStickerOutline {

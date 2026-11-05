@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;

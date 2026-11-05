@@ -1,4 +1,4 @@
-package org.telegram.plugin
+package org.wooble.plugin
 
 import com.android.build.api.artifact.SingleArtifact
 import com.android.build.api.variant.AndroidComponentsExtension
@@ -7,25 +7,25 @@ import com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.register
-import org.telegram.tasks.GenerateStringResourceIdsAssetTask
-import org.telegram.tasks.GenerateLottieMetadataAssetFileTask
-import org.telegram.tasks.TelegramStringsTask
+import org.wooble.tasks.GenerateStringResourceIdsAssetTask
+import org.wooble.tasks.GenerateLottieMetadataAssetFileTask
+import org.wooble.tasks.WoobleStringsTask
 
-class TelegramBuildAppPlugin : Plugin<Project> {
+class WoobleBuildAppPlugin : Plugin<Project> {
     override fun apply(project: Project) {
-        val telegramModule = project.project(":TMessagesProj")
+        val woobleModule = project.project(":TMessagesProj")
         val androidComponents =
             project.extensions.findByType(AndroidComponentsExtension::class.java)
-                ?: error("Apply com.android.application/library before org.telegram.build-app-plugin")
+                ?: error("Apply com.android.application/library before org.wooble.build-app-plugin")
 
         androidComponents.onVariants { variant ->
             val suffix = variant.name.replaceFirstChar { it.uppercase() }
 
-            val task = project.tasks.register<TelegramStringsTask>(
-                "generate${suffix}TelegramStrings"
+            val task = project.tasks.register<WoobleStringsTask>(
+                "generate${suffix}WoobleStrings"
             ) {
                 stringsXml.from(
-                    telegramModule.fileTree("src/main/res/values") {
+                    woobleModule.fileTree("src/main/res/values") {
                         include("strings.xml")
                     },
                     project.fileTree("src/main/res/values") {
@@ -34,7 +34,7 @@ class TelegramBuildAppPlugin : Plugin<Project> {
                 )
 
                 localizationFiles.from(
-                    telegramModule.fileTree("src/main/res") {
+                    woobleModule.fileTree("src/main/res") {
                         include("values-*/strings.xml")
                     },
                     project.fileTree("src/main/res") {
@@ -44,19 +44,19 @@ class TelegramBuildAppPlugin : Plugin<Project> {
 
                 stringsOutputDir.set(
                     project.layout.buildDirectory.dir(
-                        "generated/telegramStrings/${variant.name}/res"
+                        "generated/woobleStrings/${variant.name}/res"
                     )
                 )
 
                 assetsOutputDir.set(
                     project.layout.buildDirectory.dir(
-                        "generated/telegramStrings/${variant.name}/assets"
+                        "generated/woobleStrings/${variant.name}/assets"
                     )
                 )
 
                 stableIdsFile.set(
                     project.layout.buildDirectory.file(
-                        "generated/telegramStrings/${variant.name}/stable-ids.txt"
+                        "generated/woobleStrings/${variant.name}/stable-ids.txt"
                     )
                 )
 
@@ -65,17 +65,17 @@ class TelegramBuildAppPlugin : Plugin<Project> {
 
             variant.sources.res?.addGeneratedSourceDirectory(
                 task,
-                TelegramStringsTask::stringsOutputDir
+                WoobleStringsTask::stringsOutputDir
             )
 
             variant.sources.assets?.addGeneratedSourceDirectory(
                 task,
-                TelegramStringsTask::assetsOutputDir
+                WoobleStringsTask::assetsOutputDir
             )
 
             (variant as ApplicationVariant).androidResources.aaptAdditionalParameters.addAll(
-                task.flatMap { telegramStringsTask ->
-                    telegramStringsTask.stableIdsFile.map { stableIdsFile ->
+                task.flatMap { woobleStringsTask ->
+                    woobleStringsTask.stableIdsFile.map { stableIdsFile ->
                         listOf(
                             "--stable-ids",
                             stableIdsFile.asFile.absolutePath
@@ -114,7 +114,7 @@ class TelegramBuildAppPlugin : Plugin<Project> {
                 runtimeSymbolList.set(variant.artifacts.get(SingleArtifact.RUNTIME_SYMBOL_LIST))
                 variant.sources.res?.all?.let { layers ->
                     rawResourceDirs.from(
-                        telegramModule.fileTree("src/main/res") {
+                        woobleModule.fileTree("src/main/res") {
                             include("raw*/*.json")
                         },
                         project.fileTree("src/main/res") {

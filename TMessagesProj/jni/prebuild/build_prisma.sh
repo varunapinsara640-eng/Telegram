@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Compile libprisma into prebuild/lib/<ABI>/, using Telegram's shared build configuration.
+# Compile libprisma into prebuild/lib/<ABI>/, using Wooble's shared build configuration.
 set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

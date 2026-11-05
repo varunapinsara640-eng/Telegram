@@ -1,8 +1,8 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
-import static org.telegram.messenger.AndroidUtilities.cascade;
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.cascade;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.graphics.Rect;
 
-import org.telegram.messenger.ImageReceiver;
+import org.wooble.messenger.ImageReceiver;
 
 public class DrawableUtils {
     private static final Rect tmpRect = new Rect();

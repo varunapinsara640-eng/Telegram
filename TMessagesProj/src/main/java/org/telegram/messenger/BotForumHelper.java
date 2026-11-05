@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -15,16 +15,16 @@ import android.util.SparseIntArray;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_forum;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.TypingDotsDrawable;
-import org.telegram.ui.MultiLayoutTypingAnimator;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_forum;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.TypingDotsDrawable;
+import org.wooble.ui.MultiLayoutTypingAnimator;
 
 import java.util.ArrayList;
 import java.util.Collections;

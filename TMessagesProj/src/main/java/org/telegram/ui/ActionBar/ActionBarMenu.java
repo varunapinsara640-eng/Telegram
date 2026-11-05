@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.find;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.find;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -21,11 +21,11 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Adapters.FiltersView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.RLottieDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.Adapters.FiltersView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.RLottieDrawable;
 
 import java.util.ArrayList;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
 import android.graphics.Canvas;
 import android.graphics.Outline;
@@ -14,7 +14,7 @@ import androidx.annotation.RequiresApi;
 
 
 
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.Utilities;
 
 import java.util.function.Supplier;
 

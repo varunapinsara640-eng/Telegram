@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.messenger.regular.BuildConfig;
+import org.wooble.messenger.regular.BuildConfig;
 
 public class ApplicationLoaderImpl extends ApplicationLoader {
     @Override

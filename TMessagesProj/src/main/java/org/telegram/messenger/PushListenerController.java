@@ -1,6 +1,6 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
@@ -18,11 +18,11 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import org.wooble.messenger.voip.VoIPGroupNotification;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_update;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

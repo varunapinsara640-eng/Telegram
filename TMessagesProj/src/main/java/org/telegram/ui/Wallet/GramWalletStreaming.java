@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.os.SystemClock;
 
@@ -16,10 +16,10 @@ import com.neovisionaries.ws.client.WebSocketFrame;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_toncenter;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.tl.TL_toncenter;
 
 import java.util.List;
 import java.util.Map;

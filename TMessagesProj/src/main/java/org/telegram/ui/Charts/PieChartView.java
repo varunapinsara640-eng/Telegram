@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts;
+package org.wooble.ui.Charts;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -11,14 +11,14 @@ import android.os.Build;
 import android.text.TextPaint;
 import android.view.HapticFeedbackConstants;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Charts.data.ChartData;
-import org.telegram.ui.Charts.data.StackLinearChartData;
-import org.telegram.ui.Charts.view_data.ChartHorizontalLinesData;
-import org.telegram.ui.Charts.view_data.LegendSignatureView;
-import org.telegram.ui.Charts.view_data.LineViewData;
-import org.telegram.ui.Charts.view_data.PieLegendView;
-import org.telegram.ui.Charts.view_data.TransitionParams;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.Charts.data.ChartData;
+import org.wooble.ui.Charts.data.StackLinearChartData;
+import org.wooble.ui.Charts.view_data.ChartHorizontalLinesData;
+import org.wooble.ui.Charts.view_data.LegendSignatureView;
+import org.wooble.ui.Charts.view_data.LineViewData;
+import org.wooble.ui.Charts.view_data.PieLegendView;
+import org.wooble.ui.Charts.view_data.TransitionParams;
 
 
 public class PieChartView extends StackLinearChartView<PieChartViewData> {

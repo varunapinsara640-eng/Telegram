@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,9 +12,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.collection.ArrayMap;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,11 @@
-package org.telegram.tgnet.test
+package org.wooble.tgnet.test
 
 import org.junit.Test
-import org.telegram.SQLite.SQLiteCursor
-import org.telegram.SQLite.SQLiteDatabase
-import org.telegram.messenger.ApplicationLoader
-import org.telegram.messenger.DatabaseMigrationHelper
-import org.telegram.messenger.MessagesStorage
+import org.wooble.SQLite.SQLiteCursor
+import org.wooble.SQLite.SQLiteDatabase
+import org.wooble.messenger.ApplicationLoader
+import org.wooble.messenger.DatabaseMigrationHelper
+import org.wooble.messenger.MessagesStorage
 import java.io.File
 
 class TestDatabaseMigration {

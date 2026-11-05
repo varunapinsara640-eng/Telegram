@@ -1,4 +1,4 @@
-package org.telegram.ui.Gifts;
+package org.wooble.ui.Gifts;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.tgnet.TLObject;
+import org.wooble.tgnet.TLObject;
 
 public class GiftMessageView extends View {
 

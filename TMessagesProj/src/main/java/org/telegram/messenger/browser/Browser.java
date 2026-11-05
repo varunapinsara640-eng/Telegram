@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger.browser;
+package org.wooble.messenger.browser;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -21,36 +21,36 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.CustomTabsCopyReceiver;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ShareBroadcastReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.support.customtabs.CustomTabsCallback;
-import org.telegram.messenger.support.customtabs.CustomTabsClient;
-import org.telegram.messenger.support.customtabs.CustomTabsIntent;
-import org.telegram.messenger.support.customtabs.CustomTabsServiceConnection;
-import org.telegram.messenger.support.customtabs.CustomTabsSession;
-import org.telegram.messenger.support.customtabsclient.shared.CustomTabsHelper;
-import org.telegram.messenger.support.customtabsclient.shared.ServiceConnection;
-import org.telegram.messenger.support.customtabsclient.shared.ServiceConnectionCallback;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheetTabs;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.CustomTabsCopyReceiver;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.ShareBroadcastReceiver;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.support.customtabs.CustomTabsCallback;
+import org.wooble.messenger.support.customtabs.CustomTabsClient;
+import org.wooble.messenger.support.customtabs.CustomTabsIntent;
+import org.wooble.messenger.support.customtabs.CustomTabsServiceConnection;
+import org.wooble.messenger.support.customtabs.CustomTabsSession;
+import org.wooble.messenger.support.customtabsclient.shared.CustomTabsHelper;
+import org.wooble.messenger.support.customtabsclient.shared.ServiceConnection;
+import org.wooble.messenger.support.customtabsclient.shared.ServiceConnectionCallback;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.ui.ActionBar.ActionBarLayout;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheetTabs;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BubbleActivity;
+import org.wooble.ui.LaunchActivity;
 
 import java.lang.ref.WeakReference;
 import java.net.IDN;
@@ -224,13 +224,13 @@ public class Browser {
         return (
             isTelegraphUrl(url, false, true) ||
             url.matches("^(https://)?t\\.me/iv\\??(/.*|$)") || // t.me/iv?
-            url.matches("^(https://)?telegram\\.org/(blog|tour)(/.*|$)") || // telegram.org/blog, telegram.org/tour
+            url.matches("^(https://)?wooble\\.org/(blog|tour)(/.*|$)") || // wooble.org/blog, wooble.org/tour
             url.matches("^(https://)?fragment\\.com(/.*|$)") // fragment.com
         );
     }
 
     public static boolean isGetPremiumUrl(String url) {
-        return url != null && url.matches("(?i)^(https?://)?(t\\.me|telegram\\.me|telegram\\.dog)/getpremium([/?#].*)?$");
+        return url != null && url.matches("(?i)^(https?://)?(t\\.me|wooble\\.me|wooble\\.dog)/getpremium([/?#].*)?$");
     }
 
     public static class Progress {
@@ -308,7 +308,7 @@ public class Browser {
         if (tryTelegraph) {
             try {
                 String host = AndroidUtilities.getHostAuthority(uri);
-                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null && (isTelegraphUrl(host, true) || "telegram.org".equalsIgnoreCase(host) && (uri.toString().toLowerCase().contains("telegram.org/faq") || uri.toString().toLowerCase().contains("telegram.org/privacy") || uri.toString().toLowerCase().contains("telegram.org/blog")))) {
+                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser() != null && (isTelegraphUrl(host, true) || "wooble.org".equalsIgnoreCase(host) && (uri.toString().toLowerCase().contains("wooble.org/faq") || uri.toString().toLowerCase().contains("wooble.org/privacy") || uri.toString().toLowerCase().contains("wooble.org/blog")))) {
                     final AlertDialog[] progressDialog = new AlertDialog[] {
                         new AlertDialog(context, AlertDialog.ALERT_TYPE_SPINNER)
                     };
@@ -435,7 +435,7 @@ public class Browser {
                                 uri = Uri.parse(fallbackUrl);
                             }
                         }
-                        openInTelegramBrowser(context, uri.toString(), inCaseLoading);
+                        openInWoobleBrowser(context, uri.toString(), inCaseLoading);
                     }
                 } else {
                     openInExternalBrowser(context, uri.toString(), allowIntent, browserPackage);
@@ -477,7 +477,7 @@ public class Browser {
         return true;
     }
 
-    public static boolean openInTelegramBrowser(Context context, String url, Browser.Progress progress) {
+    public static boolean openInWoobleBrowser(Context context, String url, Browser.Progress progress) {
         if (LaunchActivity.instance != null) {
             BottomSheetTabs tabs = LaunchActivity.instance.getBottomSheetTabs();
             if (tabs != null && tabs.tryReopenTab(url) != null) {
@@ -648,7 +648,7 @@ public class Browser {
         }
         try {
             url = url.toLowerCase();
-            if (url.startsWith("tg:passport") || url.startsWith("tg://passport") || url.startsWith("tg:secureid") || url.contains("resolve") && url.contains("domain=telegrampassport")) {
+            if (url.startsWith("tg:passport") || url.startsWith("tg://passport") || url.startsWith("tg:secureid") || url.contains("resolve") && url.contains("domain=wooblepassport")) {
                 return true;
             }
         } catch (Throwable ignore) {
@@ -703,7 +703,7 @@ public class Browser {
             return true;
         } else if ("tg".equals(uri.getScheme())) {
             return true;
-        } else if ("telegram.dog".equals(host)) {
+        } else if ("wooble.dog".equals(host)) {
             String path = uri.getPath();
             if (path != null && path.length() > 1) {
                 if (all) {
@@ -718,7 +718,7 @@ public class Browser {
                 }
                 return true;
             }
-        } else if ("telegram.me".equals(host) || "t.me".equals(host)) {
+        } else if ("wooble.me".equals(host) || "t.me".equals(host)) {
             String path = uri.getPath();
             if (path != null && path.length() > 1) {
                 if (all) {
@@ -733,10 +733,10 @@ public class Browser {
                 }
                 return true;
             }
-        } else if ("telegram.org".equals(host) && uri != null && uri.getPath() != null && uri.getPath().startsWith("/blog/")) {
+        } else if ("wooble.org".equals(host) && uri != null && uri.getPath() != null && uri.getPath().startsWith("/blog/")) {
             return true;
         } else if (all) {
-            if (host.endsWith("telegram.org") || host.endsWith("telegra.ph") || host.endsWith("telesco.pe")) {
+            if (host.endsWith("wooble.org") || host.endsWith("telegra.ph") || host.endsWith("telesco.pe")) {
                 return true;
             }
         }

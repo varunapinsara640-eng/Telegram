@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.spoilers;
+package org.wooble.ui.Components.spoilers;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -17,11 +17,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,12 +1,12 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 
 
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLRPC;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

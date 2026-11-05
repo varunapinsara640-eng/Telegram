@@ -1,6 +1,6 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import org.telegram.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_iv;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -7,9 +7,9 @@ import android.graphics.drawable.ShapeDrawable;
 import android.util.Property;
 import android.view.animation.OvershootInterpolator;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Cells.DialogCell;
-import org.telegram.ui.PhotoViewer;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.ui.Cells.DialogCell;
+import org.wooble.ui.PhotoViewer;
 
 public class AnimationProperties {
 

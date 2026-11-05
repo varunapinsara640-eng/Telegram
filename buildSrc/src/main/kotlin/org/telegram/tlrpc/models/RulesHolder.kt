@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.models
+package org.wooble.tlrpc.models
 
 object RulesHolder {
     val rules = Rules(

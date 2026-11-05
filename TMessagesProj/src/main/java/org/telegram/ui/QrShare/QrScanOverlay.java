@@ -1,7 +1,7 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -52,28 +52,28 @@ import com.google.zxing.ResultPoint;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraSessionWrapper;
-import org.telegram.messenger.camera.CameraView;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.BasePermissionsActivity;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.PhotoAlbumPickerActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.camera.CameraController;
+import org.wooble.messenger.camera.CameraSessionWrapper;
+import org.wooble.messenger.camera.CameraView;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.BasePermissionsActivity;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.PhotoAlbumPickerActivity;
 
 import java.util.ArrayList;
 
@@ -82,14 +82,14 @@ import java.util.ArrayList;
  * the whole screen while the camera comes in; closing runs the same way back into the button.
  * <p>
  * Its own camera and recognition, no fragment or sheet: frames of the preview are read in the background (Google Vision,
- * else zxing), a Telegram link is outlined like in the story camera and then opened. The controls are the glass of the
+ * else zxing), a Wooble link is outlined like in the story camera and then opened. The controls are the glass of the
  * QR screen over the blurred camera.
  */
 @SuppressLint("ViewConstructor")
 public final class QrScanOverlay extends FrameLayout {
 
     public interface Listener {
-        /** A Telegram link has been scanned; the overlay is already closing. */
+        /** A Wooble link has been scanned; the overlay is already closing. */
         void onScanned(String link);
 
         /** The overlay has shrunk back into the button and is to be removed. */
@@ -139,7 +139,7 @@ public final class QrScanOverlay extends FrameLayout {
     /** The button the scanner grows out of is the screen's own (not the QR screen's glass): only the black is drawn there. */
     private boolean plainButton;
     /** Which scanned codes are taken; the others are ignored and the scan goes on. Called on the scan thread. */
-    private Utilities.CallbackReturn<String, Boolean> accept = QrScanOverlay::isTelegramLink;
+    private Utilities.CallbackReturn<String, Boolean> accept = QrScanOverlay::isWoobleLink;
 
     public void setPlainButton(boolean plain) {
         plainButton = plain;
@@ -976,7 +976,7 @@ public final class QrScanOverlay extends FrameLayout {
         }
     }
 
-    /** The first Telegram link in the frame; other codes are ignored and the scan goes on. */
+    /** The first Wooble link in the frame; other codes are ignored and the scan goes on. */
     @Nullable
     private static Scanned decode(Bitmap bitmap, @Nullable BarcodeDetector visionReader, @Nullable QRCodeReader zxingReader, Utilities.CallbackReturn<String, Boolean> accept) {
         final int w = bitmap.getWidth(), h = bitmap.getHeight();
@@ -1033,7 +1033,7 @@ public final class QrScanOverlay extends FrameLayout {
         }
     }
 
-    static boolean isTelegramLink(@Nullable String text) {
+    static boolean isWoobleLink(@Nullable String text) {
         return !TextUtils.isEmpty(text) && (text.startsWith("tg:") || Browser.isInternalUrl(text, null));
     }
 

@@ -1,4 +1,4 @@
-package org.telegram.tlrpc.telegram
+package org.wooble.tlrpc.wooble
 
 import com.github.javaparser.JavaParser
 import com.github.javaparser.ast.CompilationUnit
@@ -7,12 +7,12 @@ import com.github.javaparser.ast.body.MethodDeclaration
 import com.github.javaparser.ast.expr.ObjectCreationExpr
 import java.io.File
 
-object TelegramCodeParser {
-    fun parse(files: List<File>): TelegramTlClasses {
-        return TelegramTlClasses(files.map { findAllClasses(it) }.flatten().toSet())
+object WoobleCodeParser {
+    fun parse(files: List<File>): WoobleTlClasses {
+        return WoobleTlClasses(files.map { findAllClasses(it) }.flatten().toSet())
     }
 
-    private fun findAllClasses(javaFile: File): List<TelegramTlClass> {
+    private fun findAllClasses(javaFile: File): List<WoobleTlClass> {
         val parser = JavaParser()
         val result = parser.parse(javaFile)
 
@@ -26,7 +26,7 @@ object TelegramCodeParser {
             .orElse(null)
 
 
-        val matchingClassNames = mutableListOf<TelegramTlClass>()
+        val matchingClassNames = mutableListOf<WoobleTlClass>()
 
         val allClassLike = cu.findAll(ClassOrInterfaceDeclaration::class.java)
 
@@ -93,7 +93,7 @@ object TelegramCodeParser {
             }
 
             if (hasStaticIntConstructor || hasDeserializeMethod || hasSerializeToStream || hasReadParams || hasDeserializeResponse) {
-                matchingClassNames.add(TelegramTlClass(
+                matchingClassNames.add(WoobleTlClass(
                     constructor = constructorValue?.toUInt(),
 
                     packageName = packageName,

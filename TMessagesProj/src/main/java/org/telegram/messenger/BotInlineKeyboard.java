@@ -1,11 +1,11 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_keyboard;
 
 import java.util.ArrayList;
 

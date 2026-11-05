@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -9,13 +9,13 @@ import android.graphics.PorterDuffColorFilter;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.RLottieNative;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.RLottieNative;
 
 import java.io.File;
 

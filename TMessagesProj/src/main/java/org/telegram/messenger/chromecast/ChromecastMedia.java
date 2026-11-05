@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.wooble.messenger.chromecast;
 
 import android.net.Uri;
 

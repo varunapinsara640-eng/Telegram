@@ -1,17 +1,17 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
-import static org.telegram.messenger.AndroidUtilities.lerp;
-import static org.telegram.messenger.Utilities.clamp01;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.Utilities.clamp01;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -62,31 +62,31 @@ import androidx.core.math.MathUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.BackButtonMenu;
-import org.telegram.ui.EmptyBaseFragment;
-import org.telegram.ui.MainTabsActivity;
-import org.telegram.ui.bots.BotWebViewSheet;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.FloatingDebug.FloatingDebugController;
-import org.telegram.ui.Components.FloatingDebug.FloatingDebugProvider;
-import org.telegram.ui.Components.GroupCallPip;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.StoryViewer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.BackButtonMenu;
+import org.wooble.ui.EmptyBaseFragment;
+import org.wooble.ui.MainTabsActivity;
+import org.wooble.ui.bots.BotWebViewSheet;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.FloatingDebug.FloatingDebugController;
+import org.wooble.ui.Components.FloatingDebug.FloatingDebugProvider;
+import org.wooble.ui.Components.GroupCallPip;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stories.StoryViewer;
 
 import java.util.ArrayList;
 import java.util.Collections;

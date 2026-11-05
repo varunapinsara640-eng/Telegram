@@ -1,4 +1,4 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 /**
  * A cell whose nesting inset can be re-applied (and animated) after a structural move changes its block's depth,

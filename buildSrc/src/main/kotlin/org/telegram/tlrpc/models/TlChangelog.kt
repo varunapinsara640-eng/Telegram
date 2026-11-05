@@ -1,6 +1,6 @@
-package org.telegram.tlrpc.models
+package org.wooble.tlrpc.models
 
-import org.telegram.tlrpc.schema.TlSchemaParamType
+import org.wooble.tlrpc.schema.TlSchemaParamType
 
 data class TlSchemeChangelog(
     val constructors: List<TlConstructorChangelog>,

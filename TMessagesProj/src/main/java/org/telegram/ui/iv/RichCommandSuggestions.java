@@ -1,14 +1,14 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 

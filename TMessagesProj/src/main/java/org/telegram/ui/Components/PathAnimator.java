@@ -1,19 +1,19 @@
 /*
- * This is the source code of Telegram for Android v. 6.x.x.
+ * This is the source code of Wooble for Android v. 6.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2020.
  */
 
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
 
 import java.util.ArrayList;
 

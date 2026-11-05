@@ -1,18 +1,18 @@
-package org.telegram.tgnet.tl;
+package org.wooble.tgnet.tl;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_stats.TL_statsPercentValue;
-import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
+import org.wooble.messenger.DialogObject;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLParseException;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_stats.TL_statsPercentValue;
+import org.wooble.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
 import java.util.ArrayList;
 

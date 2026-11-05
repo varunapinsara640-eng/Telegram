@@ -11,14 +11,14 @@ import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
-import org.telegram.tlrpc.SchemeAllLayersParser
-import org.telegram.tlrpc.SchemeCodeGen
-import org.telegram.tlrpc.SchemeTlValidator
-import org.telegram.tlrpc.models.RulesHolder
-import org.telegram.tlrpc.models.TlObjectWithLayer
-import org.telegram.tlrpc.schema.TlSchemaJsonParser
-import org.telegram.tlrpc.telegram.TelegramCodeParser
-import org.telegram.tlrpc.telegram.TelegramTlClass
+import org.wooble.tlrpc.SchemeAllLayersParser
+import org.wooble.tlrpc.SchemeCodeGen
+import org.wooble.tlrpc.SchemeTlValidator
+import org.wooble.tlrpc.models.RulesHolder
+import org.wooble.tlrpc.models.TlObjectWithLayer
+import org.wooble.tlrpc.schema.TlSchemaJsonParser
+import org.wooble.tlrpc.wooble.WoobleCodeParser
+import org.wooble.tlrpc.wooble.WoobleTlClass
 import java.io.File
 
 abstract class GenerateSchemeTask : DefaultTask() {
@@ -62,19 +62,19 @@ abstract class GenerateSchemeTask : DefaultTask() {
                 add(smsjobsFile)
             }
 
-        val telegramClasses = TelegramCodeParser.parse(files)
+        val woobleClasses = WoobleCodeParser.parse(files)
         val tlSchemaFull = TlSchemaJsonParser.parse(resourcesDir, LAYER)
         val tlSchemaFilter = tlSchemaFull.applyRules(RulesHolder.rules)
 
-        val undefinedTelegramClasses = telegramClasses.groupedByConstructorAll.filterKeys {
+        val undefinedWoobleClasses = woobleClasses.groupedByConstructorAll.filterKeys {
             it !in tlSchemaFull.magicsAll
         }.values.flatten()
 
         File(outputDir, "not_linked_classes.txt")
-            .writeText(undefinedTelegramClasses.map { it.toString() }.sorted().joinToString("\n"))
+            .writeText(undefinedWoobleClasses.map { it.toString() }.sorted().joinToString("\n"))
 
         val totalHistory = tlSchemaFull.getAllConstructorsHistory()
-        val classesByUniqueIds = telegramClasses.groupedByConstructorUnique
+        val classesByUniqueIds = woobleClasses.groupedByConstructorUnique
         val schema = SchemeAllLayersParser.parseAllLayers(resourcesDir)
 
         val dep = RulesHolder.rules.databaseTypes
@@ -125,15 +125,15 @@ abstract class GenerateSchemeTask : DefaultTask() {
 
         // === Линковка ===
 
-        val linkedObjects = mutableSetOf<Pair<TlObjectWithLayer, TelegramTlClass>>()
+        val linkedObjects = mutableSetOf<Pair<TlObjectWithLayer, WoobleTlClass>>()
         linkObjectsByUniqueId(classesByUniqueIds, constructorsByUniqueIds, linkedObjects)
 
         val linkedConstructors = linkedObjects.toSet()
         linkObjectsByUniqueId(classesByUniqueIds, methodsByUniqueIds, linkedObjects)
 
-        val linkedTypes = mutableSetOf<Pair<String, TelegramTlClass>>()
+        val linkedTypes = mutableSetOf<Pair<String, WoobleTlClass>>()
         linkTypesBySinglePredicate(classesByUniqueIds, constructorTypesMap, linkedTypes)
-        linkTypesByLinkedObjects(telegramClasses.classes, linkedConstructors, linkedTypes)
+        linkTypesByLinkedObjects(woobleClasses.classes, linkedConstructors, linkedTypes)
 
         // === Генерация ===
 
@@ -164,14 +164,14 @@ abstract class GenerateSchemeTask : DefaultTask() {
         constructors: List<TlObjectWithLayer>,
         encrypted: List<TlObjectWithLayer>
     ) {
-        val packageName = "org.telegram.tgnet.model.generated"
+        val packageName = "org.wooble.tgnet.model.generated"
         val x = constructors.groupBy { it.tl.key.name.type }
             .filter { it.value.any { c -> c.layerLast == LAYER } }.keys
 
         val sealedClassName = "TlGen_" + type.replace('.', '_')
         val sealedClassBuilder = TypeSpec.classBuilder(sealedClassName)
             .addModifiers(KModifier.SEALED)
-            .addSuperinterface(ClassName("org.telegram.tgnet.model", "TlGen_Object"))
+            .addSuperinterface(ClassName("org.wooble.tgnet.model", "TlGen_Object"))
 
         for (constructor in constructors) {
             var needSuper = true
@@ -192,7 +192,7 @@ abstract class GenerateSchemeTask : DefaultTask() {
         }
 
         FileSpec.builder(packageName, sealedClassName)
-            .addImport("org.telegram.tgnet.model", "TlGen_Object", "TlGen_Vector")
+            .addImport("org.wooble.tgnet.model", "TlGen_Object", "TlGen_Vector")
             .addType(sealedClassBuilder.build())
             .build()
             .writeTo(outputDir)
@@ -201,10 +201,10 @@ abstract class GenerateSchemeTask : DefaultTask() {
     private fun generateSchemeTestClassForType(
         constructors: List<TlObjectWithLayer>,
         encrypted: List<TlObjectWithLayer>,
-        linkedTypes: Set<Pair<String, TelegramTlClass>>,
+        linkedTypes: Set<Pair<String, WoobleTlClass>>,
         comments: List<Map<String, List<List<String>>>>
     ) {
-        val packageName = "org.telegram.tgnet.test.generated"
+        val packageName = "org.wooble.tgnet.test.generated"
 
         val runWithAnnotation = AnnotationSpec.builder(
             ClassName("org.junit.runner", "RunWith")
@@ -214,11 +214,11 @@ abstract class GenerateSchemeTask : DefaultTask() {
         val testAllBuilder = TypeSpec.classBuilder("Test_All")
             .addAnnotation(runWithAnnotation)
         val testActualBuilder = TypeSpec.classBuilder("Test_Actual")
-            .superclass(ClassName("org.telegram.tgnet.test", "BaseSchemeTest"))
+            .superclass(ClassName("org.wooble.tgnet.test", "BaseSchemeTest"))
         val testLegacyBuilder = TypeSpec.classBuilder("Test_Legacy")
-            .superclass(ClassName("org.telegram.tgnet.test", "BaseSchemeTest"))
+            .superclass(ClassName("org.wooble.tgnet.test", "BaseSchemeTest"))
         val testEncryptedBuilder = TypeSpec.classBuilder("Test_Encrypred")
-            .superclass(ClassName("org.telegram.tgnet.test", "BaseSchemeTest"))
+            .superclass(ClassName("org.wooble.tgnet.test", "BaseSchemeTest"))
 
         val lt = linkedTypes.groupBy { it.first }.mapValues { it.value.map { it.second } }
 
@@ -239,7 +239,7 @@ abstract class GenerateSchemeTask : DefaultTask() {
 
             val lines = lt[constructor.tl.key.name.type]?.map { clz ->
                 val clz2 = clz.packageName + "." + clz.fullName
-                "test_TLdeserialize(org.telegram.tgnet.model.generated.TlGen_${type}.${constructor.codegenDataClassName}::class, " +
+                "test_TLdeserialize(org.wooble.tgnet.model.generated.TlGen_${type}.${constructor.codegenDataClassName}::class, " +
                         "${clz2}::TLdeserialize, ${if (isLegacy && !isEncrypted) constructor.layerLast.toString() else "null"})"
             } ?: listOf("assumeTrue(\"Test skipped, link error\", false)")
 
@@ -266,7 +266,7 @@ abstract class GenerateSchemeTask : DefaultTask() {
         }
 
         FileSpec.builder(packageName, "Test_All")
-            .addImport("org.telegram.tgnet.model", "TlGen_Object", "TlGen_Vector")
+            .addImport("org.wooble.tgnet.model", "TlGen_Object", "TlGen_Vector")
             .addImport("org.junit.Assume", "assumeTrue")
             .addType(
                 testAllBuilder
@@ -284,9 +284,9 @@ abstract class GenerateSchemeTask : DefaultTask() {
     // =========================================================
 
     private fun linkObjectsByUniqueId(
-        classesByUniqueIds: Map<UInt, TelegramTlClass>,
+        classesByUniqueIds: Map<UInt, WoobleTlClass>,
         objectsByUniqueIds: Map<UInt, TlObjectWithLayer>,
-        output: MutableSet<Pair<TlObjectWithLayer, TelegramTlClass>>
+        output: MutableSet<Pair<TlObjectWithLayer, WoobleTlClass>>
     ) {
         for (entry in objectsByUniqueIds) {
             val clazz = classesByUniqueIds[entry.value.tl.key.constructorId] ?: continue
@@ -295,9 +295,9 @@ abstract class GenerateSchemeTask : DefaultTask() {
     }
 
     private fun linkTypesBySinglePredicate(
-        classesByUniqueIds: Map<UInt, TelegramTlClass>,
+        classesByUniqueIds: Map<UInt, WoobleTlClass>,
         predicatesByType: Map<String, List<TlObjectWithLayer>>,
-        output: MutableSet<Pair<String, TelegramTlClass>>
+        output: MutableSet<Pair<String, WoobleTlClass>>
     ) {
         for (constructor in predicatesByType.filterValues { it.size == 1 }.values.flatten()) {
             val clazz = classesByUniqueIds[constructor.tl.key.constructorId] ?: continue
@@ -307,9 +307,9 @@ abstract class GenerateSchemeTask : DefaultTask() {
     }
 
     private fun linkTypesByLinkedObjects(
-        classes: Set<TelegramTlClass>,
-        linkedObjects: Set<Pair<TlObjectWithLayer, TelegramTlClass>>,
-        output: MutableSet<Pair<String, TelegramTlClass>>
+        classes: Set<WoobleTlClass>,
+        linkedObjects: Set<Pair<TlObjectWithLayer, WoobleTlClass>>,
+        output: MutableSet<Pair<String, WoobleTlClass>>
     ) {
         val linkedClassesMap = linkedObjects
             .map { it.second to it.first }

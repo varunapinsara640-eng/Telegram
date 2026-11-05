@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -12,10 +12,10 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.tgnet.TLObject;
+import org.wooble.ui.ActionBar.Theme;
 
 public class SimpleAvatarView extends View {
     public final static int SELECT_ANIMATION_DURATION = 200;

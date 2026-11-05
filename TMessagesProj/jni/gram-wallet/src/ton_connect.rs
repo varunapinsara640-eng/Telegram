@@ -239,10 +239,10 @@ pub fn gram_ton_connect_crypto(phrase: String, parameters: String) -> Result<Str
         // unavailable to dApps even if a caller skips the Java validation.
         if domain
             .trim_end_matches('.')
-            .eq_ignore_ascii_case("telegram.org")
+            .eq_ignore_ascii_case("wooble.org")
         {
             return Err(invalid(
-                "The telegram.org proof domain is reserved for wallet import",
+                "The wooble.org proof domain is reserved for wallet import",
             ));
         }
         let timestamp = p
@@ -529,7 +529,7 @@ mod tests {
                 .unwrap(),
             );
             assert!(verify_signature(&hash, &signature, &key, SignatureDomain::Empty).unwrap());
-            for domain in ["telegram.org", "TELEGRAM.ORG", "telegram.org."] {
+            for domain in ["wooble.org", "TELEGRAM.ORG", "wooble.org."] {
                 p["proofDomain"] = json!(domain);
                 assert!(gram_ton_connect_crypto(phrase.to_owned(), p.to_string()).is_err());
             }

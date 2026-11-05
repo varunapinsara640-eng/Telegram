@@ -1,11 +1,11 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_iv;
 
 public class MessageCustomParamsHelper {
 

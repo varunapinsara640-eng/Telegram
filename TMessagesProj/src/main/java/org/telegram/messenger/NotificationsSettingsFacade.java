@@ -1,14 +1,14 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.NotificationsController.TYPE_PRIVATE;
-import static org.telegram.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
-import static org.telegram.messenger.NotificationsController.TYPE_REACTIONS_STORIES;
+import static org.wooble.messenger.NotificationsController.TYPE_PRIVATE;
+import static org.wooble.messenger.NotificationsController.TYPE_REACTIONS_MESSAGES;
+import static org.wooble.messenger.NotificationsController.TYPE_REACTIONS_STORIES;
 
 import android.content.SharedPreferences;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.NotificationsSoundActivity;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.NotificationsSoundActivity;
 
 public class NotificationsSettingsFacade {
 

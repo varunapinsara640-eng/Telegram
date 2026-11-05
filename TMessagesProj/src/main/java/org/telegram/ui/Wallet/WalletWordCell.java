@@ -1,8 +1,8 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import org.telegram.messenger.LocaleController;
+import org.wooble.messenger.LocaleController;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -31,10 +31,10 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

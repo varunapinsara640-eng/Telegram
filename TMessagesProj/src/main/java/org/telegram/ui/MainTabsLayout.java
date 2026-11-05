@@ -1,7 +1,7 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -20,11 +20,11 @@ import androidx.dynamicanimation.animation.SpringForce;
 
 import android.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AnimatedLinearLayout;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.glass.GlassTabView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AnimatedLinearLayout;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.glass.GlassTabView;
 
 import java.util.HashSet;
 import java.util.Set;

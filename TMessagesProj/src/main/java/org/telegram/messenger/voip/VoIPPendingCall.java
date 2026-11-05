@@ -1,17 +1,17 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.VoIPHelper;
+import org.wooble.messenger.AccountInstance;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.voip.VoIPHelper;
 
 public final class VoIPPendingCall {
 

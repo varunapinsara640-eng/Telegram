@@ -1,11 +1,11 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.text.TextUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.tl.TL_wallet;
 
 /** Polls one submitted message. Lifecycle and callbacks run on the UI thread. */
 public class GramWalletPolling {

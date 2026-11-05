@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Stories.StoriesStorage;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Stories.StoriesStorage;
 
 import java.util.ArrayList;
 

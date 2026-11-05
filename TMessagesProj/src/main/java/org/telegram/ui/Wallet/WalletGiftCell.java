@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
@@ -6,14 +6,14 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.Gifts.GiftSheet;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.Gifts.GiftSheet;
 
 /** Profile gift rendering with wallet sticker state, without changing profile interactions. */
 class WalletGiftCell extends GiftSheet.GiftCell {

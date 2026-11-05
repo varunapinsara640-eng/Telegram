@@ -1,16 +1,16 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.AlertDialog;
 
 import java.io.InputStream;
 import java.util.ArrayList;

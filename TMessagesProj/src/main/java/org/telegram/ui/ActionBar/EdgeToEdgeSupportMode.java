@@ -1,4 +1,4 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
 public enum EdgeToEdgeSupportMode {
     NONE,

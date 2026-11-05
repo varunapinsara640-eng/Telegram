@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 import java.io.File;
 import java.nio.ByteBuffer;

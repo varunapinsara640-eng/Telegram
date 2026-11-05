@@ -1,4 +1,4 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -8,12 +8,12 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.RichMessageLayout;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.ActionBar.Theme;
 
 /** Atomic inline representation of a {@link TL_iv.textButton} while its text is being edited. */
 public class RichInlineButtonSpan extends ReplacementSpan {

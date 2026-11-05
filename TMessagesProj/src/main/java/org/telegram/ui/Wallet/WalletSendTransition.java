@@ -1,6 +1,6 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -17,9 +17,9 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
 
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.ChatAttachAlert;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.ChatAttachAlert;
 
 public final class WalletSendTransition {
     private final ChatAttachAlert sheet;
@@ -95,7 +95,7 @@ public final class WalletSendTransition {
         animation.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animator) {
-                if (sheet != null) org.telegram.messenger.AndroidUtilities.hideKeyboard(source);
+                if (sheet != null) org.wooble.messenger.AndroidUtilities.hideKeyboard(source);
             }
             @Override
             public void onAnimationEnd(Animator animator) { finish(); }
@@ -242,7 +242,7 @@ public final class WalletSendTransition {
             landing.holdForFlight(false);
             if (!to.isEmpty()) {
                 float controlY = Math.min(from.centerY(), to.centerY()) - dp(150);
-                float arrivalSpeed = 2f * (to.centerY() - controlY) / .6f / org.telegram.messenger.AndroidUtilities.density;
+                float arrivalSpeed = 2f * (to.centerY() - controlY) / .6f / org.wooble.messenger.AndroidUtilities.density;
                 landing.playLanding(arrivalSpeed);
             }
         }
@@ -270,6 +270,6 @@ public final class WalletSendTransition {
         }
         completion.run();
         final ViewGroup cleanupRoot = particleRoot;
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(() -> cleanupRoot.removeView(overlay), 650);
+        org.wooble.messenger.AndroidUtilities.runOnUIThread(() -> cleanupRoot.removeView(overlay), 650);
     }
 }

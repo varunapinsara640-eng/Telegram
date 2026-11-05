@@ -1,4 +1,4 @@
-package org.telegram.ui.Charts.data;
+package org.wooble.ui.Charts.data;
 
 import org.json.JSONException;
 import org.json.JSONObject;

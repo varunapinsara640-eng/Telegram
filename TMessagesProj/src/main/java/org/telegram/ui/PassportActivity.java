@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -66,62 +66,62 @@ import androidx.core.graphics.ColorUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SRPHelper;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.messenger.SecureDocumentKey;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.CheckBoxCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Cells.TextDetailSettingsCell;
-import org.telegram.ui.Cells.TextInfoPrivacyCell;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.ChatAttachAlert;
-import org.telegram.ui.Components.ContextProgressView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.HintEditText;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.RadialProgress;
-import org.telegram.ui.Components.SlideView;
-import org.telegram.ui.Components.URLSpanNoUnderline;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DownloadController;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MrzRecognizer;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.PushListenerController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SRPHelper;
+import org.wooble.messenger.SecureDocument;
+import org.wooble.messenger.SecureDocumentKey;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.RequestDelegate;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.CheckBoxCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Cells.TextDetailSettingsCell;
+import org.wooble.ui.Cells.TextInfoPrivacyCell;
+import org.wooble.ui.Cells.TextSettingsCell;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.ChatAttachAlert;
+import org.wooble.ui.Components.ContextProgressView;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.EmptyTextProgressView;
+import org.wooble.ui.Components.HintEditText;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.RadialProgress;
+import org.wooble.ui.Components.SlideView;
+import org.wooble.ui.Components.URLSpanNoUnderline;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -1517,7 +1517,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         FrameLayout frameLayout = (FrameLayout) fragmentView;
 
-        actionBar.setTitle(LocaleController.getString(R.string.TelegramPassport));
+        actionBar.setTitle(LocaleController.getString(R.string.WooblePassport));
 
         emptyView = new EmptyTextProgressView(context);
         emptyView.showProgress();
@@ -1553,7 +1553,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         noPasswordTextView.setGravity(Gravity.CENTER_HORIZONTAL);
         noPasswordTextView.setPadding(AndroidUtilities.dp(21), AndroidUtilities.dp(10), AndroidUtilities.dp(21), AndroidUtilities.dp(17));
         noPasswordTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
-        noPasswordTextView.setText(LocaleController.getString(R.string.TelegramPassportCreatePasswordInfo));
+        noPasswordTextView.setText(LocaleController.getString(R.string.WooblePassportCreatePasswordInfo));
         linearLayout2.addView(noPasswordTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, 21, 10, 21, 0));
 
         noPasswordSetTextView = new TextView(context);
@@ -1561,7 +1561,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         noPasswordSetTextView.setGravity(Gravity.CENTER);
         noPasswordSetTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         noPasswordSetTextView.setTypeface(AndroidUtilities.bold());
-        noPasswordSetTextView.setText(LocaleController.getString(R.string.TelegramPassportCreatePassword));
+        noPasswordSetTextView.setText(LocaleController.getString(R.string.WooblePassportCreatePassword));
         linearLayout2.addView(noPasswordSetTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 24, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, 21, 9, 21, 0));
         noPasswordSetTextView.setOnClickListener(v -> {
             TwoStepVerificationSetupActivity activity = new TwoStepVerificationSetupActivity(currentAccount, TwoStepVerificationSetupActivity.TYPE_CREATE_PASSWORD_STEP_1, currentPassword);
@@ -1675,7 +1675,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
                 builder.setPositiveButton(LocaleController.getString(R.string.OK), null);
-                builder.setNegativeButton(LocaleController.getString(R.string.RestorePasswordResetAccount), (dialog, which) -> Browser.openUrl(getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(currentAccount).getClientPhone()));
+                builder.setNegativeButton(LocaleController.getString(R.string.RestorePasswordResetAccount), (dialog, which) -> Browser.openUrl(getParentActivity(), "https://wooble.org/deactivate?phone=" + UserConfig.getInstance(currentAccount).getClientPhone()));
                 builder.setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle));
                 builder.setMessage(LocaleController.getString(R.string.RestorePasswordNoEmailText));
                 showDialog(builder.create());
@@ -1993,7 +1993,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         FrameLayout frameLayout = (FrameLayout) fragmentView;
 
-        actionBar.setTitle(LocaleController.getString(R.string.TelegramPassport));
+        actionBar.setTitle(LocaleController.getString(R.string.WooblePassport));
 
         actionBar.createMenu().addItem(info_item, R.drawable.msg_info);
 
@@ -2423,7 +2423,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     private void createManageInterface(Context context) {
         FrameLayout frameLayout = (FrameLayout) fragmentView;
 
-        actionBar.setTitle(LocaleController.getString(R.string.TelegramPassport));
+        actionBar.setTitle(LocaleController.getString(R.string.WooblePassport));
 
         actionBar.createMenu().addItem(info_item, R.drawable.msg_info);
 
@@ -2445,12 +2445,12 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         deletePassportCell = new TextSettingsCell(context);
         deletePassportCell.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
         deletePassportCell.setBackgroundDrawable(Theme.getSelectorDrawable(true));
-        deletePassportCell.setText(LocaleController.getString(R.string.TelegramPassportDelete), false);
+        deletePassportCell.setText(LocaleController.getString(R.string.WooblePassportDelete), false);
         linearLayout2.addView(deletePassportCell, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
         deletePassportCell.setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString(R.string.TelegramPassportDeleteTitle));
-            builder.setMessage(LocaleController.getString(R.string.TelegramPassportDeleteAlert));
+            builder.setTitle(LocaleController.getString(R.string.WooblePassportDeleteTitle));
+            builder.setMessage(LocaleController.getString(R.string.WooblePassportDeleteAlert));
             builder.setPositiveButton(LocaleController.getString(R.string.Delete), (dialog, which) -> {
                 TL_account.deleteSecureValue req = new TL_account.deleteSecureValue();
                 for (int a = 0; a < currentForm.values.size(); a++) {
@@ -4010,7 +4010,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                     getParentActivity().requestPermissions(new String[]{Manifest.permission.CAMERA}, 22);
                     return;
                 }
-                CameraScanActivity fragment = new CameraScanActivity(org.telegram.ui.CameraScanActivity.TYPE_MRZ);
+                CameraScanActivity fragment = new CameraScanActivity(org.wooble.ui.CameraScanActivity.TYPE_MRZ);
                 fragment.setDelegate(new CameraScanActivity.CameraScanActivityDelegate() {
                     @Override
                     public void didFindMrzInfo(MrzRecognizer.Result result) {
@@ -7380,7 +7380,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
                         Intent mailer = new Intent(Intent.ACTION_SENDTO);
                         mailer.setData(Uri.parse("mailto:"));
-                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@telegram.org"});
+                        mailer.putExtra(Intent.EXTRA_EMAIL, new String[]{"sms@wooble.org"});
                         mailer.putExtra(Intent.EXTRA_SUBJECT, "Android registration/login issue " + version + " " + phone);
                         mailer.putExtra(Intent.EXTRA_TEXT, "Phone: " + phone + "\nApp version: " + version + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault() + "\nError: " + lastError);
                         getContext().startActivity(Intent.createChooser(mailer, "Send email..."));

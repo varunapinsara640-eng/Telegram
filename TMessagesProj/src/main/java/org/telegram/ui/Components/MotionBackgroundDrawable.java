@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
@@ -23,17 +23,17 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wallpaper.WallpaperGiftPatternPosition;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.blur3.utils.BitmapChangeTracker;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.GenericProvider;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.wallpaper.WallpaperGiftPatternPosition;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.blur3.utils.BitmapChangeTracker;
 
 import java.lang.ref.WeakReference;
 import java.util.List;

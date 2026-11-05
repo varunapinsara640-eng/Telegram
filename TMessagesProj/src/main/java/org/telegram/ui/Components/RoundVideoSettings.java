@@ -1,13 +1,13 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.utils.recorder.round.RoundVideoSession;
+import org.wooble.messenger.MessagesController;
+import org.wooble.utils.recorder.round.RoundVideoSession;
 
-/** Stores Telegram-specific preferences for the Camera2 round-video implementation. */
+/** Stores Wooble-specific preferences for the Camera2 round-video implementation. */
 public final class RoundVideoSettings {
     private static final String KEY_ENABLED = "round_video_camera2_enabled";
     private static final String KEY_OUTPUT_RESOLUTION = "round_video_output_resolution";
@@ -87,7 +87,7 @@ public final class RoundVideoSettings {
         preferences().edit().putInt(KEY_VIDEO_BITRATE, value).apply();
     }
 
-    /** Returns whether circular styling and Telegram overlays are enabled. */
+    /** Returns whether circular styling and Wooble overlays are enabled. */
     public static boolean isCompositionEnabled() {
         SharedPreferences preferences = preferences();
         if (preferences.contains(KEY_COMPOSITION)) {
@@ -97,7 +97,7 @@ public final class RoundVideoSettings {
                 && preferences.getBoolean(LEGACY_KEY_WATERMARK, true);
     }
 
-    /** Stores whether circular styling and Telegram overlays are enabled. */
+    /** Stores whether circular styling and Wooble overlays are enabled. */
     public static void setCompositionEnabled(boolean enabled) {
         preferences().edit()
                 .putBoolean(KEY_COMPOSITION, enabled)

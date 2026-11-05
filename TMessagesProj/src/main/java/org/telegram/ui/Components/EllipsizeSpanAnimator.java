@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.view.View;
 
-import org.telegram.ui.Components.Reactions.HwEmojis;
+import org.wooble.ui.Components.Reactions.HwEmojis;
 
 import java.util.ArrayList;
 

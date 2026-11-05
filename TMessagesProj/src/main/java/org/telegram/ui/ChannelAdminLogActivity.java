@@ -1,16 +1,16 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.messenger.MessageObject.replaceWithLink;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.messenger.MessageObject.replaceWithLink;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -71,98 +71,98 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.LongSparseArray;
 import androidx.core.content.FileProvider;
-import org.telegram.ui.recyclerview.ChatListItemAnimator;
+import org.wooble.ui.recyclerview.ChatListItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
+import org.wooble.ui.recyclerview.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.OnPostDrawView;
-import org.telegram.messenger.utils.RectFMergeBounding;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarMenu;
-import org.telegram.ui.ActionBar.ActionBarMenuItem;
-import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Cells.ChatActionCell;
-import org.telegram.ui.Cells.ChatLoadingCell;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.ChatMessageUnsupportedCell;
-import org.telegram.ui.Cells.ChatUnreadCell;
-import org.telegram.ui.Components.AdminLogFilterAlert2;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ChatAvatarContainer;
-import org.telegram.ui.Components.ChatScrimPopupContainerLayout;
-import org.telegram.ui.Components.ClearHistoryAlert;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.EmbedBottomSheet;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.InviteLinkBottomSheet;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.PhonebookShareAlert;
-import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ShareAlert;
-import org.telegram.ui.Components.SizeNotifierFrameLayout;
-import org.telegram.ui.Components.StickersAlert;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.Components.URLSpanReplacement;
-import org.telegram.ui.Components.URLSpanUserMention;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
-import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
-import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
-import org.telegram.ui.Components.chat.WallpaperBitmapProvider;
-import org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout;
-import org.telegram.ui.Components.chat.layouts.ChatActivityFadeView;
-import org.telegram.utils.glass.GlassEngine;
-import org.telegram.utils.glass.positions.GlassPositionsArray;
-import org.telegram.utils.glass.positions.GlassPositionsMerger;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.AnimationNotificationsLocker;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.utils.OnPostDrawView;
+import org.wooble.messenger.utils.RectFMergeBounding;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.ActionBarMenu;
+import org.wooble.ui.ActionBar.ActionBarMenuItem;
+import org.wooble.ui.ActionBar.ActionBarMenuSubItem;
+import org.wooble.ui.ActionBar.ActionBarPopupWindow;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Cells.ChatActionCell;
+import org.wooble.ui.Cells.ChatLoadingCell;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.ChatMessageUnsupportedCell;
+import org.wooble.ui.Cells.ChatUnreadCell;
+import org.wooble.ui.Components.AdminLogFilterAlert2;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ChatAvatarContainer;
+import org.wooble.ui.Components.ChatScrimPopupContainerLayout;
+import org.wooble.ui.Components.ClearHistoryAlert;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.EmbedBottomSheet;
+import org.wooble.ui.Components.Forum.ForumUtilities;
+import org.wooble.ui.Components.InviteLinkBottomSheet;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.PhonebookShareAlert;
+import org.wooble.ui.Components.PipRoundVideoView;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.RecyclerAnimationScrollHelper;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ShareAlert;
+import org.wooble.ui.Components.SizeNotifierFrameLayout;
+import org.wooble.ui.Components.StickersAlert;
+import org.wooble.ui.Components.URLSpanMono;
+import org.wooble.ui.Components.URLSpanNoUnderline;
+import org.wooble.ui.Components.URLSpanReplacement;
+import org.wooble.ui.Components.URLSpanUserMention;
+import org.wooble.ui.Components.UndoView;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
+import org.wooble.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSource;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.wooble.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
+import org.wooble.ui.Components.chat.WallpaperBitmapProvider;
+import org.wooble.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout;
+import org.wooble.ui.Components.chat.layouts.ChatActivityFadeView;
+import org.wooble.utils.glass.GlassEngine;
+import org.wooble.utils.glass.positions.GlassPositionsArray;
+import org.wooble.utils.glass.positions.GlassPositionsMerger;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -1658,7 +1658,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             }
         }
 
-        if (message.currentEvent != null && (message.currentEvent.action instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage && message.currentEvent.user_id == getMessagesController().telegramAntispamUserId || message.currentEvent.action instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam)) {
+        if (message.currentEvent != null && (message.currentEvent.action instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage && message.currentEvent.user_id == getMessagesController().woobleAntispamUserId || message.currentEvent.action instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam)) {
             if (v instanceof ChatActionCell) {
                 SpannableString arrow = new SpannableString(">");
                 Drawable arrowDrawable = getContext().getResources().getDrawable(R.drawable.attach_arrow_right).mutate();
@@ -2436,9 +2436,9 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                     TLRPC.ChatFull chatFull = getMessagesController().getChatFull(currentChat.id);
                     if (chatFull != null && chatFull.antispam) {
                         TLRPC.ChannelParticipant antispamParticipant = new TLRPC.ChannelParticipant() {};
-                        antispamParticipant.user_id = getMessagesController().telegramAntispamUserId;
+                        antispamParticipant.user_id = getMessagesController().woobleAntispamUserId;
                         antispamParticipant.peer = getMessagesController().getPeer(antispamParticipant.user_id);
-                        loadAntispamUser(getMessagesController().telegramAntispamUserId);
+                        loadAntispamUser(getMessagesController().woobleAntispamUserId);
                         admins.add(0, antispamParticipant);
                     }
                 }

@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -17,11 +17,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.inset.InAppKeyboardInsetView;
-import org.telegram.ui.Components.inset.WindowInsetsProvider;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
+import org.wooble.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.wooble.ui.Components.inset.InAppKeyboardInsetView;
+import org.wooble.ui.Components.inset.WindowInsetsProvider;
 
 public class ChatInputViewsContainer extends FrameLayout {
     public static final int INPUT_BUBBLE_RADIUS = 22;

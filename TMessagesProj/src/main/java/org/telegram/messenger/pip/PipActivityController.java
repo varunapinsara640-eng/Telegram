@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip;
+package org.wooble.messenger.pip;
 
 import android.app.Activity;
 import android.util.Log;
@@ -9,13 +9,13 @@ import androidx.annotation.Nullable;
 
 import androidx.media3.session.MediaSession;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.pip.activity.IPipActivityActionListener;
-import org.telegram.messenger.pip.activity.IPipActivityAnimationListener;
-import org.telegram.messenger.pip.activity.IPipActivityHandler;
-import org.telegram.messenger.pip.activity.IPipActivityListener;
-import org.telegram.messenger.pip.utils.PipUtils;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.pip.activity.IPipActivityActionListener;
+import org.wooble.messenger.pip.activity.IPipActivityAnimationListener;
+import org.wooble.messenger.pip.activity.IPipActivityHandler;
+import org.wooble.messenger.pip.activity.IPipActivityListener;
+import org.wooble.messenger.pip.utils.PipUtils;
 
 import java.util.HashMap;
 

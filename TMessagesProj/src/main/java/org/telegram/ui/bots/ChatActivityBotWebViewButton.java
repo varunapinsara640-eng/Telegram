@@ -1,4 +1,4 @@
-package org.telegram.ui.bots;
+package org.wooble.ui.bots;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.SimpleFloatPropertyCompat;
-import org.telegram.ui.web.BotWebViewContainer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RadialProgressView;
+import org.wooble.ui.Components.SimpleFloatPropertyCompat;
+import org.wooble.ui.web.BotWebViewContainer;
 
 public class ChatActivityBotWebViewButton extends FrameLayout {
     public final static SimpleFloatPropertyCompat<ChatActivityBotWebViewButton> PROGRESS_PROPERTY = new SimpleFloatPropertyCompat<>("progress", obj -> obj.progress, ChatActivityBotWebViewButton::setProgress)

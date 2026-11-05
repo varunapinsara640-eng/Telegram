@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import androidx.media3.exoplayer.ExoPlayer;
 
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 import java.util.concurrent.CountDownLatch;
 

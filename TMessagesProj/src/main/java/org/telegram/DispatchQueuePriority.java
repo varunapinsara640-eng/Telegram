@@ -1,6 +1,6 @@
-package org.telegram;
+package org.wooble;
 
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.FileLog;
 
 import java.util.Comparator;
 import java.util.concurrent.CountDownLatch;

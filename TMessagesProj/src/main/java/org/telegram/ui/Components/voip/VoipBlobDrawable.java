@@ -1,7 +1,7 @@
-package org.telegram.ui.Components.voip;
+package org.wooble.ui.Components.voip;
 
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.BlobDrawable;
+import org.wooble.messenger.LiteMode;
+import org.wooble.ui.Components.BlobDrawable;
 
 public class VoipBlobDrawable extends BlobDrawable {
 

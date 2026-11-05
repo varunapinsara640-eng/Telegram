@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.poll;
+package org.wooble.ui.Components.poll;
 
 import android.text.TextUtils;
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 import java.util.ArrayList;
 

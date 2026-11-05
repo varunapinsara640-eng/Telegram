@@ -1,6 +1,6 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -20,40 +20,40 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.BackDrawable;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.EditTextCell;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.Components.ViewPagerFixed;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_ephemeral;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.BackDrawable;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.EditTextCell;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.Premium.PremiumFeatureBottomSheet;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.Components.ViewPagerFixed;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -967,7 +967,7 @@ public class ReportBottomSheet extends BottomSheet {
                                                         LocaleController.getString(R.string.AdReported),
                                                         -1,
                                                         AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                                        () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                                        () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                                         resourceProvider
                                                     )
                                                 )
@@ -1003,7 +1003,7 @@ public class ReportBottomSheet extends BottomSheet {
                                     LocaleController.getString(R.string.AdReported),
                                     -1,
                                     AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                    () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                    () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                     resourceProvider
                                 )
                             )
@@ -1029,7 +1029,7 @@ public class ReportBottomSheet extends BottomSheet {
                                 LocaleController.getString(R.string.AdReported),
                                 -1,
                                 AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                 resourceProvider
                             )
                         )
@@ -1082,7 +1082,7 @@ public class ReportBottomSheet extends BottomSheet {
                                                     LocaleController.getString(R.string.AdReported),
                                                     -1,
                                                     AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                                    () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                                    () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                                     resourceProvider
                                                 )
                                             )
@@ -1126,7 +1126,7 @@ public class ReportBottomSheet extends BottomSheet {
                                     LocaleController.getString(R.string.AdReported),
                                     -1,
                                     AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                    () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                    () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                     resourceProvider
                                 )
                             )
@@ -1159,7 +1159,7 @@ public class ReportBottomSheet extends BottomSheet {
                                 LocaleController.getString(R.string.AdReported),
                                 -1,
                                 AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                 resourceProvider
                             )
                         )
@@ -1201,7 +1201,7 @@ public class ReportBottomSheet extends BottomSheet {
                                                     LocaleController.getString(R.string.AdReported),
                                                     -1,
                                                     AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                                    () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                                    () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                                     resourceProvider
                                                 )
                                             )
@@ -1235,7 +1235,7 @@ public class ReportBottomSheet extends BottomSheet {
                                     LocaleController.getString(R.string.AdReported),
                                     -1,
                                     AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                    () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                    () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                     resourceProvider
                                 )
                             )
@@ -1259,7 +1259,7 @@ public class ReportBottomSheet extends BottomSheet {
                                 LocaleController.getString(R.string.AdReported),
                                 -1,
                                 AndroidUtilities.REPLACING_TAG_TYPE_LINKBOLD,
-                                () -> Browser.openUrl(context, "https://promote.telegram.org/guidelines"),
+                                () -> Browser.openUrl(context, "https://promote.wooble.org/guidelines"),
                                 resourceProvider
                             )
                         )

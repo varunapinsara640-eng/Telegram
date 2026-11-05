@@ -1,4 +1,4 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,14 +21,14 @@ import android.view.ViewConfiguration;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.LinkPath;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.URLSpanReplacement;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.EditTextCaption;
+import org.wooble.ui.Components.LinkPath;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.URLSpanReplacement;
 
 public class RichEditText extends EditTextCaption {
 
@@ -53,7 +53,7 @@ public class RichEditText extends EditTextCaption {
     private Listener listener;
     private InlineButtonClickListener inlineButtonClickListener;
     private Theme.ResourcesProvider resourcesProvider;
-    private int currentAccount = org.telegram.messenger.UserConfig.selectedAccount;
+    private int currentAccount = org.wooble.messenger.UserConfig.selectedAccount;
     private boolean ignoreTextChange;
     private boolean insertingNewline;
     private boolean softEnterNewline;
@@ -688,7 +688,7 @@ public class RichEditText extends EditTextCaption {
         end = Math.min(end, editable.length());
         if (start >= end) return;
         RichTextStyle.setStyle(editable, start, end, flag, true, block);
-        if ((flag & org.telegram.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER) != 0) invalidateSpoilers();
+        if ((flag & org.wooble.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER) != 0) invalidateSpoilers();
         notifySpansChanged();
     }
 
@@ -700,7 +700,7 @@ public class RichEditText extends EditTextCaption {
         if (start >= end) return;
         if ((flag & RichTextStyle.BOLD) != 0) autoBold = false;
         RichTextStyle.setStyle(editable, start, end, flag, false, block);
-        if ((flag & org.telegram.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER) != 0) invalidateSpoilers();
+        if ((flag & org.wooble.ui.Components.TextStyleSpan.FLAG_STYLE_SPOILER) != 0) invalidateSpoilers();
         notifySpansChanged();
     }
 }

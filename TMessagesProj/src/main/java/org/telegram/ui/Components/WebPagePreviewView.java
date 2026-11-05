@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,11 +13,11 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
 
 public class WebPagePreviewView extends FrameLayout {
     private final Theme.ResourcesProvider resourcesProvider;
@@ -34,7 +34,7 @@ public class WebPagePreviewView extends FrameLayout {
         this.resourcesProvider = resourcesProvider;
         this.currentAccount = currentAccount;
 
-        line.color1 = line.color2 = line.color3 = Theme.getColor(Theme.key_telegram_color_text, resourcesProvider);
+        line.color1 = line.color2 = line.color3 = Theme.getColor(Theme.key_wooble_color_text, resourcesProvider);
         line.backgroundColor = Theme.multAlpha(line.color1, 0.10f);
         line.hasColor2 = line.hasColor3 = false;
         line.resetAnimation();
@@ -68,7 +68,7 @@ public class WebPagePreviewView extends FrameLayout {
             siteNameView.setTypeface(AndroidUtilities.bold());
             siteNameView.setText(webPage.site_name);
             siteNameView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
-            siteNameView.setTextColor(Theme.getColor(Theme.key_telegram_color_text, resourcesProvider));
+            siteNameView.setTextColor(Theme.getColor(Theme.key_wooble_color_text, resourcesProvider));
             siteNameView.setSingleLine(true);
             siteNameView.setEllipsize(TextUtils.TruncateAt.END);
             textBlock.addView(siteNameView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 0, 0, 0));

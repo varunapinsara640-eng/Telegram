@@ -1,9 +1,9 @@
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.NotificationCenter;
 
 public class TLParseException extends RuntimeException {
     private TLParseException(String message) {

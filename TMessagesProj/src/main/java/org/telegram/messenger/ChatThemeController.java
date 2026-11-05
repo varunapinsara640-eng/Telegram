@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,20 +9,20 @@ import android.util.LongSparseArray;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.wallpaper.WallpaperBitmapHolder;
-import org.telegram.messenger.wallpaper.WallpaperGiftPatternPosition;
-import org.telegram.messenger.wallpaper.pgm.PGMImage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.EmojiThemes;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.theme.ThemeKey;
-import org.telegram.ui.ChatBackgroundDrawable;
+import org.wooble.messenger.wallpaper.WallpaperBitmapHolder;
+import org.wooble.messenger.wallpaper.WallpaperGiftPatternPosition;
+import org.wooble.messenger.wallpaper.pgm.PGMImage;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.ResultCallback;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.ui.ActionBar.EmojiThemes;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.theme.ThemeKey;
+import org.wooble.ui.ChatBackgroundDrawable;
 
 import java.io.File;
 import java.io.FileInputStream;

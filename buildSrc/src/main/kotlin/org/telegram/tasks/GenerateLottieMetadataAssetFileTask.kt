@@ -1,4 +1,4 @@
-package org.telegram.tasks
+package org.wooble.tasks
 
 import com.google.gson.stream.JsonReader
 import org.gradle.api.DefaultTask

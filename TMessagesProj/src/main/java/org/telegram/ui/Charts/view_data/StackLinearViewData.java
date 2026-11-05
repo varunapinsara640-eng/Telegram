@@ -1,9 +1,9 @@
-package org.telegram.ui.Charts.view_data;
+package org.wooble.ui.Charts.view_data;
 
 import android.graphics.Paint;
 
-import org.telegram.ui.Charts.BaseChartView;
-import org.telegram.ui.Charts.data.ChartData;
+import org.wooble.ui.Charts.BaseChartView;
+import org.wooble.ui.Charts.data.ChartData;
 
 public class StackLinearViewData extends LineViewData {
 

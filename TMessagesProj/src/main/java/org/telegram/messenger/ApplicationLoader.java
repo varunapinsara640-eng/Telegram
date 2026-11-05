@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -36,15 +36,15 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
 import org.json.JSONObject;
-import org.telegram.messenger.utils.Choreographer60FpsContent;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.ForegroundDetector;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.LauncherIconController;
+import org.wooble.messenger.utils.Choreographer60FpsContent;
+import org.wooble.messenger.voip.VideoCapturerDevice;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.Components.ForegroundDetector;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.IUpdateLayout;
+import org.wooble.ui.LauncherIconController;
 
 import java.io.File;
 import java.util.Locale;
@@ -172,7 +172,7 @@ public class ApplicationLoader extends Application {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        return new File("/data/data/org.telegram.messenger/files");
+        return new File("/data/data/org.wooble.messenger/files");
     }
 
     public static File getFilesDirFixed(String child) {

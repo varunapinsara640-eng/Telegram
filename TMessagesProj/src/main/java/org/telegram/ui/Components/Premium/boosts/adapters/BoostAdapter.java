@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.boosts.adapters;
+package org.wooble.ui.Components.Premium.boosts.adapters;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -8,35 +8,35 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.ShadowSectionCell;
-import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
-import org.telegram.ui.Components.Premium.boosts.cells.AddChannelCell;
-import org.telegram.ui.Components.Premium.boosts.cells.BoostTypeCell;
-import org.telegram.ui.Components.Premium.boosts.cells.BoostTypeSingleCell;
-import org.telegram.ui.Components.Premium.boosts.cells.ChatCell;
-import org.telegram.ui.Components.Premium.boosts.cells.DateEndCell;
-import org.telegram.ui.Components.Premium.boosts.cells.EnterPrizeCell;
-import org.telegram.ui.Components.Premium.boosts.cells.HeaderCell;
-import org.telegram.ui.Components.Premium.boosts.cells.ParticipantsTypeCell;
-import org.telegram.ui.Components.Premium.boosts.cells.DurationCell;
-import org.telegram.ui.Components.Premium.boosts.cells.SliderCell;
-import org.telegram.ui.Components.Premium.boosts.cells.StarGiveawayOptionCell;
-import org.telegram.ui.Components.Premium.boosts.cells.SubtitleWithCounterCell;
-import org.telegram.ui.Components.Premium.boosts.cells.SwitcherCell;
-import org.telegram.ui.Components.Premium.boosts.cells.TextInfoCell;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.SlideChooseView;
-import org.telegram.ui.Stars.StarsIntroActivity;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.ShadowSectionCell;
+import org.wooble.ui.Components.ListView.AdapterWithDiffUtils;
+import org.wooble.ui.Components.Premium.boosts.BoostRepository;
+import org.wooble.ui.Components.Premium.boosts.cells.AddChannelCell;
+import org.wooble.ui.Components.Premium.boosts.cells.BoostTypeCell;
+import org.wooble.ui.Components.Premium.boosts.cells.BoostTypeSingleCell;
+import org.wooble.ui.Components.Premium.boosts.cells.ChatCell;
+import org.wooble.ui.Components.Premium.boosts.cells.DateEndCell;
+import org.wooble.ui.Components.Premium.boosts.cells.EnterPrizeCell;
+import org.wooble.ui.Components.Premium.boosts.cells.HeaderCell;
+import org.wooble.ui.Components.Premium.boosts.cells.ParticipantsTypeCell;
+import org.wooble.ui.Components.Premium.boosts.cells.DurationCell;
+import org.wooble.ui.Components.Premium.boosts.cells.SliderCell;
+import org.wooble.ui.Components.Premium.boosts.cells.StarGiveawayOptionCell;
+import org.wooble.ui.Components.Premium.boosts.cells.SubtitleWithCounterCell;
+import org.wooble.ui.Components.Premium.boosts.cells.SwitcherCell;
+import org.wooble.ui.Components.Premium.boosts.cells.TextInfoCell;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.SlideChooseView;
+import org.wooble.ui.Stars.StarsIntroActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -260,7 +260,7 @@ public class BoostAdapter extends AdapterWithDiffUtils {
                 view = new SliderCell(context, resourcesProvider);
                 break;
             case HOLDER_TYPE_SUBTITLE:
-                view = new org.telegram.ui.Cells.HeaderCell(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 3, false, resourcesProvider);
+                view = new org.wooble.ui.Cells.HeaderCell(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 3, false, resourcesProvider);
                 view.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
                 break;
             case HOLDER_TYPE_SUBTITLE_WITH_COUNTER:
@@ -321,7 +321,7 @@ public class BoostAdapter extends AdapterWithDiffUtils {
                 break;
             }
             case HOLDER_TYPE_SUBTITLE: {
-                org.telegram.ui.Cells.HeaderCell cell = (org.telegram.ui.Cells.HeaderCell) holder.itemView;
+                org.wooble.ui.Cells.HeaderCell cell = (org.wooble.ui.Cells.HeaderCell) holder.itemView;
                 cell.setText(item.text);
                 break;
             }

@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -9,10 +9,10 @@ import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.Cells.IMessageCell;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.MessagesController;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.Cells.IMessageCell;
 
 import java.util.ArrayList;
 import java.util.HashMap;

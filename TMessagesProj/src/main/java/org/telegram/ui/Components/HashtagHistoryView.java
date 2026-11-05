@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,12 +12,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.messenger.R;
+import org.wooble.messenger.HashtagSearchController;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.messenger.R;
 
 import java.util.ArrayList;
 

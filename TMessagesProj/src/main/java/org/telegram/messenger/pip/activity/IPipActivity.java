@@ -1,6 +1,6 @@
-package org.telegram.messenger.pip.activity;
+package org.wooble.messenger.pip.activity;
 
-import org.telegram.messenger.pip.PipActivityController;
+import org.wooble.messenger.pip.PipActivityController;
 
 public interface IPipActivity {
     PipActivityController getPipController();

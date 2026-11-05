@@ -1,6 +1,6 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -11,9 +11,9 @@ import android.text.StaticLayout;
 import android.view.View;
 import android.graphics.Rect;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.ActionBar.Theme;
 
 public class ForwardBackground {
 

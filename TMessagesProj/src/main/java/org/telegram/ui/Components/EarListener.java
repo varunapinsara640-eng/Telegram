@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -12,14 +12,14 @@ import android.os.PowerManager;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.PhotoViewer;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.NotificationsController;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.voip.VoIPService;
+import org.wooble.ui.PhotoViewer;
 
 public class EarListener implements SensorEventListener {
 
@@ -51,7 +51,7 @@ public class EarListener implements SensorEventListener {
         }
 
         powerManager = (PowerManager) ApplicationLoader.applicationContext.getSystemService(Context.POWER_SERVICE);
-        proximityWakeLock = powerManager.newWakeLock(0x00000020, "telegram:proximity_lock2");
+        proximityWakeLock = powerManager.newWakeLock(0x00000020, "wooble:proximity_lock2");
 
         audioManager = (AudioManager) ApplicationLoader.applicationContext.getSystemService(Context.AUDIO_SERVICE);
     }

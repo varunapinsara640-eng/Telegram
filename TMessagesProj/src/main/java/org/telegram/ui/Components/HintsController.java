@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.SharedPreferences;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.Utilities;
 
 public class HintsController {
     private HintsController() {

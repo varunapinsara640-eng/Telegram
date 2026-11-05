@@ -1,8 +1,8 @@
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

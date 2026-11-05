@@ -1,6 +1,6 @@
-package org.telegram.ui.Components.Premium.boosts.adapters;
+package org.wooble.ui.Components.Premium.boosts.adapters;
 
-import static org.telegram.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
+import static org.wooble.tgnet.TLRPC.TL_payments_checkedGiftCode.NO_USER_ID;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,23 +13,23 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.Premium.boosts.BoostDialogs;
-import org.telegram.ui.Components.Premium.boosts.BoostRepository;
-import org.telegram.ui.Components.Premium.boosts.cells.ActionBtnCell;
-import org.telegram.ui.Components.Premium.boosts.cells.HeaderCell;
-import org.telegram.ui.Components.Premium.boosts.cells.LinkCell;
-import org.telegram.ui.Components.Premium.boosts.cells.TableCell;
-import org.telegram.ui.Components.Premium.boosts.cells.TextInfoCell;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.DialogsActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SendMessagesHelper;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.Premium.boosts.BoostDialogs;
+import org.wooble.ui.Components.Premium.boosts.BoostRepository;
+import org.wooble.ui.Components.Premium.boosts.cells.ActionBtnCell;
+import org.wooble.ui.Components.Premium.boosts.cells.HeaderCell;
+import org.wooble.ui.Components.Premium.boosts.cells.LinkCell;
+import org.wooble.ui.Components.Premium.boosts.cells.TableCell;
+import org.wooble.ui.Components.Premium.boosts.cells.TextInfoCell;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.DialogsActivity;
 
 import java.util.Date;
 

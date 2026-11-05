@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.inset;
+package org.wooble.ui.Components.inset;
 
 public interface InAppKeyboardInsetView {
     void applyNavigationBarHeight(int height);

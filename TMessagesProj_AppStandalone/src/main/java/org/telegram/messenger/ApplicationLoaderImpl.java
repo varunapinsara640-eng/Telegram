@@ -1,7 +1,7 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.isInAirplaneMode;
-import static org.telegram.ui.PremiumPreviewFragment.applyNewSpan;
+import static org.wooble.messenger.AndroidUtilities.isInAirplaneMode;
+import static org.wooble.ui.PremiumPreviewFragment.applyNewSpan;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,22 +14,22 @@ import android.view.ViewGroup;
 import androidx.core.content.FileProvider;
 
 import org.json.JSONObject;
-import org.telegram.messenger.web.BuildConfig;
-import org.telegram.messenger.web.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.UpdateAppAlertDialog;
-import org.telegram.ui.Components.UpdateLayout;
-import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.SMSStatsActivity;
-import org.telegram.ui.SMSSubscribeSheet;
+import org.wooble.messenger.web.BuildConfig;
+import org.wooble.messenger.web.R;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TL_smsjobs;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.UpdateAppAlertDialog;
+import org.wooble.ui.Components.UpdateLayout;
+import org.wooble.ui.IUpdateLayout;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.SMSStatsActivity;
+import org.wooble.ui.SMSSubscribeSheet;
 
 import java.io.File;
 
@@ -149,7 +149,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                         new AlertDialog.Builder(LaunchActivity.instance)
                                 .setTitle(LocaleController.getString(R.string.SmsNoSimTitle))
                                 .setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SmsNoSimMessage)))
-                                .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null)
+                                .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.OK), null)
                                 .show();
                         return;
                     }
@@ -161,7 +161,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                             new AlertDialog.Builder(LaunchActivity.instance)
                                     .setTitle(LocaleController.getString(R.string.SmsNoSimTitle))
                                     .setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SmsNoSimMessage)))
-                                    .setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null)
+                                    .setPositiveButton(LocaleController.getString(org.wooble.messenger.R.string.OK), null)
                                     .show();
                             return;
                         }
@@ -169,7 +169,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
                             if (err != null) {
                                 BulletinFactory.showError(err);
                             } else if (res instanceof TLRPC.TL_boolFalse) {
-                                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
                             } else {
                                 controller.setState(SMSJobController.STATE_JOINED);
                                 controller.loadStatus(true);

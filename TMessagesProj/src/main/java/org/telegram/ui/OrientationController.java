@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
@@ -6,7 +6,7 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.FileLog;
 
 import java.util.ArrayList;
 

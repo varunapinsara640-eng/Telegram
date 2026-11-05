@@ -1,17 +1,17 @@
-package org.telegram.tgnet.tl;
+package org.wooble.tgnet.tl;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.Wallet.WalletEngine2.SendPhase;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.TLMethod;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.ui.Wallet.WalletEngine2.SendPhase;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -171,8 +171,8 @@ public class TL_wallet {
                 case walletTransactionPeerChannel.constructor:
                     result = new walletTransactionPeerChannel();
                     break;
-                case walletTransactionPeerTelegramGift.constructor:
-                    result = new walletTransactionPeerTelegramGift();
+                case walletTransactionPeerWoobleGift.constructor:
+                    result = new walletTransactionPeerWoobleGift();
                     break;
             }
             return TLdeserialize(WalletTransactionPeer.class, result, stream, constructor, exception);
@@ -197,9 +197,9 @@ public class TL_wallet {
                 final walletTransactionPeerAddress a = (walletTransactionPeerAddress) this;
                 final walletTransactionPeerAddress b = (walletTransactionPeerAddress) peer;
                 return TextUtils.equals(a.address, b.address);
-            } else if (peer instanceof walletTransactionPeerTelegramGift) {
-                if (!(this instanceof walletTransactionPeerTelegramGift)) return false;
-                return ((walletTransactionPeerTelegramGift) this).own_profile == ((walletTransactionPeerTelegramGift) peer).own_profile;
+            } else if (peer instanceof walletTransactionPeerWoobleGift) {
+                if (!(this instanceof walletTransactionPeerWoobleGift)) return false;
+                return ((walletTransactionPeerWoobleGift) this).own_profile == ((walletTransactionPeerWoobleGift) peer).own_profile;
             } else if (peer instanceof walletTransactionPeerUnsupported) {
                 return this instanceof walletTransactionPeerUnsupported;
             }
@@ -310,7 +310,7 @@ public class TL_wallet {
             stream.writeString(provider_name);
         }
     }
-    public static class walletTransactionPeerTelegramGift extends WalletTransactionPeer {
+    public static class walletTransactionPeerWoobleGift extends WalletTransactionPeer {
         public static final int constructor = 0xf4729499;
 
         public boolean own_profile;

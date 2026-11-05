@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -150,48 +150,48 @@ import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
 import com.google.android.gms.tasks.Task;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.utils.proxy.ProxySettings;
-import org.telegram.messenger.utils.CustomHtml;
-import org.telegram.messenger.utils.DebugRecordingCanvas;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.INavigationLayout;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatBackgroundDrawable;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BackgroundGradientDrawable;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.ButtonSpan;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ForegroundColorSpanThemable;
-import org.telegram.ui.Components.ForegroundDetector;
-import org.telegram.ui.Components.HideViewAfterAnimation;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.MotionBackgroundDrawable;
-import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ShareAlert;
-import org.telegram.ui.Components.TableView;
-import org.telegram.ui.Components.TextHelper;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.URLSpanReplacement;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.spoilers.SpoilersTextView;
-import org.telegram.ui.DebugRecordingCanvasReplayFragment;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.PeerStoriesView;
-import org.telegram.ui.Stories.StoryMediaAreasView;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.ThemePreviewActivity;
-import org.telegram.ui.WallpapersListActivity;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.utils.proxy.ProxySettings;
+import org.wooble.messenger.utils.CustomHtml;
+import org.wooble.messenger.utils.DebugRecordingCanvas;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.INavigationLayout;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.ChatBackgroundDrawable;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BackgroundGradientDrawable;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.ButtonSpan;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.ForegroundColorSpanThemable;
+import org.wooble.ui.Components.ForegroundDetector;
+import org.wooble.ui.Components.HideViewAfterAnimation;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.MotionBackgroundDrawable;
+import org.wooble.ui.Components.PipRoundVideoView;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ShareAlert;
+import org.wooble.ui.Components.TableView;
+import org.wooble.ui.Components.TextHelper;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.URLSpanReplacement;
+import org.wooble.ui.Components.UndoView;
+import org.wooble.ui.Components.spoilers.SpoilersTextView;
+import org.wooble.ui.DebugRecordingCanvasReplayFragment;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Stories.PeerStoriesView;
+import org.wooble.ui.Stories.StoryMediaAreasView;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.ThemePreviewActivity;
+import org.wooble.ui.WallpapersListActivity;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -3679,7 +3679,7 @@ public class AndroidUtilities {
         }
         File storageDir = null;
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Telegram");
+            storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Wooble");
             if (!storageDir.mkdirs()) {
                 if (!storageDir.exists()) {
                     if (BuildVars.LOGS_ENABLED) {
@@ -4736,7 +4736,7 @@ public class AndroidUtilities {
             }
         }));
         if (!TextUtils.isEmpty(secret)) {
-            final TableView.TableRowFullContent tableRow = tableView.addFullRow(getString(R.string.UseProxyTelegramInfo2));
+            final TableView.TableRowFullContent tableRow = tableView.addFullRow(getString(R.string.UseProxyWoobleInfo2));
             tableRow.setFilled(true);
             final SpoilersTextView textView = (SpoilersTextView) tableRow.getChildAt(0);
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 11);
@@ -6667,7 +6667,7 @@ public class AndroidUtilities {
                     }
                     break;
             }
-            return formatString("TelegramVersion", R.string.TelegramVersion, String.format(Locale.US, "v%s (%d) %s", pInfo.versionName, code, abi));
+            return formatString("WoobleVersion", R.string.WoobleVersion, String.format(Locale.US, "v%s (%d) %s", pInfo.versionName, code, abi));
         } catch (Exception e) {
             FileLog.e(e);
         }

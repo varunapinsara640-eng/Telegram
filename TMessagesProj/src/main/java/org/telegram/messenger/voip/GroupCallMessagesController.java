@@ -1,24 +1,24 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import android.util.LongSparseArray;
 
 import androidx.annotation.Nullable;
 
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BaseController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.json.TLJsonBuilder;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.json.TLJsonParser;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BaseController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.json.TLJsonBuilder;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.json.TLJsonParser;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.tgnet.tl.TL_update;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

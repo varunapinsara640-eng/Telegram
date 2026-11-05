@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Reactions;
+package org.wooble.ui.Components.Reactions;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -14,14 +14,14 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Stories.RoundRectOutlineProvider;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Stories.RoundRectOutlineProvider;
 
 @SuppressLint("ViewConstructor")
 public class BackSpaceButtonView extends FrameLayout {

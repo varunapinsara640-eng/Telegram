@@ -76,7 +76,7 @@ prisma_android::Engine* engine(JNIEnv* env, jlong handle) {
 
 }  // namespace
 
-extern "C" JNIEXPORT jlong JNICALL Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeCreate(
+extern "C" JNIEXPORT jlong JNICALL Java_org_wooble_utils_code_highlight_PrismaHighlighter_nativeCreate(
     JNIEnv* env, jclass, jbyteArray grammars) {
     if (grammars == nullptr) {
         throwJava(env, "java/lang/NullPointerException", "Grammars are null");
@@ -98,7 +98,7 @@ extern "C" JNIEXPORT jlong JNICALL Java_org_telegram_utils_code_highlight_Prisma
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeHighlight(JNIEnv* env, jclass, jlong handle,
+Java_org_wooble_utils_code_highlight_PrismaHighlighter_nativeHighlight(JNIEnv* env, jclass, jlong handle,
                                                               jstring text, jstring language) {
     auto* instance = engine(env, handle);
     if (instance == nullptr) return nullptr;
@@ -122,7 +122,7 @@ Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeHighlight(JNIEnv*
 }
 
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeGetLanguages(JNIEnv* env, jclass,
+Java_org_wooble_utils_code_highlight_PrismaHighlighter_nativeGetLanguages(JNIEnv* env, jclass,
                                                                  jlong handle) {
     auto* instance = engine(env, handle);
     if (instance == nullptr) return nullptr;
@@ -150,12 +150,12 @@ Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeGetLanguages(JNIE
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeDestroy(JNIEnv*, jclass, jlong handle) {
+Java_org_wooble_utils_code_highlight_PrismaHighlighter_nativeDestroy(JNIEnv*, jclass, jlong handle) {
     delete reinterpret_cast<prisma_android::Engine*>(static_cast<uintptr_t>(handle));
 }
 
 extern "C" JNIEXPORT jobjectArray JNICALL
-Java_org_telegram_utils_code_highlight_PrismaHighlighter_nativeGetTokenNames(JNIEnv* env, jclass,
+Java_org_wooble_utils_code_highlight_PrismaHighlighter_nativeGetTokenNames(JNIEnv* env, jclass,
                                                                   jlong handle) {
     auto* instance = engine(env, handle);
     if (instance == nullptr) return nullptr;

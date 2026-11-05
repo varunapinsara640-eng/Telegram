@@ -1,7 +1,7 @@
-package org.telegram.ui.Stories.recorder;
+package org.wooble.ui.Stories.recorder;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -23,19 +23,19 @@ import androidx.annotation.NonNull;
 import com.google.zxing.common.detector.MathUtils;
 
 import org.checkerframework.checker.units.qual.C;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.Crop.CropRotationWheel;
-import org.telegram.ui.Components.Crop.CropTransform;
-import org.telegram.ui.Components.Crop.CropView;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.BubbleActivity;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.Crop.CropAreaView;
+import org.wooble.ui.Components.Crop.CropRotationWheel;
+import org.wooble.ui.Components.Crop.CropTransform;
+import org.wooble.ui.Components.Crop.CropView;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.LayoutHelper;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

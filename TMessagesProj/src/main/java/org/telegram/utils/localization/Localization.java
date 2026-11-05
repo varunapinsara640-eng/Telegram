@@ -1,4 +1,4 @@
-package org.telegram.utils.localization;
+package org.wooble.utils.localization;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -7,7 +7,7 @@ import android.util.SparseIntArray;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
-import org.telegram.tgnet.SerializedData;
+import org.wooble.tgnet.SerializedData;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

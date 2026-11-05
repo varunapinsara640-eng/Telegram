@@ -1,18 +1,18 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
-import static org.telegram.messenger.voip.VoIPService.getStringFromFile;
+import static org.wooble.messenger.voip.VoIPService.getStringFromFile;
 
 import android.text.TextUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.VoIPHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.ui.Components.voip.VoIPHelper;
 
 import java.io.File;
 import java.util.HashMap;

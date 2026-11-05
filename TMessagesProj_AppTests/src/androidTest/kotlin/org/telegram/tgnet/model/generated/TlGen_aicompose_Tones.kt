@@ -1,11 +1,11 @@
-package org.telegram.tgnet.model.generated
+package org.wooble.tgnet.model.generated
 
 import kotlin.Long
 import kotlin.UInt
 import kotlin.collections.List
-import org.telegram.tgnet.OutputSerializedData
-import org.telegram.tgnet.model.TlGen_Object
-import org.telegram.tgnet.model.TlGen_Vector
+import org.wooble.tgnet.OutputSerializedData
+import org.wooble.tgnet.model.TlGen_Object
+import org.wooble.tgnet.model.TlGen_Vector
 
 public sealed class TlGen_aicompose_Tones : TlGen_Object {
   public data object TL_aicompose_tonesNotModified : TlGen_aicompose_Tones() {

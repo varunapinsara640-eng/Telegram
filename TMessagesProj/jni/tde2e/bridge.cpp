@@ -36,7 +36,7 @@ jobjectArray java_bytes2d(JNIEnv *env, const std::vector<std::string>& arr) {
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_key_1generate_1temporary_1private_1key(JNIEnv *env, jclass clazz) {
+Java_org_wooble_messenger_voip_ConferenceCall_key_1generate_1temporary_1private_1key(JNIEnv *env, jclass clazz) {
     auto result = tde2e_api::key_generate_temporary_private_key();
     if (!result.is_ok()) {
         java_throw(env, result.error());
@@ -45,7 +45,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_key_1generate_1temporary_1privat
     return result.value();
 }
 
-extern "C" JNIEXPORT jbyteArray Java_org_telegram_messenger_voip_ConferenceCall_key_1to_1public_1key(JNIEnv *env, jclass clazz, jlong private_key) {
+extern "C" JNIEXPORT jbyteArray Java_org_wooble_messenger_voip_ConferenceCall_key_1to_1public_1key(JNIEnv *env, jclass clazz, jlong private_key) {
     auto result = tde2e_api::key_to_public_key(private_key);
     if (!result.is_ok()) {
         java_throw(env, result.error());
@@ -56,7 +56,7 @@ extern "C" JNIEXPORT jbyteArray Java_org_telegram_messenger_voip_ConferenceCall_
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_key_1from_1public_1key(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_key_1from_1public_1key(JNIEnv *env, jclass clazz,
                                                                        jbyteArray public_key) {
     jsize length = env->GetArrayLength(public_key);
     jbyte* bytes = env->GetByteArrayElements(public_key, nullptr);
@@ -72,7 +72,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_key_1from_1public_1key(JNIEnv *e
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_key_1from_1ecdh(JNIEnv *env, jclass clazz, jlong private_key_id, jlong other_public_key_id) {
+Java_org_wooble_messenger_voip_ConferenceCall_key_1from_1ecdh(JNIEnv *env, jclass clazz, jlong private_key_id, jlong other_public_key_id) {
     auto result = tde2e_api::key_from_ecdh(private_key_id, other_public_key_id);
     if (!result.is_ok()) {
         java_throw(env, result.error());
@@ -83,7 +83,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_key_1from_1ecdh(JNIEnv *env, jcl
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_decrypt_1message_1for_1one(JNIEnv *env, jclass clazz, jlong symmetric_key_id, jbyteArray encrypted) {
+Java_org_wooble_messenger_voip_ConferenceCall_decrypt_1message_1for_1one(JNIEnv *env, jclass clazz, jlong symmetric_key_id, jbyteArray encrypted) {
     jsize encrypted_length = env->GetArrayLength(encrypted);
     jbyte* encrypted_bytes = env->GetByteArrayElements(encrypted, nullptr);
     std::string_view view(reinterpret_cast<const char*>(encrypted_bytes), encrypted_length);
@@ -98,7 +98,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_decrypt_1message_1for_1one(JNIEn
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_encrypt_1message_1for_1one(JNIEnv *env, jclass clazz, jlong symmetric_key_id, jbyteArray message) {
+Java_org_wooble_messenger_voip_ConferenceCall_encrypt_1message_1for_1one(JNIEnv *env, jclass clazz, jlong symmetric_key_id, jbyteArray message) {
     jsize message_length = env->GetArrayLength(message);
     jbyte* message_bytes = env->GetByteArrayElements(message, nullptr);
     std::string_view view(reinterpret_cast<const char*>(message_bytes), message_length);
@@ -113,7 +113,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_encrypt_1message_1for_1one(JNIEn
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_key_1destroy(JNIEnv *env, jclass clazz, jlong key_id) {
+Java_org_wooble_messenger_voip_ConferenceCall_key_1destroy(JNIEnv *env, jclass clazz, jlong key_id) {
     auto result = tde2e_api::key_destroy(key_id);
     if (!result.is_ok()) {
         java_throw(env, result.error());
@@ -121,7 +121,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_key_1destroy(JNIEnv *env, jclass
 }
 
 jobject java_CallParticipant(JNIEnv* env, tde2e_api::CallParticipant o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallParticipant");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallParticipant");
     jmethodID constructor = env->GetMethodID(cls, "<init>", "()V");
 
     jobject obj = env->NewObject(cls, constructor);
@@ -133,7 +133,7 @@ jobject java_CallParticipant(JNIEnv* env, tde2e_api::CallParticipant o) {
 }
 
 tde2e_api::CallParticipant jni_CallParticipant(JNIEnv* env, jobject o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallParticipant");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallParticipant");
 
     return {
         env->GetLongField(o, env->GetFieldID(cls, "user_id", "J")),
@@ -143,7 +143,7 @@ tde2e_api::CallParticipant jni_CallParticipant(JNIEnv* env, jobject o) {
 }
 
 jobject java_CallState(JNIEnv* env, tde2e_api::CallState o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallState");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallState");
     const jmethodID constructor = env->GetMethodID(cls, "<init>", "()V");
 
     const jobject obj = env->NewObject(cls, constructor);
@@ -151,7 +151,7 @@ jobject java_CallState(JNIEnv* env, tde2e_api::CallState o) {
 
     const jobjectArray array = env->NewObjectArray(
         o.participants.size(),
-        env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallParticipant"),
+        env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallParticipant"),
         nullptr
     );
     for (jsize i = 0; i < o.participants.size(); ++i) {
@@ -159,15 +159,15 @@ jobject java_CallState(JNIEnv* env, tde2e_api::CallState o) {
         env->SetObjectArrayElement(array, i, participant);
         env->DeleteLocalRef(participant);
     }
-    env->SetObjectField(obj, env->GetFieldID(cls, "participants", "[Lorg/telegram/messenger/voip/ConferenceCall$CallParticipant;"), array);
+    env->SetObjectField(obj, env->GetFieldID(cls, "participants", "[Lorg/wooble/messenger/voip/ConferenceCall$CallParticipant;"), array);
 
     return obj;
 }
 
 tde2e_api::CallState jni_CallState(JNIEnv* env, jobject o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallState");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallState");
 
-    const jobjectArray array = (jobjectArray) env->GetObjectField(o, env->GetFieldID(cls, "participants", "[Lorg/telegram/messenger/voip/ConferenceCall$CallParticipant;"));
+    const jobjectArray array = (jobjectArray) env->GetObjectField(o, env->GetFieldID(cls, "participants", "[Lorg/wooble/messenger/voip/ConferenceCall$CallParticipant;"));
     const int arraySize = env->GetArrayLength(array);
     std::vector<tde2e_api::CallParticipant> participants;
     for (int i = 0; i < arraySize; ++i) {
@@ -182,7 +182,7 @@ tde2e_api::CallState jni_CallState(JNIEnv* env, jobject o) {
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1zero_1block(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1create_1zero_1block(JNIEnv *env, jclass clazz,
                                                                           jlong private_key,
                                                                           jobject initial_state) {
     auto result = tde2e_api::call_create_zero_block(private_key, jni_CallState(env, initial_state));
@@ -195,7 +195,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1zero_1block(JNIEnv
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1self_1add_1block(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1create_1self_1add_1block(JNIEnv *env, jclass clazz,
                                                                           jlong private_key_id,
                                                                           jbyteArray previous_block,
                                                                           jobject self) {
@@ -213,7 +213,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1self_1add_1block(J
 
 extern "C"
 JNIEXPORT jlong JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1create(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1create(JNIEnv *env, jclass clazz,
                                                              jlong user_id,
                                                              jlong private_key_id,
                                                              jbyteArray last_block) {
@@ -231,7 +231,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1create(JNIEnv *env, jclass
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1change_1state_1block(JNIEnv *env,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1create_1change_1state_1block(JNIEnv *env,
                                                                                    jclass clazz,
                                                                                    jlong call_id,
                                                                                    jobject new_state) {
@@ -245,7 +245,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1create_1change_1state_1blo
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1height(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1get_1height(JNIEnv *env, jclass clazz,
                                                                   jlong call_id) {
     auto result = tde2e_api::call_get_height(call_id);
     if (!result.is_ok()) {
@@ -257,7 +257,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1height(JNIEnv *env, j
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1apply_1block(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1apply_1block(JNIEnv *env, jclass clazz,
                                                                    jlong call_id,
                                                                    jbyteArray block) {
     jsize length = env->GetArrayLength(block);
@@ -274,7 +274,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1apply_1block(JNIEnv *env, 
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1state(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1get_1state(JNIEnv *env, jclass clazz,
                                                                  jlong call_id) {
     auto result = tde2e_api::call_get_state(call_id);
     if (!result.is_ok()) {
@@ -285,7 +285,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1state(JNIEnv *env, jc
 }
 
 jobject java_CallVerificationState(JNIEnv* env, tde2e_api::CallVerificationState o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallVerificationState");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallVerificationState");
     const jmethodID constructor = env->GetMethodID(cls, "<init>", "()V");
 
     const jobject obj = env->NewObject(cls, constructor);
@@ -305,7 +305,7 @@ jobject java_CallVerificationState(JNIEnv* env, tde2e_api::CallVerificationState
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1verification_1state(JNIEnv *env,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1get_1verification_1state(JNIEnv *env,
                                                                                jclass clazz,
                                                                                jlong call_id) {
     auto result = tde2e_api::call_get_verification_state(call_id);
@@ -318,7 +318,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1verification_1state(J
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1receive_1inbound_1message(JNIEnv *env,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1receive_1inbound_1message(JNIEnv *env,
                                                                                 jclass clazz,
                                                                                 jlong call_id,
                                                                                 jbyteArray message) {
@@ -336,7 +336,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1receive_1inbound_1message(
 
 extern "C"
 JNIEXPORT jobjectArray JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1pull_1outbound_1messages(JNIEnv *env,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1pull_1outbound_1messages(JNIEnv *env,
                                                                                jclass clazz,
                                                                                jlong call_id) {
     auto result = tde2e_api::call_pull_outbound_messages(call_id);
@@ -348,7 +348,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1pull_1outbound_1messages(J
 }
 
 jobject java_CallVerificationWords(JNIEnv* env, tde2e_api::CallVerificationWords o) {
-    const jclass cls = env->FindClass("org/telegram/messenger/voip/ConferenceCall$CallVerificationWords");
+    const jclass cls = env->FindClass("org/wooble/messenger/voip/ConferenceCall$CallVerificationWords");
     const jmethodID constructor = env->GetMethodID(cls, "<init>", "()V");
 
     const jobject obj = env->NewObject(cls, constructor);
@@ -370,7 +370,7 @@ jobject java_CallVerificationWords(JNIEnv* env, tde2e_api::CallVerificationWords
 
 extern "C"
 JNIEXPORT jobject JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1verification_1words(JNIEnv *env,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1get_1verification_1words(JNIEnv *env,
                                                                                jclass clazz,
                                                                                jlong call_id) {
     auto result = tde2e_api::call_get_verification_words(call_id);
@@ -383,7 +383,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1get_1verification_1words(J
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1destroy(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1destroy(JNIEnv *env, jclass clazz,
                                                               jlong call_id) {
     auto result = tde2e_api::call_destroy(call_id);
     if (!result.is_ok()) {
@@ -393,7 +393,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1destroy(JNIEnv *env, jclas
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1destroy_1all(JNIEnv *env, jclass clazz) {
+Java_org_wooble_messenger_voip_ConferenceCall_call_1destroy_1all(JNIEnv *env, jclass clazz) {
     auto result = tde2e_api::call_destroy_all();
     if (!result.is_ok()) {
         java_throw(env, result.error());
@@ -418,7 +418,7 @@ jstring java_string(JNIEnv* env, const std::string& s) {
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1describe(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1describe(JNIEnv *env, jclass clazz,
                                                                       jlong call_id) {
     auto result = tde2e_api::call_describe(call_id);
     if (!result.is_ok()) {
@@ -430,7 +430,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1describe(JNIEnv *env, jcla
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1describe_1block(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1describe_1block(JNIEnv *env, jclass clazz,
                                                                       jbyteArray block) {
     jsize length = env->GetArrayLength(block);
     jbyte* bytes = env->GetByteArrayElements(block, nullptr);
@@ -446,7 +446,7 @@ Java_org_telegram_messenger_voip_ConferenceCall_call_1describe_1block(JNIEnv *en
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_org_telegram_messenger_voip_ConferenceCall_call_1describe_1message(JNIEnv *env, jclass clazz,
+Java_org_wooble_messenger_voip_ConferenceCall_call_1describe_1message(JNIEnv *env, jclass clazz,
                                                                         jbyteArray message) {
     jsize length = env->GetArrayLength(message);
     jbyte* bytes = env->GetByteArrayElements(message, nullptr);

@@ -1,11 +1,11 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.SparseIntArray;
 
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.Theme;
 
 public class WrappedResourceProvider implements Theme.ResourcesProvider {
 

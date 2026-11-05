@@ -1,4 +1,4 @@
-package org.telegram.ui;
+package org.wooble.ui;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -12,8 +12,8 @@ import android.util.Log;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.messenger.Emoji;
+import org.wooble.ui.ActionBar.Theme;
 
 public class CachedStaticLayout {
 

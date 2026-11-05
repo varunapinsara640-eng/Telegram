@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.tgnet;
+package org.wooble.tgnet;
 
 import android.graphics.Bitmap;
 import android.graphics.Path;
@@ -18,40 +18,40 @@ import android.util.SparseArray;
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.RichQuote;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.tgnet.json.TLJsonBuilder;
-import org.telegram.tgnet.json.TLJsonParser;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.tgnet.tl.legacy.TL_legacy_message;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Stories.MessageMediaStoryFull;
-import org.telegram.ui.Stories.MessageMediaStoryFull_old;
-import org.telegram.ui.community.CommunityUtils;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildConfig;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLoader;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.RichQuote;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.TranslateController;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.tgnet.json.TLJsonBuilder;
+import org.wooble.tgnet.json.TLJsonParser;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.tgnet.tl.TL_aicompose;
+import org.wooble.tgnet.tl.TL_bots;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.tl.TL_communities;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_update;
+import org.wooble.tgnet.tl.TL_wallet;
+import org.wooble.tgnet.tl.legacy.TL_legacy_message;
+import org.wooble.tgnet.tl.TL_payments;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_stats;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.Components.poll.PollAttachedMediaPack;
+import org.wooble.ui.Stories.MessageMediaStoryFull;
+import org.wooble.ui.Stories.MessageMediaStoryFull_old;
+import org.wooble.ui.community.CommunityUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9303,7 +9303,7 @@ public class TLRPC {
                     months = 1;
                     currency = finalResult.currency;
                     amount = finalResult.monthly_amount;
-                    store_product = "telegram_premium";
+                    store_product = "wooble_premium";
                 }});
             }
             return result;

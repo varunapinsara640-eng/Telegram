@@ -1,4 +1,4 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -75,11 +75,11 @@ final class QrStarDrawable extends Drawable {
 
     @Override
     public int getIntrinsicWidth() {
-        return org.telegram.messenger.AndroidUtilities.dp(18);
+        return org.wooble.messenger.AndroidUtilities.dp(18);
     }
 
     @Override
     public int getIntrinsicHeight() {
-        return org.telegram.messenger.AndroidUtilities.dp(18);
+        return org.wooble.messenger.AndroidUtilities.dp(18);
     }
 }

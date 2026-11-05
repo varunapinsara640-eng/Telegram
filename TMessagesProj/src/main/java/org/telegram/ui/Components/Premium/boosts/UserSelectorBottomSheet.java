@@ -1,9 +1,9 @@
-package org.telegram.ui.Components.Premium.boosts;
+package org.wooble.ui.Components.Premium.boosts;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -36,58 +36,58 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import org.telegram.ui.recyclerview.LinearSmoothScrollerCustom;
+import org.wooble.ui.recyclerview.LinearSmoothScrollerCustom;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CheckBox2;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.ItemOptions;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.Premium.boosts.adapters.SelectorAdapter;
-import org.telegram.ui.Components.Premium.boosts.adapters.SelectorAdapter.Item;
-import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorBtnCell;
-import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorHeaderCell;
-import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorSearchCell;
-import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorUserCell;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Gifts.GiftSheet;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.GramWallet;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BirthdayController;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.MessagesStorage;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.CheckBox2;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.ItemOptions;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.Premium.boosts.adapters.SelectorAdapter;
+import org.wooble.ui.Components.Premium.boosts.adapters.SelectorAdapter.Item;
+import org.wooble.ui.Components.Premium.boosts.cells.selector.SelectorBtnCell;
+import org.wooble.ui.Components.Premium.boosts.cells.selector.SelectorHeaderCell;
+import org.wooble.ui.Components.Premium.boosts.cells.selector.SelectorSearchCell;
+import org.wooble.ui.Components.Premium.boosts.cells.selector.SelectorUserCell;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Gifts.GiftSheet;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.Wallet.GramWallet;
+import org.wooble.ui.PrivacyControlActivity;
+import org.wooble.ui.ProfileActivity;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -150,7 +150,7 @@ public class UserSelectorBottomSheet extends BottomSheetWithRecyclerListView imp
             if (scheme != null) {
                 if ((scheme.equals("http") || scheme.equals("https"))) {
                     String host = data.getHost().toLowerCase();
-                    if (host.equals("telegram.me") || host.equals("t.me") || host.equals("telegram.dog")) {
+                    if (host.equals("wooble.me") || host.equals("t.me") || host.equals("wooble.dog")) {
                         String path = data.getPath();
                         if (path != null) {
                             if (path.startsWith("/premium_multigift")) {
@@ -1249,9 +1249,9 @@ public class UserSelectorBottomSheet extends BottomSheetWithRecyclerListView imp
                 return getString(R.string.GiftStarsTitle);
             case TYPE_STAR_GIFT:
             case TYPE_PREMIUM:
-                return getString(R.string.GiftTelegramPremiumOrStarsTitle);
+                return getString(R.string.GiftWooblePremiumOrStarsTitle);
         }
-        return getString(R.string.GiftTelegramPremiumTitle);
+        return getString(R.string.GiftWooblePremiumTitle);
     }
 
     @Override

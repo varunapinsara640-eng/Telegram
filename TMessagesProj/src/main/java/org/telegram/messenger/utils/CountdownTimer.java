@@ -1,6 +1,6 @@
-package org.telegram.messenger.utils;
+package org.wooble.messenger.utils;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 public class CountdownTimer {
     private final Callback callback;

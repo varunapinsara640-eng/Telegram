@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.inset;
+package org.wooble.ui.Components.inset;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AdjustPanLayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.AdjustPanLayoutHelper;
 
 class KeyboardState {
     public enum State {

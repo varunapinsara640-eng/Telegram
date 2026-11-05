@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.BaseFragment;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.ActionBar.BaseFragment;
 
 public class URLSpanCopyToClipboard extends URLSpanNoUnderline {
     private BaseFragment fragment;

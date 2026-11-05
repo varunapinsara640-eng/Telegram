@@ -1,4 +1,4 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
 import android.Manifest;
 import android.app.KeyguardManager;
@@ -26,23 +26,23 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.XiaomiUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.PermissionRequest;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.VoIPFragment;
-import org.telegram.ui.VoIPPermissionActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.XiaomiUtilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_phone;
+import org.wooble.ui.Components.PermissionRequest;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.VoIPFragment;
+import org.wooble.ui.VoIPPermissionActivity;
 
 import java.util.ArrayList;
 

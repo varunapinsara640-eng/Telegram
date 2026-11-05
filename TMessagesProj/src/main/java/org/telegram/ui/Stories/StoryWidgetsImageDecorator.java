@@ -1,20 +1,20 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import static org.telegram.ui.Stories.StoryMediaAreasView.rgbaToArgb;
+import static org.wooble.ui.Stories.StoryMediaAreasView.rgbaToArgb;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.Paint.Views.LocationMarker;
-import org.telegram.ui.Components.Reactions.ReactionImageHolder;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Stories.recorder.Weather;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.Components.Paint.Views.LocationMarker;
+import org.wooble.ui.Components.Reactions.ReactionImageHolder;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Stories.recorder.Weather;
 
 import java.util.ArrayList;
 

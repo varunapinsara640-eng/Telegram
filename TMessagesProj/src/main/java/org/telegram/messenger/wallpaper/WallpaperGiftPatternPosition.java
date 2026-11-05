@@ -1,14 +1,14 @@
-package org.telegram.messenger.wallpaper;
+package org.wooble.messenger.wallpaper;
 
 import android.graphics.Matrix;
 import android.graphics.RectF;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
 import org.xml.sax.Attributes;
 
 public class WallpaperGiftPatternPosition {

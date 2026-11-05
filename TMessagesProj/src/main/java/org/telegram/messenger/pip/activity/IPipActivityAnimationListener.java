@@ -1,4 +1,4 @@
-package org.telegram.messenger.pip.activity;
+package org.wooble.messenger.pip.activity;
 
 public interface IPipActivityAnimationListener {
     default void onEnterAnimationStart(long estimatedDuration) {}

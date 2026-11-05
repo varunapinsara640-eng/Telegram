@@ -1,8 +1,8 @@
-package org.telegram.ui.Components.Premium.boosts.cells;
+package org.wooble.ui.Components.Premium.boosts.cells;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.R;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BotWebViewVibrationEffect;
+import org.wooble.messenger.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -19,11 +19,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.EditTextCaption;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.EditTextCaption;
+import org.wooble.ui.Components.LayoutHelper;
 
 @SuppressLint("ViewConstructor")
 public class EnterPrizeCell extends LinearLayout {

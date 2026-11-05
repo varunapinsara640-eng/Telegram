@@ -1,17 +1,17 @@
-package org.telegram.messenger.utils.tlutils;
+package org.wooble.messenger.utils.tlutils;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLObject;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLObject;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.tgnet.tl.TL_stars;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_ephemeral;
+import org.wooble.tgnet.tl.TL_stars;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

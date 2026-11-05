@@ -1,8 +1,8 @@
-package org.telegram.ui.iv;
+package org.wooble.ui.iv;
 
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.wooble.messenger.AppGlobalConfig;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_keyboard;
 
 import java.util.ArrayList;
 

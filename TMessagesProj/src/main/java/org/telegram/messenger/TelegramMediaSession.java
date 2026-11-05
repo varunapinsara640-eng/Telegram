@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
@@ -26,11 +26,11 @@ import android.text.TextUtils;
 import androidx.annotation.Nullable;
 import androidx.collection.LongSparseArray;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.wooble.SQLite.SQLiteCursor;
+import org.wooble.messenger.audioinfo.AudioInfo;
+import org.wooble.tgnet.NativeByteBuffer;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.LaunchActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,15 +39,15 @@ import java.util.List;
 import java.util.Locale;
 
 @SuppressLint("StaticFieldLeak")
-public class TelegramMediaSession {
+public class WoobleMediaSession {
 
-    private static volatile TelegramMediaSession instance;
+    private static volatile WoobleMediaSession instance;
 
-    public static TelegramMediaSession getInstance(Context context) {
+    public static WoobleMediaSession getInstance(Context context) {
         if (instance == null) {
-            synchronized (TelegramMediaSession.class) {
+            synchronized (WoobleMediaSession.class) {
                 if (instance == null) {
-                    instance = new TelegramMediaSession(context.getApplicationContext());
+                    instance = new WoobleMediaSession(context.getApplicationContext());
                 }
             }
         }
@@ -55,11 +55,11 @@ public class TelegramMediaSession {
     }
 
     @Nullable
-    public static TelegramMediaSession peekInstance() {
+    public static WoobleMediaSession peekInstance() {
         return instance;
     }
 
-    private static final String SESSION_TAG = "TelegramMediaSession";
+    private static final String SESSION_TAG = "WoobleMediaSession";
     private static final String MEDIA_ID_ROOT = "__ROOT__";
     private static final String MEDIA_ID_CHAT_PREFIX = "__CHAT_";
 
@@ -91,7 +91,7 @@ public class TelegramMediaSession {
     private Paint roundPaint;
     private RectF bitmapRect;
 
-    private TelegramMediaSession(Context appContext) {
+    private WoobleMediaSession(Context appContext) {
         this.appContext = appContext;
         this.currentAccount = UserConfig.selectedAccount;
         this.lastSelectedDialog = AndroidUtilities.getPrefIntOrLong(MessagesController.getNotificationsSettings(currentAccount), "auto_lastSelectedDialog", 0);

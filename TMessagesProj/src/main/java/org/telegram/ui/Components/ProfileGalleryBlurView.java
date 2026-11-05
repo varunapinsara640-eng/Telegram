@@ -1,7 +1,7 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.ui.Components.ProfileMetaballView.profileBlurQueue;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.ui.Components.ProfileMetaballView.profileBlurQueue;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -25,11 +25,11 @@ import android.view.View;
 import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ProfileActivity;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ProfileActivity;
 
 public class ProfileGalleryBlurView extends View {
 

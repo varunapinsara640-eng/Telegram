@@ -1,9 +1,9 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.wooble.messenger.AndroidUtilities;
 
 import androidx.recyclerview.widget.RecyclerView;
 

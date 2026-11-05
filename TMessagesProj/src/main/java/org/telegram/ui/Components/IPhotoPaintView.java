@@ -1,14 +1,14 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.view.MotionEvent;
 import android.view.View;
 
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Paint.RenderView;
-import org.telegram.ui.PhotoViewer;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.Paint.RenderView;
+import org.wooble.ui.PhotoViewer;
 
 import java.util.ArrayList;
 import java.util.Collections;

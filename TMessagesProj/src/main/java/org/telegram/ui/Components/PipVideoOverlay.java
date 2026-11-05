@@ -1,8 +1,8 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import static android.view.WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -45,18 +45,18 @@ import androidx.dynamicanimation.animation.SpringForce;
 
 import androidx.media3.common.C;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.pip.source.IPipSourceDelegate;
-import org.telegram.messenger.pip.utils.PipPermissions;
-import org.telegram.messenger.pip.PipSource;
-import org.telegram.messenger.pip.utils.PipUtils;
-import org.telegram.messenger.utils.ViewOutlineProviderImpl;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.MediaController;
+import org.wooble.messenger.R;
+import org.wooble.messenger.pip.source.IPipSourceDelegate;
+import org.wooble.messenger.pip.utils.PipPermissions;
+import org.wooble.messenger.pip.PipSource;
+import org.wooble.messenger.pip.utils.PipUtils;
+import org.wooble.messenger.utils.ViewOutlineProviderImpl;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PhotoViewer;
 
 import java.util.ArrayList;
 import java.util.List;

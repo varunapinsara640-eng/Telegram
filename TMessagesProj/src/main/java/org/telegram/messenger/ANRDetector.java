@@ -1,10 +1,10 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import org.telegram.ui.Components.ForegroundDetector;
+import org.wooble.ui.Components.ForegroundDetector;
 
 public class ANRDetector implements ForegroundDetector.Listener {
 

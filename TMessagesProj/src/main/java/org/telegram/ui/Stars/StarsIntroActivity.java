@@ -1,15 +1,15 @@
-package org.telegram.ui.Stars;
+package org.wooble.ui.Stars;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.formatPluralStringSpaced;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
-import static org.telegram.ui.ChatEditActivity.applyNewSpan;
-import static org.telegram.ui.Stars.StarsController.findAttribute;
-import static org.telegram.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
-import static org.telegram.ui.bots.AffiliateProgramFragment.percents;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.formatPluralStringSpaced;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
+import static org.wooble.ui.ChatEditActivity.applyNewSpan;
+import static org.wooble.ui.Stars.StarsController.findAttribute;
+import static org.wooble.ui.Stars.StarsIntroActivity.StarsTransactionView.getPlatformDrawable;
+import static org.wooble.ui.bots.AffiliateProgramFragment.percents;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -66,97 +66,97 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.WebFile;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.utils.tlutils.AmountUtils;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.AccountFrozenAlert;
-import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.SimpleTextView;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.AvatarSpan;
-import org.telegram.ui.Cells.HeaderCell;
-import org.telegram.ui.Cells.SessionCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatUsersActivity;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFloat;
-import org.telegram.ui.Components.AnimatedTextView;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
-import org.telegram.ui.Components.Bulletin;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.ButtonSpan;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.FireworksOverlay;
-import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.LinkSpanDrawable;
-import org.telegram.ui.Components.LoadingSpan;
-import org.telegram.ui.Components.OutlineTextContainerView;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconRenderer;
-import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.ui.Components.Premium.GLIcon.Icon3D;
-import org.telegram.ui.Components.Premium.StarParticlesView;
-import org.telegram.ui.Components.Premium.boosts.UserSelectorBottomSheet;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.StarAppsSheet;
-import org.telegram.ui.Components.TableView;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.TextHelper;
-import org.telegram.ui.Components.UItem;
-import org.telegram.ui.Components.UniversalAdapter;
-import org.telegram.ui.Components.UniversalRecyclerView;
-import org.telegram.ui.Components.ViewPagerFixed;
-import org.telegram.ui.Components.spoilers.SpoilerEffect2;
-import org.telegram.ui.Gifts.GiftSheet;
-import org.telegram.ui.GradientHeaderActivity;
-import org.telegram.ui.ImageReceiverSpan;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PostSuggestionsEditActivity;
-import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
-import org.telegram.ui.Stories.recorder.HintView2;
-import org.telegram.ui.bots.AffiliateProgramFragment;
-import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BillingController;
+import org.wooble.messenger.BirthdayController;
+import org.wooble.messenger.ChatObject;
+import org.wooble.messenger.ContactsController;
+import org.wooble.messenger.DialogObject;
+import org.wooble.messenger.DocumentObject;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.ImageLocation;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.messenger.MessageObject;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.SvgHelper;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.UserObject;
+import org.wooble.messenger.Utilities;
+import org.wooble.messenger.WebFile;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.utils.tlutils.AmountUtils;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stars;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.AccountFrozenAlert;
+import org.wooble.ui.ActionBar.ActionBar;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.SimpleTextView;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.AvatarSpan;
+import org.wooble.ui.Cells.HeaderCell;
+import org.wooble.ui.Cells.SessionCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.ChatUsersActivity;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFloat;
+import org.wooble.ui.Components.AnimatedTextView;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.BottomSheetWithRecyclerListView;
+import org.wooble.ui.Components.Bulletin;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.Components.ButtonSpan;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.CombinedDrawable;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EditTextBoldCursor;
+import org.wooble.ui.Components.FireworksOverlay;
+import org.wooble.ui.Components.FlickerLoadingView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.LinkSpanDrawable;
+import org.wooble.ui.Components.LoadingSpan;
+import org.wooble.ui.Components.OutlineTextContainerView;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconRenderer;
+import org.wooble.ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.wooble.ui.Components.Premium.GLIcon.Icon3D;
+import org.wooble.ui.Components.Premium.StarParticlesView;
+import org.wooble.ui.Components.Premium.boosts.UserSelectorBottomSheet;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RecyclerListView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.StarAppsSheet;
+import org.wooble.ui.Components.TableView;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.TextHelper;
+import org.wooble.ui.Components.UItem;
+import org.wooble.ui.Components.UniversalAdapter;
+import org.wooble.ui.Components.UniversalRecyclerView;
+import org.wooble.ui.Components.ViewPagerFixed;
+import org.wooble.ui.Components.spoilers.SpoilerEffect2;
+import org.wooble.ui.Gifts.GiftSheet;
+import org.wooble.ui.GradientHeaderActivity;
+import org.wooble.ui.ImageReceiverSpan;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.PostSuggestionsEditActivity;
+import org.wooble.ui.PrivacyControlActivity;
+import org.wooble.ui.ProfileActivity;
+import org.wooble.ui.Stories.recorder.ButtonWithCounterView;
+import org.wooble.ui.Stories.recorder.HintView2;
+import org.wooble.ui.bots.AffiliateProgramFragment;
+import org.wooble.ui.bots.ChannelAffiliateProgramsFragment;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -293,7 +293,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         iconTextureView.mRenderer.updateColors();
         iconTextureView.setStarParticlesView(particlesView);
         aboveTitleView.addView(iconTextureView, LayoutHelper.createFrame(190, 190, Gravity.CENTER, 0, 12, 0, 24));
-        configureHeader(getString(R.string.TelegramStars), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(getString(R.string.TelegramStarsInfo2), () -> {
+        configureHeader(getString(R.string.WoobleStars), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(getString(R.string.WoobleStarsInfo2), () -> {
             new ExplainStarsSheet(context).show();
         }), true), aboveTitleView, null);
 
@@ -403,7 +403,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         SpannableStringBuilder sb2 = new SpannableStringBuilder();
         sb2.append("G  ");
         sb2.setSpan(new ColoredImageSpan(R.drawable.menu_stars_gift), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        sb2.append(LocaleController.getString(R.string.TelegramStarsGift));
+        sb2.append(LocaleController.getString(R.string.WoobleStarsGift));
         giftButton.setText(sb2, false);
         giftButton.setOnClickListener(v -> {
             StarsController.getInstance(currentAccount).getGiftOptions();
@@ -924,7 +924,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     if (!tonAmount.isZero()) {
                         ssb.append(replaceStarsWithPlain(true, "⭐️" + tonAmount.asFormatString(), 0.62f, refTon));
                         if (refTon[0] != null) {
-                            refTon[0].setColorKey(Theme.key_telegram_color_text);
+                            refTon[0].setColorKey(Theme.key_wooble_color_text);
                         }
                         ssb.append("  ");
                     }
@@ -2587,7 +2587,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         private final int BUTTON_EXPAND = -1;
 
         public void fillItems(ArrayList<UItem> items, UniversalAdapter adapter) {
-            items.add(UItem.asHeader(getString(R.string.TelegramStarsChoose)));
+            items.add(UItem.asHeader(getString(R.string.WoobleStarsChoose)));
             int stars = 1;
             ArrayList<TL_stars.TL_starsTopupOption> options = StarsController.getInstance(currentAccount).getOptions();
             if (options != null && !options.isEmpty()) {
@@ -2870,7 +2870,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         public void fillItems(ArrayList<UItem> items, UniversalAdapter adapter) {
             items.add(UItem.asCustomShadow(headerView));
             if (canBuy) {
-                items.add(UItem.asHeader(getString(R.string.TelegramStarsChoose)));
+                items.add(UItem.asHeader(getString(R.string.WoobleStarsChoose)));
             }
             int stars = 1;
             ArrayList<TL_stars.TL_starsTopupOption> options = StarsController.getInstance(currentAccount).getOptions();
@@ -2897,7 +2897,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 if (count < 3) {
                     items.clear();
                     items.add(UItem.asCustom(headerView));
-                    items.add(UItem.asHeader(getString(R.string.TelegramStarsChoose)));
+                    items.add(UItem.asHeader(getString(R.string.WoobleStarsChoose)));
                     count = 0;
                     for (int id = 0; id < options.size(); ++id) {
                         TL_stars.TL_starsTopupOption option = options.get(id);
@@ -3159,7 +3159,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
 
         public void fillItems(ArrayList<UItem> items, UniversalAdapter adapter) {
             items.add(UItem.asCustom(headerView));
-            items.add(UItem.asHeader(getString(R.string.TelegramStarsChoose)));
+            items.add(UItem.asHeader(getString(R.string.WoobleStarsChoose)));
             int stars = 1;
             ArrayList<TL_stars.TL_starsGiftOption> options = StarsController.getInstance(currentAccount).getGiftOptions();
             if (options != null && !options.isEmpty()) {

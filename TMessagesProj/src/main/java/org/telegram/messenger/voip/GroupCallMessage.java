@@ -1,8 +1,8 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.messenger.MediaDataController;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 import java.util.ArrayList;
 

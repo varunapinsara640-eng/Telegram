@@ -1,6 +1,6 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

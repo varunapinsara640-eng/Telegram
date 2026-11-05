@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.Manifest;
 import android.app.Activity;
@@ -22,11 +22,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.BottomSheet;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.StickerImageView;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.BottomSheet;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.StickerImageView;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -97,14 +97,14 @@ public class FilesMigrationService extends Service {
         }
 
         File newPath = ApplicationLoader.applicationContext.getExternalFilesDir(null);
-        File telegramPath = new File(newPath, "Telegram");
-        File oldPath = new File(path, "Telegram");
+        File wooblePath = new File(newPath, "Wooble");
+        File oldPath = new File(path, "Wooble");
 
         totalFilesCount = getFilesCount(oldPath);
 
         long moveStart = System.currentTimeMillis();
         if (oldPath.canRead() && oldPath.canWrite()) {
-            moveDirectory(oldPath, telegramPath);
+            moveDirectory(oldPath, wooblePath);
         }
         long dt = System.currentTimeMillis() - moveStart;
 
@@ -204,7 +204,7 @@ public class FilesMigrationService extends Service {
                     }
                 }
             }
-            File oldDirectory = new File(path, "Telegram");
+            File oldDirectory = new File(path, "Wooble");
             hasOldFolder = oldDirectory.exists();
         }
         if (hasOldFolder) {

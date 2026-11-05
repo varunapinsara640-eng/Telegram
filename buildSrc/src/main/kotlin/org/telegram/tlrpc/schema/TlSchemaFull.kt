@@ -1,7 +1,7 @@
-package org.telegram.tlrpc.schema
+package org.wooble.tlrpc.schema
 
-import org.telegram.tlrpc.SchemeTlValidator
-import org.telegram.tlrpc.models.Rules
+import org.wooble.tlrpc.SchemeTlValidator
+import org.wooble.tlrpc.models.Rules
 
 data class TlSchemaFull(
     val schema: TlSchema,

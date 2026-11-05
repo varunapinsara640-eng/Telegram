@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.ui;
+package org.wooble.ui;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -53,34 +53,34 @@ import androidx.core.graphics.ColorUtils;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.EmuDetector;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.Intro;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.AlertDialog;
-import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ActionBar.ThemeColors;
-import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Components.BottomPagesView;
-import org.telegram.ui.Components.LayoutHelper;
-import org.telegram.ui.Components.RLottieDrawable;
-import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.ScaleStateListAnimator;
-import org.telegram.ui.Components.SimpleThemeDescription;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.EmuDetector;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.GenericProvider;
+import org.wooble.messenger.Intro;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.messenger.R;
+import org.wooble.messenger.UserConfig;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.Vector;
+import org.wooble.ui.ActionBar.AlertDialog;
+import org.wooble.ui.ActionBar.BaseFragment;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.ThemeColors;
+import org.wooble.ui.ActionBar.ThemeDescription;
+import org.wooble.ui.Components.BottomPagesView;
+import org.wooble.ui.Components.LayoutHelper;
+import org.wooble.ui.Components.RLottieDrawable;
+import org.wooble.ui.Components.RLottieImageView;
+import org.wooble.ui.Components.ScaleStateListAnimator;
+import org.wooble.ui.Components.SimpleThemeDescription;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
 
 import java.util.ArrayList;
 
@@ -153,7 +153,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
 
     @Override
     public View createView(Context context) {
-        logoDrawable = context.getResources().getDrawable(R.drawable.telegram_logo).mutate();
+        logoDrawable = context.getResources().getDrawable(R.drawable.wooble_logo).mutate();
         logoDrawable.setBounds(0, dp(8.666f), dp(115), dp(35));
         SpannableStringBuilder ssb = new SpannableStringBuilder(LocaleController.getString(R.string.Page1Title));
         ssb.setSpan(new ImageSpan(logoDrawable), 0, ssb.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -657,7 +657,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         private float maxRefreshRate;
         private long lastDrawFrame;
 
-        private final GenericProvider<Void, Bitmap> telegramMaskProvider = v -> {
+        private final GenericProvider<Void, Bitmap> woobleMaskProvider = v -> {
             int size = dp(ICON_HEIGHT_DP);
             Bitmap bm = Bitmap.createBitmap(dp(ICON_WIDTH_DP), size, Bitmap.Config.ARGB_8888);
             Canvas c = new Canvas(bm);
@@ -800,9 +800,9 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 c.drawCircle(size / 2f, size / 2f, size / 2f, paint);
                 return bm;
             }, 22);
-            loadTexture(telegramMaskProvider, 23);
+            loadTexture(woobleMaskProvider, 23);
 
-            updateTelegramTextures();
+            updateWoobleTextures();
             updatePowerfulTextures();
             Intro.setPrivateTextures(textures[19], textures[20]);
             Intro.setFreeTextures(textures[14], textures[13]);
@@ -814,8 +814,8 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             return true;
         }
 
-        public void updateTelegramTextures() {
-            Intro.setTelegramTextures(textures[22], textures[21], textures[23]);
+        public void updateWoobleTextures() {
+            Intro.setWoobleTextures(textures[22], textures[21], textures[23]);
         }
 
         public void updatePowerfulTextures() {
@@ -975,8 +975,8 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                     eglThread.loadTexture(R.drawable.intro_powerful_mask, 17, Theme.getColor(Theme.key_windowBackgroundWhite), true);
                     eglThread.updatePowerfulTextures();
 
-                    eglThread.loadTexture(eglThread.telegramMaskProvider, 23, true);
-                    eglThread.updateTelegramTextures();
+                    eglThread.loadTexture(eglThread.woobleMaskProvider, 23, true);
+                    eglThread.updateWoobleTextures();
 
                     Intro.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 });

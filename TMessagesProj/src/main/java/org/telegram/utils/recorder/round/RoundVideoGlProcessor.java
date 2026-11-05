@@ -1,4 +1,4 @@
-package org.telegram.utils.recorder.round;
+package org.wooble.utils.recorder.round;
 
 import android.graphics.SurfaceTexture;
 import android.opengl.EGL14;

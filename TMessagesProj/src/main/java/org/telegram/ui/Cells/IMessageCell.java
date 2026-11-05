@@ -1,11 +1,11 @@
-package org.telegram.ui.Cells;
+package org.wooble.ui.Cells;
 
 import android.view.View;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.MessageObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
 
 public interface IMessageCell {
 

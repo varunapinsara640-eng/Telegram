@@ -1,9 +1,9 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.content.Context;
 import android.graphics.*;
 import androidx.core.graphics.ColorUtils;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.FileLog;
 import java.io.InputStream;
 import java.util.Random;
 
@@ -19,7 +19,7 @@ final class WalletCard2DMaterial {
     static void prewarm(Context context) {
         if (!preparing.compareAndSet(false, true)) return;
         ASSET_QUEUE.postRunnable(() -> new WalletCard2DMaterial(context.getApplicationContext(),
-                org.telegram.messenger.R.drawable.wallet_card_qr, 46, () -> {}));
+                org.wooble.messenger.R.drawable.wallet_card_qr, 46, () -> {}));
     }
 
     private static final float W = 336, H = 205, R = 25.2f;
@@ -27,7 +27,7 @@ final class WalletCard2DMaterial {
     private static final float SECOND_LIGHT_WIDTH = 2f;
     private static final float QR_EXPOSURE = 6f;
     private static final float EDGE_BRIGHTNESS = 1.5f;
-    static final org.telegram.messenger.DispatchQueue ASSET_QUEUE = new org.telegram.messenger.DispatchQueue("walletCardAssets", true, android.os.Process.THREAD_PRIORITY_BACKGROUND);
+    static final org.wooble.messenger.DispatchQueue ASSET_QUEUE = new org.wooble.messenger.DispatchQueue("walletCardAssets", true, android.os.Process.THREAD_PRIORITY_BACKGROUND);
     private final Runnable invalidate;
 
     private static Bitmap[] textures;
@@ -520,7 +520,7 @@ final class WalletCard2DMaterial {
         }
         ASSET_QUEUE.postRunnable(() -> {
             Bitmap[] decoded = loadIcon(context, res);
-            org.telegram.messenger.AndroidUtilities.runOnUIThread(() -> {
+            org.wooble.messenger.AndroidUtilities.runOnUIThread(() -> {
                 if (iconRes != res) return;
                 installIcon(decoded);
                 invalidate.run();
@@ -539,8 +539,8 @@ final class WalletCard2DMaterial {
         Bitmap[] cached = ICON_CACHE.get(res);
         if (cached != null) return cached;
         String name;
-        if (res == org.telegram.messenger.R.drawable.wallet_card_qr) name = "qr";
-        else if (res == org.telegram.messenger.R.drawable.wallet_card_info) name = "info";
+        if (res == org.wooble.messenger.R.drawable.wallet_card_qr) name = "qr";
+        else if (res == org.wooble.messenger.R.drawable.wallet_card_info) name = "info";
         else throw new IllegalArgumentException("Missing packaged wallet icon: " + res);
         Bitmap[] decoded = new Bitmap[1 + 2 * ICON_DIRECTIONS];
         for (int i = 0; i < decoded.length; i++) {

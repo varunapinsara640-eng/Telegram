@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.wooble.ui.Components.Premium.GLIcon;
 
 import android.content.Context;
 import android.opengl.GLES30;

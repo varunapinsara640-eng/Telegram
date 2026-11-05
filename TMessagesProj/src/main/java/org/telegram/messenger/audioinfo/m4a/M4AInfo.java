@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.telegram.messenger.audioinfo.m4a;
+package org.wooble.messenger.audioinfo.m4a;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import org.telegram.messenger.audioinfo.AudioInfo;
-import org.telegram.messenger.audioinfo.mp3.ID3v1Genre;
+import org.wooble.messenger.audioinfo.AudioInfo;
+import org.wooble.messenger.audioinfo.mp3.ID3v1Genre;
 
 import java.io.IOException;
 import java.io.InputStream;

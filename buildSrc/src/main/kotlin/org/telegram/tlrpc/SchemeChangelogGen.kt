@@ -1,6 +1,6 @@
-package org.telegram.tlrpc
+package org.wooble.tlrpc
 
-import org.telegram.tlrpc.models.*
+import org.wooble.tlrpc.models.*
 
 object SchemeChangelogGen {
     fun getChangelog(old: TlSchemeWithMeta, new: TlSchemeWithMeta): TlSchemeChangelog {

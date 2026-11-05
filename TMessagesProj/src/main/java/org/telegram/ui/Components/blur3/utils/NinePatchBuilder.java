@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.blur3.utils;
+package org.wooble.ui.Components.blur3.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import java.nio.ByteOrder;
 
 import androidx.core.math.MathUtils;
 
-import org.telegram.messenger.ApplicationLoader;
+import org.wooble.messenger.ApplicationLoader;
 
 public class NinePatchBuilder {
     public static final int TRANSPARENT_COLOR = 0x00000000;

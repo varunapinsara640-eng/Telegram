@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.TimeInterpolator;
 import android.graphics.Interpolator;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.ui.ActionBar.Theme;
+import org.wooble.ui.ActionBar.Theme;
 
 public class AnimatedPaint extends Paint {
 

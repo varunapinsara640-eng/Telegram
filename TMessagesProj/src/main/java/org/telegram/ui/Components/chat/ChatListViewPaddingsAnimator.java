@@ -1,12 +1,12 @@
-package org.telegram.ui.Components.chat;
+package org.wooble.ui.Components.chat;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
 
 public class ChatListViewPaddingsAnimator {
     private final RecyclerView recyclerView;

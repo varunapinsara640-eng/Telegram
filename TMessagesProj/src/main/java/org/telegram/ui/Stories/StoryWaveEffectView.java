@@ -1,4 +1,4 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,14 +23,14 @@ import android.view.inspector.WindowInspector;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Stories.recorder.StoryRecorder;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.LiteMode;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.Utilities;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Stories.recorder.StoryRecorder;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

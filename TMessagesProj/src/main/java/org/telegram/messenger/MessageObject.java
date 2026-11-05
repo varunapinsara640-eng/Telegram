@@ -1,22 +1,22 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.find;
-import static org.telegram.messenger.AndroidUtilities.replaceTags;
-import static org.telegram.messenger.LocaleController.formatPluralSpannable;
-import static org.telegram.messenger.LocaleController.formatPluralString;
-import static org.telegram.messenger.LocaleController.formatPluralStringComma;
-import static org.telegram.messenger.LocaleController.formatSpannable;
-import static org.telegram.messenger.LocaleController.formatString;
-import static org.telegram.messenger.LocaleController.getString;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.find;
+import static org.wooble.messenger.AndroidUtilities.replaceTags;
+import static org.wooble.messenger.LocaleController.formatPluralSpannable;
+import static org.wooble.messenger.LocaleController.formatPluralString;
+import static org.wooble.messenger.LocaleController.formatPluralStringComma;
+import static org.wooble.messenger.LocaleController.formatSpannable;
+import static org.wooble.messenger.LocaleController.formatString;
+import static org.wooble.messenger.LocaleController.getString;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -49,62 +49,62 @@ import androidx.annotation.NonNull;
 import androidx.collection.LongSparseArray;
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.messenger.browser.Browser;
-import org.telegram.messenger.ringtone.RingtoneDataStore;
-import org.telegram.messenger.utils.tlutils.AmountUtils;
-import org.telegram.messenger.utils.tlutils.TLKeyboardHelper;
-import org.telegram.messenger.utils.tlutils.TlUtils;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.QuickRepliesController;
-import org.telegram.ui.Cells.ChatMessageCell;
-import org.telegram.ui.ChatActivity;
-import org.telegram.ui.MultiLayoutTypingAnimator;
-import org.telegram.ui.Components.AnimatedEmojiDrawable;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.ButtonBounce;
-import org.telegram.ui.Components.ColoredImageSpan;
-import org.telegram.ui.Components.EllipsizeSpanAnimator;
-import org.telegram.ui.Components.FormattedDateSpan;
-import org.telegram.ui.Components.Forum.ForumBubbleDrawable;
-import org.telegram.ui.Components.Forum.ForumUtilities;
-import org.telegram.ui.Components.QuoteSpan;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Components.Reactions.ReactionsUtils;
-import org.telegram.ui.Components.SquigglyLinesSpan;
-import org.telegram.ui.Components.Text;
-import org.telegram.ui.Components.TextStyleSpan;
-import org.telegram.ui.Components.TranscribeButton;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Components.URLSpanBotCommand;
-import org.telegram.ui.Components.URLSpanBrowser;
-import org.telegram.ui.Components.URLSpanMono;
-import org.telegram.ui.Components.URLSpanNoUnderline;
-import org.telegram.ui.Components.URLSpanNoUnderlineBold;
-import org.telegram.ui.Components.URLSpanReplacement;
-import org.telegram.ui.Components.URLSpanUserMention;
-import org.telegram.ui.Components.VideoPlayer;
-import org.telegram.ui.Components.WebPlayerView;
-import org.telegram.ui.Components.poll.PollAttachedMediaPack;
-import org.telegram.ui.Components.spoilers.SpoilerEffect;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PeerColorActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.ui.Stars.StarsIntroActivity;
-import org.telegram.ui.Stories.StoriesController;
-import org.telegram.ui.Wallet.GramWallet;
-import org.telegram.ui.community.CommunityUtils;
-import org.telegram.ui.web.BotWebViewContainer;
-import org.telegram.utils.code.highlight.CodeHighlighting;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.messenger.browser.Browser;
+import org.wooble.messenger.ringtone.RingtoneDataStore;
+import org.wooble.messenger.utils.tlutils.AmountUtils;
+import org.wooble.messenger.utils.tlutils.TLKeyboardHelper;
+import org.wooble.messenger.utils.tlutils.TlUtils;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.tl.TL_iv;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Business.QuickRepliesController;
+import org.wooble.ui.Cells.ChatMessageCell;
+import org.wooble.ui.ChatActivity;
+import org.wooble.ui.MultiLayoutTypingAnimator;
+import org.wooble.ui.Components.AnimatedEmojiDrawable;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.ButtonBounce;
+import org.wooble.ui.Components.ColoredImageSpan;
+import org.wooble.ui.Components.EllipsizeSpanAnimator;
+import org.wooble.ui.Components.FormattedDateSpan;
+import org.wooble.ui.Components.Forum.ForumBubbleDrawable;
+import org.wooble.ui.Components.Forum.ForumUtilities;
+import org.wooble.ui.Components.QuoteSpan;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Components.Reactions.ReactionsUtils;
+import org.wooble.ui.Components.SquigglyLinesSpan;
+import org.wooble.ui.Components.Text;
+import org.wooble.ui.Components.TextStyleSpan;
+import org.wooble.ui.Components.TranscribeButton;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Components.URLSpanBotCommand;
+import org.wooble.ui.Components.URLSpanBrowser;
+import org.wooble.ui.Components.URLSpanMono;
+import org.wooble.ui.Components.URLSpanNoUnderline;
+import org.wooble.ui.Components.URLSpanNoUnderlineBold;
+import org.wooble.ui.Components.URLSpanReplacement;
+import org.wooble.ui.Components.URLSpanUserMention;
+import org.wooble.ui.Components.VideoPlayer;
+import org.wooble.ui.Components.WebPlayerView;
+import org.wooble.ui.Components.poll.PollAttachedMediaPack;
+import org.wooble.ui.Components.spoilers.SpoilerEffect;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.PeerColorActivity;
+import org.wooble.ui.PhotoViewer;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.ui.Stars.StarsIntroActivity;
+import org.wooble.ui.Stories.StoriesController;
+import org.wooble.ui.Wallet.GramWallet;
+import org.wooble.ui.community.CommunityUtils;
+import org.wooble.ui.web.BotWebViewContainer;
+import org.wooble.utils.code.highlight.CodeHighlighting;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -2733,7 +2733,7 @@ public class MessageObject {
             }
         } else if (event.action instanceof TLRPC.TL_channelAdminLogEventActionDeleteMessage) {
             message = ((TLRPC.TL_channelAdminLogEventActionDeleteMessage) event.action).message;
-            if (fromUser != null && fromUser.id == MessagesController.getInstance(currentAccount).telegramAntispamUserId) {
+            if (fromUser != null && fromUser.id == MessagesController.getInstance(currentAccount).woobleAntispamUserId) {
                 messageText = getString(R.string.EventLogDeletedMessages).replace("un1", UserObject.getUserName(fromUser));
             } else {
                 messageText = replaceWithLink(getString(R.string.EventLogDeletedMessages), "un1", fromUser);
@@ -8522,7 +8522,7 @@ public class MessageObject {
             } else if (needDrawAvatarInternal() && !isOutOwner() && !messageOwner.isThreadMessage) {
                 maxWidth -= dp(52);
             }
-        } else if (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "telegram_background".equals(getMedia(messageOwner).webpage.type)) {
+        } else if (getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "wooble_background".equals(getMedia(messageOwner).webpage.type)) {
             try {
                 Uri uri = Uri.parse(getMedia(messageOwner).webpage.url);
                 String segment = uri.getLastPathSegment();
@@ -11943,11 +11943,11 @@ public class MessageObject {
     }
 
     public boolean isWallpaper() {
-        return getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "telegram_background".equals(getMedia(messageOwner).webpage.type);
+        return getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "wooble_background".equals(getMedia(messageOwner).webpage.type);
     }
 
     public boolean isTheme() {
-        return getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "telegram_theme".equals(getMedia(messageOwner).webpage.type);
+        return getMedia(messageOwner) instanceof TLRPC.TL_messageMediaWebPage && getMedia(messageOwner).webpage != null && "wooble_theme".equals(getMedia(messageOwner).webpage.type);
     }
 
     public int getMediaExistanceFlags() {
@@ -12606,7 +12606,7 @@ public class MessageObject {
             return storyMentionWebpage;
         }
         TLRPC.WebPage webpage = new TLRPC.TL_webPage();
-        webpage.type = "telegram_story";
+        webpage.type = "wooble_story";
         TLRPC.TL_webPageAttributeStory attr = new TLRPC.TL_webPageAttributeStory();
         attr.id = messageOwner.media.id;
         attr.peer = MessagesController.getInstance(currentAccount).getPeer(messageOwner.media.user_id);
@@ -12804,16 +12804,16 @@ public class MessageObject {
             webpage != null && (webpage.photo != null || isVideoDocument(webpage.document)) &&
             !(webpage != null && TextUtils.isEmpty(webpage.description) && TextUtils.isEmpty(webpage.title)) &&
             !isSponsored() && // drawInstantViewType = 1
-            !"telegram_megagroup".equals(webpageType) &&     // drawInstantViewType = 2
-            !"telegram_background".equals(webpageType) &&    // drawInstantViewType = 6
-            !"telegram_voicechat".equals(webpageType) &&     // drawInstantViewType = 9
-            !"telegram_videochat".equals(webpageType) &&
-            !"telegram_livestream".equals(webpageType) &&    // drawInstantViewType = 11
-            !"telegram_user".equals(webpageType) &&          // drawInstantViewType = 13
-            !"telegram_story".equals(webpageType) &&         // drawInstantViewType = 17
-            !"telegram_channel_boost".equals(webpageType) && // drawInstantViewType = 18
-            !"telegram_group_boost".equals(webpageType) &&   // drawInstantViewType = 21
-            !"telegram_chat".equals(webpageType)
+            !"wooble_megagroup".equals(webpageType) &&     // drawInstantViewType = 2
+            !"wooble_background".equals(webpageType) &&    // drawInstantViewType = 6
+            !"wooble_voicechat".equals(webpageType) &&     // drawInstantViewType = 9
+            !"wooble_videochat".equals(webpageType) &&
+            !"wooble_livestream".equals(webpageType) &&    // drawInstantViewType = 11
+            !"wooble_user".equals(webpageType) &&          // drawInstantViewType = 13
+            !"wooble_story".equals(webpageType) &&         // drawInstantViewType = 17
+            !"wooble_channel_boost".equals(webpageType) && // drawInstantViewType = 18
+            !"wooble_group_boost".equals(webpageType) &&   // drawInstantViewType = 21
+            !"wooble_chat".equals(webpageType)
         ;
     }
 
@@ -12823,11 +12823,11 @@ public class MessageObject {
         final String webpageType = webpage != null ? webpage.type : null;
         return !(webpage != null && TextUtils.isEmpty(webpage.description) && TextUtils.isEmpty(webpage.title)) && (
                 "app".equals(webpageType) || "profile".equals(webpageType) ||
-                "article".equals(webpageType) || "telegram_bot".equals(webpageType) ||
-                "telegram_user".equals(webpageType) || "telegram_channel".equals(webpageType) ||
-                "telegram_megagroup".equals(webpageType) || "telegram_voicechat".equals(webpageType) || "telegram_videochat".equals(webpageType) ||
-                "telegram_livestream".equals(webpageType) || "telegram_channel_boost".equals(webpageType) || "telegram_group_boost".equals(webpageType) ||
-                "telegram_chat".equals(webpageType)
+                "article".equals(webpageType) || "wooble_bot".equals(webpageType) ||
+                "wooble_user".equals(webpageType) || "wooble_channel".equals(webpageType) ||
+                "wooble_megagroup".equals(webpageType) || "wooble_voicechat".equals(webpageType) || "wooble_videochat".equals(webpageType) ||
+                "wooble_livestream".equals(webpageType) || "wooble_channel_boost".equals(webpageType) || "wooble_group_boost".equals(webpageType) ||
+                "wooble_chat".equals(webpageType)
         );
     }
 

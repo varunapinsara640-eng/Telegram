@@ -1,12 +1,12 @@
 /*
- * This is the source code of Telegram for Android v. 5.x.x.
+ * This is the source code of Wooble for Android v. 5.x.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -16,24 +16,24 @@ import android.graphics.SurfaceTexture;
 import android.text.TextUtils;
 import android.view.View;
 
-import org.telegram.messenger.video.MediaCodecPlayer;
-import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.tgnet.AbstractSerializedData;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.Paint.PaintTypeface;
-import org.telegram.ui.Components.Paint.Views.LinkPreview;
-import org.telegram.ui.Components.PhotoFilterView;
-import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.ui.Stories.recorder.CollageLayout;
-import org.telegram.ui.Stories.recorder.StoryEntry;
-import org.telegram.ui.Stories.recorder.Weather;
+import org.wooble.messenger.video.MediaCodecPlayer;
+import org.wooble.messenger.video.MediaCodecVideoConvertor;
+import org.wooble.tgnet.AbstractSerializedData;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_stories;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.Paint.PaintTypeface;
+import org.wooble.ui.Components.Paint.Views.LinkPreview;
+import org.wooble.ui.Components.PhotoFilterView;
+import org.wooble.ui.Components.RLottieNative;
+import org.wooble.ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.wooble.ui.Stories.recorder.CollageLayout;
+import org.wooble.ui.Stories.recorder.StoryEntry;
+import org.wooble.ui.Stories.recorder.Weather;
 
 import java.io.File;
 import java.nio.FloatBuffer;

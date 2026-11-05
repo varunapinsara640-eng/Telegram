@@ -1,4 +1,4 @@
-package org.telegram.messenger.chromecast;
+package org.wooble.messenger.chromecast;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,9 +16,9 @@ import com.google.android.gms.cast.framework.SessionManager;
 import com.google.android.gms.cast.framework.SessionManagerListener;
 import com.google.android.gms.cast.framework.media.RemoteMediaClient;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.CastSync;
-import org.telegram.ui.PhotoViewer;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.ui.CastSync;
+import org.wooble.ui.PhotoViewer;
 
 import java.io.File;
 import java.util.Objects;

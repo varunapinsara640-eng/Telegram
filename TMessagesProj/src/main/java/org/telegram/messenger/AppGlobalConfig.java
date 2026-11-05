@@ -1,9 +1,9 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLRPC;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class AppGlobalConfig {
 
     public final ConfigDouble tonUsdRate = ofDouble("ton_usd_rate", 3);
 
-    public final ConfigString starsRatingLearnMoreUrl = ofString("stars_rating_learnmore_url", "https://telegram.org/blog/telegram-stars");
+    public final ConfigString starsRatingLearnMoreUrl = ofString("stars_rating_learnmore_url", "https://wooble.org/blog/wooble-stars");
     public final ConfigBoolean needAgeVideoVerification = ofBoolean("need_age_video_verification", false);
 
     public final ConfigInt starsStarGiftResaleCommissionPermille = ofInt("stars_stargift_resale_commission_permille", 800);

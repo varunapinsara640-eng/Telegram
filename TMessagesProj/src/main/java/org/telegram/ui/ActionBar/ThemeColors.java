@@ -1,6 +1,6 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.ui.ActionBar.Theme.*;
+import static org.wooble.ui.ActionBar.Theme.*;
 
 import android.graphics.Color;
 import android.util.SparseArray;
@@ -881,9 +881,9 @@ public class ThemeColors {
         defaultColors[key_botKeyboard_button_primary] = TELEGRAM_COLOR;
         defaultColors[key_botKeyboard_button_success] = 0xFF40b135;
 
-        defaultColors[key_telegram_color_dialogsLogo] = 0xFF168bdb;
-        defaultColors[key_telegram_color] = TELEGRAM_COLOR;
-        defaultColors[key_telegram_color_text] = TELEGRAM_COLOR_TEXT;
+        defaultColors[key_wooble_color_dialogsLogo] = 0xFF168bdb;
+        defaultColors[key_wooble_color] = TELEGRAM_COLOR;
+        defaultColors[key_wooble_color_text] = TELEGRAM_COLOR_TEXT;
 
         return defaultColors;
     }
@@ -1712,9 +1712,9 @@ public class ThemeColors {
         colorKeysMap.put(key_botKeyboard_button_danger, "botKeyboard_button_danger");
         colorKeysMap.put(key_botKeyboard_button_primary, "botKeyboard_button_primary");
         colorKeysMap.put(key_botKeyboard_button_success, "botKeyboard_button_success");
-        colorKeysMap.put(key_telegram_color, "telegram_color");
-        colorKeysMap.put(key_telegram_color_text, "telegram_color_text");
-        colorKeysMap.put(key_telegram_color_dialogsLogo, "telegram_color_dialogsLogo");
+        colorKeysMap.put(key_wooble_color, "wooble_color");
+        colorKeysMap.put(key_wooble_color_text, "wooble_color_text");
+        colorKeysMap.put(key_wooble_color_dialogsLogo, "wooble_color_dialogsLogo");
 
         return colorKeysMap;
     }

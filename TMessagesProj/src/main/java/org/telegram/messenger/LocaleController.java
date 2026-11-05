@@ -1,15 +1,15 @@
 /*
- * This is the source code of Telegram for Android v. 1.3.x.
+ * This is the source code of Wooble for Android v. 1.3.x.
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
  * Copyright Nikolai Kudashov, 2013-2018.
  */
 
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.formatWholeNumber;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.formatWholeNumber;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -35,16 +35,16 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 
-import org.telegram.utils.localization.Localization;
-import org.telegram.localization.LocalizationUtils;
-import org.telegram.messenger.time.FastDateFormat;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.Stars.StarsController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.RestrictedLanguagesSelectActivity;
+import org.wooble.utils.localization.Localization;
+import org.wooble.localization.LocalizationUtils;
+import org.wooble.messenger.time.FastDateFormat;
+import org.wooble.tgnet.Vector;
+import org.wooble.ui.Components.TypefaceSpan;
+import org.wooble.ui.Stars.StarsController;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.RestrictedLanguagesSelectActivity;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedWriter;

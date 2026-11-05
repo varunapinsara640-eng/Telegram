@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -26,18 +26,18 @@ import android.view.inputmethod.EditorInfo;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Components.AnimatedEmojiSpan;
-import org.telegram.ui.Components.AnimatedFileDrawable;
-import org.telegram.ui.Components.Paint.Views.EditTextOutline;
-import org.telegram.ui.Components.Paint.Views.PaintTextOptionsView;
-import org.telegram.ui.Components.RLottieNative;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.ApplicationLoader;
+import org.wooble.messenger.Emoji;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.UserConfig;
+import org.wooble.messenger.VideoEditedInfo;
+import org.wooble.ui.Components.AnimatedEmojiSpan;
+import org.wooble.ui.Components.AnimatedFileDrawable;
+import org.wooble.ui.Components.Paint.Views.EditTextOutline;
+import org.wooble.ui.Components.Paint.Views.PaintTextOptionsView;
+import org.wooble.ui.Components.RLottieNative;
 
 import java.io.File;
 import java.nio.ByteBuffer;

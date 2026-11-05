@@ -1,7 +1,7 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
 
 public class SecureDocument extends TLObject {
 

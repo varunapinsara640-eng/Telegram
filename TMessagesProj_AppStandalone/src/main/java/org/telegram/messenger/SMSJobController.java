@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.Manifest;
 import android.app.Activity;
@@ -17,17 +17,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 
-import org.telegram.PhoneFormat.PhoneFormat;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TL_smsjobs;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.SMSSubscribeSheet;
+import org.wooble.PhoneFormat.PhoneFormat;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.InputSerializedData;
+import org.wooble.tgnet.OutputSerializedData;
+import org.wooble.tgnet.SerializedData;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TL_smsjobs;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.BulletinFactory;
+import org.wooble.ui.LaunchActivity;
+import org.wooble.ui.SMSSubscribeSheet;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -216,7 +216,7 @@ public class SMSJobController implements NotificationCenter.NotificationCenterDe
                 if (err != null) {
                     BulletinFactory.showError(err);
                 } else if (res instanceof TLRPC.TL_boolFalse) {
-                    BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                    BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
                 } else {
                     setState(SMSJobController.STATE_JOINED);
                     loadStatus(true);
@@ -806,7 +806,7 @@ public class SMSJobController implements NotificationCenter.NotificationCenterDe
             if (err != null) {
                 BulletinFactory.showError(err);
             } else if (res instanceof TLRPC.TL_boolFalse) {
-                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.telegram.messenger.R.string.UnknownError)).show();
+                BulletinFactory.global().createErrorBulletin(LocaleController.getString(org.wooble.messenger.R.string.UnknownError)).show();
             } else {
                 SMSJobController.getInstance(currentAccount).loadStatus(true);
                 SMSJobController.getInstance(currentAccount).checkIsEligible(true, null);

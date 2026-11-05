@@ -1,14 +1,14 @@
-package org.telegram.ui.Components.poll;
+package org.wooble.ui.Components.poll;
 
 import androidx.collection.LongSparseArray;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_account;
 
 import java.util.ArrayList;
 import java.util.HashMap;

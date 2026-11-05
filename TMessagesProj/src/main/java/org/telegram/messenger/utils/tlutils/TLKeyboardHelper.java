@@ -1,7 +1,7 @@
-package org.telegram.messenger.utils.tlutils;
+package org.wooble.messenger.utils.tlutils;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_keyboard;
 
 public class TLKeyboardHelper {
     private TLKeyboardHelper() {

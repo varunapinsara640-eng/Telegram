@@ -1,4 +1,4 @@
-package org.telegram.ui.Wallet;
+package org.wooble.ui.Wallet;
 
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -13,12 +13,12 @@ import android.system.OsConstants;
 import android.util.Base64;
 
 import org.json.JSONObject;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Wallet.GramWallet.SecretPhrase;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.ui.Wallet.GramWallet.SecretPhrase;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.ConnectionsManager;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

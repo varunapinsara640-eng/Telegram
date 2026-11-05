@@ -3,7 +3,7 @@ project(prisma_prebuild LANGUAGES CXX)
 
 get_filename_component(PRISMA_JNI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/.." ABSOLUTE)
 set(PRISMA_SOURCE_DIR "${PRISMA_JNI_DIR}/third_party/libprisma" CACHE PATH
-    "Pinned TelegramMessenger/libprisma submodule")
+    "Pinned WoobleMessenger/libprisma submodule")
 if(NOT EXISTS "${PRISMA_SOURCE_DIR}/libprisma/SyntaxHighlighter.cpp")
     message(FATAL_ERROR "Initialize TMessagesProj/jni/third_party/libprisma")
 endif()

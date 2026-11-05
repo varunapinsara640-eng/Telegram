@@ -1,10 +1,10 @@
-package org.telegram.ui.Stories;
+package org.wooble.ui.Stories;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.MessagesController;
+import org.wooble.messenger.NotificationCenter;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.tl.TL_stories;
 
 import java.util.ArrayList;
 

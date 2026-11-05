@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -12,14 +12,14 @@ import android.view.TextureView;
 
 import androidx.media3.exoplayer.ExoPlayer;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileStreamLoadOperation;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.VideoPlayer;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.FileLoader;
+import org.wooble.messenger.FileLog;
+import org.wooble.messenger.FileStreamLoadOperation;
+import org.wooble.messenger.Utilities;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.VideoPlayer;
 
 //used for player in background thread
 public class VideoPlayerHolderBase {

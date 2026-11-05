@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -7,13 +7,13 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import org.telegram.messenger.AppGlobalConfig;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.utils.settings.SharedSettings;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
-import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
+import org.wooble.messenger.AppGlobalConfig;
+import org.wooble.messenger.ImageReceiver;
+import org.wooble.messenger.UserConfig;
+import org.wooble.utils.settings.SharedSettings;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.wooble.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 /** Common UI contract implemented by the legacy and Camera2 round-video views. */
 public abstract class InstantCameraViewBase extends FrameLayout {
@@ -129,7 +129,7 @@ public abstract class InstantCameraViewBase extends FrameLayout {
     /** Applies an external preview playback command. */
     public abstract void changeVideoPreviewState(int state, float progress);
 
-    /** Handles Telegram's round-video send command. */
+    /** Handles Wooble's round-video send command. */
     public abstract void send(
             int state,
             boolean notify,

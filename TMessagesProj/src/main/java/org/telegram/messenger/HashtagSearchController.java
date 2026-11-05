@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -6,10 +6,10 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ChatActivity;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLObject;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ChatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

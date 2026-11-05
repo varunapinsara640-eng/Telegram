@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium;
+package org.wooble.ui.Components.Premium;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,14 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Components.AvatarDrawable;
+import org.wooble.ui.Components.BackupImageView;
+import org.wooble.ui.Components.LayoutHelper;
 
 public class PremiumGiftHeaderCell extends LinearLayout {
     private TLRPC.User user;
@@ -91,7 +91,7 @@ public class PremiumGiftHeaderCell extends LinearLayout {
         avatarDrawable.setInfo(user);
         avatarImageView.setForUserOrChat(user, avatarDrawable);
 
-        titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GiftTelegramPremiumTitle)));
-        subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTelegramPremiumDescription, user.first_name)));
+        titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GiftWooblePremiumTitle)));
+        subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftWooblePremiumDescription, user.first_name)));
     }
 }

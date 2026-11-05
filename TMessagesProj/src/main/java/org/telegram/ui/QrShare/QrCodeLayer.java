@@ -1,7 +1,7 @@
-package org.telegram.ui.QrShare;
+package org.wooble.ui.QrShare;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.dpf2;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.dpf2;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -16,14 +16,14 @@ import com.google.zxing.EncodeHintType;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.google.zxing.qrcode.encoder.Encoder;
 
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.TelegramQRCodeWriter;
+import org.wooble.messenger.SharedConfig;
+import org.wooble.messenger.WoobleQRCodeWriter;
 
 import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Telegram-styled QR that can dissolve into particles: a ragged front sweeps from the bottom up, every module it
+ * Wooble-styled QR that can dissolve into particles: a ragged front sweeps from the bottom up, every module it
  * crosses lifts off as a particle (rising, drifting apart, shrinking), and the new code's modules pop in a moment
  * later behind the front. The code is rendered once as a mask (any colour via a colour filter) and drawn per module,
  * so a full code looks exactly like the static render.
@@ -87,13 +87,13 @@ public final class QrCodeLayer {
         return build(link, px, ErrorCorrectionLevel.M, 0.75f, null);
     }
 
-    /** {@code center} replaces the Telegram logo drawn in the middle (a transparent drawable leaves it blank). */
+    /** {@code center} replaces the Wooble logo drawn in the middle (a transparent drawable leaves it blank). */
     public static Code build(String link, int px, ErrorCorrectionLevel level, float radiusFactor, android.graphics.drawable.Drawable center) {
         try {
             final HashMap<EncodeHintType, Object> hints = new HashMap<>();
             hints.put(EncodeHintType.ERROR_CORRECTION, level);
             hints.put(EncodeHintType.MARGIN, 0);
-            final TelegramQRCodeWriter writer = new TelegramQRCodeWriter();
+            final WoobleQRCodeWriter writer = new WoobleQRCodeWriter();
             if (center != null) writer.setCenterDrawable(center);
             final Code c = new Code();
             final Bitmap code = writer.encode(link, px, px, hints, null, radiusFactor, 0x00000000, 0xFFFFFFFF); // white: coloured where drawn

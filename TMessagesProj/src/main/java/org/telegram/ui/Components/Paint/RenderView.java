@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Paint;
+package org.wooble.ui.Components.Paint;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,12 +13,12 @@ import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.BlurringShader;
-import org.telegram.ui.Components.Size;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.BuildVars;
+import org.wooble.messenger.DispatchQueue;
+import org.wooble.messenger.FileLog;
+import org.wooble.ui.Components.BlurringShader;
+import org.wooble.ui.Components.Size;
 
 import java.util.concurrent.CountDownLatch;
 

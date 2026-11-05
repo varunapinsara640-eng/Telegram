@@ -1,4 +1,4 @@
-package org.telegram.ui.Components.Premium.GLIcon;
+package org.wooble.ui.Components.Premium.GLIcon;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,8 +18,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.PathInterpolator;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.Premium.StarParticlesView;
+import org.wooble.messenger.FileLog;
+import org.wooble.ui.Components.Premium.StarParticlesView;
 
 import java.util.ArrayList;
 

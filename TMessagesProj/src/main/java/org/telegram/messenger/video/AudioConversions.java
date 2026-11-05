@@ -1,4 +1,4 @@
-package org.telegram.messenger.video;
+package org.wooble.messenger.video;
 
 public class AudioConversions {
 

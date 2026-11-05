@@ -1,4 +1,4 @@
-package org.telegram.messenger;
+package org.wooble.messenger;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,13 +13,13 @@ import androidx.core.content.FileProvider;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
-import org.telegram.messenger.regular.BuildConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.AlertsCreator;
-import org.telegram.ui.Components.UpdateAppAlertDialog;
-import org.telegram.ui.Components.UpdateLayout;
-import org.telegram.ui.IUpdateLayout;
+import org.wooble.messenger.regular.BuildConfig;
+import org.wooble.tgnet.ConnectionsManager;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.ui.Components.AlertsCreator;
+import org.wooble.ui.Components.UpdateAppAlertDialog;
+import org.wooble.ui.Components.UpdateLayout;
+import org.wooble.ui.IUpdateLayout;
 
 import java.io.File;
 
@@ -44,7 +44,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
     @Override
     protected void startAppCenterInternal(Activity context) {
-        if (org.telegram.messenger.BuildConfig.DEBUG) {
+        if (org.wooble.messenger.BuildConfig.DEBUG) {
             return;
         }
         try {
@@ -61,7 +61,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
                 final FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
                 crashlytics.setUserId(userId);
-                crashlytics.setCustomKey("version", getVersionName(org.telegram.messenger.BuildConfig.VERSION_NUM));
+                crashlytics.setCustomKey("version", getVersionName(org.wooble.messenger.BuildConfig.VERSION_NUM));
                 crashlytics.setCustomKey("model", Build.MODEL);
                 crashlytics.setCustomKey("manufacturer", Build.MANUFACTURER);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -77,7 +77,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
             /*
             if (BuildVars.DEBUG_VERSION) {
                 Distribute.setEnabledForDebuggableBuild(true);
-                String appHash = org.telegram.messenger.BuildConfig.APP_CENTER_HASH;
+                String appHash = org.wooble.messenger.BuildConfig.APP_CENTER_HASH;
                 if (TextUtils.isEmpty(appHash)) {
                     throw new RuntimeException("App Center hash is empty. add to local.properties field APP_CENTER_HASH_PRIVATE and APP_CENTER_HASH_PUBLIC");
                 }
@@ -200,7 +200,7 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
 
     @Override
     public boolean isCustomUpdate() {
-        return !TextUtils.isEmpty(org.telegram.messenger.BuildConfig.BETA_URL);
+        return !TextUtils.isEmpty(org.wooble.messenger.BuildConfig.BETA_URL);
     }
 
     @Override

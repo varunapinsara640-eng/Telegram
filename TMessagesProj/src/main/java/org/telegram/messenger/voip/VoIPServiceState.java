@@ -1,7 +1,7 @@
-package org.telegram.messenger.voip;
+package org.wooble.messenger.voip;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.wooble.tgnet.TLRPC;
+import org.wooble.tgnet.tl.TL_phone;
 
 import java.util.ArrayList;
 

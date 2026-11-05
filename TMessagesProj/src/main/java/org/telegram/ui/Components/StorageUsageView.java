@@ -1,4 +1,4 @@
-package org.telegram.ui.Components;
+package org.wooble.ui.Components;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import androidx.core.graphics.ColorUtils;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.TextSettingsCell;
-import org.telegram.ui.Components.voip.CellFlickerDrawable;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.messenger.LocaleController;
+import org.wooble.messenger.R;
+import org.wooble.ui.ActionBar.Theme;
+import org.wooble.ui.Cells.TextSettingsCell;
+import org.wooble.ui.Components.voip.CellFlickerDrawable;
 
 public class StorageUsageView extends FrameLayout {
 
@@ -33,8 +33,8 @@ public class StorageUsageView extends FrameLayout {
     private boolean calculating;
     ProgressView progressView;
 
-    TextView telegramCacheTextView;
-    TextView telegramDatabaseTextView;
+    TextView woobleCacheTextView;
+    TextView woobleDatabaseTextView;
     TextView freeSizeTextView;
     TextView totlaSizeTextView;
     TextView calculatingTextView;
@@ -140,13 +140,13 @@ public class StorageUsageView extends FrameLayout {
         }
 
 
-        telegramCacheTextView = new TextView(context);
-        telegramCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
-        telegramCacheTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
+        woobleCacheTextView = new TextView(context);
+        woobleCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+        woobleCacheTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
 
-        telegramDatabaseTextView = new TextView(context);
-        telegramDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
-        telegramDatabaseTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
+        woobleDatabaseTextView = new TextView(context);
+        woobleDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+        woobleDatabaseTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
 
         freeSizeTextView = new TextView(context);
         freeSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
@@ -159,18 +159,18 @@ public class StorageUsageView extends FrameLayout {
 
         lastProgressColor = Theme.getColor(Theme.key_player_progress);
 
-        telegramCacheTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
-        telegramCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+        woobleCacheTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
+        woobleCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
         freeSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), ColorUtils.setAlphaComponent(lastProgressColor,64)), null, null, null);
         freeSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
         totlaSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), ColorUtils.setAlphaComponent(lastProgressColor,127)), null, null, null);
         totlaSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
-        telegramDatabaseTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
-        telegramDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+        woobleDatabaseTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
+        woobleDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
 
         legendLayout.addView(calculatingTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
-        legendLayout.addView(telegramDatabaseTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
-        legendLayout.addView(telegramCacheTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
+        legendLayout.addView(woobleDatabaseTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
+        legendLayout.addView(woobleCacheTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
         legendLayout.addView(totlaSizeTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
         legendLayout.addView(freeSizeTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT));
 
@@ -196,10 +196,10 @@ public class StorageUsageView extends FrameLayout {
 
         if (calculating) {
             calculatingTextView.setVisibility(View.VISIBLE);
-            telegramCacheTextView.setVisibility(View.GONE);
+            woobleCacheTextView.setVisibility(View.GONE);
             freeSizeTextView.setVisibility(View.GONE);
             totlaSizeTextView.setVisibility(View.GONE);
-            telegramDatabaseTextView.setVisibility(View.GONE);
+            woobleDatabaseTextView.setVisibility(View.GONE);
             divider.setVisibility(GONE);
             textSettingsCell.setVisibility(GONE);
             progress = 0f;
@@ -215,14 +215,14 @@ public class StorageUsageView extends FrameLayout {
             if (totalSize > 0) {
                 divider.setVisibility(VISIBLE);
                 textSettingsCell.setVisibility(VISIBLE);
-                telegramCacheTextView.setVisibility(View.VISIBLE);
-                telegramDatabaseTextView.setVisibility(GONE);
-                textSettingsCell.setTextAndValue(LocaleController.getString(R.string.ClearTelegramCache), AndroidUtilities.formatFileSize(totalSize), true);
-                telegramCacheTextView.setText(LocaleController.formatString("TelegramCacheSize", R.string.TelegramCacheSize, AndroidUtilities.formatFileSize(totalSize + database)));
+                woobleCacheTextView.setVisibility(View.VISIBLE);
+                woobleDatabaseTextView.setVisibility(GONE);
+                textSettingsCell.setTextAndValue(LocaleController.getString(R.string.ClearWoobleCache), AndroidUtilities.formatFileSize(totalSize), true);
+                woobleCacheTextView.setText(LocaleController.formatString("WoobleCacheSize", R.string.WoobleCacheSize, AndroidUtilities.formatFileSize(totalSize + database)));
             } else {
-                telegramCacheTextView.setVisibility(View.GONE);
-                telegramDatabaseTextView.setVisibility(VISIBLE);
-                telegramDatabaseTextView.setText(LocaleController.formatString("LocalDatabaseSize", R.string.LocalDatabaseSize, AndroidUtilities.formatFileSize(database)));
+                woobleCacheTextView.setVisibility(View.GONE);
+                woobleDatabaseTextView.setVisibility(VISIBLE);
+                woobleDatabaseTextView.setText(LocaleController.formatString("LocalDatabaseSize", R.string.LocalDatabaseSize, AndroidUtilities.formatFileSize(database)));
                 divider.setVisibility(GONE);
                 textSettingsCell.setVisibility(GONE);
             }
@@ -269,11 +269,11 @@ public class StorageUsageView extends FrameLayout {
         if (lastProgressColor != Theme.getColor(Theme.key_player_progress)){
             lastProgressColor = Theme.getColor(Theme.key_player_progress);
 
-            telegramCacheTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
-            telegramCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+            woobleCacheTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
+            woobleCacheTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
 
-            telegramDatabaseTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
-            telegramDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
+            woobleDatabaseTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), lastProgressColor), null, null, null);
+            woobleDatabaseTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));
 
             freeSizeTextView.setCompoundDrawablesWithIntrinsicBounds(Theme.createCircleDrawable(AndroidUtilities.dp(10), ColorUtils.setAlphaComponent(lastProgressColor,64)), null, null, null);
             freeSizeTextView.setCompoundDrawablePadding(AndroidUtilities.dp(6));

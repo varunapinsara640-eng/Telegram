@@ -1,9 +1,9 @@
-package org.telegram.ui.Storage;
+package org.wooble.ui.Storage;
 
 import android.util.LongSparseArray;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.CacheControlActivity;
+import org.wooble.messenger.MessageObject;
+import org.wooble.ui.CacheControlActivity;
 
 import java.io.File;
 import java.util.ArrayList;

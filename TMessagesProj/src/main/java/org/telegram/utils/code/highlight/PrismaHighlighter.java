@@ -1,10 +1,10 @@
-package org.telegram.utils.code.highlight;
+package org.wooble.utils.code.highlight;
 
 /**
  * Native libprisma tokenizer. Reuse an instance on a background queue and close it when its owner
  * is destroyed. All native calls on one instance are serialized.
  *
- * <p>Telegram NativeLoader loads the main native library containing PrismaJni.cpp before
+ * <p>Wooble NativeLoader loads the main native library containing PrismaJni.cpp before
  * constructing this class. Native methods must be kept by R8.
  */
 public final class PrismaHighlighter implements AutoCloseable {

@@ -1,7 +1,7 @@
-package org.telegram.ui.ActionBar;
+package org.wooble.ui.ActionBar;
 
-import static org.telegram.messenger.AndroidUtilities.dp;
-import static org.telegram.messenger.AndroidUtilities.lerp;
+import static org.wooble.messenger.AndroidUtilities.dp;
+import static org.wooble.messenger.AndroidUtilities.lerp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.CubicBezierInterpolator;
-import org.telegram.ui.Components.EllipsizeSpanAnimator;
-import org.telegram.ui.Components.LayoutHelper;
+import org.wooble.messenger.AndroidUtilities;
+import org.wooble.ui.Components.CubicBezierInterpolator;
+import org.wooble.ui.Components.EllipsizeSpanAnimator;
+import org.wooble.ui.Components.LayoutHelper;
 
 import me.vkryl.android.animator.ListAnimator;
 import me.vkryl.android.animator.ReplaceAnimator;
@@ -52,8 +52,8 @@ public class ActionBarAnimatedSubtitleOverlayContainer extends FrameLayout imple
         }
 
         final SimpleTextViewReplaceable overlayTextView = new SimpleTextViewReplaceable(getContext());
-        overlayTextView.setTextColor(Theme.getColor(Theme.key_telegram_color_dialogsLogo, resourcesProvider));
-        overlayTextView.setLinkTextColor(Theme.getColor(Theme.key_telegram_color_dialogsLogo, resourcesProvider));
+        overlayTextView.setTextColor(Theme.getColor(Theme.key_wooble_color_dialogsLogo, resourcesProvider));
+        overlayTextView.setLinkTextColor(Theme.getColor(Theme.key_wooble_color_dialogsLogo, resourcesProvider));
         overlayTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
         overlayTextView.setAlpha(0);
         overlayTextView.setText(text);
@@ -78,8 +78,8 @@ public class ActionBarAnimatedSubtitleOverlayContainer extends FrameLayout imple
 
     public void updateColors() {
         for (ListAnimator.Entry<SimpleTextViewReplaceable> entry : titleOverlayAnimator) {
-            entry.item.setTextColor(Theme.getColor(Theme.key_telegram_color_dialogsLogo, resourcesProvider));
-            entry.item.setLinkTextColor(Theme.getColor(Theme.key_telegram_color_dialogsLogo, resourcesProvider));
+            entry.item.setTextColor(Theme.getColor(Theme.key_wooble_color_dialogsLogo, resourcesProvider));
+            entry.item.setLinkTextColor(Theme.getColor(Theme.key_wooble_color_dialogsLogo, resourcesProvider));
         }
     }
 
