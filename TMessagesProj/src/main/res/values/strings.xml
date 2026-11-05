@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppName">Wooble</string>
+    <string name="AppNameBeta">Wooble Beta</string>
     <string name="LanguageName">English</string>
     <string name="English">English</string>
     <string name="LanguageNameInEnglish">English</string>
     <string name="LanguageCode">en</string>
     <string name="ContinueOnThisLanguage">Continue in English</string>
+</resources>
+
     <!--signin view-->
     <string name="YourPhone">Your Phone</string>
     <string name="StartText">Please confirm your country code and enter your phone number.</string>
