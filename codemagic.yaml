@@ -7,7 +7,6 @@ workflows:
       groups:
         - keystore_credentials
       vars:
-        PACKAGE_NAME: "org.wooble.messenger"
         NDK_VERSION: "27.2.12479018"
       java: 17
     triggering:
@@ -33,11 +32,12 @@ workflows:
 
       - name: Build Android APK
         script: |
-          # C++ Native කේතය (Native JNI Framework) එකත් එක්කම APK එක බිල්ඩ් කරන නිල විධානය
+          # අවසන් APK එකේ Application ID එක පමණක් Wooble ලෙස බලහත්කාරයෙන් වෙනස් කර බිල්ඩ් කිරීම
           ./gradlew :TMessagesProj_AppStandalone:assembleRelease \
             --no-daemon \
             --stacktrace \
             -Dorg.gradle.jvmargs="-Xmx8g -XX:MaxMetaspaceSize=1g" \
+            -PapplicationId="org.wooble.messenger" \
             -PdisableAppStandaloneTests=true
           
     artifacts:
