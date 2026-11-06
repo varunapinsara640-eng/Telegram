@@ -19,11 +19,14 @@ workflows:
     scripts:
       - name: Set up Android NDK and local.properties
         script: |
+          # Android SDK එක තියෙන තැන ස්ථිර කරගැනීම
+          ANDROID_SDK_ROOT="/Users/builder/Library/Android/sdk"
+          
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
           echo "ndk.dir=$ANDROID_SDK_ROOT/ndk/$NDK_VERSION" >> local.properties
           
-          # බිල්ඩ් එකට අවශ්‍ය NDK එක සර්වර් එක ඇතුළේ ඩවුන්ලෝඩ් කරගැනීම
-          sdkmanager --install "ndk;$NDK_VERSION"
+          # sdkmanager එක තියෙන නිවැරදි මාවත හරහා NDK එක Install කිරීම
+          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install "ndk;$NDK_VERSION"
 
       - name: Build Android APK
         script: |
