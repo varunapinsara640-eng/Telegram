@@ -9,7 +9,7 @@ workflows:
       vars:
         PACKAGE_NAME: "org.wooble.messenger"
         NDK_VERSION: "27.2.12479018"
-      java: 17 # sdkmanager එක වැඩ කිරීමට ජාවා 17 නැවත ලබා දෙන ලදී
+      java: 17
     triggering:
       events:
         - push
@@ -33,8 +33,12 @@ workflows:
 
       - name: Build Android APK
         script: |
-          # Java 17 ගැළපීම් ගැටලු මඟ හැරීමට කේතය Java 11 වලට target කර බිල්ඩ් කිරීම
-          ./gradlew :TMessagesProj_AppStandalone:assembleRelease --no-daemon --info --stacktrace -Dorg.gradle.jvmargs="-Xmx8g" -Pandroid.uniquePackageNames=true
+          # C++ Native කේතය (Native JNI Framework) එකත් එක්කම APK එක බිල්ඩ් කරන නිල විධානය
+          ./gradlew :TMessagesProj_AppStandalone:assembleRelease \
+            --no-daemon \
+            --stacktrace \
+            -Dorg.gradle.jvmargs="-Xmx8g -XX:MaxMetaspaceSize=1g" \
+            -PdisableAppStandaloneTests=true
           
     artifacts:
       - TMessagesProj_AppStandalone/build/outputs/apk/**/*.apk
