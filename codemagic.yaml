@@ -9,7 +9,7 @@ workflows:
       vars:
         PACKAGE_NAME: "org.wooble.messenger"
         NDK_VERSION: "27.2.12479018"
-      java: 17
+      java: 11 # ගැටලුව විසඳීම සඳහා Java 11 දක්වා වෙනස් කරන ලදී
     triggering:
       events:
         - push
@@ -33,7 +33,6 @@ workflows:
 
       - name: Build Android APK
         script: |
-          # සැබෑ ස්ටෑන්ඩ්අලෝන් ඇප් එක (Standalone APK) බිල්ඩ් කරන නිවැරදිම කමාන්ඩ් එක
           ./gradlew :TMessagesProj_AppStandalone:assembleRelease --no-daemon --info --stacktrace
 
     artifacts:
