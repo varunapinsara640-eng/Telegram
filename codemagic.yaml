@@ -26,18 +26,15 @@ workflows:
 
       - name: Clear Gradle Cache and Inject Keystore
         script: |
-          # පැරණි බිල්ඩ් දත්ත මකා පිරිසිදු කිරීම (Clean Build)
           ./gradlew clean --no-daemon
-          
-          # Keystore passwords ටික පරිසර විචල්‍යයන් (Variables) වලින් කෙලින්ම සෙට් කිරීම
           echo "RELEASE_KEY_PASSWORD=$CM_KEYSTORE_PASSWORD" >> gradle.properties
           echo "RELEASE_STORE_PASSWORD=$CM_KEYSTORE_PASSWORD" >> gradle.properties
           echo "RELEASE_KEY_ALIAS=$CM_KEY_ALIAS" >> gradle.properties
 
       - name: Build Android APK
         script: |
-          # --info ධජය සමඟ සැබෑ දෝෂය සම්පූර්ණයෙන්ම මතු කරමින් බිල්ඩ් කිරීම
-          ./gradlew assembleTMessagesProjRelease --no-daemon --info --stacktrace
+          # සැබෑ ස්ටෑන්ඩ්අලෝන් ඇප් එක (Standalone APK) බිල්ඩ් කරන නිවැරදිම කමාන්ඩ් එක
+          ./gradlew :TMessagesProj_AppStandalone:assembleRelease --no-daemon --info --stacktrace
 
     artifacts:
-      - TMessagesProj/build/outputs/apk/**/*.apk
+      - TMessagesProj_AppStandalone/build/outputs/apk/**/*.apk
