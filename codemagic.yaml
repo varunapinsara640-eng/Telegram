@@ -9,7 +9,6 @@ workflows:
       vars:
         ANDROID_NDK_VERSION: "27.2.12479018"
         ANDROID_SDK_VERSION: "36"
-      android_ndk: 27.2.12479018
     triggering:
       events:
         - push
