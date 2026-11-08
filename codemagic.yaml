@@ -9,12 +9,12 @@ workflows:
       vars:
         ANDROID_NDK_VERSION: "27.2.12479018"
         ANDROID_SDK_VERSION: "36"
-      android_ndk: 27.2.12479018   # නිවැරදි NDK අනුවාදය සෘජුවම ලබා දීම
+      android_ndk: 27.2.12479018   # නිවැරදිව පෙළගස්වන ලද NDK අනුවාදය (Indentation Fixed)
     triggering:
       events:
         - push
       branch_patterns:
-        - pattern: main
+        - pattern: master          # ඔබේ GitHub ශාඛාව (Branch) 'master' නිසා එය නිවැරදි කරන ලදී
     scripts:
       - name: Fetch Git Submodules Recursively
         script: |
@@ -44,15 +44,7 @@ workflows:
       - name: Build Android APK (Release Mode)
         script: |
           # Gradle මඟින් නිල ඇප් එකේ APK එක ජනනය කිරීම
-          # සටහන: ඔබේ අවශ්‍යතාවය අනුව 'assembleRelease' හෝ 'bundleRelease' යොදාගත හැක
           ./gradlew assembleAfatRelease --no-daemon
 
     artifacts:
       - TMessagesProj/build/outputs/apk/afat/release/*.apk
-    publishing:
-      email:
-        recipients:
-          - varunapinsara640@gmail.com   # බිල්ඩ් එක අවසන් වූ පසු ඔබට ඊමේල් පණිවිඩයක් ලැබෙනු ඇත
-        notify:
-          success: true
-          failure: true
