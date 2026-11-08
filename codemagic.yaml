@@ -33,11 +33,18 @@ workflows:
 
       - name: Accept Android SDK Licenses and Set SDK Environment
         script: |
+          # 💡 Codemagic පද්ධතියේ පවතින නිවැරදි sdkmanager පථයන් (Paths) එක් කිරීම
+          export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_HOME/tools/bin:$PATH
+          
+          # බලපත්‍ර ස්වයංක්‍රීයව පිළිගැනීම සහ SDK 36 මෙවලම් බාගත කිරීම
           yes | sdkmanager --licenses
           sdkmanager "platforms;android-$ANDROID_SDK_VERSION" "build-tools;36.0.0"
 
       - name: Build Android APK (Release Mode)
         script: |
+          # 💡 මෙතැනටද පද්ධති පථයන් එක් කර Local Wrapper එක මඟින් සාර්ථකව බිල්ඩ් කිරීම
+          export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_HOME/tools/bin:$PATH
+          chmod +x gradlew
           ./gradlew assembleAfatRelease --no-daemon
 
     artifacts:
