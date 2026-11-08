@@ -2,48 +2,43 @@ workflows:
   telegram-android-build:
     name: Telegram Android Custom Build
     max_build_duration: 60
-    instance_type: mac_mini_m2      # වේගවත් බිල්ඩ් එකක් සඳහා M2 මැෂින් එකක් භාවිතය සුදුසුය
+    instance_type: mac_mini_m2
     environment:
       groups:
-        - telegram_env             # UI එකෙන් සැකසූ variable group එක මෙතැනට සම්බන්ධ වේ
+        - telegram_env
       vars:
         ANDROID_NDK_VERSION: "27.2.12479018"
         ANDROID_SDK_VERSION: "36"
-      android_ndk: 27.2.12479018   # නිවැරදිව පෙළගස්වන ලද NDK අනුවාදය (Indentation Fixed)
+      android_ndk: 27.2.12479018
     triggering:
       events:
         - push
       branch_patterns:
-        - pattern: master          # ඔබේ GitHub ශාඛාව (Branch) 'master' නිසා එය නිවැරදි කරන ලදී
+        - pattern: master
     scripts:
       - name: Fetch Git Submodules Recursively
         script: |
-          # නිල උපදෙස් පරිදි සබ්-මොඩියුල ගැඹුර 1ක් වන සේ ක්ලෝන් කිරීම
           git submodule init
           git submodule update --init --recursive --depth=1
 
       - name: Set up Keystore and Google Services Configuration
         script: |
-          # Base64 කේත වලින් නැවත නිවැරදි ෆෝල්ඩර තුළට ගොනු ජනනය කිරීම
           echo $RELEASE_KEYSTORE_BASE64 | base64 --decode > TMessagesProj/config/release.keystore
           echo $GOOGLE_SERVICES_BASE64 | base64 --decode > TMessagesProj/google-services.json
 
       - name: Configure gradle.properties Secrets
         script: |
-          # gradle.properties ගොනුවට පාස්වර්ඩ්ස් සහ ඇලියස් ඇතුළත් කිරීම
           echo "RELEASE_KEY_ALIAS=$RELEASE_KEY_ALIAS" >> gradle.properties
           echo "RELEASE_KEY_PASSWORD=$RELEASE_KEY_PASSWORD" >> gradle.properties
           echo "RELEASE_STORE_PASSWORD=$RELEASE_STORE_PASSWORD" >> gradle.properties
 
       - name: Accept Android SDK Licenses and Set SDK Environment
         script: |
-          # SDK 36 බලපත්‍ර ස්වයංක්‍රීයව පිළිගැනීම
           yes | sdkmanager --licenses
           sdkmanager "platforms;android-$ANDROID_SDK_VERSION" "build-tools;36.0.0"
 
       - name: Build Android APK (Release Mode)
         script: |
-          # Gradle මඟින් නිල ඇප් එකේ APK එක ජනනය කිරීම
           ./gradlew assembleAfatRelease --no-daemon
 
     artifacts:
