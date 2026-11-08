@@ -17,14 +17,15 @@ workflows:
     scripts:
       - name: Fetch Git Submodules Recursively
         script: |
-          # 💡 සබ්-මොඩියුල සියල්ලම ගැඹුරින් සහ සම්පූර්ණයෙන්ම ක්ලෝන් කිරීම තහවුරු කිරීම
+          # නිල උපදෙස්: සබ්-මොඩියුල සියල්ලම ගැඹුරින් සහ සම්පූර්ණයෙන්ම ක්ලෝන් කිරීම
           git submodule init
           git submodule update --init --recursive
 
       - name: Set up Keystore and Google Services Configuration
         script: |
+          # නිල උපදෙස්: google-services.json නිවැරදිව TMessagesProj ෆෝල්ඩරයට සමාන්තරව තැබීම
           echo $RELEASE_KEYSTORE_BASE64 | base64 --decode > TMessagesProj/config/release.keystore
-          echo $GOOGLE_SERVICES_BASE64 | base64 --decode > TMessagesProj/google-services.json
+          echo $GOOGLE_SERVICES_BASE64 | base64 --decode > google-services.json
 
       - name: Configure gradle.properties Secrets
         script: |
@@ -37,7 +38,7 @@ workflows:
           export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_HOME/tools/bin:$PATH
           yes | sdkmanager --licenses
           
-          # 💡 CMake සහ Ninja නිවැරදිව පද්ධතිය තුළට බාගත කර යාවත්කාලීන කිරීම
+          # පද්ධතියට අවශ්‍ය නිල මෙවලම් බාගත කිරීම තහවුරු කිරීම
           sdkmanager "platforms;android-$ANDROID_SDK_VERSION" "build-tools;36.0.0" "cmake;3.22.1" "ndk;$ANDROID_NDK_VERSION"
 
       - name: Build Android APK (Release Mode)
@@ -45,8 +46,10 @@ workflows:
           export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_HOME/tools/bin:$PATH
           chmod +x gradlew
           
-          # 💡 CMake දෝෂ මඟහරවා ගැනීමට පිරිසිදු කිරීමක් සිදු කර අවසානයේ බිල්ඩ් කිරීම
+          # 💡 පැරණි CMake Cache ලිපිගොනු සම්පූර්ණයෙන්ම මකා දමා පිරිසිදු කිරීම
           ./gradlew clean
+          
+          # Wooble Standalone/Play Store APK එක නිල වශයෙන් ජනනය කිරීම
           ./gradlew assembleAfatRelease --no-daemon
 
     artifacts:
