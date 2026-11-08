@@ -1,44 +1,58 @@
 workflows:
-  wooble-android-build:
-    name: Wooble Android APK Build
+  telegram-android-build:
+    name: Telegram Android Custom Build
     max_build_duration: 60
-    instance_type: mac_mini_m2
+    instance_type: mac_mini_m2      # වේගවත් බිල්ඩ් එකක් සඳහා M2 මැෂින් එකක් භාවිතය සුදුසුය
     environment:
       groups:
-        - keystore_credentials
+        - telegram_env             # UI එකෙන් සැකසූ variable group එක මෙතැනට සම්බන්ධ වේ
       vars:
-        NDK_VERSION: "27.2.12479018"
-      java: 17
+        ANDROID_NDK_VERSION: "27.2.12479018"
+        ANDROID_SDK_VERSION: "36"
+      android_ndk: 27.2.12479018   # නිවැරදි NDK අනුවාදය සෘජුවම ලබා දීම
     triggering:
       events:
         - push
       branch_patterns:
-        - pattern: master
-          include: true
+        - pattern: main
     scripts:
-      - name: Set up Android NDK and local.properties
+      - name: Fetch Git Submodules Recursively
         script: |
-          ANDROID_SDK_ROOT="/Users/builder/Library/Android/sdk"
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-          echo "ndk.dir=$ANDROID_SDK_ROOT/ndk/$NDK_VERSION" >> local.properties
-          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --install "ndk;$NDK_VERSION"
+          # නිල උපදෙස් පරිදි සබ්-මොඩියුල ගැඹුර 1ක් වන සේ ක්ලෝන් කිරීම
+          git submodule init
+          git submodule update --init --recursive --depth=1
 
-      - name: Clear Gradle Cache and Inject Keystore
+      - name: Set up Keystore and Google Services Configuration
         script: |
-          ./gradlew clean --no-daemon
-          echo "RELEASE_KEY_PASSWORD=$CM_KEYSTORE_PASSWORD" >> gradle.properties
-          echo "RELEASE_STORE_PASSWORD=$CM_KEYSTORE_PASSWORD" >> gradle.properties
-          echo "RELEASE_KEY_ALIAS=$CM_KEY_ALIAS" >> gradle.properties
+          # Base64 කේත වලින් නැවත නිවැරදි ෆෝල්ඩර තුළට ගොනු ජනනය කිරීම
+          echo $RELEASE_KEYSTORE_BASE64 | base64 --decode > TMessagesProj/config/release.keystore
+          echo $GOOGLE_SERVICES_BASE64 | base64 --decode > TMessagesProj/google-services.json
 
-      - name: Build Android APK
+      - name: Configure gradle.properties Secrets
         script: |
-          # අවසන් APK එකේ Application ID එක පමණක් Wooble ලෙස බලහත්කාරයෙන් වෙනස් කර බිල්ඩ් කිරීම
-          ./gradlew :TMessagesProj_AppStandalone:assembleRelease \
-            --no-daemon \
-            --stacktrace \
-            -Dorg.gradle.jvmargs="-Xmx8g -XX:MaxMetaspaceSize=1g" \
-            -PapplicationId="org.wooble.messenger" \
-            -PdisableAppStandaloneTests=true
-          
+          # gradle.properties ගොනුවට පාස්වර්ඩ්ස් සහ ඇලියස් ඇතුළත් කිරීම
+          echo "RELEASE_KEY_ALIAS=$RELEASE_KEY_ALIAS" >> gradle.properties
+          echo "RELEASE_KEY_PASSWORD=$RELEASE_KEY_PASSWORD" >> gradle.properties
+          echo "RELEASE_STORE_PASSWORD=$RELEASE_STORE_PASSWORD" >> gradle.properties
+
+      - name: Accept Android SDK Licenses and Set SDK Environment
+        script: |
+          # SDK 36 බලපත්‍ර ස්වයංක්‍රීයව පිළිගැනීම
+          yes | sdkmanager --licenses
+          sdkmanager "platforms;android-$ANDROID_SDK_VERSION" "build-tools;36.0.0"
+
+      - name: Build Android APK (Release Mode)
+        script: |
+          # Gradle මඟින් නිල ඇප් එකේ APK එක ජනනය කිරීම
+          # සටහන: ඔබේ අවශ්‍යතාවය අනුව 'assembleRelease' හෝ 'bundleRelease' යොදාගත හැක
+          ./gradlew assembleAfatRelease --no-daemon
+
     artifacts:
-      - TMessagesProj_AppStandalone/build/outputs/apk/**/*.apk
+      - TMessagesProj/build/outputs/apk/afat/release/*.apk
+    publishing:
+      email:
+        recipients:
+          - varunapinsara640@gmail.com   # බිල්ඩ් එක අවසන් වූ පසු ඔබට ඊමේල් පණිවිඩයක් ලැබෙනු ඇත
+        notify:
+          success: true
+          failure: true
